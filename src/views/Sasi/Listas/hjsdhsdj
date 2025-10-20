@@ -1,0 +1,286 @@
+
+
+<v-data-table
+				:headers="headers"
+				hide-default-footer
+				:items="orderedItens"
+				disable-pagination
+				class="elevation-1"
+			>
+				<template v-slot:item.cod="{item}">
+					<div v-if="!item.titulo">
+						<h3>{{item.id}}</h3>
+						<v-text-field
+							@keypress.enter="getProduto($event.target.value, item)"
+							@keyup="$event.target.value.length === 0 ? item.disponivel_item = 0 : ''"
+							:ref="item.id.toString() + 'input-codigo'"
+							label="Código"
+							class="label"
+							:value="item.cod"
+						></v-text-field>
+						<v-text-field
+							label="Código Marca 2"
+							class="label"
+							background-color="blue lighten-4"
+							v-if="item.marcaOpcional"
+							v-model="item.codMarcaOpcional"
+						></v-text-field>
+					</div>
+				</template>
+				<template v-slot:item.qtd_item="{item}">
+					<div v-if="!item.titulo">
+						<v-text-field class="input-no-details" v-mask="'##'" solo v-model="item.qtd_item"></v-text-field>
+						<h4 :class="item.saldo > 0 ? 'success--text' : 'error--text'">Saldo: {{item.saldo}}</h4>
+						<h4>Lucro: {{item.lucro}}</h4>
+					</div>
+				</template>
+				<template v-slot:item.descri_item="{item}">
+					<div v-if="!item.titulo">
+						<v-textarea
+							label="Descrição Sistema"
+							class="label"
+							auto-grow
+							:rows="1"
+							v-model="item.descri_item"
+						></v-textarea>
+						<v-textarea label="Descrição Site" class="label" auto-grow :rows="1" v-model="item.descricao"></v-textarea>
+						<v-textarea
+							background-color="blue lighten-4"
+							v-if="item.marcaOpcional"
+							label="Descrição Marca 2"
+							class="label"
+							auto-grow
+							:rows="1"
+							v-model="item.descricaoMarcaOpcional"
+						></v-textarea>
+						<div v-if="item.kit" style="border-style: solid; border-width: 2px; border-color: #fb8c00;">
+							<div class="ma-3">
+								<h4>Conteudo do Kit</h4>
+								<div v-for="(row, index) in item.rowsKits" :key="index">
+									<v-row>
+										<v-col cols="12" md="3">
+											<v-text-field
+												class="input-no-details input-qtd-produtos"
+												v-mask="'##'"
+												v-model="row.qtd"
+											></v-text-field>
+										</v-col>
+										<v-col cols="12" md="9">
+											<v-textarea
+												class="input-no-details input-qtd-produtos"
+												auto-grow
+												:rows="1"
+												v-model="row.descricao"
+												@click:append="row.button == '+' ? addRowKit(item) : removeRowKit(item)"
+												:append-icon="row.button == '+' ? 'fa-plus success--text': 'fa-minus error--text'"
+											></v-textarea>
+										</v-col>
+									</v-row>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div v-else>
+						<v-textarea label="Titulo" class="label" auto-grow :rows="1" v-model="item.descricao"></v-textarea>
+					</div>
+				</template>
+				<template v-slot:item.valor="{item}">
+					<div v-if="!item.titulo">
+						<div class="text-left">
+							<label class="label-text">Valor Sistema</label>
+							<br />
+							<span>R$ {{(parseFloat(item.valor)).toFixed(2).replace('.', ',')}}</span>
+						</div>
+						<div
+							style="font-size: 14px !important;"
+							class="v-input label v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--is-booted"
+						>
+							<div class="v-input__control">
+								<div class="v-input__slot">
+									<div class="v-text-field__slot">
+										<label
+											for="input-money"
+											class="v-label v-label--active theme--light"
+											style="left: 0px; right: auto; position: absolute;"
+										>Valor Site</label>
+										<money
+											v-model="item.valor_site"
+											id="input-money"
+											v-bind="$money"
+											:class="item.checked ? 'white' : 'warning'"
+											@change="calcTotalItens(); checkLimiteValorSite($event.target.value, item);checkIfChecked(item)"
+											@keyup.native="calcTotalItens(); checkIfChecked(item); checkLimiteValorSite($event.target.value, item)"
+											@click="calcTotalItens(); checkIfChecked(item)"
+											@blur="calcTotalItens(); checkIfChecked(item)"
+											@focus="calcTotalItens(); checkIfChecked(item)"
+										></money>
+									</div>
+								</div>
+								<div class="v-text-field__details">
+									<div class="v-messages theme--light">
+										<div class="v-messages__wrapper"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div
+							v-if="item.marcaOpcional"
+							style="font-size: 14px !important;"
+							class="v-input label v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--is-booted"
+						>
+							<div class="v-input__control">
+								<div class="v-input__slot blue lighten-4">
+									<div class="v-text-field__slot">
+										<label
+											for="input-money"
+											class="v-label v-label--active theme--light"
+											style="left: 0px; right: auto; position: absolute;"
+										>Valor Marca 2</label>
+										<money v-model="item.valorMarcaOpcional" id="input-money" v-bind="$money"></money>
+									</div>
+								</div>
+								<div class="v-text-field__details">
+									<div class="v-messages theme--light">
+										<div class="v-messages__wrapper"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</template>
+				<template v-slot:item.marca="{item}">
+					<div v-if="!item.titulo">
+						<div v-if="item.luva">
+							<div class="ma-2" style="border-style: solid; border-width: 2px; border-color: #4caf50;">
+								<v-autocomplete
+									v-model="item.luvaCodigos"
+									:items="arrayLuvas"
+									color="success"
+									auto-select-first
+									hide-no-data
+									outlined
+									dense
+									chips
+									deletable-chips
+									item-text="codigo"
+									item-value="codigo"
+									small-chips
+									label="Código"
+									class="label mt-2 ml-1 mr-1 input-qtd-produtos"
+									multiple
+									:search-input.sync="searchLuva"
+								></v-autocomplete>
+								<v-autocomplete
+									v-model="item.luvaTamanhos"
+									:items="['PP', 'P', 'M', 'G', '6,5', '7,0', '7,5', '8,0', '8,5']"
+									outlined
+									color="success"
+									dense
+									chips
+									deletable-chips
+									small-chips
+									label="Tamanho"
+									class="label ml-1 mr-1 input-qtd-produtos"
+									multiple
+								></v-autocomplete>
+							</div>
+						</div>
+
+						<div v-else>
+							<v-textarea label="Marca 1" class="label" auto-grow :rows="1" v-model="item.marca"></v-textarea>
+							<v-textarea
+								background-color="blue lighten-4"
+								v-if="item.marcaOpcional"
+								label="Marca 2"
+								class="label"
+								auto-grow
+								:rows="1"
+								v-model="item.nomeMarcaOpcional"
+							></v-textarea>
+						</div>
+					</div>
+				</template>
+				<template v-slot:item.obs_item="{item}">
+					<v-textarea
+						v-if="!item.titulo"
+						label="Obs"
+						class="label"
+						auto-grow
+						:rows="1"
+						v-model="item.obs_item"
+					></v-textarea>
+				</template>
+				<template v-slot:item.disponivel_item="{item}">
+					<v-switch v-if="!item.titulo" dense v-model="item.disponivel_item" color="primary">
+						<template v-slot:label>
+							<span class="primary--text" v-if="item.disponivel_item">Disponível: SIM</span>
+							<span class="error--text" v-else>Disponível: NÃO</span>
+						</template>
+					</v-switch>
+					<v-switch dense v-model="item.opcional_item" color="primary">
+						<template v-slot:label>
+							<span class="primary--text" v-if="item.opcional_item">Opcional: SIM</span>
+							<span class="error--text" v-else>Opcional: NÃO</span>
+						</template>
+					</v-switch>
+					<v-checkbox v-model="item.trava_qtd_item" label="Travar Qtd"></v-checkbox>
+				</template>
+				<template v-slot:item.acao="{item}">
+					<v-icon @click="addRow(item)" small color="success">fa-plus</v-icon>
+					<v-divider class="ma-3"></v-divider>
+					<v-icon @click="removeRow(item)" small color="error">fa-minus</v-icon>
+					<v-divider class="ma-3"></v-divider>
+					<v-menu offset-y>
+						<template v-slot:activator="{ on }">
+							<v-icon v-on="on" small color="primary">fa-cogs</v-icon>
+						</template>
+						<v-list>
+							<v-list-item v-if="!item.titulo && !item.luva && !item.marcaOpcional">
+								<v-list-item-title @click="item.marcaOpcional = true">
+									<v-btn text color="primary" small>Marca 2</v-btn>
+								</v-list-item-title>
+							</v-list-item>
+							<v-list-item v-if="item.marcaOpcional">
+								<v-list-item-title>
+									<v-btn @click="item.marcaOpcional = false" text color="primary" small>Remover Marca 2</v-btn>
+								</v-list-item-title>
+							</v-list-item>
+							<v-list-item v-if="!item.titulo && !item.luva && !item.kit">
+								<v-list-item-title>
+									<v-btn @click="item.kit = true" text color="warning" small>è um KIT</v-btn>
+								</v-list-item-title>
+							</v-list-item>
+							<v-list-item v-if="item.kit">
+								<v-list-item-title>
+									<v-btn @click="item.kit = false" text color="warning" small>Não è um KIT</v-btn>
+								</v-list-item-title>
+							</v-list-item>
+							<v-list-item v-if="!item.titulo && !item.luva && !item.marcaOpcional && !item.kit">
+								<v-list-item-title>
+									<v-btn @click="item.luva = true" text color="success" small>è uma LUVA</v-btn>
+								</v-list-item-title>
+							</v-list-item>
+							<v-list-item v-if="item.luva">
+								<v-list-item-title class="primary--text">
+									<v-btn @click="item.luva = false" text color="success" small>Não è uma LUVA</v-btn>
+								</v-list-item-title>
+							</v-list-item>
+							<v-list-item v-if="!item.titulo && !item.luva && !item.marcaOpcional && !item.kit">
+								<v-list-item-title class="primary--text">
+									<v-btn @click="item.titulo = true" text color="primary" small>Titulo</v-btn>
+								</v-list-item-title>
+							</v-list-item>
+							<v-list-item v-if="item.titulo">
+								<v-list-item-title class="primary--text">
+									<v-btn @click="item.titulo = false" text color="primary" small>Não é Titulo</v-btn>
+								</v-list-item-title>
+							</v-list-item>
+							<v-list-item>
+								<v-list-item-title>
+									<v-btn text color="primary" small>Destacar</v-btn>
+								</v-list-item-title>
+							</v-list-item>
+						</v-list>
+					</v-menu>
+				</template>
+			</v-data-table>
