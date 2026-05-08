@@ -56,8 +56,11 @@ jobs:
               podman rm -f cris-cliente
             fi
 
+            podman network exists solident-network || podman network create solident-network
+
             podman run -d \
               --name cris-cliente \
               --restart=always \
+              --network solident-network \
               -p 8088:80 \
               ghcr.io/${{ github.repository_owner }}/cris-cliente:latest
