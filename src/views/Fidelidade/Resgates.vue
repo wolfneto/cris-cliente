@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <v-card-title>
@@ -182,7 +182,7 @@
                         <br />
                         Nome: <b>{{ item.nome }}</b>
                         <br />
-                        Código: <b>{{ item.codigo }}</b>
+                        CÃ³digo: <b>{{ item.codigo }}</b>
                         <v-divider></v-divider>
                       </span>
                     </v-expansion-panel-content>
@@ -216,13 +216,13 @@
 
     <v-dialog v-model="dialogEmitir" persistent max-width="400">
       <v-card>
-        <v-card-title class="headline error--text">Atenção!</v-card-title>
+        <v-card-title class="headline error--text">AtenÃ§Ã£o!</v-card-title>
         <v-card-text>
           <h6>Deseja realmente emitir resgate?</h6>
         </v-card-text>
         <v-card-actions>
           <div class="flex-grow-1"></div>
-          <v-btn color="error" @click="dialogEmitir = false">Não</v-btn>
+          <v-btn color="error" @click="dialogEmitir = false">NÃ£o</v-btn>
           <v-btn color="success" @click="emitirResgate(objectItem)">Sim</v-btn>
         </v-card-actions>
       </v-card>
@@ -326,7 +326,7 @@ export default {
       {
         name: "acao",
         align: "center",
-        label: "Ação",
+        label: "AÃ§Ã£o",
         sortable: false,
       },
     ],

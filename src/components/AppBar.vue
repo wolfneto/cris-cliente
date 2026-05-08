@@ -1,4 +1,4 @@
-<template>
+﻿<template>
 	<div>
 		<v-app-bar dense :height="35" app color="deep-purple accent-4" dark>
 			<v-toolbar-title>{{title}}</v-toolbar-title>

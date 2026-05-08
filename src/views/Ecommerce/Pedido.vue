@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <v-card-title>
@@ -10,7 +10,7 @@
           v-model="search"
           v-on:keyup="filtrarPagamentos(search)"
           append-icon="fa-search"
-          label="Nome, nº Pedido"
+          label="Nome, nÂº Pedido"
           single-line
           hide-details
         ></v-text-field>
@@ -26,28 +26,28 @@
               bottom
             >
               <template v-slot:activator="{ on }">
-                <v-btn class="ml-3 d-print-none" color="indigo" dark v-on="on">Opções</v-btn>
+                <v-btn class="ml-3 d-print-none" color="indigo" dark v-on="on">OpÃ§Ãµes</v-btn>
               </template>
               <v-card>
                 <v-radio-group class="ml-4" v-model="radios" :mandatory="false" dense>
-                  <v-radio label="Crédito Reservado" @change="reservados()" class="mt-5"></v-radio>
+                  <v-radio label="CrÃ©dito Reservado" @change="reservados()" class="mt-5"></v-radio>
                   <v-radio label="Boletos Emitidos" @change="boletosEmitidos()"></v-radio>
                   <v-radio label="Boletos Pagos" @change="boletosPago()"></v-radio>
                   <v-radio label="Ver Todos" @change="todosPagamentos()"></v-radio>
                  
-                  <!-- <v-radio label="Crédito Pago" @change="creditoPago()"></v-radio>-->
+                  <!-- <v-radio label="CrÃ©dito Pago" @change="creditoPago()"></v-radio>-->
                 </v-radio-group>
               </v-card>
             </v-menu>
           </v-col>
           <v-col cols="12" md="8">
             <div v-if="this.visualizacaoAtiva" class="ma-2">
-              <span class="primary--text body-1">Você está visualizando</span>
+              <span class="primary--text body-1">VocÃª estÃ¡ visualizando</span>
               <i class="ml-2 mr-2 grey--text fas fa-angle-right"></i>
               <span
                 v-if="this.visualizacaoAtiva == '0'"
                 class="primary--text lighten-1 body-1"
-              >Crédito Reserva</span>             
+              >CrÃ©dito Reserva</span>             
               <span
                 v-else-if="this.visualizacaoAtiva == '1'"
                 class="primary--text body-1"
@@ -63,7 +63,7 @@
               <!-- <span
                 v-else-if="this.visualizacaoAtiva == '4'"
                 class="success--text body-1"
-              >Crédito Pagos</span>-->
+              >CrÃ©dito Pagos</span>-->
             </div>
           </v-col>
         </v-row>
@@ -170,7 +170,7 @@
                   v-else-if="row.status == 'PAGO' && row.tipo_pagamento == 'CREDITO'"
                   color="success"
                   dark
-                >CRÉDITO PAGO</v-chip>-->
+                >CRÃ‰DITO PAGO</v-chip>-->
                 <v-chip
                   v-else-if="row.forma_pagamento == 'BOLETO' && row.status == 'PAGO'"
                   color="success"
@@ -226,10 +226,10 @@
           <v-card-text>
             <v-form ref="form" v-model="valid" lazy-validation>
               <v-text-field
-                hint="Digite somente números"
+                hint="Digite somente nÃºmeros"
                 autofocus
                 v-model="dataPagamentoBoleto"
-                :rules="[v => !!v || 'Campo Obrigatório']"
+                :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                 label="Data do Pagamento"
                 v-mask="'##/##/####'"
                 required
@@ -245,11 +245,11 @@
       </v-dialog>
       <!-- <v-dialog v-model="dialogExcluir" persistent max-width="300">
         <v-card>
-          <v-card-title class="headline">Atenção!</v-card-title>
+          <v-card-title class="headline">AtenÃ§Ã£o!</v-card-title>
           <v-card-text>Deseja realmente excluir o link?</v-card-text>
           <v-card-actions>
             <div class="flex-grow-1"></div>
-            <v-btn color="primary" text @click="dialogExcluir = false">Não</v-btn>
+            <v-btn color="primary" text @click="dialogExcluir = false">NÃ£o</v-btn>
             <v-btn color="error" text @click="deletar(objectItem)">Excluir</v-btn>
           </v-card-actions>
         </v-card>
@@ -329,7 +329,7 @@ export default {
         name: "acao",
         prop: "acao",
         align: "center",
-        label: "Ação",
+        label: "AÃ§Ã£o",
         field: "acao",
         sortable: true
       }

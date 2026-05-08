@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <v-card-title>
@@ -10,7 +10,7 @@
             <v-text-field
               v-model="data_de"
               v-mask="'##/##/####'"
-              :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
+              :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
               @keydown.enter="getPedidos()"
               placeholder="dd/mm/aaaa"
               label="De"
@@ -22,9 +22,9 @@
               v-model="data_ate"
               v-mask="'##/##/####'"
               @keydown.enter="getPedidos()"
-              :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
+              :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
               placeholder="dd/mm/aaaa"
-              label="Até"
+              label="AtÃ©"
               required
             ></v-text-field>
           </v-col>
@@ -34,14 +34,14 @@
               v-model="search"
               @click="$event.target.select()"
               append-icon="fa-search"
-              label="Nome, CPF ou nº Pedido"
+              label="Nome, CPF ou nÂº Pedido"
               hide-details
             ></v-text-field>
           </v-col>
         </v-row>
       </v-card-title>
       <v-btn-toggle mandatory class="ml-3" dark v-model="status_link" tile>
-        <v-btn small active-class="error" :value="false">Não Pagos</v-btn>
+        <v-btn small active-class="error" :value="false">NÃ£o Pagos</v-btn>
         <v-btn small active-class="success" :value="true">Pagos</v-btn>
       </v-btn-toggle>
       <q-table
@@ -151,11 +151,11 @@
                   </template>
                   <v-card width="400px">
                     <v-card-title>
-                      Observações Financeiro
+                      ObservaÃ§Ãµes Financeiro
                     </v-card-title>
 
                     <v-textarea
-                      label="Insira as observações"
+                      label="Insira as observaÃ§Ãµes"
                       filled
                       clearable
                       no-resize
@@ -252,7 +252,7 @@
                           <v-chip
                             @click="show($event, item)"
                             :color="
-                              item.status_pagamento == 'NÃO PAGO'
+                              item.status_pagamento == 'NÃƒO PAGO'
                                 ? 'red'
                                 : item.status_pagamento == 'EM ABERTO'
                                 ? 'warning'
@@ -334,15 +334,15 @@
             >Detalhes Pagamento</v-card-title
           >
           <v-card-text>
-            <b>Cartão de Crédito</b>
+            <b>CartÃ£o de CrÃ©dito</b>
             <br />
             <b>Banco:</b>
             {{ objectItem.credito_pagamento.banco }}
             <br />
-            <b>Autorização:</b>
+            <b>AutorizaÃ§Ã£o:</b>
             {{ objectItem.credito_pagamento.terminal_nsu }}
             <br />
-            <b>Nº Comprovante:</b>
+            <b>NÂº Comprovante:</b>
             {{ objectItem.credito_pagamento.acquirer_transaction_id }}
             <br />
             <b>Status:</b>
@@ -385,10 +385,10 @@
             <b>Banco:</b>
             {{ objectItem.boleto_pagamento.banco }}
             <br />
-            <b>Nº Documento:</b>
+            <b>NÂº Documento:</b>
             {{ objectItem.boleto_pagamento.document_number }}
             <br />
-            <b>Nosso Número:</b>
+            <b>Nosso NÃºmero:</b>
             {{ objectItem.boleto_pagamento.our_number }}
             <br />
             <b>Valor:</b>
@@ -453,10 +453,10 @@
     <v-dialog v-model="dialog" persistent max-width="390">
       <v-card>
         <v-card-title>
-          <span class="headline">Atenção</span>
+          <span class="headline">AtenÃ§Ã£o</span>
         </v-card-title>
         <v-card-text>
-          Você não pode mais criar link de pagamento! <br />
+          VocÃª nÃ£o pode mais criar link de pagamento! <br />
           Exclua um link para continuar.
         </v-card-text>
         <v-card-actions>
@@ -468,7 +468,7 @@
     <v-dialog v-model="dialogAcao" persistent max-width="40%">
       <v-card>
         <v-card-title>
-          <span class="headline">Atenção</span>
+          <span class="headline">AtenÃ§Ã£o</span>
         </v-card-title>
         <v-card-text class="headline">
           <p>teste</p>
@@ -597,7 +597,7 @@
                   rows="3"
                   outlined
                   counter="100"
-                  label="Observações do Boleto"
+                  label="ObservaÃ§Ãµes do Boleto"
                   maxlength="100"
                   hint="Maximo 100 caracteres"
                 ></v-textarea>
@@ -661,11 +661,11 @@
               <h5>{{ $put_mask(objectComprovante.aluno.cpf, "cpf") }}</h5>
               <h5>
                 <br />
-                <b>Número Documento:</b>
+                <b>NÃºmero Documento:</b>
                 {{ objectComprovante.boleto_pagamento.document_number }}
               </h5>
               <h5>
-                <b>Nosso Número:</b>
+                <b>Nosso NÃºmero:</b>
                 {{ objectComprovante.boleto_pagamento.our_number }}
               </h5>
               <h5>
@@ -709,7 +709,7 @@
                   v-else-if="
                     objectComprovante.credito_pagamento.status == 'APPROVED'
                   "
-                  >CRÉDITO PAGO</span
+                  >CRÃ‰DITO PAGO</span
                 >
                 <span v-else>CANCELAMENTO</span>
               </h2>
@@ -739,11 +739,11 @@
                 {{ objectComprovante.credito_pagamento.banco }}
               </h5>
               <h5>
-                <b>Autorização:</b>
+                <b>AutorizaÃ§Ã£o:</b>
                 {{ objectComprovante.credito_pagamento.terminal_nsu }}
               </h5>
               <h5>
-                <b>N° Comprovante:</b>
+                <b>NÂ° Comprovante:</b>
                 {{
                   objectComprovante.credito_pagamento.acquirer_transaction_id
                 }}
@@ -830,11 +830,11 @@
               <h5>{{ $put_mask(objectComprovante.aluno.cpf, "cpf") }}</h5>
               <h5>
                 <br />
-                <b>Número Documento:</b>
+                <b>NÃºmero Documento:</b>
                 {{ objectComprovante.boleto_pagamento.document_number }}
               </h5>
               <h5>
-                <b>Nosso Número:</b>
+                <b>Nosso NÃºmero:</b>
                 {{ objectComprovante.boleto_pagamento.our_number }}
               </h5>
               <h5>
@@ -878,7 +878,7 @@
                   v-else-if="
                     objectComprovante.credito_pagamento.status == 'APPROVED'
                   "
-                  >CRÉDITO PAGO</span
+                  >CRÃ‰DITO PAGO</span
                 >
                 <span v-else>CANCELAMENTO</span>
               </h2>
@@ -908,11 +908,11 @@
                 {{ objectComprovante.credito_pagamento.banco }}
               </h5>
               <h5>
-                <b>Autorização:</b>
+                <b>AutorizaÃ§Ã£o:</b>
                 {{ objectComprovante.credito_pagamento.terminal_nsu }}
               </h5>
               <h5>
-                <b>N° Comprovante:</b>
+                <b>NÂ° Comprovante:</b>
                 {{
                   objectComprovante.credito_pagamento.acquirer_transaction_id
                 }}
@@ -1037,13 +1037,13 @@
     </v-dialog>
     <v-dialog v-model="dialogEmitir" persistent max-width="300">
       <v-card>
-        <v-card-title class="headline error--text">Atenção!</v-card-title>
+        <v-card-title class="headline error--text">AtenÃ§Ã£o!</v-card-title>
         <v-card-text
           >Deseja realmente emitir o pedido para o DC-INFO?</v-card-text
         >
         <v-card-actions>
           <div class="flex-grow-1"></div>
-          <v-btn color="error" text @click="dialogEmitir = false">Não</v-btn>
+          <v-btn color="error" text @click="dialogEmitir = false">NÃ£o</v-btn>
           <v-btn color="success" text @click="emitirPedido(objectItem)"
             >Sim</v-btn
           >
@@ -1060,17 +1060,17 @@
 
           <!-- <div v-if="divEnderecoEntrega1" id="printEnderecoEntrega">
             <v-card-text>
-              <h5><b>Endereço de Entrega</b></h5>
+              <h5><b>EndereÃ§o de Entrega</b></h5>
               <h5>
-                <b>Número Pedido:</b> {{ this.enderecoEntrega.numero_pedido }}
+                <b>NÃºmero Pedido:</b> {{ this.enderecoEntrega.numero_pedido }}
               </h5>
               <h5>
-                <b>Número Online:</b> {{ this.enderecoEntrega.numero_online }}
+                <b>NÃºmero Online:</b> {{ this.enderecoEntrega.numero_online }}
               </h5>
               <h5><b>Nome:</b> {{ this.enderecoEntrega.nome }}</h5>
               <h6><b>CPF:</b> {{ putMask(this.enderecoEntrega.cpf_aluno) }}</h6>
               <h5>
-                <b>Endereço</b>: {{ this.enderecoEntrega.endereco }},
+                <b>EndereÃ§o</b>: {{ this.enderecoEntrega.endereco }},
                 {{ this.enderecoEntrega.numero }}
               </h5>
               <h5 v-if="enderecoEntrega.complemento">
@@ -1104,9 +1104,9 @@
     </v-dialog>
     <v-dialog v-model="dialogExcluirPedido" persistent max-width="350">
       <v-card>
-        <v-card-title class="headline error--text">Atenção!</v-card-title>
+        <v-card-title class="headline error--text">AtenÃ§Ã£o!</v-card-title>
         <v-card-text>Deseja realmente <b>EXCLUIR</b> este pedido?</v-card-text>
-        <v-card-text>NÃO SERÁ POSSÍVEL DESFAZER ESTA AÇÃO!</v-card-text>
+        <v-card-text>NÃƒO SERÃ POSSÃVEL DESFAZER ESTA AÃ‡ÃƒO!</v-card-text>
         <v-card-actions>
           <div class="flex-grow-1"></div>
           <v-btn color="success" @click="dialogExcluirPedido = false"
@@ -1155,7 +1155,7 @@ export default {
       },
       {
         value: "descri_item",
-        text: "DESCRIÇÃO",
+        text: "DESCRIÃ‡ÃƒO",
       },
       {
         value: "valor_item",
@@ -1243,7 +1243,7 @@ export default {
       },
       {
         name: "acao",
-        label: "Ação",
+        label: "AÃ§Ã£o",
         align: "center",
         field: "acao",
         sortable: false,
@@ -1268,7 +1268,7 @@ export default {
     formasPagamento: null,
     arrayFormasPagamento: [
       { text: "BOLETO", value: "BOLETO" },
-      { text: "CARTÃO DE CREDITO", value: "CREDITO" },
+      { text: "CARTÃƒO DE CREDITO", value: "CREDITO" },
       { text: "PIX", value: "PIX" },
       { text: "DINHEIRO", value: "DINHEIRO" },
     ],
@@ -1394,7 +1394,7 @@ export default {
 
         //   if (resposta != false) {
         //     this.dadosEndereco = resposta;
-        //     // tem endereço de entrega, salvar no store pra tambem imprimir junto com o pedido
+        //     // tem endereÃ§o de entrega, salvar no store pra tambem imprimir junto com o pedido
         //   }
         //this.$htmlToPaper("print");
         // mostral modal com o numero do pedido
@@ -1458,7 +1458,7 @@ export default {
       if (valor > this.objectItemLink.diferencaTotal) {
         this.set_snackbar({
           show: true,
-          msg: "O valor do Link não pode ser maior que o valor total restante do pedido!",
+          msg: "O valor do Link nÃ£o pode ser maior que o valor total restante do pedido!",
           type: "warning",
           time: 2000,
         });
@@ -1469,7 +1469,7 @@ export default {
       if (valor < 50) {
         this.set_snackbar({
           show: true,
-          msg: "Valor Minimo Para Gerar um Link é de R$ 50,00",
+          msg: "Valor Minimo Para Gerar um Link Ã© de R$ 50,00",
           type: "warning",
           time: 2000,
         });
@@ -1494,7 +1494,7 @@ export default {
           obs_boleto_cobranca:
             this.formasPagamento == "BOLETO" ? this.obs_boleto : "",
           tipo_pagamento: this.formasPagamento,
-          status_pagamento: "NÃO PAGO",
+          status_pagamento: "NÃƒO PAGO",
           data_cobranca: this.$moment_now_db(),
           valor_cobranca: valor,
           max_parcela_cobranca: this.parcelas,
@@ -1636,7 +1636,7 @@ export default {
       await this.getPedidos();
     },
     show(e, item) {
-      if (item.status_pagamento != "NÃO PAGO") {
+      if (item.status_pagamento != "NÃƒO PAGO") {
         this.x = e.clientX;
         this.y = e.clientY;
         this.objectItem = { ...item };
@@ -1708,7 +1708,7 @@ export default {
       });
       let link = {
         template:
-          item.status_pagamento == "NÃO PAGO" ? "cobranca" : "cobranca_boleto",
+          item.status_pagamento == "NÃƒO PAGO" ? "cobranca" : "cobranca_boleto",
         nome: result.aluno.nome + " " + result.aluno.sobrenome,
         email: result.aluno.email,
         pedido: result.id_pedidos,
@@ -1737,7 +1737,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "NÃO É POSSIVEL EXCLUIR ESTE PEDIDO, POIS O MESMO POSSUI LINK PAGO",
+          msg: "NÃƒO Ã‰ POSSIVEL EXCLUIR ESTE PEDIDO, POIS O MESMO POSSUI LINK PAGO",
           type: "warning",
           time: 3000,
         });

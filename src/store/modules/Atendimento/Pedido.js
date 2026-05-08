@@ -1,5 +1,5 @@
-import { parseFloat } from 'core-js/fn/number';
-import api from '../../../api/api'
+﻿import { parseFloat } from 'core-js/fn/number';
+import api from '../../../plugins/axios'
 export default {
     state: {
         editar: false,

@@ -1,4 +1,4 @@
-import api from '../../../api/api'
+﻿import api from '../../../plugins/axios'
 export default {
     state: {
         produtos_varejo: [],      

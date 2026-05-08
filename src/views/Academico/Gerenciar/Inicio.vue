@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <Tabs></Tabs>
     <v-card class="mx-auto">
@@ -15,7 +15,7 @@
                       large
                       @click="dialogAvisosAcademico = true"
                       ><v-icon class="mr-2">fas fa-bullhorn</v-icon> Avisos
-                      Acadêmico</v-btn
+                      AcadÃªmico</v-btn
                     >
                   </v-col>
                   <v-col cols="6">
@@ -53,7 +53,7 @@
                       outlined
                     >
                       <h5>
-                        SITE EM MANUTENÇÃO
+                        SITE EM MANUTENÃ‡ÃƒO
                       </h5>
                     </v-alert>
                   </v-col>
@@ -61,7 +61,7 @@
                 <v-row class="ma-2" justify="center" no-gutters>
                   <v-col cols="5">
                     <span
-                      ><strong>ÚLTIMA EDIÇÃO POR:</strong>
+                      ><strong>ÃšLTIMA EDIÃ‡ÃƒO POR:</strong>
                       {{ editado_por }}</span
                     >
                   </v-col>
@@ -79,9 +79,9 @@
                       v-model="selectedStatus"
                       :items="[
                         { text: 'ONLINE', value: 0 },
-                        { text: 'EM MANUTENÇÃO', value: 1 },
+                        { text: 'EM MANUTENÃ‡ÃƒO', value: 1 },
                       ]"
-                      label="Site Online ou Em Manutenção"
+                      label="Site Online ou Em ManutenÃ§Ã£o"
                       required
                       filled
                     ></v-select>
@@ -118,7 +118,7 @@
     <v-dialog v-model="dialogAvisosAcademico" width="65%">
       <v-card>
         <v-card-title>
-          <span class="text-h5">Aviso Geral Dialog Acadêmico</span>
+          <span class="text-h5">Aviso Geral Dialog AcadÃªmico</span>
         </v-card-title>
         <v-card-text
           class="mt-n8"
@@ -328,7 +328,7 @@ export default {
 
       if (this.error) {
         this.showSnackbar(
-          "Atenção! Ocorreu um erro no servidor!",
+          "AtenÃ§Ã£o! Ocorreu um erro no servidor!",
           "error",
           5000
         );
@@ -464,7 +464,7 @@ export default {
       this.loading = false;
       if (this.error) {
         this.showSnackbar(
-          "Atenção! Ocorreu um erro no servidor!",
+          "AtenÃ§Ã£o! Ocorreu um erro no servidor!",
           "error",
           5000
         );
@@ -478,7 +478,7 @@ export default {
       await this.get_manutencao();
       if (this.error) {
         this.showSnackbar(
-          "Atenção! Ocorreu um erro no servidor!",
+          "AtenÃ§Ã£o! Ocorreu um erro no servidor!",
           "error",
           5000
         );
@@ -501,7 +501,7 @@ export default {
       await this.save(obj);
       if (this.error) {
         this.showSnackbar(
-          "Atenção! Ocorreu um erro no servidor!",
+          "AtenÃ§Ã£o! Ocorreu um erro no servidor!",
           "error",
           5000
         );
@@ -520,7 +520,7 @@ export default {
 
       if (this.error) {
         this.showSnackbar(
-          "Atenção! Ocorreu um erro no servidor!",
+          "AtenÃ§Ã£o! Ocorreu um erro no servidor!",
           "error",
           5000
         );

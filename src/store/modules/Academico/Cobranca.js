@@ -1,4 +1,4 @@
-import api from '../../../api/api'
+﻿import api from '../../../plugins/axios'
 export default {
     state: {
         codigo_link: {},
@@ -8,7 +8,7 @@ export default {
     },
     getters: {
         filteredPedidos: (state) => (filter) => {
-            filter.status = filter.status ? "PAGO" : "NÃO PAGO";
+            filter.status = filter.status ? "PAGO" : "NÃƒO PAGO";
             let arrayAux = state.pedidos.filter((p) => p.status == filter.status);
             let arrayAuxFiltered = []
             arrayAuxFiltered = arrayAux.filter((p) => p.id_pedidos == filter.val);

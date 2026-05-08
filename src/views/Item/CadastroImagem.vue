@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card max-width="auto" height="auto" elevation="2">
       <v-container>
@@ -7,7 +7,7 @@
             <v-text-field
               class="uppercase"
               v-model="search"
-              label="Buscar por código"
+              label="Buscar por cÃ³digo"
               @keypress.enter="getItem()"
               @click="$event.target.select()"
               filled
@@ -60,7 +60,7 @@
             <v-text-field
               class="uppercase"
               v-model="item.descricao"
-              label="Descrição"
+              label="DescriÃ§Ã£o"
               readonly
               filled
             ></v-text-field>
@@ -122,7 +122,7 @@ export default {
     msgSnackbar: "",
 
     regras_imagem: (val) =>
-      !val || val.size < 50000 || "Imagem não pode exceder 5MB.",
+      !val || val.size < 50000 || "Imagem nÃ£o pode exceder 5MB.",
     file: null,
     showMenuImage: false,
     x: 0,
@@ -159,7 +159,7 @@ export default {
           } else if (res.data == null) {
             this.item = {};
             this.file = null;
-            this.showSnackbar("ITEM NÃO ENCONTRADO!", "warning", 5000);
+            this.showSnackbar("ITEM NÃƒO ENCONTRADO!", "warning", 5000);
           } else {
             this.item = res.data;
             this.inputImg = true;

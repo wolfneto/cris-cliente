@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container
     fluid
     pa-0
@@ -66,7 +66,7 @@
                                 type="search"
                                 v-model="searchCod"
                                 prepend-icon="fa-user"
-                                label="Código"
+                                label="CÃ³digo"
                                 v-mask="'#####'"
                               ></v-text-field>
                             </v-col>
@@ -170,7 +170,7 @@
                           color="success"
                         >
                           <v-icon left>fa-user-edit </v-icon>
-                          Editar Informações
+                          Editar InformaÃ§Ãµes
                         </v-btn>
                       </template>
 
@@ -197,7 +197,7 @@
                               class="input-uppercase"
                               :error-messages="
                                 v$.cliente.email.$error
-                                  ? 'Campo Obrigatório'
+                                  ? 'Campo ObrigatÃ³rio'
                                   : ''
                               "
                               height="10"
@@ -225,7 +225,7 @@
                             <v-text-field
                               :error-messages="
                                 v$.cliente.telefone.$error
-                                  ? 'Campo Obrigatório'
+                                  ? 'Campo ObrigatÃ³rio'
                                   : ''
                               "
                               label="Telefone"
@@ -242,7 +242,7 @@
                             <v-text-field
                               :error-messages="
                                 v$.cliente.celular.$error
-                                  ? 'Campo Obrigatório'
+                                  ? 'Campo ObrigatÃ³rio'
                                   : ''
                               "
                               label="Celular"
@@ -262,14 +262,14 @@
                               @keyup="getCep(cliente.cliente_enderecos)"
                               :error-messages="
                                 v$.cliente.cliente_enderecos.cep.$error
-                                  ? 'Campo Obrigatório'
+                                  ? 'Campo ObrigatÃ³rio'
                                   : ''
                               "
                               :loading="cepLoading"
                               ref="cep_principal"
                               v-mask="'#####-###'"
                               height="10"
-                              hint="Digite somento números"
+                              hint="Digite somento nÃºmeros"
                               autocomplete="nope"
                               filled
                               dense
@@ -290,12 +290,12 @@
                               "
                               :error-messages="
                                 v$.cliente.cliente_enderecos.logradouro.$error
-                                  ? 'Campo Obrigatório'
+                                  ? 'Campo ObrigatÃ³rio'
                                   : ''
                               "
                               filled
                               dense
-                              label="Endereço"
+                              label="EndereÃ§o"
                               :hide-details="true"
                             ></v-text-field>
                           </v-col>
@@ -304,13 +304,13 @@
                               height="10"
                               filled
                               dense
-                              label="Número"
+                              label="NÃºmero"
                               type="search"
                               autocomplete="off"
                               v-model="cliente.cliente_enderecos.numero"
                               :error-messages="
                                 v$.cliente.cliente_enderecos.numero.$error
-                                  ? 'Campo Obrigatório'
+                                  ? 'Campo ObrigatÃ³rio'
                                   : ''
                               "
                               ref="numero_principal"
@@ -344,7 +344,7 @@
                               v-model.trim="cliente.cliente_enderecos.bairro"
                               :error-messages="
                                 v$.cliente.cliente_enderecos.bairro.$error
-                                  ? 'Campo Obrigatório'
+                                  ? 'Campo ObrigatÃ³rio'
                                   : ''
                               "
                               filled
@@ -362,7 +362,7 @@
                               v-model.trim="cliente.cliente_enderecos.cidade"
                               :error-messages="
                                 v$.cliente.cliente_enderecos.cidade.$error
-                                  ? 'Campo Obrigatório'
+                                  ? 'Campo ObrigatÃ³rio'
                                   : ''
                               "
                               filled
@@ -380,7 +380,7 @@
                               v-model.trim="cliente.cliente_enderecos.uf"
                               :error-messages="
                                 v$.cliente.cliente_enderecos.uf.$error
-                                  ? 'Campo Obrigatório'
+                                  ? 'Campo ObrigatÃ³rio'
                                   : ''
                               "
                               filled
@@ -395,7 +395,7 @@
                             <v-select
                               :error-messages="
                                 v$.cliente.tipo.$error
-                                  ? 'Campo Obrigatório'
+                                  ? 'Campo ObrigatÃ³rio'
                                   : ''
                               "
                               height="10"
@@ -412,7 +412,7 @@
                             <v-select
                               :error-messages="
                                 v$.cliente.atividade.$error
-                                  ? 'Campo Obrigatório'
+                                  ? 'Campo ObrigatÃ³rio'
                                   : ''
                               "
                               height="10"
@@ -429,7 +429,7 @@
                             <v-select
                               :error-messages="
                                 v$.cliente.condicao.$error
-                                  ? 'Campo Obrigatório'
+                                  ? 'Campo ObrigatÃ³rio'
                                   : ''
                               "
                               height="10"
@@ -437,7 +437,7 @@
                               :items="condicoes"
                               return-object
                               v-model="cliente.condicao"
-                              label="Condição"
+                              label="CondiÃ§Ã£o"
                               dense
                               :hide-details="true"
                             ></v-select>
@@ -446,13 +446,13 @@
                             <v-text-field
                               :error-messages="
                                 v$.cliente.inscricao_estadual.$error
-                                  ? 'Campo Obrigatório'
+                                  ? 'Campo ObrigatÃ³rio'
                                   : ''
                               "
                               height="10"
                               filled
                               dense
-                              label="Inscrição Estadual"
+                              label="InscriÃ§Ã£o Estadual"
                               v-mask="'#########'"
                               type="search"
                               autocomplete="off"
@@ -467,7 +467,7 @@
                               autocomplete="off"
                               filled
                               dense
-                              label="Inscrição Municipal"
+                              label="InscriÃ§Ã£o Municipal"
                               v-model.trim="cliente.inscricao_municipal"
                               :hide-details="true"
                             ></v-text-field>
@@ -477,7 +477,7 @@
                           <v-col>
                             <v-select
                               :error-messages="
-                                v$.atendente.$error ? 'Campo Obrigatório' : ''
+                                v$.atendente.$error ? 'Campo ObrigatÃ³rio' : ''
                               "
                               height="10"
                               filled
@@ -563,7 +563,7 @@
                 <v-card-title>
                   <v-text-field
                     dense
-                    placeholder="Busque por código ou descrição"
+                    placeholder="Busque por cÃ³digo ou descriÃ§Ã£o"
                     ref="searchinput"
                     outlined
                     hide-details
@@ -672,7 +672,7 @@
               <v-card>
                 <div>
                   <v-overlay absolute :value="!permissoes.ver_desconto">
-                    <h6 class="error--text">Você não tem permissão</h6>
+                    <h6 class="error--text">VocÃª nÃ£o tem permissÃ£o</h6>
                   </v-overlay>
                   <v-list>
                     <v-list-item>
@@ -697,7 +697,7 @@
                     </v-list-item>
                     <v-list-item>
                       <v-list-item-title
-                        >Resetar desconto unitário</v-list-item-title
+                        >Resetar desconto unitÃ¡rio</v-list-item-title
                       >
                       <v-list-item-action>
                         <v-btn
@@ -775,7 +775,7 @@
           dense
           justify="center"
         >
-          PEDIDO NÚMERO {{ pedido_editar.id }} EM EDIÇÃO
+          PEDIDO NÃšMERO {{ pedido_editar.id }} EM EDIÃ‡ÃƒO
         </v-row>
         <v-row dense no-gutters style="height: 78%">
           <v-col class="fill-parent-height">
@@ -896,7 +896,7 @@
             </q-virtual-scroll>
             <div v-else class="d-flex justify-center fill-height">
               <div class="align-self-center">
-                <h5>Nenhum Item no Orçamento</h5>
+                <h5>Nenhum Item no OrÃ§amento</h5>
               </div>
             </div>
           </v-col>
@@ -938,10 +938,10 @@
       <v-card>
         <v-container style="width: 600px">
           <v-card-title class="justify-center">
-            <p>Escolha as opções abaixo para formar o Grupo</p>
+            <p>Escolha as opÃ§Ãµes abaixo para formar o Grupo</p>
             <v-checkbox
               v-model="check_grupo"
-              label="Não encontrei a faculdade, semestre ou periodo do cliente"
+              label="NÃ£o encontrei a faculdade, semestre ou periodo do cliente"
             ></v-checkbox>
           </v-card-title>
           <v-divider></v-divider>
@@ -972,10 +972,10 @@
                   v-model="selected_graduacao"
                   @change="onChangeGraduacao()"
                   :items="[
-                    { text: 'Graduação', value: 0 },
-                    { text: 'Especialização', value: 1 },
+                    { text: 'GraduaÃ§Ã£o', value: 0 },
+                    { text: 'EspecializaÃ§Ã£o', value: 1 },
                   ]"
-                  label="Graduação ou Especialização"
+                  label="GraduaÃ§Ã£o ou EspecializaÃ§Ã£o"
                 ></v-select>
               </v-col>
             </v-row>
@@ -1023,7 +1023,7 @@
             <h6>{{ new_grupo }}</h6>
           </div>
           <div class="text-center" v-if="check_grupo">
-            <h6>À DEFINIR</h6>
+            <h6>Ã€ DEFINIR</h6>
             <v-textarea
               counter
               label="Descreva qual faculdade, semestre e periodo. Para que possamos ajustar posteriormente"
@@ -1081,11 +1081,11 @@
                     <v-col cols="4">
                       <v-text-field
                         :error-messages="
-                          v$.cliente.cpf_cnpj.$error ? 'Campo Obrigatório' : ''
+                          v$.cliente.cpf_cnpj.$error ? 'Campo ObrigatÃ³rio' : ''
                         "
                         height="10"
                         @keyup="checkCpfCnpj(cliente.cpf_cnpj)"
-                        hint="Digite somento números"
+                        hint="Digite somento nÃºmeros"
                         type="search"
                         autocomplete="off"
                         filled
@@ -1106,10 +1106,10 @@
                         @keyup="fantasia = cliente.razao_social"
                         :error-messages="
                           v$.cliente.razao_social.$error
-                            ? 'Campo Obrigatório'
+                            ? 'Campo ObrigatÃ³rio'
                             : ''
                         "
-                        label="Razão Social"
+                        label="RazÃ£o Social"
                         class="input-uppercase"
                         dense
                         filled
@@ -1124,7 +1124,7 @@
                         type="search"
                         autocomplete="off"
                         :error-messages="
-                          v$.fantasia.$error ? 'Campo Obrigatório' : ''
+                          v$.fantasia.$error ? 'Campo ObrigatÃ³rio' : ''
                         "
                         label="Fantasia"
                         dense
@@ -1136,7 +1136,7 @@
                       <v-text-field
                         class="input-uppercase"
                         :error-messages="
-                          v$.cliente.email.$error ? 'Campo Obrigatório' : ''
+                          v$.cliente.email.$error ? 'Campo ObrigatÃ³rio' : ''
                         "
                         height="10"
                         autocomplete="nope"
@@ -1160,9 +1160,9 @@
                     <v-col>
                       <v-text-field
                         :error-messages="
-                          v$.cliente.telefone.$error ? 'Campo Obrigatório' : ''
+                          v$.cliente.telefone.$error ? 'Campo ObrigatÃ³rio' : ''
                         "
-                        hint="Digite somente números"
+                        hint="Digite somente nÃºmeros"
                         label="Telefone"
                         height="10"
                         autocomplete="nope"
@@ -1175,9 +1175,9 @@
                     <v-col>
                       <v-text-field
                         :error-messages="
-                          v$.cliente.celular.$error ? 'Campo Obrigatório' : ''
+                          v$.cliente.celular.$error ? 'Campo ObrigatÃ³rio' : ''
                         "
-                        hint="Digite somente números"
+                        hint="Digite somente nÃºmeros"
                         label="Celular"
                         height="10"
                         :hide-details="true"
@@ -1196,14 +1196,14 @@
                         @keyup="getCep(cliente.cliente_enderecos)"
                         :error-messages="
                           v$.cliente.cliente_enderecos.cep.$error
-                            ? 'Campo Obrigatório'
+                            ? 'Campo ObrigatÃ³rio'
                             : ''
                         "
                         :loading="cepLoading"
                         ref="cep_principal"
                         v-mask="'#####-###'"
                         height="10"
-                        hint="Digite somento números"
+                        hint="Digite somento nÃºmeros"
                         autocomplete="nope"
                         filled
                         dense
@@ -1221,12 +1221,12 @@
                         v-model.trim="cliente.cliente_enderecos.logradouro"
                         :error-messages="
                           v$.cliente.cliente_enderecos.logradouro.$error
-                            ? 'Campo Obrigatório'
+                            ? 'Campo ObrigatÃ³rio'
                             : ''
                         "
                         filled
                         dense
-                        label="Endereço"
+                        label="EndereÃ§o"
                       ></v-text-field>
                     </v-col>
                     <v-col>
@@ -1234,13 +1234,13 @@
                         height="10"
                         filled
                         dense
-                        label="Número"
+                        label="NÃºmero"
                         type="search"
                         autocomplete="off"
                         v-model="cliente.cliente_enderecos.numero"
                         :error-messages="
                           v$.cliente.cliente_enderecos.numero.$error
-                            ? 'Campo Obrigatório'
+                            ? 'Campo ObrigatÃ³rio'
                             : ''
                         "
                         ref="numero_principal"
@@ -1270,7 +1270,7 @@
                         v-model.trim="cliente.cliente_enderecos.bairro"
                         :error-messages="
                           v$.cliente.cliente_enderecos.bairro.$error
-                            ? 'Campo Obrigatório'
+                            ? 'Campo ObrigatÃ³rio'
                             : ''
                         "
                         filled
@@ -1287,7 +1287,7 @@
                         v-model.trim="cliente.cliente_enderecos.cidade"
                         :error-messages="
                           v$.cliente.cliente_enderecos.cidade.$error
-                            ? 'Campo Obrigatório'
+                            ? 'Campo ObrigatÃ³rio'
                             : ''
                         "
                         filled
@@ -1304,7 +1304,7 @@
                         v-model.trim="cliente.cliente_enderecos.uf"
                         :error-messages="
                           v$.cliente.cliente_enderecos.uf.$error
-                            ? 'Campo Obrigatório'
+                            ? 'Campo ObrigatÃ³rio'
                             : ''
                         "
                         filled
@@ -1317,7 +1317,7 @@
                     <v-col>
                       <v-select
                         :error-messages="
-                          v$.cliente.tipo.$error ? 'Campo Obrigatório' : ''
+                          v$.cliente.tipo.$error ? 'Campo ObrigatÃ³rio' : ''
                         "
                         height="10"
                         filled
@@ -1331,7 +1331,7 @@
                     <v-col>
                       <v-select
                         :error-messages="
-                          v$.cliente.atividade.$error ? 'Campo Obrigatório' : ''
+                          v$.cliente.atividade.$error ? 'Campo ObrigatÃ³rio' : ''
                         "
                         height="10"
                         filled
@@ -1345,14 +1345,14 @@
                     <v-col>
                       <v-select
                         :error-messages="
-                          v$.cliente.condicao.$error ? 'Campo Obrigatório' : ''
+                          v$.cliente.condicao.$error ? 'Campo ObrigatÃ³rio' : ''
                         "
                         height="10"
                         filled
                         :items="condicoes"
                         return-object
                         v-model="cliente.condicao"
-                        label="Condição"
+                        label="CondiÃ§Ã£o"
                         dense
                       ></v-select>
                     </v-col>
@@ -1360,13 +1360,13 @@
                       <v-text-field
                         :error-messages="
                           v$.cliente.inscricao_estadual.$error
-                            ? 'Campo Obrigatório'
+                            ? 'Campo ObrigatÃ³rio'
                             : ''
                         "
                         height="10"
                         filled
                         dense
-                        label="Inscrição Estadual"
+                        label="InscriÃ§Ã£o Estadual"
                         v-mask="'#########'"
                         type="search"
                         autocomplete="off"
@@ -1380,7 +1380,7 @@
                         autocomplete="off"
                         filled
                         dense
-                        label="Inscrição Municipal"
+                        label="InscriÃ§Ã£o Municipal"
                         v-model.trim="cliente.inscricao_municipal"
                       ></v-text-field>
                     </v-col>
@@ -1389,7 +1389,7 @@
                     <v-col>
                       <v-select
                         :error-messages="
-                          v$.atendente.$error ? 'Campo Obrigatório' : ''
+                          v$.atendente.$error ? 'Campo ObrigatÃ³rio' : ''
                         "
                         height="10"
                         filled
@@ -1435,14 +1435,14 @@
       <v-card>
         <v-container style="width: 600px">
           <v-card-title class="justify-center">
-            <p>Deseja acrescentar alguma observação ao pedido?</p>
+            <p>Deseja acrescentar alguma observaÃ§Ã£o ao pedido?</p>
           </v-card-title>
           <v-divider></v-divider>
           <v-card-text>
             <div class="text-center">
               <v-textarea
                 counter
-                label="Descreva resumidamente uma observação para o pedido"
+                label="Descreva resumidamente uma observaÃ§Ã£o para o pedido"
                 :rules="[(v) => v.length <= 125 || 'Max 125 caracteres']"
                 v-model="obs_pedido"
                 no-resize
@@ -1461,7 +1461,7 @@
               salvarOrcamento();
             "
           >
-            Não
+            NÃ£o
           </v-btn>
           <v-btn
             color="success"
@@ -1479,13 +1479,13 @@
     <v-dialog v-model="dialogLimpar" max-width="300">
       <v-card>
         <v-container>
-          <v-card-title class="headline error--text">Atenção!</v-card-title>
+          <v-card-title class="headline error--text">AtenÃ§Ã£o!</v-card-title>
           <v-card-text
-            >Deseja realmente limpar TODOS OS DADOS do orçamento?</v-card-text
+            >Deseja realmente limpar TODOS OS DADOS do orÃ§amento?</v-card-text
           >
           <v-card-actions>
             <div class="flex-grow-1"></div>
-            <v-btn color="error" text @click="dialogLimpar = false">Não</v-btn>
+            <v-btn color="error" text @click="dialogLimpar = false">NÃ£o</v-btn>
             <v-btn
               color="success"
               text
@@ -1541,8 +1541,8 @@ export default {
       pedido_editar: {},
       atividades: [
         { text: "VAREJO", value: 1, ref: "03" },
-        { text: "ACADÊMICO", value: 2, ref: "10" },
-        { text: "ORGÃO PUBLICO", value: 3, ref: "02" },
+        { text: "ACADÃŠMICO", value: 2, ref: "10" },
+        { text: "ORGÃƒO PUBLICO", value: 3, ref: "02" },
         { text: "OUTROS", value: 4, ref: "03" },
       ],
       condicoes: [
@@ -1550,7 +1550,7 @@ export default {
         { text: "BLOQUEADO", value: 2, ref: "BL" },
       ],
       tipos: [
-        { text: "FÍSICO", value: 1, ref: "FI" },
+        { text: "FÃSICO", value: 1, ref: "FI" },
         { text: "JURIDICO", value: 2, ref: "JU" },
       ],
       fantasia: "",
@@ -1564,7 +1564,7 @@ export default {
         observacao: "",
         telefone: "",
         celular: "",
-        tipo: { text: "FÍSICO", value: 1, ref: "FI" },
+        tipo: { text: "FÃSICO", value: 1, ref: "FI" },
         atividade: "",
         condicao: { text: "ATIVO", value: 1, ref: "A" },
         inscricao_estadual: "",
@@ -1634,13 +1634,13 @@ export default {
           sortable: false,
         },
         {
-          name: "CÓDIGO",
+          name: "CÃ“DIGO",
           prop: "codigo",
           align: "center",
           sortable: true,
         },
         {
-          name: "DESCRIÇÃO",
+          name: "DESCRIÃ‡ÃƒO",
           prop: "descricao",
           align: "center",
           sortable: true,
@@ -1678,13 +1678,13 @@ export default {
       ],
       headersItens: [
         {
-          name: "CÓDIGO",
+          name: "CÃ“DIGO",
           prop: "codigo",
           align: "center",
           sortable: true,
         },
         {
-          name: "DESCRIÇÃO",
+          name: "DESCRIÃ‡ÃƒO",
           prop: "descricao",
           align: "center",
           sortable: true,
@@ -1721,7 +1721,7 @@ export default {
           value: "cpf_cnpj",
         },
         {
-          text: "Razão Social",
+          text: "RazÃ£o Social",
           sortable: true,
           value: "razao_social",
         },
@@ -1754,95 +1754,95 @@ export default {
     return {
       atendente: {
         required: helpers.withMessage(
-          "Campo ATENDENTE é obrigatório",
+          "Campo ATENDENTE Ã© obrigatÃ³rio",
           required
         ),
       },
       fantasia: {
-        required: helpers.withMessage("Campo FANTASIA é obrigatório", required),
+        required: helpers.withMessage("Campo FANTASIA Ã© obrigatÃ³rio", required),
         required: requiredIf(!this.menu_cliente),
       },
       cliente: {
         cpf_cnpj: {
           required: helpers.withMessage(
-            "Campo CPF/CNPJ é obrigatório",
+            "Campo CPF/CNPJ Ã© obrigatÃ³rio",
             required
           ),
         },
         razao_social: {
           required: helpers.withMessage(
-            "Campo RAZÃO SOCIAL é obrigatório",
+            "Campo RAZÃƒO SOCIAL Ã© obrigatÃ³rio",
             required
           ),
         },
         email: {
-          required: helpers.withMessage("Campo EMAIL é obrigatório", required),
+          required: helpers.withMessage("Campo EMAIL Ã© obrigatÃ³rio", required),
         },
         telefone: {
           required: helpers.withMessage(
-            "Campo TELEFONE é obrigatório",
+            "Campo TELEFONE Ã© obrigatÃ³rio",
             required
           ),
         },
         celular: {
           required: helpers.withMessage(
-            "Campo CELULAR é obrigatório",
+            "Campo CELULAR Ã© obrigatÃ³rio",
             required
           ),
         },
         tipo: {
-          required: helpers.withMessage("Campo TIPO é obrigatório", required),
+          required: helpers.withMessage("Campo TIPO Ã© obrigatÃ³rio", required),
         },
         atividade: {
           required: helpers.withMessage(
-            "Campo ATIVIDADE é obrigatório",
+            "Campo ATIVIDADE Ã© obrigatÃ³rio",
             required
           ),
         },
         condicao: {
           required: helpers.withMessage(
-            "Campo CONDIÇÃO é obrigatório",
+            "Campo CONDIÃ‡ÃƒO Ã© obrigatÃ³rio",
             required
           ),
         },
         inscricao_estadual: {
           required: helpers.withMessage(
-            "Campo INCRIÇÃO ESTADUAL é obrigatório",
+            "Campo INCRIÃ‡ÃƒO ESTADUAL Ã© obrigatÃ³rio",
             required
           ),
           required: requiredIf(this.isCnpj),
         },
         cliente_enderecos: {
           cep: {
-            required: helpers.withMessage("Campo CEP é obrigatório", required),
+            required: helpers.withMessage("Campo CEP Ã© obrigatÃ³rio", required),
           },
           logradouro: {
             required: helpers.withMessage(
-              "Campo ENDEREÇO é obrigatório",
+              "Campo ENDEREÃ‡O Ã© obrigatÃ³rio",
               required
             ),
           },
           numero: {
             required: helpers.withMessage(
-              "Campo NÚMERO é obrigatório",
+              "Campo NÃšMERO Ã© obrigatÃ³rio",
               required
             ),
           },
           bairro: {
             required: helpers.withMessage(
-              "Campo BAIRRO é obrigatório",
+              "Campo BAIRRO Ã© obrigatÃ³rio",
               required
             ),
           },
           cidade: {
             required: helpers.withMessage(
-              "Campo CIDADE é obrigatório",
+              "Campo CIDADE Ã© obrigatÃ³rio",
               required
             ),
           },
           uf: {
             required: helpers.withMessage(
-              "Campo ESTADO é obrigatório",
+              "Campo ESTADO Ã© obrigatÃ³rio",
               required
             ),
           },
@@ -2073,7 +2073,7 @@ export default {
 
         this.set_snackbar({
           show: true,
-          msg: "ORÇAMENTO COPIADO",
+          msg: "ORÃ‡AMENTO COPIADO",
           type: "success",
           time: 3000,
         });
@@ -2469,7 +2469,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "Nenhum Item no orçamento",
+          msg: "Nenhum Item no orÃ§amento",
           type: "warning",
           time: 3000,
         });
@@ -2484,7 +2484,7 @@ export default {
         } else {
           this.set_snackbar({
             show: true,
-            msg: "Você não tem permissão",
+            msg: "VocÃª nÃ£o tem permissÃ£o",
             type: "warning",
             time: 3000,
           });
@@ -2492,7 +2492,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "Nenhum Item no orçamento",
+          msg: "Nenhum Item no orÃ§amento",
           type: "warning",
           time: 3000,
         });
@@ -2512,7 +2512,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "Nenhum Item no orçamento",
+          msg: "Nenhum Item no orÃ§amento",
           type: "warning",
           time: 3000,
         });
@@ -2549,7 +2549,7 @@ export default {
       } else {
         let msg = "";
         if (this.menu_cliente) {
-          // edição
+          // ediÃ§Ã£o
           this.cliente.editar = true;
           this.cliente.atendente = this.atendente;
           msg =
@@ -2557,7 +2557,7 @@ export default {
             this.cliente.razao_social.toUpperCase() +
             " Editado com Sucesso!";
         } else {
-          // criação
+          // criaÃ§Ã£o
           this.cliente.editar = false;
           this.cliente.vendedor = this.atendente;
           this.cliente.atendente = this.atendente;
@@ -2621,7 +2621,7 @@ export default {
           this.invalid_cpf_cnpj = true;
           this.set_snackbar({
             show: true,
-            msg: "CPF inválido.",
+            msg: "CPF invÃ¡lido.",
             type: "warning",
             time: 3000,
           });
@@ -2637,7 +2637,7 @@ export default {
           this.invalid_cpf_cnpj = true;
           this.set_snackbar({
             show: true,
-            msg: "CNPJ inválido.",
+            msg: "CNPJ invÃ¡lido.",
             type: "warning",
             time: 3000,
           });
@@ -2651,7 +2651,7 @@ export default {
         this.invalid_cpf_cnpj = true;
         this.set_snackbar({
           show: true,
-          msg: "Este CPF ou CNPJ já possui cadastro no sistema.",
+          msg: "Este CPF ou CNPJ jÃ¡ possui cadastro no sistema.",
           type: "warning",
           time: 3000,
         });
@@ -2660,42 +2660,42 @@ export default {
     isValidCnpj(value) {
       if (!value) return false;
 
-      // Aceita receber o valor como string, número ou array com todos os dígitos
+      // Aceita receber o valor como string, nÃºmero ou array com todos os dÃ­gitos
       const isString = typeof value === "string";
       const validTypes =
         isString || Number.isInteger(value) || Array.isArray(value);
 
-      // Elimina valor em formato inválido
+      // Elimina valor em formato invÃ¡lido
       if (!validTypes) return false;
 
       // Filtro inicial para entradas do tipo string
       if (isString) {
-        // Limita ao máximo de 18 caracteres, para CNPJ formatado
+        // Limita ao mÃ¡ximo de 18 caracteres, para CNPJ formatado
         if (value.length > 18) return false;
 
-        // Teste Regex para veificar se é uma string apenas dígitos válida
+        // Teste Regex para veificar se Ã© uma string apenas dÃ­gitos vÃ¡lida
         const digitsOnly = /^\d{14}$/.test(value);
-        // Teste Regex para verificar se é uma string formatada válida
+        // Teste Regex para verificar se Ã© uma string formatada vÃ¡lida
         const validFormat = /^\d{2}.\d{3}.\d{3}\/\d{4}-\d{2}$/.test(value);
 
-        // Se o formato é válido, usa um truque para seguir o fluxo da validação
+        // Se o formato Ã© vÃ¡lido, usa um truque para seguir o fluxo da validaÃ§Ã£o
         if (digitsOnly || validFormat) true;
-        // Se não, retorna inválido
+        // Se nÃ£o, retorna invÃ¡lido
         else return false;
       }
 
-      // Guarda um array com todos os dígitos do valor
+      // Guarda um array com todos os dÃ­gitos do valor
       const match = value.toString().match(/\d/g);
       const numbers = Array.isArray(match) ? match.map(Number) : [];
 
-      // Valida a quantidade de dígitos
+      // Valida a quantidade de dÃ­gitos
       if (numbers.length !== 14) return false;
 
-      // Elimina inválidos com todos os dígitos iguais
+      // Elimina invÃ¡lidos com todos os dÃ­gitos iguais
       const items = [...new Set(numbers)];
       if (items.length === 1) return false;
 
-      // Cálculo validador
+      // CÃ¡lculo validador
       const calc = (x) => {
         const slice = numbers.slice(0, x);
         let factor = x - 7;
@@ -2712,14 +2712,14 @@ export default {
         return result > 9 ? 0 : result;
       };
 
-      // Separa os 2 últimos dígitos de verificadores
+      // Separa os 2 Ãºltimos dÃ­gitos de verificadores
       const digits = numbers.slice(12);
 
-      // Valida 1o. dígito verificador
+      // Valida 1o. dÃ­gito verificador
       const digit0 = calc(12);
       if (digit0 !== digits[0]) return false;
 
-      // Valida 2o. dígito verificador
+      // Valida 2o. dÃ­gito verificador
       const digit1 = calc(13);
       return digit1 === digits[1];
     },
@@ -2817,7 +2817,7 @@ export default {
 
       if (this.selected_faculdade.grupo == 0) {
         //grupo 0 monta o grupo da seguinte forma:
-        //código do semestre + primeira letra do periodo + faculdade
+        //cÃ³digo do semestre + primeira letra do periodo + faculdade
         this.new_grupo =
           this.selected_semestre.cod_semestre +
           this.selected_periodo.nome_periodo.charAt(0) +
@@ -2846,7 +2846,7 @@ export default {
 
               this.set_snackbar({
                 show: true,
-                msg: "Cep Inválido",
+                msg: "Cep InvÃ¡lido",
                 type: "warning",
                 time: 2000,
               });
@@ -2884,14 +2884,14 @@ export default {
       if (this.itens_pedido.length == 0) {
         this.set_snackbar({
           show: true,
-          msg: "Não foi possível salvar o orçamento, nenhum item selecionado!",
+          msg: "NÃ£o foi possÃ­vel salvar o orÃ§amento, nenhum item selecionado!",
           type: "warning",
           time: 3000,
         });
       } else if (!this.cliente.selected) {
         this.set_snackbar({
           show: true,
-          msg: "Não foi possível salvar o orçamento, nenhum cliente selecionado!",
+          msg: "NÃ£o foi possÃ­vel salvar o orÃ§amento, nenhum cliente selecionado!",
           type: "warning",
           time: 3000,
         });
@@ -2911,7 +2911,7 @@ export default {
         if (this.error) {
           this.set_snackbar({
             show: true,
-            msg: "Não foi possível salvar o orçamento, erro interno!",
+            msg: "NÃ£o foi possÃ­vel salvar o orÃ§amento, erro interno!",
             type: "error",
             time: 3000,
           });
@@ -2920,7 +2920,7 @@ export default {
           this.resetCliente();
           this.set_snackbar({
             show: true,
-            msg: "Orçamento salvo com sucesso!",
+            msg: "OrÃ§amento salvo com sucesso!",
             type: "success",
             time: 3000,
           });

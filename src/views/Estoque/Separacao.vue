@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-row class="ma-auto">
       <v-col>
@@ -11,7 +11,7 @@
                     <v-text-field
                       v-on:keyup="checkPedidoEmSeparacao()"
                       v-model="numeroPedido"
-                      placeholder="N° Pedido"
+                      placeholder="NÂ° Pedido"
                       v-mask="'######A'"
                       filled
                       dense
@@ -55,7 +55,7 @@
                 :items="pedidosSeparacao"
                 hide-default-footer
                 dense
-                no-data-text="Não há pedidos em separação no momento."
+                no-data-text="NÃ£o hÃ¡ pedidos em separaÃ§Ã£o no momento."
               ></v-data-table>
             </div>
           </v-card-text>
@@ -65,10 +65,10 @@
     <div class="text-center">
       <v-dialog v-model="dialogFinalizarSeparacao" width="400">
         <v-card>
-          <v-card-title class="headline grey lighten-2" primary-title>Atenção!</v-card-title>
+          <v-card-title class="headline grey lighten-2" primary-title>AtenÃ§Ã£o!</v-card-title>
           <br />
           <v-card-text>
-            <b>Separação finalizada com sucesso!</b>
+            <b>SeparaÃ§Ã£o finalizada com sucesso!</b>
           </v-card-text>
           <v-divider></v-divider>
           <v-card-actions>
@@ -90,7 +90,7 @@ export default {
     separadores: [{ nome: "FULANO" }, { nome: "SICLANO" }, { nome: "FULANO" }],
     headerPedidosEmSeparacao: [
       {
-        text: "N° Pedido",
+        text: "NÂ° Pedido",
         align: "left",
         value: "numero_pedido"
       },

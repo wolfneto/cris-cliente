@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <v-card-title>
@@ -15,7 +15,7 @@
           <v-col cols="12" sm="5">
             <v-text-field
               v-model="data_de"
-              :rules=" [v => !!v.trim() || 'Data obrigatória!' ] "
+              :rules=" [v => !!v.trim() || 'Data obrigatÃ³ria!' ] "
               label="De"
               v-mask="'##/##/####'"
               filled
@@ -24,8 +24,8 @@
           <v-col cols="12" sm="5">
             <v-text-field
               v-model="data_ate"
-              :rules=" [v => !!v.trim() || 'Data obrigatória!' ] "
-              label="Até"
+              :rules=" [v => !!v.trim() || 'Data obrigatÃ³ria!' ] "
+              label="AtÃ©"
               v-mask="'##/##/####'"
               filled
             ></v-text-field>
@@ -54,7 +54,7 @@
               @click="$event.target.select()"
               @keyup.enter="checkCodListaRepetido()"
               prepend-icon="fa-exchange-alt"
-              label="Novo Código"
+              label="Novo CÃ³digo"
               class="uppercase"
             ></v-text-field>
           </v-col> -->
@@ -119,12 +119,12 @@
             <td>{{item.nome_marca }}</td>
             <td>R$ {{item.valor_marca}}</td>
             <td>
-              Disponível:
+              DisponÃ­vel:
               <span class="success--text" v-if="item.disponivel_item == 1"><b>SIM</b></span>
-              <span class="error--text" v-else><b>NÃO</b></span>
+              <span class="error--text" v-else><b>NÃƒO</b></span>
               <br />Opcional:
               <span class="success--text" v-if="item.opcional_item == 1"><b>SIM</b></span>
-              <span class="error--text" v-else><b>NÃO</b></span>
+              <span class="error--text" v-else><b>NÃƒO</b></span>
             </td>
           </tr>
         </template>
@@ -134,7 +134,7 @@
       <v-card>
         <v-card-title>
           <span class="headline ma-4">
-           <h5> <b>Atenção! O codigo que você esta tentando inserir para alteração, já consta na(as) lista(as) ou em outra lista do mesmo semestre!</b></h5>
+           <h5> <b>AtenÃ§Ã£o! O codigo que vocÃª esta tentando inserir para alteraÃ§Ã£o, jÃ¡ consta na(as) lista(as) ou em outra lista do mesmo semestre!</b></h5>
           </span>
         </v-card-title>
         <v-card-text>
@@ -163,12 +163,12 @@
                   <td>{{item.nome_marca }}</td>
                   <td>R$ {{item.valor_marca}}</td>
                   <td>
-                    Disponível:
+                    DisponÃ­vel:
                     <span class="success--text" v-if="item.disponivel_item == 1">Sim</span>
-                    <span class="error--text" v-else>Não</span>
+                    <span class="error--text" v-else>NÃ£o</span>
                     <br />Opcional:
                     <span class="success--text" v-if="item.opcional_item == 1">Sim</span>
-                    <span class="error--text" v-else>Não</span>
+                    <span class="error--text" v-else>NÃ£o</span>
                   </td>
                 </tr>
               </template>
@@ -184,7 +184,7 @@
     <!-- <v-dialog persistent v-model="dialogMarca" max-width="600px">
       <v-card>
         <v-card-title>
-          <span class="headline">Trocar descrição da Marca</span>
+          <span class="headline">Trocar descriÃ§Ã£o da Marca</span>
         </v-card-title>
         <v-card-text>
           <v-container>
@@ -261,7 +261,7 @@ export default {
         value: "data_create"
       },
       {
-        text: "Descrição",
+        text: "DescriÃ§Ã£o",
         sortable: true,
         value: "descri_item",
         width: "250pt"
@@ -313,7 +313,7 @@ export default {
     //     value: "data_create"
     //   },
     //   {
-    //     text: "Descrição",
+    //     text: "DescriÃ§Ã£o",
     //     sortable: true,
     //     value: "descri_item"
     //   },
@@ -398,7 +398,7 @@ export default {
     //         ];
     //       } else {
     //         this.showSnakerbar(
-    //           "Atenção! O codigo do item inserido para alteração " + this.codigo_para + " não foi encontrado ou não existe.",
+    //           "AtenÃ§Ã£o! O codigo do item inserido para alteraÃ§Ã£o " + this.codigo_para + " nÃ£o foi encontrado ou nÃ£o existe.",
     //           "warning",
     //         );
     //       }

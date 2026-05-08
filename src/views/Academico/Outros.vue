@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container fluid>
     <v-card class="mx-auto">
       <v-row no-gutters>
@@ -92,7 +92,7 @@
                     Codigo
                   </th>
                   <th class="text-left">
-                    Descrição
+                    DescriÃ§Ã£o
                   </th>
                   <th class="text-left">
                     Marca
@@ -132,15 +132,15 @@
     <v-dialog v-model="dialog2" persistent width="55%">
       <v-card>
         <v-card-title>
-          <h5>Atenção!</h5>
+          <h5>AtenÃ§Ã£o!</h5>
           <v-spacer></v-spacer>
         </v-card-title>
         <v-card-text>
           <h6>
-            Enviar Pedido <b>N° {{ objectItemDialog.id_pedidos }}</b> para Tela
+            Enviar Pedido <b>NÂ° {{ objectItemDialog.id_pedidos }}</b> para Tela
             Outros?
           </h6>
-          <v-alert v-if="arrayItemsBloqueados.length > 0 " type="error"> OS ITEM(S) ABAIXO ESTÃO BLOQUEADOS E SERÃO REMOVIDOS DO PEDIDO!</v-alert>
+          <v-alert v-if="arrayItemsBloqueados.length > 0 " type="error"> OS ITEM(S) ABAIXO ESTÃƒO BLOQUEADOS E SERÃƒO REMOVIDOS DO PEDIDO!</v-alert>
           <v-divider></v-divider>
           <v-simple-table v-if="arrayItemsBloqueados.length > 0 " dense>
             <thead>
@@ -149,7 +149,7 @@
                   Codigo
                 </th>
                 <th class="text-left">
-                  Descrição
+                  DescriÃ§Ã£o
                 </th>
                 <th class="text-left">
                   Marca
@@ -212,7 +212,7 @@ export default {
       { text: "Ver Itens Pedido", value: "itempedidos" },
       { text: "Total Pedido", value: "valor_total" },
       {
-        text: "Ação",
+        text: "AÃ§Ã£o",
         value: "acao",
         align: "center",
         sortable: false,
@@ -265,7 +265,7 @@ export default {
         if (Object.keys(this.aluno_pedido_outros).length == 0) {
           this.set_snackbar({
             show: true,
-            msg: "NÃO EXISTE CADASTRO PARA O CPF INFORMADO!",
+            msg: "NÃƒO EXISTE CADASTRO PARA O CPF INFORMADO!",
             type: "warning",
             time: 5000,
           });

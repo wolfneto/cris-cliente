@@ -1,4 +1,4 @@
-import api from '../../../api/api'
+﻿import api from '../../../plugins/axios'
 
 const pagamentoApiBase = process.env.VUE_APP_URL_SERVIDOR_PAGAMENTO || 'https://solident.com.br/node';
 const pagamentoApiBaseNormalized = pagamentoApiBase.replace(/\/$/, '');
@@ -44,7 +44,7 @@ export default {
             if (status == "CONFERINDO" || status == "PENDENTE") return "black";
             if (status == "SEPARANDO" || status == 'SEPARADO' || status == 'PAUSADO' || status == 'CANCELADO') return "red lighten-1";
             if (status == "PAGO OUTROS") return "deep-purple lighten-2";
-            if (status == "NÃO PAGO OUTROS") return "deep-purple";
+            if (status == "NÃƒO PAGO OUTROS") return "deep-purple";
             if (status == "PIX PAGO") return "teal";
             if (status == "RECUSADO") return "warning";
         },

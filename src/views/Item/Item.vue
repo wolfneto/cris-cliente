@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <v-card-title>
@@ -111,7 +111,7 @@
             @keyup.enter="getItem()"
             @click="$event.target.select()"
             append-icon="fa-search"
-            label="Busque por: Código"
+            label="Busque por: CÃ³digo"
             ref="input_buscar"
           ></v-text-field>
         </v-card-title>
@@ -240,13 +240,13 @@ export default {
     busca: "",
     headers: [
       { text: "Codigo", value: "codigo" },
-      { text: "Descrição", value: "descricao" },
+      { text: "DescriÃ§Ã£o", value: "descricao" },
       { text: "Marca", value: "marca" },
       { text: "Disponivel", value: "saldo", align: "center" },
       { text: "Saldo DC-Info", value: "saldo_dcinfo", align: "center" },
       { text: "Status", value: "status" },
       {
-        text: "Ação",
+        text: "AÃ§Ã£o",
         value: "acao",
         align: "center",
         sortable: false,
@@ -323,7 +323,7 @@ export default {
           this.loading = false;
           if (res.data == false) {
             this.showSnakerbar(
-              "CODIGO NÃO FOI ENCONTRADO EM LISTAS ONLINE!",
+              "CODIGO NÃƒO FOI ENCONTRADO EM LISTAS ONLINE!",
               "warning"
             );
           } else {
@@ -374,7 +374,7 @@ export default {
               "error"
             );
           } else if (res.data == null) {
-            this.showSnakerbar("Item Não Encontrado!", "warning");
+            this.showSnakerbar("Item NÃ£o Encontrado!", "warning");
           } else {
             this.item = res.data;
             this.$nextTick(() => this.$refs.input_saldo.focus());
@@ -426,7 +426,7 @@ export default {
             );
           });
       } else {
-        this.showSnakerbar("Saldo é Obrigatório", "warning");
+        this.showSnakerbar("Saldo Ã© ObrigatÃ³rio", "warning");
       }
     },
     async deleteItem(codigo) {

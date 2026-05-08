@@ -1,11 +1,11 @@
-<template>
+﻿<template>
   <v-container>
     <v-row justify="center" class="custom-row">
       <v-col cols="3">
         <v-text-field
           v-model="data_de"
           v-mask="'##/##/####'"
-          :rules=" [v => !!v.trim() || 'Data obrigatória!' ] "
+          :rules=" [v => !!v.trim() || 'Data obrigatÃ³ria!' ] "
           placeholder="dd/mm/aaaa"
           label="De"
           required
@@ -15,9 +15,9 @@
         <v-text-field
           v-model="data_ate"
           v-mask="'##/##/####'"
-          :rules=" [v => !!v.trim() || 'Data obrigatória!' ] "
+          :rules=" [v => !!v.trim() || 'Data obrigatÃ³ria!' ] "
           placeholder="dd/mm/aaaa"
-          label="Até"
+          label="AtÃ©"
           required
         ></v-text-field>
       </v-col>
@@ -45,10 +45,10 @@
             v-model="selectedPosGraduacao"
             @change="onChangeGraduacao()"
             :items="[
-              { text: 'Graduação', value: 0 },
-              { text: 'Especialização', value: 1 },
+              { text: 'GraduaÃ§Ã£o', value: 0 },
+              { text: 'EspecializaÃ§Ã£o', value: 1 },
             ]"
-            label="Graduação ou Especialização"
+            label="GraduaÃ§Ã£o ou EspecializaÃ§Ã£o"
           ></v-select>
         </v-col>
       </v-row>
@@ -193,7 +193,7 @@ export default {
       await this.get_semestres(obj);
       if (this.error) {
         this.showSnackbar(
-          "Atenção! Ocorreu um erro no servidor!",
+          "AtenÃ§Ã£o! Ocorreu um erro no servidor!",
           "error",
           5000
         );

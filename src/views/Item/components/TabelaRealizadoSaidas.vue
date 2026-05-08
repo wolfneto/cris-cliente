@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <div ref="tabelaSaidas" tabindex="1">
       <q-virtual-scroll
@@ -45,7 +45,7 @@ import { mapState, mapMutations, mapActions } from "vuex";
 export default {
   data: () => ({
     headers: [
-      { text: "Mês", sortable: true, value: "mes" },
+      { text: "MÃªs", sortable: true, value: "mes" },
       { text: "Ano", sortable: true, value: "ano" },
       { text: "Total", sortable: true, value: "total" },
     ],

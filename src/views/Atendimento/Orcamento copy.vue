@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card class="mx-auto">
       <v-card-text>
@@ -60,7 +60,7 @@
                 <v-expansion-panel-content eager>
                   <v-text-field
                     dense
-                    placeholder="Busque por código ou descrição"
+                    placeholder="Busque por cÃ³digo ou descriÃ§Ã£o"
                     ref="searchinput"
                     outlined
                     hide-details
@@ -307,13 +307,13 @@ export default {
           sortable: false,
         },
         {
-          name: "CÓDIGO",
+          name: "CÃ“DIGO",
           prop: "codigo",
           align: "center",
           sortable: true,
         },
         {
-          name: "DESCRIÇÃO",
+          name: "DESCRIÃ‡ÃƒO",
           prop: "descricao",
           align: "center",
           sortable: true,
@@ -351,13 +351,13 @@ export default {
       ],
       headersItens: [
         {
-          name: "CÓDIGO",
+          name: "CÃ“DIGO",
           prop: "codigo",
           align: "center",
           sortable: true,
         },
         {
-          name: "DESCRIÇÃO",
+          name: "DESCRIÃ‡ÃƒO",
           prop: "descricao",
           align: "center",
           sortable: true,

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <v-card-title>
@@ -7,7 +7,7 @@
             <v-text-field
               v-model="data_de"
               v-mask="'##/##/####'"
-              :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
+              :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
               @keydown.enter="getEntregas()"
               placeholder="dd/mm/aaaa"
               label="De"
@@ -19,9 +19,9 @@
               v-model="data_ate"
               v-mask="'##/##/####'"
               @keydown.enter="getEntregas()"
-              :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
+              :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
               placeholder="dd/mm/aaaa"
-              label="Até"
+              label="AtÃ©"
               required
             ></v-text-field>
           </v-col>
@@ -45,7 +45,7 @@
           :items="entregas"
           hide-default-footer
           dense
-          no-data-text="Não há entregas no periodo."
+          no-data-text="NÃ£o hÃ¡ entregas no periodo."
         >
           <template v-slot:[`item.dados`]="{ item }">
             <b>Recebido por: {{ item.nome_recebedor }}</b>
@@ -67,15 +67,15 @@ export default {
   data: () => ({
     header: [
       {
-        text: "N° Online",
+        text: "NÂ° Online",
         align: "center",
         value: "pedido_online",
       },
-      { text: "N° DCInfo", value: "pedido_dcinfo" },
+      { text: "NÂ° DCInfo", value: "pedido_dcinfo" },
       { text: "Grupo", value: "pedido_grupo" },
       { text: "Dados", value: "dados" },
       { text: "Vendedor", value: "vendedor" },
-      { text: "Endereço", value: "endereco_completo" },
+      { text: "EndereÃ§o", value: "endereco_completo" },
     ],
   }),
   async created() {

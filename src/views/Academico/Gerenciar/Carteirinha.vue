@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <Tabs></Tabs>
     <v-card width="auto">
@@ -131,7 +131,7 @@
               </v-row>
               <v-row class="custom-row">
                 <v-col md="6" offset-md="3">
-                  <span>Valor mínimo</span>
+                  <span>Valor mÃ­nimo</span>
                   <money
                     maxlength="10"
                     class="form-control font-weight-bold text-center"
@@ -156,10 +156,10 @@
     <v-dialog v-model="dialogDelete" persistent max-width="40%">
       <v-card>
         <v-card-title class="text-h5">
-          ATENÇÃO!
+          ATENÃ‡ÃƒO!
         </v-card-title>
         <v-card-text class="text-h5">
-          Deseja excluir a opção de Carteirinha desse semestre? <br />
+          Deseja excluir a opÃ§Ã£o de Carteirinha desse semestre? <br />
           <b
             >{{ objectItem.nome_exibicao_faculdade }} -
             {{ objectItem.descri_semestre }}
@@ -219,7 +219,7 @@ export default {
       { text: "Status", value: "status", align: "center" },
 
       {
-        text: "Ação",
+        text: "AÃ§Ã£o",
         value: "acao",
         align: "center",
         sortable: false,

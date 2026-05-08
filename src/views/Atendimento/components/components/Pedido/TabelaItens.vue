@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div>
     <div ref="tabelaItens" tabindex="1">
       <q-virtual-scroll
@@ -46,7 +46,7 @@
     </div>
     <v-dialog v-model="dialogHistorico" max-width="800">
       <v-card>
-        <v-card-title class="headline">Histórico de Compras</v-card-title>
+        <v-card-title class="headline">HistÃ³rico de Compras</v-card-title>
 
         <v-card-text>aqui vai ter os historicos de saidas e entradas do item {{objectItem.descricao}}</v-card-text>
 
@@ -74,7 +74,7 @@ export default {
           name: "codigo",
           prop: "codigo",
           align: "center",
-          label: "Código",
+          label: "CÃ³digo",
           field: "codigo",
           sortable: true,
         },
@@ -82,7 +82,7 @@ export default {
           name: "descricao",
           prop: "descricao",
           align: "center",
-          label: "Descrição",
+          label: "DescriÃ§Ã£o",
           field: "descricao",
           sortable: true,
         },

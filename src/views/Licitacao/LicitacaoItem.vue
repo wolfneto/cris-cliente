@@ -1,4 +1,4 @@
-<template>
+﻿<template>
 	<v-container>
 		<v-row>
 			<v-col cols="12" md="4">
@@ -32,7 +32,7 @@
 											label="Codigo"
 											class="uppercase"
 											v-model="editedItem.codigo"
-											:rules="[v => !!v.trim() || 'Campo obrigatório!']"
+											:rules="[v => !!v.trim() || 'Campo obrigatÃ³rio!']"
 											filled
 											required
 										></v-text-field>
@@ -41,10 +41,10 @@
 								<v-row class="custom-row">
 									<v-col cols="12" md="12">
 										<v-textarea
-											label="Descrição"
+											label="DescriÃ§Ã£o"
 											class="uppercase"
 											v-model="editedItem.descricao"
-											:rules="[v => !!v.trim() || 'Campo obrigatório!']"
+											:rules="[v => !!v.trim() || 'Campo obrigatÃ³rio!']"
 											filled
 											no-resize
 											rows="2"
@@ -97,8 +97,8 @@
 
 							<v-dialog v-model="dialogDelete" max-width="290">
 								<v-card>
-									<v-card-title class="headline">Atenção!</v-card-title>
-									<v-card-text>Deseja realmente excluir este item? Está ação não poderá de ser desfeita!</v-card-text>
+									<v-card-title class="headline">AtenÃ§Ã£o!</v-card-title>
+									<v-card-text>Deseja realmente excluir este item? EstÃ¡ aÃ§Ã£o nÃ£o poderÃ¡ de ser desfeita!</v-card-text>
 									<v-card-actions>
 										<div class="flex-grow-1"></div>
 										<v-btn small color="error" @click="close">Voltar</v-btn>
@@ -138,8 +138,8 @@ export default {
 				sortable: false
 			},
 			{ text: "Codigo", value: "codigo", width: 20 },
-			{ text: "Descrição", value: "descricao", width: 600 },
-			{ text: "Ação", value: "acao" }
+			{ text: "DescriÃ§Ã£o", value: "descricao", width: 600 },
+			{ text: "AÃ§Ã£o", value: "acao" }
 		],
 		editedIndex: -1,
 		editedItem: {
