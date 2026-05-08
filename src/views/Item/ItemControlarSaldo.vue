@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <v-card-title>
@@ -7,7 +7,7 @@
       <v-card-text v-if="item.hasOwnProperty('descricao')">
         <v-row class="justify-center text-center">
           <v-col class="font-weight-black" cols="4">
-            Código: {{ item.codigo }}
+            CÃ³digo: {{ item.codigo }}
           </v-col>
           <v-col class="font-weight-black" cols="8">
             <v-fade-transition leave-absolute>
@@ -94,14 +94,14 @@
       </v-card-text>
       <v-card-actions class="d-flex justify-space-around">
         <v-btn @click="showDialog(true)" color="success">Nova Entrada</v-btn>
-        <v-btn @click="showDialog(false)" color="error">Nova Saída</v-btn>
+        <v-btn @click="showDialog(false)" color="error">Nova SaÃ­da</v-btn>
       </v-card-actions>
     </v-card>
 
     <v-dialog v-model="dialog" max-width="200" persistent>
       <v-card class="mx-auto">
         <v-card-title>
-          <span class="text-h5">{{ entrada ? "Entrada" : "Saída" }}</span>
+          <span class="text-h5">{{ entrada ? "Entrada" : "SaÃ­da" }}</span>
         </v-card-title>
         <v-card-text>
           <v-container>
@@ -222,7 +222,7 @@ export default {
             if(this.entrada) {
               this.showSnakerbar("Entrada Realizada!", "success");
             } else {
-              this.showSnakerbar("Saída Realizada!", "success");
+              this.showSnakerbar("SaÃ­da Realizada!", "success");
             }
             
           } else {

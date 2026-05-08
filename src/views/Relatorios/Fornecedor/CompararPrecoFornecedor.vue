@@ -1,13 +1,13 @@
-<template>
+﻿<template>
 	<v-container>
 		<v-card v-if="showTable">
 			<v-card-title>
-				Buscar Item - <v-btn class="ml-2" small color="primary" @click="showTableRelatorio = true; showTable = false; mostrarCamposDiferenca = false">Relatório</v-btn>
+				Buscar Item - <v-btn class="ml-2" small color="primary" @click="showTableRelatorio = true; showTable = false; mostrarCamposDiferenca = false">RelatÃ³rio</v-btn>
 				<v-spacer></v-spacer>
 				<v-text-field
 					v-model="search"
 					append-icon="fa-search"
-					label="Código, Fabricante ou Descrição"
+					label="CÃ³digo, Fabricante ou DescriÃ§Ã£o"
 					single-line
 					hide-details
 					autofocus
@@ -45,7 +45,7 @@
 		</v-card>
 		<v-card v-if="showTableRelatorio">
 			<v-card-title>
-				Relatório Por Marca - <v-btn class="ml-2" small color="error" @click="showTable = true; showTableRelatorio = false">Voltar</v-btn>
+				RelatÃ³rio Por Marca - <v-btn class="ml-2" small color="error" @click="showTable = true; showTableRelatorio = false">Voltar</v-btn>
 				<v-spacer></v-spacer>
 				<v-text-field
 					v-model="searchMarca"
@@ -91,10 +91,10 @@
 			<div class="container" v-if="mostrarCamposDiferenca">
 				<div class="row">
 					<div class="col text-left">
-						<label>Código: &nbsp;</label>
+						<label>CÃ³digo: &nbsp;</label>
 						<span class="font-weight-bold">&nbsp;{{item.codigo}}</span>
 						<br />
-						<label>Descrição: &nbsp;</label>
+						<label>DescriÃ§Ã£o: &nbsp;</label>
 						<span class="font-weight-bold">&nbsp;{{item.descricao}}</span>
 						<br />
 						<label>Custo Sistema: &nbsp;</label>
@@ -243,7 +243,7 @@ export default {
 			itens: [],
 			headers: [
 				{ text: "Codigo", value: "codigo" },
-				{ text: "Descrição", value: "descricao" },
+				{ text: "DescriÃ§Ã£o", value: "descricao" },
 				{ text: "Marca", value: "marca" },
 				{ text: "Valor", value: "valor" },
 				{ text: "Saldo", value: "saldo" },
@@ -269,7 +269,7 @@ export default {
 			relatorio: [],
 			headersRelatorio: [
 				{ text: "Codigo", value: "codigo" },
-				{ text: "Descrição", value: "descricao" },
+				{ text: "DescriÃ§Ã£o", value: "descricao" },
 				{ text: "Fornecedor 1", value: "fornecedor1" },
 				{ text: "Fornecedor 2", value: "fornecedor2" },
 				{ text: "Fornecedor 3", value: "fornecedor3" },

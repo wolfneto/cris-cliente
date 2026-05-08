@@ -1,4 +1,4 @@
-import Vue from 'vue';
+﻿import Vue from 'vue';
 var CryptoJS = require("crypto-js");
 
 Vue.prototype.$crypto = CryptoJS;

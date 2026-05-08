@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <v-card-title>
@@ -148,7 +148,7 @@ export default {
       this.loading = true;
       await this.get_aluno(this.cpf);
       if (this.aluno == false) {
-        this.showSnakerbar("Aluno não encontrado!", "warning", 3000);
+        this.showSnakerbar("Aluno nÃ£o encontrado!", "warning", 3000);
       } else {
         this.aluno_obj = this.aluno;
       }

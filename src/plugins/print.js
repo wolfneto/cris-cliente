@@ -1,4 +1,4 @@
-import Vue from 'vue'
+﻿import Vue from 'vue'
 import VueHtmlToPaper from 'vue-html-to-paper';
 
 const options = {

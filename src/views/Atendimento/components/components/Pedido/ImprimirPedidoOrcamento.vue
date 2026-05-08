@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
       <div v-for="(pedidoTeste, index) in itens_pedido" :key="pedidoTeste.ordem">
         <!-- <div style="position: fixed;top: 0;height: 255px;width: 100%;"> -->
@@ -6,7 +6,7 @@
           <v-row>
             <v-col class="text-left" cols="6">
               <div>
-                <span class="font-weight-bold" style="font-size: 1.5rem">ORÇAMENTO</span>
+                <span class="font-weight-bold" style="font-size: 1.5rem">ORÃ‡AMENTO</span>
                 <span
                 v-if="!previa"
                   class="font-weight-bold"
@@ -19,11 +19,11 @@
               >{{pedidoDcinfo.cliente.ygrucli}}</span> -->
             </v-col>
             <v-col class="text-left" cols="3">
-                <span class="font-weight-bold" style="font-size: 1.5rem">EM ANÁLISE</span>
+                <span class="font-weight-bold" style="font-size: 1.5rem">EM ANÃLISE</span>
             </v-col>
             <v-col class="text-right" cols="3">
               <barcode :height="30" :display-value="false" v-bind:value="next_id"></barcode>
-              Página {{index +1}}/{{itens_pedido.length}}
+              PÃ¡gina {{index +1}}/{{itens_pedido.length}}
             </v-col>
           </v-row>
           <v-row>
@@ -39,13 +39,13 @@
             <v-col class="text-left no-padding-up-down" cols="5">
               <span class="font-weight-bold">{{cliente.fantasia}}</span>
             </v-col>
-            <!-- <v-col class="text-left no-padding-up-down" cols="1">Operação:</v-col>
+            <!-- <v-col class="text-left no-padding-up-down" cols="1">OperaÃ§Ã£o:</v-col>
             <v-col class="text-left no-padding-up-down" cols="5">
               <span class="font-weight-bold">* VENDA (ESTADUAL)</span>
             </v-col> -->
           </v-row>
           <v-row>
-            <v-col class="text-left no-padding-up-down" cols="1">Endereço:</v-col>
+            <v-col class="text-left no-padding-up-down" cols="1">EndereÃ§o:</v-col>
             <v-col class="text-left no-padding-up-down" cols="5">
               <span
                 class="font-weight-bold"
@@ -76,10 +76,10 @@
             <!-- <v-col class="text-left no-padding-up-down" cols="1">Pgto:</v-col>
             <v-col class="text-left no-padding-up-down" cols="5">
               <div v-if="pedidoDcinfo.pagamento.tipo == 'BOLETO'">
-                <span class="font-weight-bold">BOLETO Á VISTA</span>
+                <span class="font-weight-bold">BOLETO Ã VISTA</span>
               </div>
               <div v-else>
-                <span class="font-weight-bold">CARTÃO {{pedidoDcinfo.pagamento.number_installments}}x</span>
+                <span class="font-weight-bold">CARTÃƒO {{pedidoDcinfo.pagamento.number_installments}}x</span>
               </div>
             </v-col> -->
           </v-row>
@@ -185,7 +185,7 @@
           <v-row>
             <v-col class="text-left" cols="6">
               <div>
-                <span class="font-weight-bold" style="font-size: 1.5rem">ORÇAMENTO</span>
+                <span class="font-weight-bold" style="font-size: 1.5rem">ORÃ‡AMENTO</span>
                 <span
                   class="font-weight-bold"
                   style="font-size: 1.5rem"
@@ -197,12 +197,12 @@
               >{{pedidoDcinfo.cliente.ygrucli}}</span> -->
             </v-col>
             <v-col class="text-left" cols="3">
-                <span class="font-weight-bold" style="font-size: 1.5rem">EM ANÁLISE</span>
+                <span class="font-weight-bold" style="font-size: 1.5rem">EM ANÃLISE</span>
             </v-col>
             <v-col class="text-right" cols="3">
               <barcode :height="30" :display-value="false" v-bind:value="next_id"></barcode>
               <br />
-              Página {{index +1}}/{{itens_pedido.length}}
+              PÃ¡gina {{index +1}}/{{itens_pedido.length}}
             </v-col>
           </v-row>
           <v-row>
@@ -218,13 +218,13 @@
             <v-col class="text-left no-padding-up-down" cols="5">
               <span class="font-weight-bold">{{cliente.fantasia}}</span>
             </v-col>
-            <!-- <v-col class="text-left no-padding-up-down" cols="1">Operação:</v-col>
+            <!-- <v-col class="text-left no-padding-up-down" cols="1">OperaÃ§Ã£o:</v-col>
             <v-col class="text-left no-padding-up-down" cols="5">
               <span class="font-weight-bold">* VENDA (ESTADUAL)</span>
             </v-col> -->
           </v-row>
           <v-row>
-            <v-col class="text-left no-padding-up-down" cols="1">Endereço:</v-col>
+            <v-col class="text-left no-padding-up-down" cols="1">EndereÃ§o:</v-col>
             <v-col class="text-left no-padding-up-down" cols="5">
               <span
                 class="font-weight-bold"
@@ -255,10 +255,10 @@
             <!-- <v-col class="text-left no-padding-up-down" cols="1">Pgto:</v-col>
             <v-col class="text-left no-padding-up-down" cols="5">
               <div v-if="pedidoDcinfo.pagamento.tipo == 'BOLETO'">
-                <span class="font-weight-bold">BOLETO Á VISTA</span>
+                <span class="font-weight-bold">BOLETO Ã VISTA</span>
               </div>
               <div v-else>
-                <span class="font-weight-bold">CARTÃO {{pedidoDcinfo.pagamento.number_installments}}x</span>
+                <span class="font-weight-bold">CARTÃƒO {{pedidoDcinfo.pagamento.number_installments}}x</span>
               </div>
             </v-col> -->
           </v-row>
@@ -285,16 +285,16 @@
          <!-- <v-row style="padding-top: 5px;">
              <v-col class="text-left" cols="6">
               <v-row>
-                <v-col cols="6">[ ] MANHÂ</v-col>
+                <v-col cols="6">[ ] MANHÃ‚</v-col>
                 <v-col cols="6">[ ] ENTREGAR E RECEBER</v-col>
               </v-row>
               <v-row>
                 <v-col cols="6">[ ] TARDE</v-col>
-                <v-col cols="6">[ ] SÓ ENTREGAR</v-col>
+                <v-col cols="6">[ ] SÃ“ ENTREGAR</v-col>
               </v-row>
               <v-row>
                 <v-col cols="6">[ ] DIA TODO</v-col>
-                <v-col cols="6">[ ] SÓ RECEBER</v-col>
+                <v-col cols="6">[ ] SÃ“ RECEBER</v-col>
               </v-row>
               <v-row>
                 <v-col cols="12">[ ] TROCA DE MATERIAL</v-col>
@@ -308,7 +308,7 @@
                     <br />
                     {{pedidoDcinfo.pagamento.bandeira}} {{pedidoDcinfo.pagamento.number_installments}}x
                     <br />
-                    AUTORIZAÇÃO {{pedidoDcinfo.pagamento.authorization_code}}
+                    AUTORIZAÃ‡ÃƒO {{pedidoDcinfo.pagamento.authorization_code}}
                     <br />
                     {{pedidoDcinfo.pagamento.authorized_at}}
                     <br />
@@ -320,7 +320,7 @@
                   <br />
                   {{pedidoDcinfo.pagamento.bandeira}} {{pedidoDcinfo.pagamento.number_installments}}x
                   <br />
-                  AUTORIZAÇÃO {{pedidoDcinfo.pagamento.authorization_code}}
+                  AUTORIZAÃ‡ÃƒO {{pedidoDcinfo.pagamento.authorization_code}}
                   <br />
                   {{pedidoDcinfo.pagamento.authorized_at}}
                   <br />

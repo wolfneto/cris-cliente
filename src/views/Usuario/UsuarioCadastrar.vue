@@ -1,4 +1,4 @@
-<template>
+﻿<template>
 	<v-container>
 		<v-card>
 			<v-form ref="form" v-model="valid" lazy-validation>
@@ -8,7 +8,7 @@
 							<v-text-field
 								autofocus
 								v-model="usuario.nome"
-								:rules="[v => !!v || 'Campo Obrigatório']"
+								:rules="[v => !!v || 'Campo ObrigatÃ³rio']"
 								label="Nome"
 								required
 							></v-text-field>
@@ -18,8 +18,8 @@
 						<v-col cols="12" md="4">
 							<v-text-field
 								v-model="usuario.usuario"
-								:rules="[v => !!v || 'Campo Obrigatório']"
-								label="Usuário"
+								:rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+								label="UsuÃ¡rio"
 								required
 							></v-text-field>
 						</v-col>
@@ -29,7 +29,7 @@
 							<v-text-field
 								v-model="usuario.senha"
 								type="password"
-								:rules="[v => !!v || 'Campo Obrigatório']"
+								:rules="[v => !!v || 'Campo ObrigatÃ³rio']"
 								label="Senha"
 								required
 							></v-text-field>
@@ -75,7 +75,7 @@ export default {
 						senha: this.usuario.senha
 					})
 					.then(res => {
-						this.msgSnackbar = "Usuário Cadastrado Com Sucesso!";
+						this.msgSnackbar = "UsuÃ¡rio Cadastrado Com Sucesso!";
 						this.typeSnackbar = "success";
 						this.snackbar = true;
 						this.timeSnackbar = 2000;

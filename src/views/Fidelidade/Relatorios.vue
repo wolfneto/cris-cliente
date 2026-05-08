@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-tabs grow icons-and-text class="mb-5">
       <v-tabs-slider></v-tabs-slider>
@@ -85,7 +85,7 @@
           :search="searchResgates"
         >
           <template v-slot:item.status="{ item }">
-            <span v-if="item.status" class="success--text">Diponível</span>
+            <span v-if="item.status" class="success--text">DiponÃ­vel</span>
             <span v-else class="error--text">Utilizado</span>
           </template>
           <template v-slot:item.acao="{ item }">
@@ -123,7 +123,7 @@
           :items-per-page="5"
           :footer-props="{
 					itemsPerPageOptions: [5, 10, 30, -1],
-					itemsPerPageText: 'Inserções por pagina',
+					itemsPerPageText: 'InserÃ§Ãµes por pagina',
 					}"
           no-data-text="Nenhum ponto inserido"
           sort-by="inserido_em"
@@ -134,7 +134,7 @@
         >
           <template v-slot:item.expirado="{ item }">
             <span class="error--text" v-if="item.expirado">Sim</span>
-            <span class="primary--text" v-else>Não</span>
+            <span class="primary--text" v-else>NÃ£o</span>
           </template>
           <template v-slot:item.acao="{ item }">
             <v-btn small color="warning" @click="remover(item)">
@@ -280,8 +280,8 @@
     <div v-if="divRelatorioGeral">
       <v-card>
         <v-card-title>
-          Relatório Geral -
-          <v-btn class="primary ml-2" @click="relatorioGeralPontos()" small>Gerar Relatório Geral Pontos</v-btn>
+          RelatÃ³rio Geral -
+          <v-btn class="primary ml-2" @click="relatorioGeralPontos()" small>Gerar RelatÃ³rio Geral Pontos</v-btn>
           <v-btn v-if="pontosGeral.length > 0" class="success ml-2" @click="excel()" small>Gerar Excel</v-btn>
           <v-spacer></v-spacer>
         </v-card-title>
@@ -338,7 +338,7 @@
     <div style="display:none" id="print">
       <h3
         v-if="geral.length > 0"
-      >Relatório de Resgates {{geral[0].nome_exibicao_faculdade}} - {{geral[0].descri_semestre}} - {{geral[0].nome_periodo}}</h3>
+      >RelatÃ³rio de Resgates {{geral[0].nome_exibicao_faculdade}} - {{geral[0].descri_semestre}} - {{geral[0].nome_periodo}}</h3>
       <table class="table table-bordered">
         <thead>
           <tr>
@@ -376,7 +376,7 @@
     <div style="display:none" id="print2">
       <h3
         v-if="arrayResgatesGeral.length > 0"
-      >Relatório de Resgates Geral</h3>
+      >RelatÃ³rio de Resgates Geral</h3>
       <table class="table table-bordered">
         <thead>
           <tr>
@@ -474,12 +474,12 @@ export default {
     cpf: "",
     headersResgates: [
       { text: "Codigo", value: "id" },
-      { text: "Descrição", value: "nome_produto" },
+      { text: "DescriÃ§Ã£o", value: "nome_produto" },
       { text: "Pontos Usados", value: "pontos_produto" },
       { text: "Status", value: "status" },
       { text: "Tipo", value: "tipo_resgate" },
       { text: "Resgatado Em", value: "create_at" },
-      { text: "Ação", value: "acao" }
+      { text: "AÃ§Ã£o", value: "acao" }
     ],
     headersInseridos: [
       { text: "Pedido", value: "id_pedido" },
@@ -488,7 +488,7 @@ export default {
       { text: "Expirado", value: "expirado" },
       { text: "Inserido Por", value: "inserido_por" },
       { text: "Inserido Em", value: "inserido_em" },
-      { text: "Ação", value: "acao" }
+      { text: "AÃ§Ã£o", value: "acao" }
     ],
     headersGeral: [
       { text: "Codigo", value: "id" },
@@ -599,16 +599,16 @@ export default {
     },
     async excluir(item) {
       let check = await this.$bvModal.msgBoxConfirm(
-        "Você tem certeza que deseja excluir o voucher?, " +
+        "VocÃª tem certeza que deseja excluir o voucher?, " +
           item.pontos_produto +
-          " pontos serão devolvidos ao aluno.",
+          " pontos serÃ£o devolvidos ao aluno.",
         {
-          title: "Confirmação!",
+          title: "ConfirmaÃ§Ã£o!",
           size: "sm",
           buttonSize: "sm",
           okVariant: "success",
           okTitle: "SIM",
-          cancelTitle: "NÃO",
+          cancelTitle: "NÃƒO",
           footerClass: "p-2",
           hideHeaderClose: false,
           centered: true
@@ -646,14 +646,14 @@ export default {
     },
     async remover(item) {
       let check = await this.$bvModal.msgBoxConfirm(
-        "Você tem certeza que deseja remover os pontos?",
+        "VocÃª tem certeza que deseja remover os pontos?",
         {
-          title: "Confirmação!",
+          title: "ConfirmaÃ§Ã£o!",
           size: "sm",
           buttonSize: "sm",
           okVariant: "danger",
           okTitle: "SIM",
-          cancelTitle: "NÃO",
+          cancelTitle: "NÃƒO",
           footerClass: "p-2",
           hideHeaderClose: false,
           centered: true

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card class="mx-auto mt-10" max-width="1800" height="700" elevation="4">
       <v-row class="ma-auto">
@@ -23,7 +23,7 @@
               <v-text-field
                 v-mask="'##/##/####'"
                 placeholder="dd/mm/aaaa"
-                label="Até"
+                label="AtÃ©"
                 required
                 dense
               ></v-text-field>

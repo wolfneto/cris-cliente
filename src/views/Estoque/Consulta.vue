@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card class="mx-auto mt-10" max-width="1800" height="700" elevation="4">
       <v-row class="ma-auto">
@@ -35,10 +35,10 @@
             <b>Marca</b>
           </h6>
           <h6 class="mt-n3">
-            <b>Catálogo</b>
+            <b>CatÃ¡logo</b>
           </h6>
           <h6 class="mt-n3">
-            <b>Localização</b>
+            <b>LocalizaÃ§Ã£o</b>
           </h6>
         </div>
 
@@ -47,9 +47,9 @@
             <v-col cols="12" md="8">
               <v-row>
                 <v-col cols="6">
-                  <h6>Disponível</h6>
+                  <h6>DisponÃ­vel</h6>
                   <p class="mt-n2">
-                    <b>Saídas previstas</b>
+                    <b>SaÃ­das previstas</b>
                   </p>
                   <v-card class="ma-0" elevation="4">
                   <v-simple-table class="ml-0" dense height="300" style="width: 450px">
@@ -73,7 +73,7 @@
                   </v-card>
                 </v-col>
                 <v-col cols="6">
-                  <h6>Em produção</h6>
+                  <h6>Em produÃ§Ã£o</h6>
                   <p class="mt-n2">
                     <b>Entradas previstas</b>
                   </p>

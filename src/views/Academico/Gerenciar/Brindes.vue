@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <Tabs></Tabs>
     <v-row justify="center" class="custom-row">
@@ -21,10 +21,10 @@
           v-model="selectedPosGraduacao"
           @change="onChangeGraduacao()"
           :items="[
-            { text: 'Graduação', value: 0 },
-            { text: 'Especialização', value: 1 },
+            { text: 'GraduaÃ§Ã£o', value: 0 },
+            { text: 'EspecializaÃ§Ã£o', value: 1 },
           ]"
-          label="Graduação ou Especialização"
+          label="GraduaÃ§Ã£o ou EspecializaÃ§Ã£o"
         ></v-select>
       </v-col>
     </v-row>
@@ -132,7 +132,7 @@
               <v-row class="custom-row">
                 <v-col cols="2">
                   <v-text-field
-                    :rules="[(v) => !!v || 'Campo Obrigatório']"
+                    :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
                     v-model="objectItem.nome"
                     label="Nome"
                     class="uppercase"
@@ -141,9 +141,9 @@
                 </v-col>
                 <v-col cols="4">
                   <v-text-field
-                    :rules="[(v) => !!v || 'Campo Obrigatório']"
+                    :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
                     v-model="objectItem.descricao"
-                    label="Descrição"
+                    label="DescriÃ§Ã£o"
                     class="uppercase"
                     filled
                   ></v-text-field>
@@ -195,7 +195,7 @@
                     </template>
                     <template v-slot:item.descricao="{ item }">
                       <v-text-field
-                        placeholder="Descrição"
+                        placeholder="DescriÃ§Ã£o"
                         v-model="item.descricao"
                         class="uppercase"
                       ></v-text-field>
@@ -248,14 +248,14 @@
     </v-dialog>
     <v-dialog v-model="dialogExcluir" persistent max-width="450">
       <v-card>
-        <v-card-title class="headline">Atenção!</v-card-title>
+        <v-card-title class="headline">AtenÃ§Ã£o!</v-card-title>
         <v-card-text class="h5"
           >Deseja realmente excluir este Brinde?<br />
           <div class="ma-4 text-center">{{ this.objectItem.nome }}</div>
         </v-card-text>
         <v-card-actions>
           <div class="flex-grow-1"></div>
-          <v-btn color="primary" text @click="dialogExcluir = false">Não</v-btn>
+          <v-btn color="primary" text @click="dialogExcluir = false">NÃ£o</v-btn>
           <v-btn color="error" text @click="excluirBrinde(objectItem)"
             >Excluir</v-btn
           >
@@ -322,7 +322,7 @@ export default {
       {
         name: "descricao",
         align: "left",
-        label: "Descrição",
+        label: "DescriÃ§Ã£o",
         sortable: true,
       },
       {
@@ -340,17 +340,17 @@ export default {
       {
         name: "acao",
         align: "center",
-        label: "Ação",
+        label: "AÃ§Ã£o",
         sortable: false,
       },
     ],
     headersBrindesMarcas: [
-      { text: "Código", value: "codigo", width: 30 },
-      { text: "Descrição", value: "descricao", width: 250 },
+      { text: "CÃ³digo", value: "codigo", width: 30 },
+      { text: "DescriÃ§Ã£o", value: "descricao", width: 250 },
       { text: "Valor", value: "valor", width: 20 },
       { text: "Imagem", value: "img_path", width: 20 },
       {
-        text: "Ação",
+        text: "AÃ§Ã£o",
         value: "acao",
         align: "center",
         sortable: false,
@@ -418,7 +418,7 @@ export default {
         if (!checked) {
           this.set_snackbar({
             show: true,
-            msg: "Os campos CODIGO, DESCRIÇÃO e VALOR não podem ser vazios!",
+            msg: "Os campos CODIGO, DESCRIÃ‡ÃƒO e VALOR nÃ£o podem ser vazios!",
             type: "warning",
             time: 3000,
           });
@@ -572,7 +572,7 @@ export default {
 
             this.set_snackbar({
               show: true,
-              msg: "Codigo informado não existe!",
+              msg: "Codigo informado nÃ£o existe!",
               type: "warning",
               time: 3000,
             });

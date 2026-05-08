@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <v-card-title>
@@ -21,7 +21,7 @@
               v-on:keyup="find(search)"
               @click="$event.target.select()"
               append-icon="fa-search"
-              label="Nome, CPF ou nº Pedido"
+              label="Nome, CPF ou nÂº Pedido"
               single-line
               hide-details
               dense
@@ -36,7 +36,7 @@
               class="ma-2"
               v-model="data_de"
               v-mask="'##/##/####'"
-              :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
+              :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
               placeholder="dd/mm/aaaa"
               label="De"
               required
@@ -48,9 +48,9 @@
               class="ma-2"
               v-model="data_ate"
               v-mask="'##/##/####'"
-              :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
+              :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
               placeholder="dd/mm/aaaa"
-              label="Até"
+              label="AtÃ©"
               required
               dense
             ></v-text-field>
@@ -88,7 +88,7 @@
               tile
               small
               v-on="on"
-              >relatórios
+              >relatÃ³rios
               <v-icon x-small class="ma-1 text-white">fas fa-chart-line</v-icon>
             </v-btn>
           </template>
@@ -197,7 +197,7 @@
                         <th class="text-left">Codigo</th>
                         <th class="text-left">Banco</th>
                         <th class="text-left">Total</th>
-                        <th class="text-left">Ação</th>
+                        <th class="text-left">AÃ§Ã£o</th>
                       </tr>
                     </thead>
                     <tbody class="grey lighten-4">
@@ -242,7 +242,7 @@
                             <span>{{ item.boleto.expiration_date }}</span>
                           </v-chip>
                           <v-chip
-                            v-if="item.status_pagamento == 'NÃO PAGO'"
+                            v-if="item.status_pagamento == 'NÃƒO PAGO'"
                             @click="show($event, item)"
                             color="error text-white"
                             small
@@ -269,7 +269,7 @@
                             color="success"
                             dark
                             small
-                            >CRÉDITO PAGO</v-chip
+                            >CRÃ‰DITO PAGO</v-chip
                           >
                           <v-chip
                             v-else-if="
@@ -376,7 +376,7 @@
                           <v-btn
                             v-if="
                               item.pagamentos_logs.length > 0 &&
-                                item.status_pagamento == 'NÃO PAGO'
+                                item.status_pagamento == 'NÃƒO PAGO'
                             "
                             @click="ver_logs(item.pagamentos_logs)"
                             small
@@ -407,10 +407,10 @@
           <v-card-text>
             <v-form ref="form" v-model="valid" lazy-validation>
               <v-text-field
-                hint="Digite somento números"
+                hint="Digite somento nÃºmeros"
                 autofocus
                 v-model="dataPagamentoBoleto"
-                :rules="[(v) => !!v || 'Campo Obrigatório']"
+                :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
                 label="Data do Pagamento"
                 v-mask="'##/##/####'"
                 required
@@ -434,7 +434,7 @@
       </v-dialog>
       <v-dialog v-model="dialogExcluir" persistent max-width="350">
         <v-card>
-          <v-card-title class="headline">Atenção!</v-card-title>
+          <v-card-title class="headline">AtenÃ§Ã£o!</v-card-title>
           <v-card-text
             ><span class="subtitle-2">Deseja realmente excluir este link?</span>
           </v-card-text>
@@ -560,7 +560,7 @@
             style="width: 800px; height: 50%"
             v-if="objectItemPrint.tipo_pagamento == 'CREDITO'"
           >
-            <h2 class="text-center">CRÉDITO PAGO</h2>
+            <h2 class="text-center">CRÃ‰DITO PAGO</h2>
             <br />
             <h5>
               <b>{{ objectItemPrint.cliente_id }}</b>
@@ -599,11 +599,11 @@
               {{ objectItemPrint.banco }}
             </h5>
             <h5>
-              <b>Autorização:</b>
+              <b>AutorizaÃ§Ã£o:</b>
               {{ objectItemPrint.credito.terminal_nsu }}
             </h5>
             <h5>
-              <b>N° Comprovante:</b>
+              <b>NÂ° Comprovante:</b>
               {{ objectItemPrint.credito.acquirer_transaction_id }}
             </h5>
             <h5>
@@ -627,7 +627,7 @@
             style="width: 800px; height: 40%"
             v-if="objectItemPrint.tipo_pagamento == 'CREDITO'"
           >
-            <h2 class="text-center">CRÉDITO PAGO</h2>
+            <h2 class="text-center">CRÃ‰DITO PAGO</h2>
             <br />
             <h5>
               <b>{{ objectItemPrint.codigo_cliente }}</b>
@@ -666,11 +666,11 @@
               {{ objectItemPrint.banco }}
             </h5>
             <h5>
-              <b>Autorização:</b>
+              <b>AutorizaÃ§Ã£o:</b>
               {{ objectItemPrint.credito.terminal_nsu }}
             </h5>
             <h5>
-              <b>N° Comprovante:</b>
+              <b>NÂ° Comprovante:</b>
               {{ objectItemPrint.credito.acquirer_transaction_id }}
             </h5>
             <h5>
@@ -839,7 +839,7 @@
     >
       <v-card>
         <v-card-title class="headline font-weight-black"> </v-card-title>
-        <div v-if="objectItemPagamento.status_pagamento == 'NÃO PAGO'">
+        <div v-if="objectItemPagamento.status_pagamento == 'NÃƒO PAGO'">
           <v-card>
             <v-card-title class="headline">Link de Pagamento</v-card-title>
             <v-card-text>
@@ -917,11 +917,11 @@
           <v-card>
             <v-card-title>Detalhes Pagamento</v-card-title>
             <v-card-text>
-              <b>Cartão de Crédito</b><br />
+              <b>CartÃ£o de CrÃ©dito</b><br />
               <b>Banco:</b> {{ objectItemPagamento.banco }}<br />
-              <b>Autorização:</b>
+              <b>AutorizaÃ§Ã£o:</b>
               {{ objectItemPagamento.credito.terminal_nsu }}<br />
-              <b>N° Comprovante:</b>
+              <b>NÂ° Comprovante:</b>
               {{ objectItemPagamento.credito.acquirer_transaction_id }}<br />
               <b>Status:</b> {{ objectItemPagamento.credito.status }}<br />
               <b>Bandeira:</b> {{ objectItemPagamento.credito.bandeira }}<br />
@@ -960,11 +960,11 @@
               objectItemPagamento.credito == null ? "" : objectItemPagamento.pagamentos_cartao_credito.nome_cartao
             }}             
             <br />
-            <b class="error--text">CLIENTE NÃO É O TITULAR</b>
+            <b class="error--text">CLIENTE NÃƒO Ã‰ O TITULAR</b>
             <br />
           </div>
           <div v-else>
-            <b class="success--text">CLIENTE É O TITULAR</b>
+            <b class="success--text">CLIENTE Ã‰ O TITULAR</b>
             <br />
           </div> 
             </v-card-text>
@@ -991,9 +991,9 @@
             <v-card-text>
               <b>Boleto</b><br />
               <b>Banco:</b> {{ objectItemPagamento.banco }}<br />
-              <b>N° Documento:</b>
+              <b>NÂ° Documento:</b>
               {{ objectItemPagamento.boleto.document_number }}<br />
-              <b>Nosso Número:</b> {{ objectItemPagamento.boleto.our_number
+              <b>Nosso NÃºmero:</b> {{ objectItemPagamento.boleto.our_number
               }}<br />
               <b>Valor:</b>
               {{
@@ -1024,7 +1024,7 @@
         <div
           v-else-if="
             objectItemPagamento.tipo_pagamento == 'PIX' &&
-              objectItemPagamento.status_pagamento != 'NÃO PAGO'
+              objectItemPagamento.status_pagamento != 'NÃƒO PAGO'
           "
         >
           <v-card>
@@ -1125,9 +1125,9 @@
         </v-card-title>
         <v-card-text>
           <div v-for="log in objectItem" :key="log.id">
-            <b>Código do Link: </b><span>{{ log.codigo_link }}</span>
+            <b>CÃ³digo do Link: </b><span>{{ log.codigo_link }}</span>
             <br />
-            <b>Razão: </b><span class="error--text">{{ log.razao }}</span>
+            <b>RazÃ£o: </b><span class="error--text">{{ log.razao }}</span>
             <br />
             <b>Data: </b><span>{{ log.created_at }}</span>
             <br />
@@ -1156,10 +1156,10 @@
 
     <v-dialog v-if="objectItemPagamento.tipo_pagamento == 'PIX'" v-model="dialogEstornar" persistent max-width="400">
       <v-card v-if="objectItemPagamento.pagamentos_pix.status == 'CONCLUIDA'">
-        <v-card-title class="display-1 error--text">Atenção!</v-card-title>
+        <v-card-title class="display-1 error--text">AtenÃ§Ã£o!</v-card-title>
         <v-divider></v-divider>
         <v-card-text class="body-1 font-weight-black">
-          <p>É isso mesmo que deseja fazer ?</p>
+          <p>Ã‰ isso mesmo que deseja fazer ?</p>
           <p>
             VALOR A ESTORNAR:
             {{
@@ -1182,7 +1182,7 @@
         <v-divider></v-divider>
         <v-card-actions>
           <div class="flex-grow-1"></div>
-          <v-btn color="error" text @click="dialogEstornar = false">Não</v-btn>
+          <v-btn color="error" text @click="dialogEstornar = false">NÃ£o</v-btn>
           <v-btn color="success" text @click="estornarPix()">Sim</v-btn>
         </v-card-actions>
       </v-card>
@@ -1544,9 +1544,9 @@ export default {
               obj.codigo_link = pagamento.codigo_link;
               obj.created_at = pagamento.created_at;
 
-              if (pagamento.tipo_pagamento == "NÃO PAGO") {
+              if (pagamento.tipo_pagamento == "NÃƒO PAGO") {
                 obj.valor = parseFloat(pagamento.total);
-                obj.status = "NÃO PAGO";
+                obj.status = "NÃƒO PAGO";
                 json.push(obj);
               } else if (pagamento.tipo_pagamento == "CREDITO") {
                 if (
@@ -1594,7 +1594,7 @@ export default {
         this.$XLSX.utils.book_append_sheet(wb, ws, "pagamentos_varejo_" + tipo); // sheetAName is name of Worksheet
         this.$XLSX.writeFile(wb, "pagamentos_varejo_" + tipo + ".xlsx"); // name of the file is 'book.xlsx'
       } else {
-        this.showSnackbar("Atenção! Não existem pagamentos!", "warning", 5000);
+        this.showSnackbar("AtenÃ§Ã£o! NÃ£o existem pagamentos!", "warning", 5000);
       }
       this.loading = false;
     },

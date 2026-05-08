@@ -1,4 +1,4 @@
-import Vue from 'vue'
+﻿import Vue from 'vue'
 
 import Quasar from "quasar/dist/quasar.esm";
 import "quasar/dist/quasar.umd";

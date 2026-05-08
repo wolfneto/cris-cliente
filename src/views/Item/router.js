@@ -1,4 +1,4 @@
-import MargemLucro from './MargemLucro';
+﻿import MargemLucro from './MargemLucro';
 import CadastroImagem from './CadastroImagem.vue';
 import ItemControlarSaldo from './ItemControlarSaldo';
 import Item from './Item';

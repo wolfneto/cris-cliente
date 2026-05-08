@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <h4 class="text-center">Entregas</h4>
@@ -20,7 +20,7 @@
             class="primary white--text text-center elevation-8 pa-6 h6"
             @click="$router.push('/estoque/entregas_relatorio')"
           >
-            Relátorio de Entregas
+            RelÃ¡torio de Entregas
           </div>
         </v-col>
       </v-row>

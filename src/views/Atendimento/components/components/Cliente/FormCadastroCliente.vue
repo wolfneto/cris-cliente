@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card height="600">
       <v-toolbar dense flat color="primary" dark>
@@ -14,7 +14,7 @@
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-tabs vertical>
           <v-tab active-class="blue darken-2 white--text">Dados</v-tab>
-          <v-tab active-class="blue darken-2 white--text">Endereços</v-tab>
+          <v-tab active-class="blue darken-2 white--text">EndereÃ§os</v-tab>
           <v-tab active-class="blue darken-2 white--text">Contatos</v-tab>
           <v-tab-item>
             <v-container>
@@ -24,10 +24,10 @@
                     <v-col cols="12" md="2">
                       <v-text-field
                         @keyup="checkCpfCnpj(cliente.cpf_cnpj)"
-                        hint="Digite somento números"
+                        hint="Digite somento nÃºmeros"
                         autofocus
                         v-model="cliente.cpf_cnpj"
-                        :rules="[v => !!v || 'Campo Obrigatório']"
+                        :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                         label="CPF/CNPJ"
                         v-mask="['###.###.###-##', '##.###.###/####-##']"
                         required
@@ -39,10 +39,10 @@
                         :items="condicoes"
                         item-text="descricao"
                         item-value="id"
-                        label="Condição"
+                        label="CondiÃ§Ã£o"
                         persistent-hint
                         outlined
-                        hint="Condição Financeira"
+                        hint="CondiÃ§Ã£o Financeira"
                       ></v-select>
                     </v-col>
                     <v-col cols="12" md="2">
@@ -91,16 +91,16 @@
                         v-model="cliente.razao_social"
                         @keyup="cliente.fantasia = cliente.razao_social"
                         :rules="nomeRules"
-                        label="Razão Social"
+                        label="RazÃ£o Social"
                         class="input-uppercase"
                         required
                       ></v-text-field>
                     </v-col>
                     <v-col cols="12" md="2">
                       <v-text-field
-                        hint="Digite somento números com DDD"
+                        hint="Digite somento nÃºmeros com DDD"
                         v-model="cliente.telefone"
-                        :rules="[v => !!v || 'Campo Obrigatório']"
+                        :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                         label="Telefone"
                         v-mask="'(##) ####-####'"
                         required
@@ -110,7 +110,7 @@
                       <v-text-field
                         class="input-uppercase"
                         v-model="cliente.email"
-                        :rules="[v => !!v || 'Campo Obrigatório']"
+                        :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                         label="E-Mail"
                         required
                       ></v-text-field>
@@ -128,9 +128,9 @@
                     </v-col>
                     <v-col cols="12" md="2">
                       <v-text-field
-                        hint="Digite somento números com DDD"
+                        hint="Digite somento nÃºmeros com DDD"
                         v-model="cliente.celular"
-                        :rules="[v => !!v || 'Campo Obrigatório']"
+                        :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                         label="Celular/WhatsApp"
                         v-mask="['(##) ####-####', '(##) #####-####']"
                         required
@@ -152,14 +152,14 @@
                           v-mask="'#########'"
                           v-model="cliente.inscricao_estadual"
                           :rules="nomeRules"
-                          label="Inscrição Estadual"
+                          label="InscriÃ§Ã£o Estadual"
                           required
                         ></v-text-field>
                       </v-col>
                       <v-col cols="12" md="4">
                         <v-text-field
                           v-model="cliente.inscricao_municipal"
-                          label="Inscrição Municipal"
+                          label="InscriÃ§Ã£o Municipal"
                         ></v-text-field>
                       </v-col>
                     </v-row>
@@ -171,15 +171,15 @@
           <v-tab-item>
             <v-container>
               <v-card class="mx-auto" outlined>
-                <v-card-title class="primary--text">Endereço Principal</v-card-title>
+                <v-card-title class="primary--text">EndereÃ§o Principal</v-card-title>
                 <v-card-text>
                   <v-row class="custom-row">
                     <v-col cols="12" md="2">
                       <v-text-field
                         @keyup="getCep(cliente.endereco_principal)"
-                        hint="Digite somento números"
+                        hint="Digite somento nÃºmeros"
                         v-model="cliente.endereco_principal.cep"
-                        :rules="[v => !!v || 'Campo Obrigatório']"
+                        :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                         label="Cep"
                         :loading="cepPrincipalLoading"
                         ref="cep_principal"
@@ -192,16 +192,16 @@
                         class="input-uppercase"
                         hint="Rua, Avenida, Estrada..."
                         v-model="cliente.endereco_principal.logradouro"
-                        :rules="[v => !!v || 'Campo Obrigatório']"
-                        label="Endereço"
+                        :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                        label="EndereÃ§o"
                         required
                       ></v-text-field>
                     </v-col>
                     <v-col cols="12" md="1">
                       <v-text-field
                         v-model="cliente.endereco_principal.numero"
-                        :rules="[v => !!v || 'Campo Obrigatório']"
-                        label="Número"
+                        :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                        label="NÃºmero"
                         ref="numero_principal"
                         required
                         v-mask="'####'"
@@ -220,7 +220,7 @@
                       <v-text-field
                         class="input-uppercase"
                         v-model="cliente.endereco_principal.bairro"
-                        :rules="[v => !!v || 'Campo Obrigatório']"
+                        :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                         label="Bairro"
                         required
                       ></v-text-field>
@@ -229,7 +229,7 @@
                       <v-text-field
                         class="input-uppercase"
                         v-model="cliente.endereco_principal.cidade"
-                        :rules="[v => !!v || 'Campo Obrigatório']"
+                        :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                         label="Cidade"
                         required
                       ></v-text-field>
@@ -238,7 +238,7 @@
                       <v-text-field
                         class="input-uppercase"
                         v-model="cliente.endereco_principal.uf"
-                        :rules="[v => !!v || 'Campo Obrigatório']"
+                        :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                         label="Estado"
                         required
                       ></v-text-field>
@@ -247,7 +247,7 @@
                       <v-checkbox
                         @change="hasEnderecoEntrega(cliente.hasEnderecoEntrega)"
                         v-model="cliente.hasEnderecoEntrega"
-                        label="Possui endereço de entrega"
+                        label="Possui endereÃ§o de entrega"
                       ></v-checkbox>
                     </v-col>
                   </v-row>
@@ -255,8 +255,8 @@
               </v-card>
               <v-card v-if="cliente.hasEnderecoEntrega" class="mx-auto mt-2" outlined>
                 <v-card-title class="primary--text">
-                  Endereços de Entrega -
-                  <v-btn small class="ml-3 success" @click="addEnderecoEntrega()">Adicionar Endereço</v-btn>
+                  EndereÃ§os de Entrega -
+                  <v-btn small class="ml-3 success" @click="addEnderecoEntrega()">Adicionar EndereÃ§o</v-btn>
                 </v-card-title>
                 <v-card-text>
                   <v-data-table
@@ -275,9 +275,9 @@
                             height="12"
                             hide-details
                             @keyup="getCep(item)"
-                            hint="Digite somento números"
+                            hint="Digite somento nÃºmeros"
                             v-model="item.cep"
-                            :rules="[v => !!v || 'Campo Obrigatório']"
+                            :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                             label="Cep"
                             :loading="item.loading"
                             ref="cep_entrega"
@@ -293,8 +293,8 @@
                             class="input-uppercase"
                             hint="Rua, Avenida, Estrada..."
                             v-model="item.logradouro"
-                            :rules="[v => !!v || 'Campo Obrigatório']"
-                            label="Endereço"
+                            :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                            label="EndereÃ§o"
                             required
                           ></v-text-field>
                         </td>
@@ -304,8 +304,8 @@
                             height="12"
                             hide-details
                             v-model="item.numero"
-                            :rules="[v => !!v || 'Campo Obrigatório']"
-                            label="Número"
+                            :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                            label="NÃºmero"
                             required
                             maxlength="4"
                           ></v-text-field>
@@ -327,7 +327,7 @@
                             hide-details
                             class="input-uppercase"
                             v-model="item.bairro"
-                            :rules="[v => !!v || 'Campo Obrigatório']"
+                            :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                             label="Bairro"
                             required
                           ></v-text-field>
@@ -339,7 +339,7 @@
                             hide-details
                             class="input-uppercase"
                             v-model="item.cidade"
-                            :rules="[v => !!v || 'Campo Obrigatório']"
+                            :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                             label="Cidade"
                             required
                           ></v-text-field>
@@ -351,7 +351,7 @@
                             hide-details
                             class="input-uppercase"
                             v-model="item.uf"
-                            :rules="[v => !!v || 'Campo Obrigatório']"
+                            :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                             label="UF"
                             required
                           ></v-text-field>
@@ -435,12 +435,12 @@
 
     <v-dialog v-model="dialogContinuar" max-width="290">
       <v-card>
-        <v-card-title class="headline">Atenção</v-card-title>
-        <v-card-text>Deseja fazer um Orçamento para este cliente?</v-card-text>
+        <v-card-title class="headline">AtenÃ§Ã£o</v-card-title>
+        <v-card-text>Deseja fazer um OrÃ§amento para este cliente?</v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
 
-          <v-btn class="error--text" text @click="close()">Não</v-btn>
+          <v-btn class="error--text" text @click="close()">NÃ£o</v-btn>
 
           <v-btn class="success--text" text @click="closeAndContinue()">Sim</v-btn>
         </v-card-actions>
@@ -493,7 +493,7 @@ function defaultData() {
     show: true,
     vendedores: [],
     nomeRules: [
-      v => !!v || "Campo Obrigatório",
+      v => !!v || "Campo ObrigatÃ³rio",
       v => v.length >= 3 || "Campo deve possuir 3 caracteres ou mais"
     ],
     valid: false,
@@ -507,8 +507,8 @@ function defaultData() {
     permissoes: {},
     headersEnderecoEntrega: [
       { text: "Cep", value: "cep", sortable: false, width: 150 },
-      { text: "Endereço", value: "logradouro", sortable: false },
-      { text: "Nº", value: "numero", sortable: false, width: 100 },
+      { text: "EndereÃ§o", value: "logradouro", sortable: false },
+      { text: "NÂº", value: "numero", sortable: false, width: 100 },
       {
         text: "Complemento",
         value: "complemento",
@@ -518,7 +518,7 @@ function defaultData() {
       { text: "Bairro", value: "bairro", sortable: false },
       { text: "Cidade", value: "cidade", sortable: false },
       { text: "UF", value: "uf", sortable: false, width: 70 },
-      { text: "Ação", value: "acao", sortable: true }
+      { text: "AÃ§Ã£o", value: "acao", sortable: true }
     ],
     enderecosEntrega: [],
     headersContatos: [
@@ -528,7 +528,7 @@ function defaultData() {
       { text: "Telefone", value: "telefone", sortable: true },
       { text: "Celular", value: "celular", sortable: true },
       { text: "Obs", value: "obs", sortable: true },
-      { text: "Ação", value: "acao", sortable: true }
+      { text: "AÃ§Ã£o", value: "acao", sortable: true }
     ],
     contatos: [
       {
@@ -737,7 +737,7 @@ export default {
               } else {
                 this.cepEntregaLoading = false;
               }
-              this.showSnackbar("Cep Inválido", "warning", 2000);
+              this.showSnackbar("Cep InvÃ¡lido", "warning", 2000);
               return;
             }
 

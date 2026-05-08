@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container fluid>
     <v-card class="mx-auto">
       <v-card-title>
@@ -86,7 +86,7 @@
               <v-row>
                 <v-col cols="2">
                   <v-text-field
-                    :rules="[(v) => !!v || 'Campo Obrigatório']"
+                    :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
                     v-model="objectItem.codigo"
                     label="Codigo"
                     hint="codigo do vendedor"
@@ -99,7 +99,7 @@
                   <v-text-field
                     class="uppercase"
                     required
-                    :rules="[(v) => !!v || 'Campo Obrigatório']"
+                    :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
                     v-model="objectItem.nome"
                     label="Nome Vendedor"
                     dense
@@ -165,12 +165,12 @@ export default {
     search: "",
     filteredVendedores: [],
     headersVendedores: [
-      { text: "Código", value: "codigo" },
+      { text: "CÃ³digo", value: "codigo" },
       { text: "Nome", value: "nome" },
       { text: "Celular", value: "celular" },
       { text: "Status", value: "status" },
       {
-        text: "Ação",
+        text: "AÃ§Ã£o",
         value: "acao",
         align: "center",
         sortable: false,

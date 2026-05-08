@@ -1,4 +1,4 @@
-import Vuex from 'vuex';
+﻿import Vuex from 'vuex';
 import Vue from 'vue';
 import 'es6-promise/auto';
 
@@ -31,7 +31,7 @@ import produtoVarejo from './modules/SiteVarejo/ProdutoVarejo'
 import pedidoVarejo from './modules/SiteVarejo/PedidoVarejo'
 import vendedorVarejo from './modules/SiteVarejo/VendedorVarejo'
 import pedidoOutros from './modules/Academico/Outros'
-import api from '../api/api'
+import api from '../plugins/axios'
 
 Vue.use(Vuex);
 

@@ -1,13 +1,13 @@
-<template>
+﻿<template>
   <v-container>
-    <h4 class="text-center">Relatório Financeiro Acadêmico Excel</h4>
+    <h4 class="text-center">RelatÃ³rio Financeiro AcadÃªmico Excel</h4>
     <h5 class="text-center">Somente pedidos pagos pelo site.</h5>
     <v-row justify="center" class="custom-row">
       <v-col cols="12" md="2">
         <v-text-field
           v-model="de"
           v-mask="'##/##/####'"
-          :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
+          :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
           placeholder="dd/mm/aaaa"
           label="De"
           required
@@ -17,9 +17,9 @@
         <v-text-field
           v-model="ate"
           v-mask="'##/##/####'"
-          :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
+          :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
           placeholder="dd/mm/aaaa"
-          label="Até"
+          label="AtÃ©"
           required
         ></v-text-field>
       </v-col>

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <v-card-title>
@@ -32,7 +32,7 @@
               autocomplete="nope"
               @keyup="searchCliente($event.target.value, 'cod')"
               prepend-icon="fa-user"
-              label="Código"
+              label="CÃ³digo"
               v-mask="'#####'"
             ></v-text-field>
           </v-col>
@@ -69,7 +69,7 @@
             {{ item.cliente_atividade.descricao }}
           </td>
           <td colspan="3">
-            <b>Condição:</b>
+            <b>CondiÃ§Ã£o:</b>
             <span v-if="item.condicao">ATIVO</span>
             <span v-else>BLOQUEADO</span>
           </td>
@@ -116,7 +116,7 @@ export default {
         value: "cpf_cnpj",
       },
       {
-        text: "Razão Social",
+        text: "RazÃ£o Social",
         sortable: true,
         value: "razao_social",
       },

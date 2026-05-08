@@ -1,4 +1,4 @@
-<template>
+﻿<template>
 	<v-content>
 		<v-container fill-height fluid>
 			<v-layout align-center justify-center>
@@ -13,7 +13,7 @@
 								<v-text-field
 									ref="usuario"
 									v-model="usuario"
-									:rules="[() => !!usuario || 'Campo Obrigatório']"
+									:rules="[() => !!usuario || 'Campo ObrigatÃ³rio']"
 									prepend-icon="fa-user"
 									label="Login"
 									required
@@ -21,7 +21,7 @@
 								<v-text-field
 									ref="senha"
 									v-model="senha"
-									:rules="[() => !!senha || 'Campo Obrigatório']"
+									:rules="[() => !!senha || 'Campo ObrigatÃ³rio']"
 									prepend-icon="fa-lock"
 									type="password"
 									label="Senha"
@@ -74,7 +74,7 @@ export default {
 						console.log(res.data);
 						if (res.data === true) {
 							this.showSnakerbar(
-								"Usuário ou Senha Incorretos!",
+								"UsuÃ¡rio ou Senha Incorretos!",
 								"warning",
 								2000
 							);

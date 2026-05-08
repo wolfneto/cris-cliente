@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div ref="tabelaitenspedido" tabindex="0">
     <q-virtual-scroll
       ref="tabela"
@@ -59,7 +59,7 @@
           <v-icon>fa-file-excel</v-icon>
         </v-btn>
       </v-col>
-      <v-col cols="2">Fat. médio 12 meses: 1.506,84</v-col>
+      <v-col cols="2">Fat. mÃ©dio 12 meses: 1.506,84</v-col>
       <v-col cols="2">Financeiro atrasado: 292.746,21</v-col>
       <v-col cols="2">Margem: 73,20%</v-col>
       <v-col cols="2">Itens: 5</v-col>
@@ -89,7 +89,7 @@ export default {
           name: "codigo",
           prop: "codigo",
           align: "center",
-          label: "Código",
+          label: "CÃ³digo",
           field: "codigo",
           sortable: true
         },
@@ -97,7 +97,7 @@ export default {
           name: "descricao",
           prop: "descricao",
           align: "center",
-          label: "Descrição",
+          label: "DescriÃ§Ã£o",
           field: "descricao",
           sortable: true
         },

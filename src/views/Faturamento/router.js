@@ -1,10 +1,10 @@
-import EmissaoNotasFiscais from './EmissaoNotasFiscais';
+﻿import EmissaoNotasFiscais from './EmissaoNotasFiscais';
 import CancelarNotaFiscal from './CancelarNotaFiscal';
 
 
 export default [{
         path: '/faturamento/emissaoNotasFiscais',
-        name: 'Emissão Notas Fiscais',
+        name: 'EmissÃ£o Notas Fiscais',
         component: EmissaoNotasFiscais,
         meta: {
             requiresAuth: true

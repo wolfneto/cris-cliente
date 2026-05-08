@@ -1,4 +1,4 @@
-import Status from './Status';
+﻿import Status from './Status';
 import Orcamento from './Orcamento';
 // import Externo from './Externo';
 // import Status from './Status';
@@ -13,7 +13,7 @@ export default [{
     },
     {
         path: '/atendimento/orcamento',
-        name: 'Atendimento - Orçamento',
+        name: 'Atendimento - OrÃ§amento',
         component: Orcamento,
         meta: {
             requiresAuth: true
