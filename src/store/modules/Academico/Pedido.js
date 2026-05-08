@@ -1,4 +1,8 @@
 import api from '../../../api/api'
+
+const pagamentoApiBase = process.env.VUE_APP_URL_SERVIDOR_PAGAMENTO || 'https://solident.com.br/node';
+const pagamentoApiBaseNormalized = pagamentoApiBase.replace(/\/$/, '');
+
 export default {
     state: {
         pedidos: [],
@@ -257,8 +261,7 @@ export default {
         },
 
         async aprovar_reserva_academico(context, payload) {
-            //http://academicosolident.com.br:21135/pagamento/aprovar
-            let res = await api.post("http://192.168.0.96:3010/pagamento/aprovar", {
+            let res = await api.post(`${pagamentoApiBaseNormalized}/pagamento/aprovar`, {
                 payment: payload
             })
             if (res.data == false) {
@@ -269,8 +272,7 @@ export default {
             }
         },
         async cancelar_reserva_academico(context, payload) {
-            //http://academicosolident.com.br:21135/pagamento/aprovar
-            let res = await api.post("http://192.168.0.96:3010/pagamento/cancelar", {
+            let res = await api.post(`${pagamentoApiBaseNormalized}/pagamento/cancelar`, {
                 payment: payload
             })
             if (res.data == false) {
@@ -281,8 +283,7 @@ export default {
             }
         },
         async cancelar_pix_academico(context, payload) {
-            //http://academicosolident.com.br:21135/pagamento/aprovar
-            let res = await api.post("https://solident.com.br/node/pix_estorno", {
+            let res = await api.post(`${pagamentoApiBaseNormalized}/pix_estorno`, {
                 dados: payload
             })
             if (res.data == false) {
