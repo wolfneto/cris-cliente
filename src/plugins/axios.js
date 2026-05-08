@@ -1,7 +1,7 @@
 ﻿import Vue from 'vue'
 import axios from 'axios'
 
-const apiBaseUrl = process.env.VUE_APP_URL_SERVIDOR_DADOS || 'http://localhost:3000'
+const apiBaseUrl = process.env.VUE_APP_URL_SERVIDOR_DADOS
 
 const api = axios.create({
 	baseURL: apiBaseUrl,
