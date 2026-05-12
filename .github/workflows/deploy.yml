@@ -3,7 +3,7 @@ name: Deploy to VPS
 on:
   push:
     branches:
-      - main
+      - dental_academico
 
 jobs:
   deploy:
@@ -23,8 +23,8 @@ jobs:
       - name: Deploy files to VPS
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          password: ${{ secrets.VPS_PASS }}
+          host: ${{ secrets.VPS_HOST_DENTAL_ACADEMICO }}
+          username: ${{ secrets.VPS_USER_DENTEL_ACADEMICO }}
+          password: ${{ secrets.VPS_PASS_DENTAL_ACADEMICO }}
           source: "build/"              
           target: "/var/www/NOME-DO-PROJETO"
