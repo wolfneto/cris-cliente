@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <v-form ref="form" v-model="valid" lazy-validation>
@@ -7,10 +7,10 @@
             <v-col cols="12" md="2">
               <v-text-field
                 @keyup="checkCpfCnpj(cliente.cpf_cnpj)"
-                hint="Digite somento números"
+                hint="Digite somento nÃºmeros"
                 autofocus
                 v-model="cliente.cpf_cnpj"
-                :rules="[v => !!v || 'Campo Obrigatório']"
+                :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                 label="CPF/CNPJ"
                 v-mask="['###.###.###-##', '##.###.###/####-##']"
                 required
@@ -20,10 +20,10 @@
               <v-select
                 v-model="cliente.condicao"
                 :items="condicoes"
-                label="Condição"
+                label="CondiÃ§Ã£o"
                 persistent-hint
                 outlined
-                hint="Condição Financeira"
+                hint="CondiÃ§Ã£o Financeira"
               ></v-select>
             </v-col>
             <v-col cols="12" md="2">
@@ -57,16 +57,16 @@
                 v-model="cliente.razao_social"
                 @keyup="cliente.fantasia = cliente.razao_social"
                 :rules="nomeRules"
-                label="Razão Social"
+                label="RazÃ£o Social"
                 class="input-uppercase"
                 required
               ></v-text-field>
             </v-col>
             <v-col cols="12" md="2">
               <v-text-field
-                hint="Digite somento números com DDD"
+                hint="Digite somento nÃºmeros com DDD"
                 v-model="cliente.telefone"
-                :rules="[v => !!v || 'Campo Obrigatório']"
+                :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                 label="Telefone"
                 v-mask="'(##) ####-####'"
                 required
@@ -76,7 +76,7 @@
               <v-text-field
                 class="input-uppercase"
                 v-model="cliente.email"
-                :rules="[v => !!v || 'Campo Obrigatório']"
+                :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                 label="E-Mail"
                 required
               ></v-text-field>
@@ -94,9 +94,9 @@
             </v-col>
             <v-col cols="12" md="2">
               <v-text-field
-                hint="Digite somento números com DDD"
+                hint="Digite somento nÃºmeros com DDD"
                 v-model="cliente.celular"
-                :rules="[v => !!v || 'Campo Obrigatório']"
+                :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                 label="Celular/WhatsApp"
                 v-mask="['(##) ####-####', '(##) #####-####']"
                 required
@@ -113,12 +113,12 @@
                   v-mask="'#########'"
                   v-model="cliente.inscricao_estadual"
                   :rules="nomeRules"
-                  label="Inscrição Estadual"
+                  label="InscriÃ§Ã£o Estadual"
                   required
                 ></v-text-field>
               </v-col>
               <v-col cols="12" md="4">
-                <v-text-field v-model="cliente.inscricao_municipal" label="Inscrição Municipal"></v-text-field>
+                <v-text-field v-model="cliente.inscricao_municipal" label="InscriÃ§Ã£o Municipal"></v-text-field>
               </v-col>
             </v-row>
           </div>
@@ -126,9 +126,9 @@
             <v-col cols="12" md="2">
               <v-text-field
                 @keyup="getCep(cliente.cliente_enderecos[0].cep, cliente.cliente_enderecos[0].tipo)"
-                hint="Digite somento números"
+                hint="Digite somento nÃºmeros"
                 v-model="cliente.cliente_enderecos[0].cep"
-                :rules="[v => !!v || 'Campo Obrigatório']"
+                :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                 label="Cep"
                 :loading="cepPrincipalLoading"
                 ref="cep_principal"
@@ -141,16 +141,16 @@
                 class="input-uppercase"
                 hint="Rua, Avenida, Estrada..."
                 v-model="cliente.cliente_enderecos[0].logradouro"
-                :rules="[v => !!v || 'Campo Obrigatório']"
-                label="Endereço"
+                :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                label="EndereÃ§o"
                 required
               ></v-text-field>
             </v-col>
             <v-col cols="12" md="1">
               <v-text-field
                 v-model="cliente.cliente_enderecos[0].numero"
-                :rules="[v => !!v || 'Campo Obrigatório']"
-                label="Número"
+                :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                label="NÃºmero"
                 ref="numero_principal"
                 required
                 v-mask="'####'"
@@ -169,7 +169,7 @@
               <v-text-field
                 class="input-uppercase"
                 v-model="cliente.cliente_enderecos[0].bairro"
-                :rules="[v => !!v || 'Campo Obrigatório']"
+                :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                 label="Bairro"
                 required
               ></v-text-field>
@@ -178,7 +178,7 @@
               <v-text-field
                 class="input-uppercase"
                 v-model="cliente.cliente_enderecos[0].cidade"
-                :rules="[v => !!v || 'Campo Obrigatório']"
+                :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                 label="Cidade"
                 required
               ></v-text-field>
@@ -187,13 +187,13 @@
               <v-text-field
                 class="input-uppercase"
                 v-model="cliente.cliente_enderecos[0].uf"
-                :rules="[v => !!v || 'Campo Obrigatório']"
+                :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                 label="Estado"
                 required
               ></v-text-field>
             </v-col>
             <v-col cols="12" md="3">
-              <v-checkbox v-model="cliente.hasEnderecoEntrega" label="Possui endereço de entrega"></v-checkbox>
+              <v-checkbox v-model="cliente.hasEnderecoEntrega" label="Possui endereÃ§o de entrega"></v-checkbox>
             </v-col>
           </v-row>
           <div v-if="cliente.hasEnderecoEntrega" class="blue lighten-5">
@@ -204,9 +204,9 @@
                 <v-col cols="12" md="2">
                   <v-text-field
                     @keyup="getCep(cliente.cliente_enderecos[1].cep, cliente.cliente_enderecos[1].tipo)"
-                    hint="Digite somento números"
+                    hint="Digite somento nÃºmeros"
                     v-model="cliente.cliente_enderecos[1].cep"
-                    :rules="[v => !!v || 'Campo Obrigatório']"
+                    :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                     label="Cep"
                     :loading="cepEntregaLoading"
                     ref="cep_entrega"
@@ -219,16 +219,16 @@
                     class="input-uppercase"
                     hint="Rua, Avenida, Estrada..."
                     v-model="cliente.cliente_enderecos[1].logradouro"
-                    :rules="[v => !!v || 'Campo Obrigatório']"
-                    label="Endereço"
+                    :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                    label="EndereÃ§o"
                     required
                   ></v-text-field>
                 </v-col>
                 <v-col cols="12" md="1">
                   <v-text-field
                     v-model="cliente.cliente_enderecos[1].numero"
-                    :rules="[v => !!v || 'Campo Obrigatório']"
-                    label="Número"
+                    :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                    label="NÃºmero"
                     ref="numero_entrega"
                     required
                     maxlength="4"
@@ -247,7 +247,7 @@
                   <v-text-field
                     class="input-uppercase"
                     v-model="cliente.cliente_enderecos[1].bairro"
-                    :rules="[v => !!v || 'Campo Obrigatório']"
+                    :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                     label="Bairro"
                     required
                   ></v-text-field>
@@ -256,7 +256,7 @@
                   <v-text-field
                     class="input-uppercase"
                     v-model="cliente.cliente_enderecos[1].cidade"
-                    :rules="[v => !!v || 'Campo Obrigatório']"
+                    :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                     label="Cidade"
                     required
                   ></v-text-field>
@@ -265,7 +265,7 @@
                   <v-text-field
                     class="input-uppercase"
                     v-model="cliente.cliente_enderecos[1].uf"
-                    :rules="[v => !!v || 'Campo Obrigatório']"
+                    :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                     label="Estado"
                     required
                   ></v-text-field>
@@ -283,11 +283,11 @@
 
     <v-dialog v-model="dialogContinuar" max-width="290">
       <v-card>
-        <v-card-title class="headline">Deseja fazer um Orçamento para este cliente?</v-card-title>
+        <v-card-title class="headline">Deseja fazer um OrÃ§amento para este cliente?</v-card-title>
         <v-card-actions>
           <v-spacer></v-spacer>
 
-          <v-btn color="green darken-1" text @click="close()">Não</v-btn>
+          <v-btn color="green darken-1" text @click="close()">NÃ£o</v-btn>
 
           <v-btn color="green darken-1" text @click="closeAndContinue()">Sim</v-btn>
         </v-card-actions>
@@ -357,7 +357,7 @@ function defaultData() {
     ],
     vendedores: [],
     nomeRules: [
-      v => !!v || "Campo Obrigatório",
+      v => !!v || "Campo ObrigatÃ³rio",
       v => v.length >= 3 || "Campo deve possuir 3 caracteres ou mais"
     ],
     valid: false,
@@ -452,7 +452,7 @@ export default {
                 this.cepEntregaLoading = false;
                 this.$refs.cep_entrega.focus();
               }
-              this.showSnackbar("Cep Inválido", "warning", 2000);
+              this.showSnackbar("Cep InvÃ¡lido", "warning", 2000);
               return;
             }
             if (tipo == 1) {

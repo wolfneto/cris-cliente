@@ -1,4 +1,4 @@
-import Produto from './Produto';
+﻿import Produto from './Produto';
 import Pedido from './PedidoVarejo.vue';
 import Vendedor from './Vendedor';
 

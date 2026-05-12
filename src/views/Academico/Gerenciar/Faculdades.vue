@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <Tabs></Tabs>
     <v-card class="ma-0" max-width="100%" height="100%" elevation="4">
@@ -59,14 +59,14 @@
             @click="updateSituacao(item)"
             color="#B9F6CA"
             text-color="green"
-            >VISÍVEL</v-chip
+            >VISÃVEL</v-chip
           >
           <v-chip
             v-else
             @click="updateSituacao(item)"
             color="#FFCDD2"
             text-color="red"
-            >INVISÍVEL</v-chip
+            >INVISÃVEL</v-chip
           >
         </template>
         <template v-slot:item.grupo="{ item }">
@@ -104,7 +104,7 @@
               <v-row>
                 <v-col cols="12">
                   <v-text-field
-                    :rules="[(v) => !!v || 'Campo Obrigatório']"
+                    :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
                     v-model="objectItem.nome_faculdade"
                     label="Nome"
                     hint="Por examplo, anhanguerasantana"
@@ -116,9 +116,9 @@
                 <v-col cols="12" class="mt-n6">
                   <v-text-field
                     required
-                    :rules="[(v) => !!v || 'Campo Obrigatório']"
+                    :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
                     v-model="objectItem.nome_exibicao_faculdade"
-                    label="Nome de Exibição"
+                    label="Nome de ExibiÃ§Ã£o"
                     hint="Por examplo, Anhanguera Santana"
                     dense
                     clearable
@@ -128,7 +128,7 @@
                 <v-col cols="12" class="mt-n6">
                   <v-text-field
                     required
-                    :rules="[(v) => !!v || 'Campo Obrigatório']"
+                    :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
                     v-model="objectItem.sigla"
                     label="Sigla Faculdade"
                     hint="USP, FMU e etc."
@@ -161,12 +161,12 @@
                 </v-col>
                 <v-col cols="12" md="2"> 
                   <v-radio-group
-                    label="Situação"
+                    label="SituaÃ§Ã£o"
                     v-model="objectItem.situacao_faculdade"
                     mandatory
                   >
                     <v-radio label="Visivel" value="1"></v-radio>
-                    <v-radio label="Invisível" value="0"></v-radio>
+                    <v-radio label="InvisÃ­vel" value="0"></v-radio>
                   </v-radio-group>
                 </v-col>
                 <v-col cols="12" md="3">
@@ -187,8 +187,8 @@
                 <v-col cols="12" md="5">
                   <div class="mt-4">
                     <v-alert border="left" dense text type="info">
-                      Ao selecionar o tipo de grupo, este é o formato que
-                      aparecerá no pedido.<br />
+                      Ao selecionar o tipo de grupo, este Ã© o formato que
+                      aparecerÃ¡ no pedido.<br />
                       Tipo 0 - Ex: <b>1N - Brasil</b><br />
                       Tipo 1 - Ex: <b>Turma 125 - USP</b>
                     </v-alert>
@@ -208,7 +208,7 @@
     </v-dialog>
     <v-dialog v-model="dialogExcluir" persistent max-width="600">
       <v-card>
-        <v-card-title class="headline">Atenção!</v-card-title>
+        <v-card-title class="headline">AtenÃ§Ã£o!</v-card-title>
         <v-card-text
           ><span class="text-h5">Deseja realmente excluir esta faculdade?</span
           ><br /><br />
@@ -220,7 +220,7 @@
         <v-divider class="mt-10"></v-divider>
         <v-card-actions>
           <div class="flex-grow-1"></div>
-          <v-btn color="primary" text @click="dialogExcluir = false">Não</v-btn>
+          <v-btn color="primary" text @click="dialogExcluir = false">NÃ£o</v-btn>
           <v-btn color="error" text @click="deleteFaculdade(objectItem)"
             >Excluir</v-btn
           >
@@ -262,12 +262,12 @@ export default {
       { text: "ID", value: "id_faculdade" },
       { text: "Nome", value: "nome_exibicao_faculdade" },
       { text: "Status", value: "status", align: "center" },
-      { text: "Situação", value: "situacao_faculdade", align: "center" },
+      { text: "SituaÃ§Ã£o", value: "situacao_faculdade", align: "center" },
       { text: "Grupo", value: "grupo", sortable: false },
       { text: "Mensagem", value: "mensagem", sortable: false },
       { text: "Imagem", value: "imagem_path", sortable: false },
       {
-        text: "Ação",
+        text: "AÃ§Ã£o",
         value: "acao",
         align: "center",
         sortable: false,
@@ -464,7 +464,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "Situação editada com sucesso!",
+          msg: "SituaÃ§Ã£o editada com sucesso!",
           type: "success",
           time: 3000,
         });

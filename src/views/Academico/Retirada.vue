@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <v-container>
@@ -60,7 +60,7 @@
                   tile
                   class="ma-1"
                   color="grey lighten-1"
-                  >relatório<v-icon class="ml-2" small dark
+                  >relatÃ³rio<v-icon class="ml-2" small dark
                     >fas fa-chart-line</v-icon
                   >
                 </v-btn>
@@ -173,7 +173,7 @@
 
                   <v-list-item-subtitle
                     :class="
-                      item.pagamento.status_pagamento == 'NÃO PAGO'
+                      item.pagamento.status_pagamento == 'NÃƒO PAGO'
                         ? 'red--text'
                         : 'success--text'
                     "
@@ -388,7 +388,7 @@
     </v-dialog>
     <v-dialog persistent v-model="dialogCancelarPagamento" max-width="490">
       <v-card>
-        <v-card-title class="headline">Atenção!</v-card-title>
+        <v-card-title class="headline">AtenÃ§Ã£o!</v-card-title>
         <v-card-text>
           <span class="font-weight-bold">Deseja cancelar este pagamento?</span>
           <br />
@@ -523,7 +523,7 @@ export default {
       {
         name: "acao",
         align: "center",
-        label: "Ação",
+        label: "AÃ§Ã£o",
         sortable: true,
       },
     ],
@@ -537,7 +537,7 @@ export default {
       {
         name: "descri_item",
         align: "center",
-        label: "Descrição",
+        label: "DescriÃ§Ã£o",
         sortable: true,
       },
       {
@@ -608,7 +608,7 @@ export default {
         if (this.error) {
           this.loading = false;
           this.showSnackbar(
-            "Atenção! Ocorreu um erro no servidor!",
+            "AtenÃ§Ã£o! Ocorreu um erro no servidor!",
             "error",
             5000
           );
@@ -616,7 +616,7 @@ export default {
         if (!this.pedidos.length) {
           this.loading = false;
           this.showSnackbar(
-            "Atenção! Não existem pedidos para o CPF informado!",
+            "AtenÃ§Ã£o! NÃ£o existem pedidos para o CPF informado!",
             "warning",
             5000
           );
@@ -625,7 +625,7 @@ export default {
         }
       } else {
         this.showSnackbar(
-          "Atenção! Insira um numero de CPF válido!",
+          "AtenÃ§Ã£o! Insira um numero de CPF vÃ¡lido!",
           "warning",
           3000
         );
@@ -639,21 +639,21 @@ export default {
         this.loading = false;
         if (!this.error) {
           if (!this.aluno) {
-            this.showSnackbar("Aluno Não Encontrado!", "warning", 5000);
+            this.showSnackbar("Aluno NÃ£o Encontrado!", "warning", 5000);
           } else {
             this.loading = false;
             this.dialogAluno = true;
           }
         } else {
           this.showSnackbar(
-            "Atenção! Ocorreu um erro no servidor!",
+            "AtenÃ§Ã£o! Ocorreu um erro no servidor!",
             "error",
             5000
           );
         }
       } else {
         this.showSnackbar(
-          "Atenção! Insira um numero de CPF válido!",
+          "AtenÃ§Ã£o! Insira um numero de CPF vÃ¡lido!",
           "warning",
           3000
         );
@@ -672,7 +672,7 @@ export default {
       if (this.error) {
         this.print = false;
         this.showSnackbar(
-          "Atenção! Ocorreu um erro no servidor!",
+          "AtenÃ§Ã£o! Ocorreu um erro no servidor!",
           "error",
           5000
         );
@@ -693,7 +693,7 @@ export default {
       if (this.error) {
         this.print = false;
         this.showSnackbar(
-          "Atenção! Ocorreu um erro no servidor!",
+          "AtenÃ§Ã£o! Ocorreu um erro no servidor!",
           "error",
           5000
         );
@@ -707,7 +707,7 @@ export default {
       if (this.error) {
         this.loading = false;
         this.showSnackbar(
-          "Atenção! Ocorreu um erro no servidor!",
+          "AtenÃ§Ã£o! Ocorreu um erro no servidor!",
           "error",
           5000
         );
@@ -715,7 +715,7 @@ export default {
       if (!this.pedidos.length) {
         this.loading = false;
         this.showSnackbar(
-          "Atenção! Não existem pedidos retirados!",
+          "AtenÃ§Ã£o! NÃ£o existem pedidos retirados!",
           "warning",
           5000
         );
@@ -730,7 +730,7 @@ export default {
       if (this.error) {
         this.loading = false;
         this.showSnackbar(
-          "Atenção! Ocorreu um erro no servidor!",
+          "AtenÃ§Ã£o! Ocorreu um erro no servidor!",
           "error",
           5000
         );
@@ -738,7 +738,7 @@ export default {
       if (!this.pedidos.length) {
         this.loading = false;
         this.showSnackbar(
-          "Atenção! Não existem pedidos retirados!",
+          "AtenÃ§Ã£o! NÃ£o existem pedidos retirados!",
           "warning",
           5000
         );
@@ -826,7 +826,7 @@ export default {
         this.$XLSX.writeFile(wb, "pedidos_" + tipo + ".xlsx"); // name of the file is 'book.xlsx'
       } else {
         this.showSnackbar(
-          "Atenção! Não existem pedidos retirados!",
+          "AtenÃ§Ã£o! NÃ£o existem pedidos retirados!",
           "warning",
           5000
         );

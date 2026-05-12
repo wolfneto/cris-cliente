@@ -1,4 +1,4 @@
-import Produtos from './Produtos';
+﻿import Produtos from './Produtos';
 import Categorias from './Categorias';
 import Relatorios from './Relatorios';
 import Resgates from './Resgates';
@@ -21,7 +21,7 @@ export default [{
     },
     {
         path: '/fidelidade/relatorios',
-        name: 'Fidelidade Relatórios',
+        name: 'Fidelidade RelatÃ³rios',
         component: Relatorios,
         meta: {
             requiresAuth: true

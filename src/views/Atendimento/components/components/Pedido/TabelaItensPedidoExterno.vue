@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div ref="tabelaitenspedido" tabindex="0">
     <q-virtual-scroll
       ref="tabela"
@@ -158,7 +158,7 @@
               ></v-text-field>
             </v-col>
             <v-col cols="12" md="6">
-              <label>Resetar % unitário</label>
+              <label>Resetar % unitÃ¡rio</label>
               <v-btn
                 :disabled="podeDesconto"
                 class="mt-n2 white--text"
@@ -207,13 +207,13 @@ export default {
           sortable: false,
         },
         {
-          name: "CÓDIGO",
+          name: "CÃ“DIGO",
           prop: "codigo",
           align: "center",
           sortable: true,
         },
         {
-          name: "DESCRIÇÃO",
+          name: "DESCRIÃ‡ÃƒO",
           prop: "descricao",
           align: "center",
           sortable: true,
@@ -466,7 +466,7 @@ export default {
       this.calcular_itens_pedido();
     },
 
-    // em manutenção
+    // em manutenÃ§Ã£o
     editItem(index) {
       //let item = this.itens[this.selected_item];
       // let item = this.itens[index];

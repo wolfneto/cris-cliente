@@ -1,4 +1,4 @@
-<template>
+﻿<template>
 	<v-container>
 		<v-data-table
 			:no-data-text="'Nenhuma categoria encontrado'"
@@ -32,10 +32,10 @@
 											<v-col cols="12" md="12">
 												<v-text-field
 													counter
-													:rules=" [v => !!v || 'Descrição Obrigatória!', v => v.length <= 45 || 'Descrição Obrigatória!' ] "
+													:rules=" [v => !!v || 'DescriÃ§Ã£o ObrigatÃ³ria!', v => v.length <= 45 || 'DescriÃ§Ã£o ObrigatÃ³ria!' ] "
 													maxlength="45"
 													v-model="editedItem.nome_categoria"
-													label="Descrição"
+													label="DescriÃ§Ã£o"
                                                     v-on:keydown.enter.prevent="save()"
 												></v-text-field>
 											</v-col>
@@ -85,8 +85,8 @@ export default {
 		dialog: false,
 		headers: [
             { text: "Id", value: "id" },
-            { text: "Descrição", value: "nome_categoria" },
-            { text: "Ação", value: "acao" }
+            { text: "DescriÃ§Ã£o", value: "nome_categoria" },
+            { text: "AÃ§Ã£o", value: "acao" }
         ],
 		editedIndex: -1,
 		editedItem: {
@@ -175,7 +175,7 @@ export default {
 			this.dialog = true;
 		},
 		deleteItem(item) {
-            let check = confirm("Você tem certeza que deseja deletar esta categoria?");
+            let check = confirm("VocÃª tem certeza que deseja deletar esta categoria?");
             console.log(check);
 			if (check == true) {
                 this.loading = true;

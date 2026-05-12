@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <div>
       <div>
@@ -6,13 +6,13 @@
           <v-col class="text-left" cols="6">
             <div>
               <span class="font-weight-bold" style="font-size: 1.5rem"
-                >ORÇAMENTO {{pedido_imprimir.id == false ? '':pedido_imprimir.id}}</span
+                >ORÃ‡AMENTO {{pedido_imprimir.id == false ? '':pedido_imprimir.id}}</span
               >
             </div>
           </v-col>
           <v-col class="text-left" cols="3">
             <span class="font-weight-bold" style="font-size: 1.5rem"
-              >{{pedido_imprimir.id == false ? 'EM ANÁLISE':'PENDENTE'}}</span
+              >{{pedido_imprimir.id == false ? 'EM ANÃLISE':'PENDENTE'}}</span
             >
           </v-col>
           <v-col class="text-right" cols="3"> </v-col>
@@ -25,7 +25,7 @@
               {{ pedido_imprimir.cliente.razao_social }}</span
             >
           </v-col>
-          <v-col class="text-left no-padding-up-down" cols="1">Endereço:</v-col>
+          <v-col class="text-left no-padding-up-down" cols="1">EndereÃ§o:</v-col>
           <v-col class="text-left no-padding-up-down" cols="5">
             <span class="font-weight-bold"
               >{{ pedido_imprimir.cliente.cliente_enderecos.logradouro }},

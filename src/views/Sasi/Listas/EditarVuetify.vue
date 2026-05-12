@@ -1,4 +1,4 @@
-<template>
+﻿<template>
 	<v-container>
 		<v-card style="margin-bottom: 90px !important;">
 			<v-card-title>
@@ -15,7 +15,7 @@
 										v-model="descricao"
 										v-on:keyup="findProduto()"
 										prepend-icon="fa-edit"
-										label="Buscar por descrição"
+										label="Buscar por descriÃ§Ã£o"
 										single-line
 										hide-details
 									></v-text-field>
@@ -24,7 +24,7 @@
 									<v-text-field
 										v-model="codigo"
 										prepend-icon="fa-search"
-										label="Buscar por código"
+										label="Buscar por cÃ³digo"
 										single-line
 										hide-details
 									></v-text-field>
@@ -77,12 +77,12 @@
 							@keypress.enter="getProduto($event.target.value, item)"
 							@keyup="$event.target.value.length === 0 ? item.disponivel_item = 0 : ''"
 							:ref="item.id.toString() + 'input-codigo'"
-							label="Código"
+							label="CÃ³digo"
 							class="label"
 							:value="item.cod"
 						></v-text-field>
 						<v-text-field
-							label="Código Marca 2"
+							label="CÃ³digo Marca 2"
 							class="label"
 							background-color="blue lighten-4"
 							v-if="item.marcaOpcional"
@@ -100,17 +100,17 @@
 				<template v-slot:item.descri_item="{item}">
 					<div v-if="!item.titulo">
 						<v-textarea
-							label="Descrição Sistema"
+							label="DescriÃ§Ã£o Sistema"
 							class="label"
 							auto-grow
 							:rows="1"
 							v-model="item.descri_item"
 						></v-textarea>
-						<v-textarea label="Descrição Site" class="label" auto-grow :rows="1" v-model="item.descricao"></v-textarea>
+						<v-textarea label="DescriÃ§Ã£o Site" class="label" auto-grow :rows="1" v-model="item.descricao"></v-textarea>
 						<v-textarea
 							background-color="blue lighten-4"
 							v-if="item.marcaOpcional"
-							label="Descrição Marca 2"
+							label="DescriÃ§Ã£o Marca 2"
 							class="label"
 							auto-grow
 							:rows="1"
@@ -228,7 +228,7 @@
 									item-text="codigo"
 									item-value="codigo"
 									small-chips
-									label="Código"
+									label="CÃ³digo"
 									class="label mt-2 ml-1 mr-1 input-qtd-produtos"
 									multiple
 									:search-input.sync="searchLuva"
@@ -276,14 +276,14 @@
 				<template v-slot:item.disponivel_item="{item}">
 					<v-switch v-if="!item.titulo" dense v-model="item.disponivel_item" color="primary">
 						<template v-slot:label>
-							<span class="primary--text" v-if="item.disponivel_item">Disponível: SIM</span>
-							<span class="error--text" v-else>Disponível: NÃO</span>
+							<span class="primary--text" v-if="item.disponivel_item">DisponÃ­vel: SIM</span>
+							<span class="error--text" v-else>DisponÃ­vel: NÃƒO</span>
 						</template>
 					</v-switch>
 					<v-switch dense v-model="item.opcional_item" color="primary">
 						<template v-slot:label>
 							<span class="primary--text" v-if="item.opcional_item">Opcional: SIM</span>
-							<span class="error--text" v-else>Opcional: NÃO</span>
+							<span class="error--text" v-else>Opcional: NÃƒO</span>
 						</template>
 					</v-switch>
 					<v-checkbox v-model="item.trava_qtd_item" label="Travar Qtd"></v-checkbox>
@@ -310,22 +310,22 @@
 							</v-list-item>
 							<v-list-item v-if="!item.titulo && !item.luva && !item.kit">
 								<v-list-item-title>
-									<v-btn @click="item.kit = true" text color="warning" small>è um KIT</v-btn>
+									<v-btn @click="item.kit = true" text color="warning" small>Ã¨ um KIT</v-btn>
 								</v-list-item-title>
 							</v-list-item>
 							<v-list-item v-if="item.kit">
 								<v-list-item-title>
-									<v-btn @click="item.kit = false" text color="warning" small>Não è um KIT</v-btn>
+									<v-btn @click="item.kit = false" text color="warning" small>NÃ£o Ã¨ um KIT</v-btn>
 								</v-list-item-title>
 							</v-list-item>
 							<v-list-item v-if="!item.titulo && !item.luva && !item.marcaOpcional && !item.kit">
 								<v-list-item-title>
-									<v-btn @click="item.luva = true" text color="success" small>è uma LUVA</v-btn>
+									<v-btn @click="item.luva = true" text color="success" small>Ã¨ uma LUVA</v-btn>
 								</v-list-item-title>
 							</v-list-item>
 							<v-list-item v-if="item.luva">
 								<v-list-item-title class="primary--text">
-									<v-btn @click="item.luva = false" text color="success" small>Não è uma LUVA</v-btn>
+									<v-btn @click="item.luva = false" text color="success" small>NÃ£o Ã¨ uma LUVA</v-btn>
 								</v-list-item-title>
 							</v-list-item>
 							<v-list-item v-if="!item.titulo && !item.luva && !item.marcaOpcional && !item.kit">
@@ -335,7 +335,7 @@
 							</v-list-item>
 							<v-list-item v-if="item.titulo">
 								<v-list-item-title class="primary--text">
-									<v-btn @click="item.titulo = false" text color="primary" small>Não é Titulo</v-btn>
+									<v-btn @click="item.titulo = false" text color="primary" small>NÃ£o Ã© Titulo</v-btn>
 								</v-list-item-title>
 							</v-list-item>
 							<v-list-item>
@@ -406,7 +406,7 @@
 		<v-dialog v-model="itemRepetidoDialog" persistent max-width="290">
 			<v-card>
 				<v-card-title class="headline">Item Repetido</v-card-title>
-				<v-card-text>O Item {{objectItem.codigo}} - {{objectItem.descricao}} já se encontra na lista, o que deseja fazer?</v-card-text>
+				<v-card-text>O Item {{objectItem.codigo}} - {{objectItem.descricao}} jÃ¡ se encontra na lista, o que deseja fazer?</v-card-text>
 				<v-card-actions>
 					<v-spacer></v-spacer>
 					<v-btn color="error" text @click="itemRepetidoDialog = false">Voltar</v-btn>
@@ -441,16 +441,16 @@ export default {
 		search: "",
 		itens: [],
 		headersProdutos: [
-			{ text: "Código", value: "codigo", sortable: true },
+			{ text: "CÃ³digo", value: "codigo", sortable: true },
 			{ text: "Saldo", value: "saldo", sortable: true },
-			{ text: "Descrição", value: "descricao", sortable: true },
+			{ text: "DescriÃ§Ã£o", value: "descricao", sortable: true },
 			{ text: "Marca", value: "marca", sortable: true },
 			{ text: "Valor", value: "valor", sortable: true },
 			{ text: "Qtd", value: "qtd", sortable: false, width: 100 }
 		],
 		headers: [
 			{
-				text: "Código",
+				text: "CÃ³digo",
 				value: "cod",
 				align: "center",
 				sortable: true,
@@ -463,7 +463,7 @@ export default {
 				sortable: false,
 				width: 80
 			},
-			{ text: "Descrição", value: "descri_item", sortable: false, width: 300 },
+			{ text: "DescriÃ§Ã£o", value: "descri_item", sortable: false, width: 300 },
 			{
 				text: "Valor",
 				value: "valor",
@@ -480,7 +480,7 @@ export default {
 				sortable: false
 			},
 			{
-				text: "Ação",
+				text: "AÃ§Ã£o",
 				align: "center",
 				value: "acao",
 				sortable: false,
@@ -548,7 +548,7 @@ export default {
 		},
 		checkLimiteValorSite(valor_digitado, item) {
 			valor_digitado = parseFloat(valor_digitado.replace(",", "."));
-			//100   *   (10   ÷   100)
+			//100   *   (10   Ã·   100)
 			let maximo =
 				parseFloat(item.valor) * (this.permissoes.margem_preco / 100) +
 				parseFloat(item.valor);
@@ -659,12 +659,12 @@ export default {
 		},
 		checkEditValue(item, data) {
 			const options = {
-				title: "Atenção",
+				title: "AtenÃ§Ã£o",
 				size: "sm",
 				okLabel: "Usar Valor Sistema",
 				cancelLabel: "Manter Valor"
 			};
-			this.$dialogs.confirm("O que você deseja fazer?", options).then(res => {
+			this.$dialogs.confirm("O que vocÃª deseja fazer?", options).then(res => {
 				if (res.ok) {
 					item.valor_site = data.valor;
 					item.valor = data.valor;
@@ -725,7 +725,7 @@ export default {
 					.then(res => {
 						if (res.data === false) {
 							//item nao encontrado
-							this.showSnakerbar("Produto Não Encontrado!", "warning", 2000);
+							this.showSnakerbar("Produto NÃ£o Encontrado!", "warning", 2000);
 						} else {
 							item.cod = "";
 							item.descricao = "";

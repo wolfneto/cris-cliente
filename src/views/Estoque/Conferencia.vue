@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card class="mx-auto" max-width="1000" height="650" elevation="5">
       <v-row>
@@ -120,11 +120,11 @@
     </v-card>
     <v-dialog v-model="dialogCancelarConferencia" max-width="460" persistent>
       <v-card>
-        <v-card-title class="body-3">Deseja realmente cancelar está conferência?</v-card-title>
+        <v-card-title class="body-3">Deseja realmente cancelar estÃ¡ conferÃªncia?</v-card-title>
         <v-card-text>
           <span
             class="subtitle-1 font-weight-medium"
-          >A conferência será cancelada e todos itens conferidos não serão salvos no pedido!</span>
+          >A conferÃªncia serÃ¡ cancelada e todos itens conferidos nÃ£o serÃ£o salvos no pedido!</span>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -136,9 +136,9 @@
 
     <v-dialog v-model="dialogPausarConferencia" max-width="460" persistent>
       <v-card>
-        <v-card-title class="body-3">Deseja pausar está conferência?</v-card-title>
+        <v-card-title class="body-3">Deseja pausar estÃ¡ conferÃªncia?</v-card-title>
         <v-card-text>
-          <span class="subtitle-1 font-weight-medium">O itens conferidos serão salvos no pedido!</span>
+          <span class="subtitle-1 font-weight-medium">O itens conferidos serÃ£o salvos no pedido!</span>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -150,9 +150,9 @@
 
     <v-dialog v-model="dialogEncerrarConferencia" max-width="460" persistent>
       <v-card>
-        <v-card-title class="body-3">Deseja encerrar está conferência?</v-card-title>
+        <v-card-title class="body-3">Deseja encerrar estÃ¡ conferÃªncia?</v-card-title>
         <v-card-text>
-          <span class="subtitle-1 font-weight-medium">O itens conferidos serão salvos no pedido!</span>
+          <span class="subtitle-1 font-weight-medium">O itens conferidos serÃ£o salvos no pedido!</span>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -194,7 +194,7 @@
     </v-dialog>
     <v-dialog v-model="dialogItemNaoPertencePedido" max-width="380" persistent>
       <v-card>
-        <v-card-title class="body-3">Este item não pertence ao Pedido!</v-card-title>
+        <v-card-title class="body-3">Este item nÃ£o pertence ao Pedido!</v-card-title>
         <div class="pa-4 text-center">
           <v-btn color="primary" width="120px" @click="nextTickCod()">Ok</v-btn>
         </div>
@@ -231,7 +231,7 @@ export default {
         name: "descricao",
         prop: "descricao",
         align: "center",
-        label: "Descrição",
+        label: "DescriÃ§Ã£o",
         field: "descricao",
         sortable: true
       },
@@ -247,7 +247,7 @@ export default {
         name: "acao",
         prop: "acao",
         align: "center",
-        label: "Ação",
+        label: "AÃ§Ã£o",
         field: "acao",
         sortable: true
       }

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-row class="d-flex flex-row justify-center">
       <v-col cols="12" md="4">
@@ -6,7 +6,7 @@
         <v-text-field
           @keyup.enter="buscarPedidos($event.target.value, 'cliente')"
           class="input-uppercase"
-          label="Código"
+          label="CÃ³digo"
           required
         ></v-text-field>
       </v-col>
@@ -16,7 +16,7 @@
           v-mask="'######A'"
           class="input-uppercase"
           @keyup.enter="buscarPedidos($event.target.value, 'pedido')"
-          label="Número do Pedido"
+          label="NÃºmero do Pedido"
           required
         ></v-text-field>
       </v-col>
@@ -26,7 +26,7 @@
         <v-col cols="12" md="1">
           <v-text-field
             v-model="pedido.yCodCli"
-            label="Código"
+            label="CÃ³digo"
             readonly
             filled
           ></v-text-field>
@@ -63,7 +63,7 @@
             :success="pedido.yStatus == 4 ? true : false"
             :error="pedido.yStatus == 4 ? false : true"
             :color="pedido.yStatus == 4 ? 'primary' : 'error'"
-            :suffix="pedido.yStatus == 4 ? 'FATURADO' : 'NÃO FATURADO'"
+            :suffix="pedido.yStatus == 4 ? 'FATURADO' : 'NÃƒO FATURADO'"
             v-model="pedido.yNumero"
             label="Pedido"
             readonly
@@ -108,7 +108,7 @@
             rows="3"
             outlined
             counter
-            label="Observações do Boleto"
+            label="ObservaÃ§Ãµes do Boleto"
             :rules="[(va) => va.length <= 800 || 'Maximo 800 caracteres']"
             v-model="descricaoBoleto"
           ></v-textarea>
@@ -125,7 +125,7 @@
             rows="3"
             outlined
             counter
-            label="Descrição P/ Painel Iugu"
+            label="DescriÃ§Ã£o P/ Painel Iugu"
             :rules="[(va) => va.length <= 800 || 'Maximo 800 caracteres']"
             v-model="descricaoIugu"
           ></v-textarea>
@@ -156,7 +156,7 @@
               <v-col cols="12" md="1">
                 <v-text-field
                   v-model="cliente.yCodCli"
-                  label="Código"
+                  label="CÃ³digo"
                   readonly
                   filled
                 ></v-text-field>
@@ -232,7 +232,7 @@
                   rows="3"
                   outlined
                   counter
-                  label="Observações do Boleto"
+                  label="ObservaÃ§Ãµes do Boleto"
                   :rules="[(v) => v.length <= 800 || 'Maximo 800 caracteres']"
                   v-model="descricaoBoleto"
                 ></v-textarea>
@@ -246,7 +246,7 @@
                   rows="3"
                   outlined
                   counter
-                  label="Descrição P/ Painel Iugu"
+                  label="DescriÃ§Ã£o P/ Painel Iugu"
                   :rules="[(v) => v.length <= 800 || 'Maximo 800 caracteres']"
                   v-model="descricaoIugu"
                 ></v-textarea>
@@ -258,7 +258,7 @@
           <v-chip v-if="item.yStatus == 4" color="success" dark
             >FATURADO</v-chip
           >
-          <v-chip v-else color="error" dark>NÃO FATURADO</v-chip>
+          <v-chip v-else color="error" dark>NÃƒO FATURADO</v-chip>
         </template>
         <template v-slot:item.yValTot="{ item }">
           <div>
@@ -270,12 +270,12 @@
 
     <!-- <v-dialog v-model="dialogReserva" persistent max-width="600">
       <v-card>
-        <v-card-title class="headline error--text">ATENÇÃO</v-card-title>
+        <v-card-title class="headline error--text">ATENÃ‡ÃƒO</v-card-title>
         <v-card-text>
          <div class="title">
-           Você está criando um link em que sera feita uma <br> <span class="error--text">RESERVA</span> no cartão do cliente e <span class="error--text">NÃO UMA COBRANÇA</span>
+           VocÃª estÃ¡ criando um link em que sera feita uma <br> <span class="error--text">RESERVA</span> no cartÃ£o do cliente e <span class="error--text">NÃƒO UMA COBRANÃ‡A</span>
          <br>
-         Você tem certeza disso?
+         VocÃª tem certeza disso?
          </div>
         </v-card-text>
         <v-card-actions>
@@ -586,12 +586,12 @@ export default {
             
           } else {
             this.disabledBtn = true;
-            this.showSnackbar("Pedido Não Encontrado!", "warning");
+            this.showSnackbar("Pedido NÃ£o Encontrado!", "warning");
           }
           this.loading = false;
         } else {
           this.pedido = {};
-          this.showSnackbar("Número do Pedido Inválido", "warning");
+          this.showSnackbar("NÃºmero do Pedido InvÃ¡lido", "warning");
           this.disabledBtn = true;
         }
       } else {

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card class="mx-auto mt-10" max-width="1000" height="650" elevation="5">
       <v-row class="ma-auto">
@@ -23,8 +23,8 @@
           </div>
           <div class="ma-4 mt-4">
             <v-radio-group v-model="radios" :mandatory="true" dense>
-              <v-radio label="Impressão 1" @change="radio1 = true ; radio2 = false"></v-radio>
-              <v-radio label="Impressão 2" @change="radio2 = true ; radio1 = false"></v-radio>
+              <v-radio label="ImpressÃ£o 1" @change="radio1 = true ; radio2 = false"></v-radio>
+              <v-radio label="ImpressÃ£o 2" @change="radio2 = true ; radio1 = false"></v-radio>
             </v-radio-group>
           </div>
 

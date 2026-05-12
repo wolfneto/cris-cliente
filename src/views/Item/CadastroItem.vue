@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card max-width="1500" height="650" elevation="2">
       <v-row class="ma-2 mt-10">
@@ -35,7 +35,7 @@
               <v-col cols="12" md="6">
                 <v-text-field
                   class="uppercase"
-                  label="Código"
+                  label="CÃ³digo"
                   ref="codigo"
                   v-model="item.codigo"
                   :rules="[regras]"
@@ -49,7 +49,7 @@
               <v-col cols="12" md="6">
                 <v-text-field
                   class="uppercase"
-                  label="Código Fornecedor"
+                  label="CÃ³digo Fornecedor"
                   v-model="item.codigo_fornecedor"
                   :rules="[regras]"
                   dense
@@ -73,7 +73,7 @@
               <v-col cols="12" md="12">
                 <v-text-field
                   class="uppercase"
-                  label="Descrição"
+                  label="DescriÃ§Ã£o"
                   v-model="item.descricao"
                   :rules="[regras]"
                   dense
@@ -116,7 +116,7 @@
               <v-col cols="12" md="6">
                 <v-text-field
                   class="uppercase"
-                  label="Código de Barras"
+                  label="CÃ³digo de Barras"
                   v-model="item.codigo_barras"
                   :rules="[regras]"
                   dense
@@ -132,7 +132,7 @@
                   item-text="descricao"
                   :rules="[select]"
                   return-object
-                  label="Endereço"
+                  label="EndereÃ§o"
                   dense
                 ></v-autocomplete>               
               </v-col>
@@ -144,7 +144,7 @@
                   item-text="descricao"
                   :rules="[select]"
                   return-object
-                  label="Armazém"
+                  label="ArmazÃ©m"
                   dense
                 ></v-autocomplete>                
               </v-col>
@@ -179,7 +179,7 @@ export default {
     getFornecedor: null,
     getEndereco: null,
     getArmazem: null,
-    regras: val => (val || "").length >= 4 || "*Campo obrigatório",
+    regras: val => (val || "").length >= 4 || "*Campo obrigatÃ³rio",
     select: v => !!v || "Item is required",
     typeSnackbar: "",
     timeSnackbar: 2000,

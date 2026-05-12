@@ -1,4 +1,4 @@
-<template>
+﻿<template>
 	<!-- expand-on-hover -->
 	<v-navigation-drawer :mini-variant.sync="mini" permanent app>
 		<template v-slot:prepend>

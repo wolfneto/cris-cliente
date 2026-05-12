@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <Tabs></Tabs>
     <v-row justify="center" class="custom-row">
@@ -21,10 +21,10 @@
           v-model="selectedPosGraduacao"
           @change="onChangeGraduacao()"
           :items="[
-            { text: 'Graduação', value: 0 },
-            { text: 'Especialização', value: 1 },
+            { text: 'GraduaÃ§Ã£o', value: 0 },
+            { text: 'EspecializaÃ§Ã£o', value: 1 },
           ]"
-          label="Graduação ou Especialização"
+          label="GraduaÃ§Ã£o ou EspecializaÃ§Ã£o"
         ></v-select>
       </v-col>
     </v-row>
@@ -74,7 +74,7 @@
                     <v-row class="custom-row">
                       <v-col cols="12">
                         <v-text-field
-                          :rules="[(v) => !!v || 'Campo Obrigatório']"
+                          :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
                           v-model="objectItem.titulo_aviso"
                           label="Titulo"
                         ></v-text-field>
@@ -85,7 +85,7 @@
                         <v-textarea
                           :rows="4"
                           no-resize
-                          :rules="[(v) => !!v || 'Campo Obrigatório']"
+                          :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
                           v-model="objectItem.mensagem_aviso"
                           label="Mensagem"
                         ></v-textarea>
@@ -115,11 +115,11 @@
     </v-data-table>
     <v-dialog v-model="dialogExcluir" persistent max-width="300">
       <v-card>
-        <v-card-title class="headline">Atenção!</v-card-title>
+        <v-card-title class="headline">AtenÃ§Ã£o!</v-card-title>
         <v-card-text>Deseja realmente excluir o aviso?</v-card-text>
         <v-card-actions>
           <div class="flex-grow-1"></div>
-          <v-btn color="primary" text @click="dialogExcluir = false">Não</v-btn>
+          <v-btn color="primary" text @click="dialogExcluir = false">NÃ£o</v-btn>
           <v-btn color="error" text @click="deleteAviso(objectItem)"
             >Excluir</v-btn
           >
@@ -163,7 +163,7 @@ export default {
       { text: "Titulo", value: "titulo_aviso" },
       { text: "Mensagem", value: "mensagem_aviso" },
       {
-        text: "Ação",
+        text: "AÃ§Ã£o",
         value: "acao",
         align: "center",
         sortable: false,

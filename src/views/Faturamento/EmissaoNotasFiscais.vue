@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card class="mx-auto" max-width="1000" height="650" elevation="5">
       <v-row>
@@ -7,7 +7,7 @@
             v-if="!divEmissaoFaturamento"
             class="ml-4 uppercase"
             append-icon="fa-search"
-            label="Número pedido"
+            label="NÃºmero pedido"
             v-mask="'######A'"
             ref="numeroPedido"
             v-model="numeroPedido"
@@ -20,7 +20,7 @@
             v-else
             class="ml-4 uppercase"
             append-icon="fa-search"
-            label="Número pedido"
+            label="NÃºmero pedido"
             v-mask="'######A'"
             v-model="numeroPedido"
             filled
@@ -45,7 +45,7 @@
                 </v-col>
                 <v-col cols="12" md="4">
                   <v-select
-                    :items="['Emitido', 'Separando', 'Separado', 'Conferindo', 'Pausado', 'Conferido', 'Faturado', 'Expedido', 'Entregue', 'Saldo', 'Cancelado', 'Devolução', 'Denegado', 'Atrasado', 'Separado Parcial', 'Operacional']"
+                    :items="['Emitido', 'Separando', 'Separado', 'Conferindo', 'Pausado', 'Conferido', 'Faturado', 'Expedido', 'Entregue', 'Saldo', 'Cancelado', 'DevoluÃ§Ã£o', 'Denegado', 'Atrasado', 'Separado Parcial', 'Operacional']"
                      background-color="grey lighten-2"                   
                     required
                   ></v-select>
@@ -57,21 +57,21 @@
                 </v-col>
                 <v-col cols="12" md="4">
                   <v-select
-                    :items="['BOLETO BANCÁRIO', 'CHEQUE', 'CRÉDITO CONTA', 'DEPÓSITO', 'DINHEIRO', 'ELO', 'MASTER', 'MENSALISTA', 'VISA']"
+                    :items="['BOLETO BANCÃRIO', 'CHEQUE', 'CRÃ‰DITO CONTA', 'DEPÃ“SITO', 'DINHEIRO', 'ELO', 'MASTER', 'MENSALISTA', 'VISA']"
                      background-color="grey lighten-2"
                   ></v-select>
                 </v-col>
               </v-row>
               <v-row class="mt-n10" align="center" justify="center">
                 <v-col cols="12" md="4">
-                  <v-subheader>Natureza de Operação</v-subheader>
+                  <v-subheader>Natureza de OperaÃ§Ã£o</v-subheader>
                 </v-col>
                 <v-col cols="12" md="4">
                   <v-select
-                    :items="['*VENDA (ESTADUAL)', '*VENDA (INTERESTADUAL)', 'COMPRA (CONCORRÊNCIA)', 'COMPRA (NOTA)', 'DEVOLUÇÃO DE MERCADORIAS', 'DEVOLUÇÃO DE MERCADORIAS', 'DEVOLUÇÃO (ESTADUAL)',
-                 'DEVOLUÇÃO (INTERESTADUAL)', 'DEVOLUÇÃO (INTERESTADUAL)', 'DEVOLUÇÃO DE DEMONSTRAÇÃO', 'REMESSA DE MERCADORIA PARA CONSERTO(ESTADUAL)', 'REMESSA DE MERCADORIA PARA CONSERTO(ESTADUAL)',
-                  'SIMPLES REMESSA(ESTADUAL)', 'TROCA', '*VENDA (INTERESTADUAL)', '*VENDA CONTRIBUINTE (INTERESTADUAL)', 'DEVOLUÇÃO (INTERESTADUAL)', 'REMESSA MERCADORIA PARA CONSERTO (INTERESTADUAL)', 
-                  'DEVOLUÇÃO (INTERESTADUAL)', 'SIMPLES REMESSA (INTERESTADUAL)', 'TROCA (INTERESTADUAL)', 'ESTORNO ENTREGA FUTURA (INTERESTADUAL)' ]"
+                    :items="['*VENDA (ESTADUAL)', '*VENDA (INTERESTADUAL)', 'COMPRA (CONCORRÃŠNCIA)', 'COMPRA (NOTA)', 'DEVOLUÃ‡ÃƒO DE MERCADORIAS', 'DEVOLUÃ‡ÃƒO DE MERCADORIAS', 'DEVOLUÃ‡ÃƒO (ESTADUAL)',
+                 'DEVOLUÃ‡ÃƒO (INTERESTADUAL)', 'DEVOLUÃ‡ÃƒO (INTERESTADUAL)', 'DEVOLUÃ‡ÃƒO DE DEMONSTRAÃ‡ÃƒO', 'REMESSA DE MERCADORIA PARA CONSERTO(ESTADUAL)', 'REMESSA DE MERCADORIA PARA CONSERTO(ESTADUAL)',
+                  'SIMPLES REMESSA(ESTADUAL)', 'TROCA', '*VENDA (INTERESTADUAL)', '*VENDA CONTRIBUINTE (INTERESTADUAL)', 'DEVOLUÃ‡ÃƒO (INTERESTADUAL)', 'REMESSA MERCADORIA PARA CONSERTO (INTERESTADUAL)', 
+                  'DEVOLUÃ‡ÃƒO (INTERESTADUAL)', 'SIMPLES REMESSA (INTERESTADUAL)', 'TROCA (INTERESTADUAL)', 'ESTORNO ENTREGA FUTURA (INTERESTADUAL)' ]"
                    background-color="grey lighten-2"
                   ></v-select>
                 </v-col>
@@ -120,7 +120,7 @@
                     class="ma-4"
                     background-color="grey lighten-2"
                     filled
-                    label="Observações"
+                    label="ObservaÃ§Ãµes"
                     rows="4"
                     row-height="30"
                     readonly
@@ -134,11 +134,11 @@
     </v-card>
     <v-dialog v-model="dialogCancelarFaturamento" max-width="500" persistent>
       <v-card>
-        <v-card-title class="body-3">Deseja realmente cancelar está Faturamento?</v-card-title>
+        <v-card-title class="body-3">Deseja realmente cancelar estÃ¡ Faturamento?</v-card-title>
         <v-card-text>
           <span
             class="subtitle-1 font-weight-medium"
-          >O faturamento será cancelado e os dados não serão salvos!</span>
+          >O faturamento serÃ¡ cancelado e os dados nÃ£o serÃ£o salvos!</span>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -151,7 +151,7 @@
       <v-card>
         <v-card-title class="body-3">Salvar Faturamento?</v-card-title>
         <v-card-text>
-          <span class="subtitle-1 font-weight-medium">Os dados do faturamento serão salvos!</span>
+          <span class="subtitle-1 font-weight-medium">Os dados do faturamento serÃ£o salvos!</span>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -166,7 +166,7 @@
         <v-card-text>
           <span
             class="subtitle-1 font-weight-medium"
-          >Após confirmar este faturamento não será mais possível alterá-lo!</span>
+          >ApÃ³s confirmar este faturamento nÃ£o serÃ¡ mais possÃ­vel alterÃ¡-lo!</span>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>

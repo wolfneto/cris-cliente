@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <div v-if="!proximaTela">
       <v-row justify="center" class="custom-row">
@@ -22,11 +22,11 @@
             v-model="selectedPosGraduacao"
             @change="onChangeGraduacao()"
             :items="[
-              { text: 'GRADUAÇÃO', value: 0 },
-              { text: 'ESPECIALIZAÇÃO', value: 1 },
+              { text: 'GRADUAÃ‡ÃƒO', value: 0 },
+              { text: 'ESPECIALIZAÃ‡ÃƒO', value: 1 },
             ]"
             class="text-uppercase"
-            label="Graduação ou Especialização"
+            label="GraduaÃ§Ã£o ou EspecializaÃ§Ã£o"
           ></v-select>
         </v-col>
       </v-row>
@@ -54,14 +54,14 @@
       </v-row>
       <v-row justify="center" class="custom-row">
         <v-col align-self="start" class="text-center" cols="8">
-          <v-btn color="success" @click="avancar()">Avançar</v-btn>
+          <v-btn color="success" @click="avancar()">AvanÃ§ar</v-btn>
         </v-col>
       </v-row>
 
       <v-row>
         <v-col cols="12">
           <div v-if="this.allLocalList.length > 0" class="ma-3 text-center">
-            <h4>Listas Não Salvas</h4>
+            <h4>Listas NÃ£o Salvas</h4>
 
             <div class="mt-3" v-for="lista in allLocalList" :key="lista.key">
               <v-row>
@@ -103,7 +103,7 @@
                       v-model="descricao"
                       v-on:keyup="findProduto()"
                       prepend-icon="fa-edit"
-                      label="Buscar por descrição"
+                      label="Buscar por descriÃ§Ã£o"
                       single-line
                       hide-details
                     ></v-text-field>
@@ -113,7 +113,7 @@
                       v-model="codigo"
                       v-on:keyup="findProdutoByCod()"
                       prepend-icon="fa-search"
-                      label="Buscar por código"
+                      label="Buscar por cÃ³digo"
                       single-line
                       hide-details
                     ></v-text-field>
@@ -187,9 +187,9 @@
         >
           <thead>
             <tr class="text-center">
-              <th style="width: 14%" scope="col">Código</th>
+              <th style="width: 14%" scope="col">CÃ³digo</th>
               <th style="width: 5%" scope="col">Qtd</th>
-              <th style="width: 33%" scope="col">Descrição</th>
+              <th style="width: 33%" scope="col">DescriÃ§Ã£o</th>
               <th
                 v-if="permissoes.ver_preco == 1"
                 style="width: 12%"
@@ -218,12 +218,12 @@
               >
                 <v-card>
                   <v-card-title>
-                    <span class="headline">Senha Obrigatória</span>
+                    <span class="headline">Senha ObrigatÃ³ria</span>
                   </v-card-title>
                   <v-card-text>
                     <v-container>
                       <v-row justify="center">
-                        <b>Entre com sua senha de confirmação.</b>
+                        <b>Entre com sua senha de confirmaÃ§Ã£o.</b>
                       </v-row>
                       <v-row justify="center">
                         <v-col cols="8">
@@ -246,7 +246,7 @@
                       >Cancelar</v-btn
                     >
                     <v-btn class="success" @click="checkSenhaUsuario(item)"
-                      >Avançar</v-btn
+                      >AvanÃ§ar</v-btn
                     >
                   </v-card-actions>
                 </v-card>
@@ -372,11 +372,11 @@
                 </div>
 
                 <div v-else>
-                  <b>Descrição Sistema</b>
+                  <b>DescriÃ§Ã£o Sistema</b>
                   <br />
                   <div>{{ item.descricao }}</div>
                   <hr />
-                  <b>Descrição Site</b>
+                  <b>DescriÃ§Ã£o Site</b>
                   <br />
                   <div
                     class="border border-dark text-uppercase"
@@ -389,7 +389,7 @@
 
                   <div v-if="item.marcaOpcional">
                     <hr />
-                    <b>Descrição Marca 2</b>
+                    <b>DescriÃ§Ã£o Marca 2</b>
                     <br />
                     <div class="primary white--text">
                       {{ item.descricaoMarcaOpcional }}
@@ -422,7 +422,7 @@
                             @input="row.descricao = $event.target.value"
                             class="form-control bg-warning"
                             rows="2"
-                            placeholder="Descrição Conteudo"
+                            placeholder="DescriÃ§Ã£o Conteudo"
                           ></textarea>
                           <div class="input-group-append">
                             <button
@@ -539,7 +539,7 @@
                     >
                       <input
                         @keyup.13="getLuva($event.target.value, row)"
-                        placeholder="Código"
+                        placeholder="CÃ³digo"
                         :value="row.codigo"
                         @input="row.codigo = $event.target.value"
                         type="text"
@@ -591,7 +591,7 @@
                           :value="row.descricao"
                           class="form-control bg-grey text-white"
                           rows="2"
-                          placeholder="Descrição Sistema"
+                          placeholder="DescriÃ§Ã£o Sistema"
                         ></textarea>
                           </v-col>                          
                         </v-row>                        
@@ -607,7 +607,7 @@
                     >
                       <input
                         @keyup.13="getLuva($event.target.value, row)"
-                        placeholder="Código"
+                        placeholder="CÃ³digo"
                         :value="row.codigo"
                         @input="row.codigo = $event.target.value"
                         type="text"
@@ -645,7 +645,7 @@
                           :value="row.descricao"
                           class="form-control bg-success text-white"
                           rows="2"
-                          placeholder="Descrição Sistema"
+                          placeholder="DescriÃ§Ã£o Sistema"
                         ></textarea>
                       </div>
                     </div>
@@ -672,12 +672,12 @@
                     :unchecked-value="0"
                   >
                     <span class="success--text" v-if="item.disponivel == '1'">
-                      Disponível:
+                      DisponÃ­vel:
                       <b>SIM</b>
                     </span>
                     <span class="error--text" v-else>
-                      Disponível:
-                      <b>NÂO</b>
+                      DisponÃ­vel:
+                      <b>NÃ‚O</b>
                     </span>
                   </b-form-checkbox>
                   <b-form-checkbox
@@ -696,7 +696,7 @@
                     </span>
                     <span class="error--text" v-else>
                       Opcional:
-                      <b>NÂO</b>
+                      <b>NÃ‚O</b>
                     </span>
                   </b-form-checkbox>
                   <b-form-checkbox
@@ -845,14 +845,14 @@
           >
             <v-list-item-title>
               <v-btn @click="child.data.kit = true" text color="warning" small
-                >è um KIT</v-btn
+                >Ã¨ um KIT</v-btn
               >
             </v-list-item-title>
           </v-list-item>
           <v-list-item v-if="child.data.kit">
             <v-list-item-title>
               <v-btn @click="child.data.kit = false" text color="warning" small
-                >Não è um KIT</v-btn
+                >NÃ£o Ã¨ um KIT</v-btn
               >
             </v-list-item-title>
           </v-list-item>
@@ -889,14 +889,14 @@
           >
             <v-list-item-title>
               <v-btn @click="child.data.luva = true" text color="success" small
-                >è uma LUVA</v-btn
+                >Ã¨ uma LUVA</v-btn
               >
             </v-list-item-title>
           </v-list-item>
           <v-list-item v-if="child.data.luva">
             <v-list-item-title class="primary--text">
               <v-btn @click="child.data.luva = false" text color="success" small
-                >Não è uma LUVA</v-btn
+                >NÃ£o Ã¨ uma LUVA</v-btn
               >
             </v-list-item-title>
           </v-list-item>
@@ -922,7 +922,7 @@
                 text
                 color="primary"
                 small
-                >Não é Titulo</v-btn
+                >NÃ£o Ã© Titulo</v-btn
               >
             </v-list-item-title>
           </v-list-item>
@@ -950,7 +950,7 @@
         <v-card>
           <v-card-title class="headline">Item Repetido</v-card-title>
           <v-card-text
-            >O Item {{ objectItem.codigo }} - {{ objectItem.descricao }} já se
+            >O Item {{ objectItem.codigo }} - {{ objectItem.descricao }} jÃ¡ se
             encontra na lista, o que deseja fazer?</v-card-text
           >
           <v-card-actions>
@@ -972,7 +972,7 @@
           <v-card-actions>
             <v-spacer></v-spacer>
             <div class="text-center">
-              <v-btn color="error" @click="dialogSalvar = false">Não</v-btn>
+              <v-btn color="error" @click="dialogSalvar = false">NÃ£o</v-btn>
               <v-btn color="success" @click="salvarLista()">Sim</v-btn>
             </div>
           </v-card-actions>
@@ -980,7 +980,7 @@
       </v-dialog>
       <v-dialog v-model="deleteRowDialog" persistent max-width="500">
         <v-card>
-          <v-card-title class="headline">Atenção!</v-card-title>
+          <v-card-title class="headline">AtenÃ§Ã£o!</v-card-title>
           <v-card-text>
             <b
               v-if="
@@ -1084,9 +1084,9 @@ export default {
     toggle: false,
     produtos: [],
     headersProdutos: [
-      { text: "Código", value: "codigo", sortable: true },
+      { text: "CÃ³digo", value: "codigo", sortable: true },
       { text: "Saldo", value: "saldo", sortable: true },
-      { text: "Descrição", value: "descricao", sortable: true },
+      { text: "DescriÃ§Ã£o", value: "descricao", sortable: true },
       { text: "Marca", value: "marca", sortable: true },
       { text: "Valor", value: "valor", sortable: true },
       { text: "Qtd", value: "qtd", sortable: false, width: 100 },
@@ -1258,12 +1258,12 @@ export default {
         .msgBoxConfirm(
           "Deseja realmente aplicar o valor de sistema na lista?",
           {
-            title: "Confirmação!",
+            title: "ConfirmaÃ§Ã£o!",
             size: "sm",
             buttonSize: "sm",
             okVariant: "danger",
             okTitle: "SIM",
-            cancelTitle: "NÃO",
+            cancelTitle: "NÃƒO",
             footerClass: "p-2",
             hideHeaderClose: false,
             centered: true,
@@ -1278,7 +1278,7 @@ export default {
 
             this.set_snackbar({
               show: true,
-              msg: "Preço de Sistema Aplicado com Sucesso!",
+              msg: "PreÃ§o de Sistema Aplicado com Sucesso!",
               type: "success",
               time: 3000,
             });
@@ -1384,7 +1384,7 @@ export default {
         this.set_snackbar({
           show: true,
           msg:
-            "Atenção Você esqueceu de preencher o valor de um item disponível!",
+            "AtenÃ§Ã£o VocÃª esqueceu de preencher o valor de um item disponÃ­vel!",
           type: "warning",
           time: 3000,
         });
@@ -1416,7 +1416,7 @@ export default {
         this.set_snackbar({
           show: true,
           msg:
-            "Atenção Você esqueceu de preencher o Codigo da marca 2 ou Valor marca 2",
+            "AtenÃ§Ã£o VocÃª esqueceu de preencher o Codigo da marca 2 ou Valor marca 2",
           type: "warning",
           time: 3000,
         });
@@ -1444,7 +1444,7 @@ export default {
         this.calcTotalItens();
         this.set_snackbar({
           show: true,
-          msg: "Você esqueceu de preencher a quantidade de um item disponivel!",
+          msg: "VocÃª esqueceu de preencher a quantidade de um item disponivel!",
           type: "warning",
           time: 3000,
         });
@@ -1463,7 +1463,7 @@ export default {
       localStorage.removeItem(key);
       this.set_snackbar({
         show: true,
-        msg: "Atenção Lista Removida!",
+        msg: "AtenÃ§Ã£o Lista Removida!",
         type: "success",
         time: 3000,
       });
@@ -1513,7 +1513,7 @@ export default {
         localStorage.setItem(key, JSON.stringify(dadosLista));
         this.set_snackbar({
           show: true,
-          msg: "Atenção salvo com sucesso!",
+          msg: "AtenÃ§Ã£o salvo com sucesso!",
           type: "success",
           time: 3000,
         });
@@ -1586,7 +1586,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "TODOS OS CAMPOS SÃO OBRIGATÓRIOS",
+          msg: "TODOS OS CAMPOS SÃƒO OBRIGATÃ“RIOS",
           type: "warning",
           time: 3000,
         });
@@ -1692,7 +1692,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "TODOS OS CAMPOS SÃO OBRIGATÓRIOS",
+          msg: "TODOS OS CAMPOS SÃƒO OBRIGATÃ“RIOS",
           type: "warning",
           time: 3000,
         });
@@ -1758,7 +1758,7 @@ export default {
             if (res.data === false) {
               this.set_snackbar({
                 show: true,
-                msg: "Produto Não Encontrado!",
+                msg: "Produto NÃ£o Encontrado!",
                 type: "warning",
                 time: 3000,
               });
@@ -1772,7 +1772,7 @@ export default {
               ) {
                 this.set_snackbar({
                   show: true,
-                  msg: "ITEM JÁ ADICIONADO NESTA LISTA!",
+                  msg: "ITEM JÃ ADICIONADO NESTA LISTA!",
                   type: "warning",
                   time: 3000,
                 });
@@ -1811,7 +1811,7 @@ export default {
           .then((res) => {
              console.log("res", res.data);
             if (!res.data) {
-              this.set_snackbar({show: true,msg: "Item Não Encontrado!",type: "warning",time: 3000});
+              this.set_snackbar({show: true,msg: "Item NÃ£o Encontrado!",type: "warning",time: 3000});
             } else {
               item.cod = "";
               item.descricao = "";
@@ -1835,7 +1835,7 @@ export default {
               ) {
                 this.set_snackbar({
                   show: true,
-                  msg: "ITEM JÁ ADICIONADO NESTA LISTA!",
+                  msg: "ITEM JÃ ADICIONADO NESTA LISTA!",
                   type: "warning",
                   time: 3000,
                 });
@@ -1959,8 +1959,8 @@ export default {
 
     checkEditValue(item, data) {
       this.$bvModal
-        .msgBoxConfirm("O que você deseja fazer?", {
-          title: "Confirmação",
+        .msgBoxConfirm("O que vocÃª deseja fazer?", {
+          title: "ConfirmaÃ§Ã£o",
           size: "sm",
           buttonSize: "sm",
           okVariant: "success",
@@ -2005,7 +2005,7 @@ export default {
     },
 
     checkLimiteValorSite(valor_digitado, item) {
-      //100   *   (10   ÷   100)
+      //100   *   (10   Ã·   100)
       let maximo =
         item.valor * (this.permissoes.margem_preco / 100) + item.valor;
       let minimo =
@@ -2079,7 +2079,7 @@ export default {
     },
 
     checkLimiteValorMarcaOpcional(valor_digitado, item) {
-      //100   *   (10   ÷   100)
+      //100   *   (10   Ã·   100)
       let maximo =
         item.valorMarcaOpcionalOriginal * (this.permissoes.margem_preco / 100) +
         item.valorMarcaOpcionalOriginal;

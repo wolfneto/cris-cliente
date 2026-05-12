@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <Tabs></Tabs>
     <v-row justify="center" class="custom-row">
@@ -21,10 +21,10 @@
           v-model="selectedPosGraduacao"
           @change="onChangeGraduacao()"
           :items="[
-            { text: 'Graduação', value: 0 },
-            { text: 'Especialização', value: 1 },
+            { text: 'GraduaÃ§Ã£o', value: 0 },
+            { text: 'EspecializaÃ§Ã£o', value: 1 },
           ]"
-          label="Graduação ou Especialização"
+          label="GraduaÃ§Ã£o ou EspecializaÃ§Ã£o"
         ></v-select>
       </v-col>
     </v-row>
@@ -74,7 +74,7 @@
                     <v-row class="custom-row">
                       <v-col cols="12">
                         <v-text-field
-                          :rules="[v => !!v || 'Campo Obrigatório']"
+                          :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
                           v-model="objectItem.nome_kit"
                           label="Nome"
                         ></v-text-field>
@@ -85,7 +85,7 @@
                         <v-textarea
                           :rows="5"
                           no-resize
-                          label="Descrição"
+                          label="DescriÃ§Ã£o"
                           v-model="objectItem.descricao_kit"
                         ></v-textarea>
                       </v-col>
@@ -160,7 +160,7 @@
                           <template v-slot:item.codigo="{ item }">
                             <v-text-field
                               @keyup.13="getProduto($event.target.value, item)"
-                              placeholder="Código"
+                              placeholder="CÃ³digo"
                               v-model="item.codigo"
                             ></v-text-field>
                           </template>
@@ -206,7 +206,7 @@
       </template>
       <template v-slot:item.pagamento_online="{ item }">
         <v-chip v-if="item.pagamento_online == 1" color="success" dark>Sim</v-chip>
-        <v-chip v-else color="error" dark>Não</v-chip>
+        <v-chip v-else color="error" dark>NÃ£o</v-chip>
       </template>
       <template v-slot:item.formas="{ item }">
         <v-btn
@@ -235,7 +235,7 @@
                   <tr>
                     <th class="text-left">ID</th>
                     <th class="text-left">Codigo</th>
-                    <th class="text-left">Descrição</th>
+                    <th class="text-left">DescriÃ§Ã£o</th>
                     <th class="text-left">Valor</th>
                   </tr>
                 </thead>
@@ -293,11 +293,11 @@
 
     <v-dialog v-model="dialogExcluir" persistent max-width="300">
       <v-card>
-        <v-card-title class="headline">Atenção!</v-card-title>
+        <v-card-title class="headline">AtenÃ§Ã£o!</v-card-title>
         <v-card-text>Deseja realmente excluir o kit?</v-card-text>
         <v-card-actions>
           <div class="flex-grow-1"></div>
-          <v-btn color="primary" text @click="dialogExcluir = false">Não</v-btn>
+          <v-btn color="primary" text @click="dialogExcluir = false">NÃ£o</v-btn>
           <v-btn color="error" text @click="deleteKit(objectItem)">Excluir</v-btn>
         </v-card-actions>
       </v-card>
@@ -332,14 +332,14 @@ export default {
     headers: [
       { text: "ID", value: "id_kit" },
       { text: "Nome", value: "nome_kit" },
-      { text: "Descrição", value: "descricao_kit" },
+      { text: "DescriÃ§Ã£o", value: "descricao_kit" },
       { text: "Itens", value: "itens" },
       { text: "Total", value: "total_kit" },
       { text: "Status", value: "status_kit" },
       { text: "Pgto Online", value: "pagamento_online" },
       { text: "Pgto Formas", value: "formas" },
       {
-        text: "Ação",
+        text: "AÃ§Ã£o",
         value: "acao",
         align: "center",
         sortable: false,
@@ -371,12 +371,12 @@ export default {
       pagamento_online: 0,
     },
     headersItensKit: [
-      { text: "Código", value: "codigo", width: 200 },
+      { text: "CÃ³digo", value: "codigo", width: 200 },
       { text: "Saldo", value: "saldo" },
-      { text: "Descrição", value: "descricao" },
+      { text: "DescriÃ§Ã£o", value: "descricao" },
       { text: "Valor", value: "valor" },
       {
-        text: "Ação",
+        text: "AÃ§Ã£o",
         value: "acao",
         align: "center",
         sortable: false,
@@ -461,7 +461,7 @@ export default {
       for (let i = 1; i <= this.selectedParcela; i++) {
         this.formasPagamento.push({
           id: i,
-          tipo: "Valor em até: " + i + "x",
+          tipo: "Valor em atÃ©: " + i + "x",
           valor: this.valorTotal,
         });
       }
@@ -478,7 +478,7 @@ export default {
         for (let i = 1; i <= this.selectedParcela; i++) {
           this.formasPagamento.push({
             id: i,
-            tipo: "Valor em até: " + i + "x",
+            tipo: "Valor em atÃ©: " + i + "x",
             valor: this.valorTotal,
           });
         }
@@ -524,7 +524,7 @@ export default {
               item.saldo = res.data.saldo;
               this.calcTotalItens();
             } else {
-              this.showSnakerbar("Produto Não Encontrado!", "warning", 3000);
+              this.showSnakerbar("Produto NÃ£o Encontrado!", "warning", 3000);
             }
           })
           .catch((err) => {

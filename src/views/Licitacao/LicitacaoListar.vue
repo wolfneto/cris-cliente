@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-row>
       <v-col cols="12" md="4">
@@ -26,7 +26,7 @@
             <v-textarea
               v-model="item.descricao"
               rows="4"
-              label="Descrição"
+              label="DescriÃ§Ã£o"
               class="uppercase-area"
               no-resize
               filled
@@ -74,7 +74,7 @@
                       label="Data"
                       v-mask="'##/##/####'"
                       placeholder="dd/mm/aaaa"
-                      :rules=" [v => !!v.trim() || 'Data obrigatória!' ] "
+                      :rules=" [v => !!v.trim() || 'Data obrigatÃ³ria!' ] "
                       filled
                       required
                     ></v-text-field>
@@ -84,7 +84,7 @@
                       v-model="editedItem.nome_empresa"
                       label="Empresa"
                       class="uppercase"
-                      :rules=" [v => !!v.trim() || 'Nome da empresa obrigatório!'] "
+                      :rules=" [v => !!v.trim() || 'Nome da empresa obrigatÃ³rio!'] "
                       filled
                       required
                     ></v-text-field>
@@ -120,7 +120,7 @@
                       v-model="editedItem.quantidade"
                       label="Qtd"
                       type="number"
-                      :rules=" [v => !!v || 'Quantidade obrigatória!'] "
+                      :rules=" [v => !!v || 'Quantidade obrigatÃ³ria!'] "
                       filled
                       required
                     ></v-text-field>
@@ -131,7 +131,7 @@
                       label="Marca"
                       class="uppercase"
                       type="text"
-                      :rules=" [v => !!v.trim() || 'Marca obrigatória!'] "
+                      :rules=" [v => !!v.trim() || 'Marca obrigatÃ³ria!'] "
                       filled
                       required
                     ></v-text-field>
@@ -145,7 +145,7 @@
                       label="MS"
                       class="uppercase"
                       type="text"
-                      :rules=" [v => !!v.trim() || 'MS obrigatório!'] "
+                      :rules=" [v => !!v.trim() || 'MS obrigatÃ³rio!'] "
                       filled
                       required
                     ></v-text-field>
@@ -244,7 +244,7 @@ export default {
       { text: "Qtd", value: "quantidade" },
       { text: "Marca", value: "marca" },
       { text: "MS", value: "ms" },
-      { text: "Ação", value: "acao" }
+      { text: "AÃ§Ã£o", value: "acao" }
     ],
 
     editedIndex: -1,
@@ -305,7 +305,7 @@ export default {
                   "error"
                 );
               } else if (res.data === null) {
-                this.showSnackbar("Item não encontrado!", "warning", 2000);
+                this.showSnackbar("Item nÃ£o encontrado!", "warning", 2000);
               } else {
                 this.item = res.data;
                 this.empresas = this.item.licitacao_empresas;
@@ -364,7 +364,7 @@ export default {
 
     deleteItem(item) {
       let check = confirm(
-        "Você tem certeza que deseja deletar este item?"
+        "VocÃª tem certeza que deseja deletar este item?"
       );
       if (check == true) {
         this.loading = true;

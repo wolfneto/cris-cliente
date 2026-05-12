@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <Tabs></Tabs>
     <v-card width="auto">
@@ -121,9 +121,9 @@
                 <v-row class="custom-row">
                   <v-col cols="12">
                     <v-text-field
-                      :rules="[(v) => !!v || 'Campo Obrigatório']"
+                      :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
                       v-model="objectItem.descricao"
-                      label="Descrição"
+                      label="DescriÃ§Ã£o"
                       class="uppercase"
                       solo
                       @keyup="check()"
@@ -235,14 +235,14 @@ export default {
     objectIndex: -1,
     objectItem: {},
     headersTiposEquipamentos: [
-      { text: "Código", value: "codigo", width: 200 },
+      { text: "CÃ³digo", value: "codigo", width: 200 },
       { text: "Saldo", value: "saldo" },
-      { text: "Descrição", value: "descricao" },
+      { text: "DescriÃ§Ã£o", value: "descricao" },
       { text: "Imagem", value: "imagem", width: 150 },
       { text: "Valor", value: "valor" },
-      { text: "Qtd Disponível", value: "qtd_disponivel", width: 150 },
+      { text: "Qtd DisponÃ­vel", value: "qtd_disponivel", width: 150 },
       {
-        text: "Ação",
+        text: "AÃ§Ã£o",
         value: "acao",
         align: "center",
         sortable: false,
@@ -255,7 +255,7 @@ export default {
       { text: "Status", value: "status_online", align: "center" },
 
       {
-        text: "Ação",
+        text: "AÃ§Ã£o",
         value: "acao",
         align: "center",
         sortable: false,
@@ -431,7 +431,7 @@ export default {
 
             this.set_snackbar({
               show: true,
-              msg: "Codigo informado não existe!",
+              msg: "Codigo informado nÃ£o existe!",
               type: "warning",
               time: 3000,
             });
@@ -471,7 +471,7 @@ export default {
           this.fechar();
           this.set_snackbar({
             show: true,
-            msg: "Os tipos equipamentos não pode ser vazio!",
+            msg: "Os tipos equipamentos nÃ£o pode ser vazio!",
             type: "warning",
             time: 3000,
           });

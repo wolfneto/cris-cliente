@@ -1,4 +1,4 @@
-import Listar from './Listas/Listar';
+﻿import Listar from './Listas/Listar';
 import Inserir from './Listas/Inserir';
 import Importar from './ImportarLista';
 import TrocarItens from './TrocarItens';
