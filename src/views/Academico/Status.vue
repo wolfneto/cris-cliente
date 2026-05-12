@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <v-card-title>
@@ -7,7 +7,7 @@
             <v-text-field
               v-model="data_de"
               v-mask="'##/##/####'"
-              :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
+              :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
               @keydown.enter="getPedidos()"
               placeholder="dd/mm/aaaa"
               label="De"
@@ -19,14 +19,14 @@
               v-model="data_ate"
               v-mask="'##/##/####'"
               @keydown.enter="getPedidos()"
-              :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
+              :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
               placeholder="dd/mm/aaaa"
-              label="Até"
+              label="AtÃ©"
               required
             ></v-text-field>
           </v-col>
         </v-row>
-        Pedidos Acadêmico
+        Pedidos AcadÃªmico
         <v-btn small class="ml-3" @click="getPedidos()">Atualizar</v-btn>
         <div class="flex-grow-1"></div>
         <v-text-field
@@ -366,7 +366,7 @@ export default {
       {
         name: "acao",
         align: "center",
-        label: "Ação",
+        label: "AÃ§Ã£o",
         sortable: false,
       },
     ],
@@ -377,7 +377,7 @@ export default {
       },
       {
         value: "descri_item",
-        text: "DESCRIÇÃO",
+        text: "DESCRIÃ‡ÃƒO",
       },
       {
         value: "marca_item",

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
 	<v-app>
 		<div v-if="logged == 'true'">
 			<menuBar></menuBar>

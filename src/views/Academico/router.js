@@ -1,4 +1,4 @@
-import Inicio from './Gerenciar/Inicio';
+﻿import Inicio from './Gerenciar/Inicio';
 import Faculdades from './Gerenciar/Faculdades';
 import Semestres from './Gerenciar/Semestres';
 import Periodos from './Gerenciar/Periodos';
@@ -18,7 +18,7 @@ import Outros from './Outros';
 
 export default [{
         path: '/academico/gerenciar/inicio',
-        name: 'Gerenciar Site Acadêmico',
+        name: 'Gerenciar Site AcadÃªmico',
         component: Inicio,
         meta: {
             requiresAuth: true
@@ -90,7 +90,7 @@ export default [{
     },
     {
         path: '/academico/pedidos',
-        name: 'Pedidos Acadêmico',
+        name: 'Pedidos AcadÃªmico',
         component: Pedidos,
         meta: {
             requiresAuth: true
@@ -106,7 +106,7 @@ export default [{
     },
     {
         path: '/academico/app',
-        name: 'App Acadêmico',
+        name: 'App AcadÃªmico',
         component: App,
         meta: {
             requiresAuth: true
@@ -130,7 +130,7 @@ export default [{
     },
     {
         path: '/academico/cobranca',
-        name: 'Cobrança - Pagamento Parcial',
+        name: 'CobranÃ§a - Pagamento Parcial',
         component: Cobranca,
         meta: {
             requiresAuth: true

@@ -1,5 +1,5 @@
-import { push } from "core-js/fn/array";
-import api from "../../../api/api";
+﻿import { push } from "core-js/fn/array";
+import api from "../../../plugins/axios";
 export default {
   state: {
     bancoAcademico: {},

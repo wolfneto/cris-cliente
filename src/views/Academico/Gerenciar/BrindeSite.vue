@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <Tabs></Tabs>
     <v-card width="auto">
@@ -160,7 +160,7 @@
                       color="orange lighten-3"
                       text-color="orange darken-4"
                       @click="updateAcumulaBrindeLista(item)"
-                      >NÃO ACUMULA</v-chip
+                      >NÃƒO ACUMULA</v-chip
                     >
                   </template>
 
@@ -198,7 +198,7 @@
                 @keyup.enter="getItem()"
                 @click="$event.target.select()"
                 append-icon="fa-search"
-                label="Busque por: Código"
+                label="Busque por: CÃ³digo"
                 ref="input_buscar"
                 filled
                 dense
@@ -225,7 +225,7 @@
                 class="uppercase"
                 v-model="objectItem.descricao_site"
                 @click="$event.target.select()"
-                label="Descrição do Site"
+                label="DescriÃ§Ã£o do Site"
                 filled
               ></v-text-field>
             </v-col>
@@ -240,7 +240,7 @@
                 v-model="objectItem.observacao"
                 @click="$event.target.select()"
                 clearable
-                label="Observações:"
+                label="ObservaÃ§Ãµes:"
                 filled
                 rows="4"
               ></v-textarea>
@@ -295,7 +295,7 @@
     </v-dialog>
     <v-dialog v-model="dialogExcluirBrinde" persistent max-width="50%">
       <v-card>
-        <v-card-title class="headline">Atenção!</v-card-title>
+        <v-card-title class="headline">AtenÃ§Ã£o!</v-card-title>
         <v-card-text>
           <span class="text-h5">Deseja realmente excluir este Brinde? </span
           ><br /><br />
@@ -345,10 +345,10 @@
                 :disabled="selectedFaculdade == 0 ? true : false"
                 @change="onChangeSelect()"
                 :items="[
-                  { text: 'Graduação', value: 0 },
-                  { text: 'Especialização', value: 1 },
+                  { text: 'GraduaÃ§Ã£o', value: 0 },
+                  { text: 'EspecializaÃ§Ã£o', value: 1 },
                 ]"
-                label="Graduação ou Especialização:"
+                label="GraduaÃ§Ã£o ou EspecializaÃ§Ã£o:"
                 filled
               ></v-select>
             </v-col>
@@ -366,7 +366,7 @@
           ></v-row>
           <v-row class="mt-n6 justify-center text-center">
             <v-col cols="3">
-              <span>Valor Mínimo p/ Brinde</span>
+              <span>Valor MÃ­nimo p/ Brinde</span>
               <money
                 :disabled="selectedSemestre == 0 ? true : false"
                 maxlength="10"
@@ -380,7 +380,7 @@
               :disabled="selectedSemestre == 0 ? true : false"
                 v-model="selectedAcumula"
                 :items="[
-                  { text: 'Não Acumula', value: 0 },
+                  { text: 'NÃ£o Acumula', value: 0 },
                   { text: 'Acumula', value: 1 },
                 ]"
                 filled
@@ -428,7 +428,7 @@
     <v-dialog v-model="dialogRelatorioBrindes" width="85%">
       <v-card>
         <v-card-title>
-          <span class="text-h5">Relatório Brindes</span>
+          <span class="text-h5">RelatÃ³rio Brindes</span>
         </v-card-title>
         <v-card-text>
           <v-simple-table dense fixed-header height="650px">
@@ -445,7 +445,7 @@
                     Codigo
                   </th>
                   <th class="text-left">
-                    Descrição
+                    DescriÃ§Ã£o
                   </th>
                   <th class="text-center" width="150">
                     Valor Acima de:
@@ -504,7 +504,7 @@
                       class="text-red font-weight-bold"
                       @click="updateAcumulaBrindeLista(item)"
                       text
-                      >NÃO ACUMULA</v-btn
+                      >NÃƒO ACUMULA</v-btn
                     >
                   </td>
                 </tr>
@@ -601,7 +601,7 @@ export default {
         width: 120,
       },
       {
-        text: "Ação",
+        text: "AÃ§Ã£o",
         value: "acao",
         align: "center",
         sortable: false,
@@ -734,7 +734,7 @@ export default {
 
             this.set_snackbar({
               show: true,
-              msg: "Item Não Encontrado!",
+              msg: "Item NÃ£o Encontrado!",
               type: "warning",
             });
           } else {
@@ -817,7 +817,7 @@ export default {
         } else if (this.retorno == false) {
           this.set_snackbar({
             show: true,
-            msg: "O CODIGO PARA O BRINDE INFORMADO JÁ ESTA CADASTRADO!",
+            msg: "O CODIGO PARA O BRINDE INFORMADO JÃ ESTA CADASTRADO!",
             type: "warning",
             time: 5000,
           });
@@ -856,7 +856,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "Brinde excluído com sucesso!",
+          msg: "Brinde excluÃ­do com sucesso!",
           type: "success",
           time: 3000,
         });
@@ -977,7 +977,7 @@ export default {
       if (item.valor == 0) {
         this.set_snackbar({
           show: true,
-          msg: "ATENÇÃO! O VALOR MÍNIMO DO BRINDE NÃO PODE SER VAZIO.",
+          msg: "ATENÃ‡ÃƒO! O VALOR MÃNIMO DO BRINDE NÃƒO PODE SER VAZIO.",
           type: "warning",
         });
       } else {

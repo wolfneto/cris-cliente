@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <h4 class="text-center">Controle de Entregas</h4>
@@ -21,7 +21,7 @@
       <v-row justify="center" class="mt-n4">
         <v-col cols="12" sm="5" md="7" lg="7">
           <v-btn @click="$router.push('/estoque/entregas_relatorio')" block color="primary"
-            ><v-icon left>fa-file-chart</v-icon>Relatórios</v-btn
+            ><v-icon left>fa-file-chart</v-icon>RelatÃ³rios</v-btn
           >
         </v-col>
       </v-row>
@@ -44,7 +44,7 @@
           :items="pedidos"
           hide-default-footer
           dense
-          no-data-text="Não há pedidos no momento."
+          no-data-text="NÃ£o hÃ¡ pedidos no momento."
         >
           <template v-slot:[`item.cliente`]="{ item }">
             <b>{{ item.cliente }}</b>
@@ -109,7 +109,7 @@ export default {
     pedido: "",
     header: [
       {
-        text: "N° Pedido",
+        text: "NÂ° Pedido",
         align: "center",
         value: "numero_pedido",
       },
@@ -119,7 +119,7 @@ export default {
       { text: "Nota", value: "nota", align: "center" },
       { text: "Dados", value: "dados", align: "center" },
       { text: "Vendedor", value: "vendedor", align: "center" },
-      { text: "Ação", value: "acao" },
+      { text: "AÃ§Ã£o", value: "acao" },
     ],
   }),
   created() {
@@ -168,7 +168,7 @@ export default {
       ) {
         this.set_snackbar({
           show: true,
-          msg: "Pedido Já Adicionado",
+          msg: "Pedido JÃ¡ Adicionado",
           type: "warning",
           time: 3000,
         });

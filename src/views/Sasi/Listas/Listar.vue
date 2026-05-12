@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <EditarLista
       v-if="editar"
@@ -28,10 +28,10 @@
             v-model="selectedPosGraduacao"
             @change="onChangeGraduacao()"
             :items="[
-              { text: 'Graduação', value: 0 },
-              { text: 'Especialização', value: 1 },
+              { text: 'GraduaÃ§Ã£o', value: 0 },
+              { text: 'EspecializaÃ§Ã£o', value: 1 },
             ]"
-            label="Graduação ou Especialização"
+            label="GraduaÃ§Ã£o ou EspecializaÃ§Ã£o"
             dense
           ></v-select>
         </v-col>
@@ -54,7 +54,7 @@
           <v-text-field
             v-model="data_de"
             v-mask="'##/##/####'"
-            :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
+            :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
             placeholder="dd/mm/aaaa"
             label="De"
             required
@@ -64,9 +64,9 @@
           <v-text-field
             v-model="data_ate"
             v-mask="'##/##/####'"
-            :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
+            :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
             placeholder="dd/mm/aaaa"
-            label="Até"
+            label="AtÃ©"
             required
           ></v-text-field>
         </v-col>
@@ -145,7 +145,7 @@
                 }}</small
               >
               <small v-else class="warning--text"
-                >Não Possui Minimo p/ Venda</small
+                >NÃ£o Possui Minimo p/ Venda</small
               >
             </div>
           </v-row>
@@ -208,10 +208,10 @@
                         {{ item.nome_status_lista }}
                         <div v-if="item.hasOwnProperty('status')">
                           <span class="success--text" v-if="item.habilitada"
-                            >Diponível P/ Edição</span
+                            >DiponÃ­vel P/ EdiÃ§Ã£o</span
                           >
                           <span class="error--text" v-else
-                            >Não Disponível P/ Edição</span
+                            >NÃ£o DisponÃ­vel P/ EdiÃ§Ã£o</span
                           >
                         </div>
                       </v-list-item-subtitle>
@@ -255,11 +255,11 @@
                           class="red--text body-2"
                         >
                           <b>
-                            (Em Previsão:
+                            (Em PrevisÃ£o:
                             <span class="success--text" v-if="item.em_previsao"
                               >SIM</span
                             >
-                            <span v-else>NÃO</span>
+                            <span v-else>NÃƒO</span>
                             - {{ item.previsao }}x)
                           </b>
                         </small>
@@ -313,7 +313,7 @@
                     "
                     @click="showPrevisao(item)"
                   >
-                    <v-list-item-title>Criar Previsão</v-list-item-title>
+                    <v-list-item-title>Criar PrevisÃ£o</v-list-item-title>
                   </v-list-item>
                   <v-list-item
                     v-else-if="
@@ -323,7 +323,7 @@
                     "
                     @click="showPrevisao(item)"
                   >
-                    <v-list-item-title>Ver Previsão</v-list-item-title>
+                    <v-list-item-title>Ver PrevisÃ£o</v-list-item-title>
                   </v-list-item>
                   <v-list-item
                     v-if="
@@ -333,7 +333,7 @@
                     "
                     @click="aprovarPrevisao(item)"
                   >
-                    <v-list-item-title>Desaprovar Previsão</v-list-item-title>
+                    <v-list-item-title>Desaprovar PrevisÃ£o</v-list-item-title>
                   </v-list-item>
                   <v-list-item
                     v-if="
@@ -343,7 +343,7 @@
                     "
                     @click="aprovarPrevisao(item)"
                   >
-                    <v-list-item-title>Aprovar Previsão</v-list-item-title>
+                    <v-list-item-title>Aprovar PrevisÃ£o</v-list-item-title>
                   </v-list-item>
                   <v-list-item
                     v-if="
@@ -392,7 +392,7 @@
       <v-dialog v-model="dialogPrevisao" persistent max-width="300px">
         <v-card>
           <v-card-title>
-            <span class="headline">Previsão de Venda</span>
+            <span class="headline">PrevisÃ£o de Venda</span>
           </v-card-title>
           <v-card-text>
             <v-container>
@@ -442,10 +442,10 @@
                     v-model="selectedPosGraduacaoCopiar"
                     @change="onChangeGraduacaoCopiar()"
                     :items="[
-                      { text: 'Graduação', value: 0 },
-                      { text: 'Especialização', value: 1 },
+                      { text: 'GraduaÃ§Ã£o', value: 0 },
+                      { text: 'EspecializaÃ§Ã£o', value: 1 },
                     ]"
-                    label="Graduação ou Especialização"
+                    label="GraduaÃ§Ã£o ou EspecializaÃ§Ã£o"
                   ></v-select>
                 </v-col>
               </v-row>
@@ -550,10 +550,10 @@
       <v-dialog v-model="dialogSemRepetidos" width="500">     
         <v-card>
           <v-card-title class="text-h5 grey lighten-2">
-          ATENÇÂO!
+          ATENÃ‡Ã‚O!
           </v-card-title>
            <v-card-text class="subtitle-1 mt-4 font-weight-black">
-            NÃO FORAM ENCONTRADOS ITENS REPETIDOS NAS LISTAS SELECIONADAS!
+            NÃƒO FORAM ENCONTRADOS ITENS REPETIDOS NAS LISTAS SELECIONADAS!
            </v-card-text>       
           <v-card-actions>
             <v-spacer></v-spacer>
@@ -565,9 +565,9 @@
       </v-dialog>
       <v-dialog v-model="itemRepetidoListaDialog" persistent max-width="1200">
         <v-card>
-          <v-card-title class="headline">Atenção!</v-card-title>
+          <v-card-title class="headline">AtenÃ§Ã£o!</v-card-title>
           <v-card-text>
-            Esta lista não pode ser aprovada pois possue item(s) que já constam
+            Esta lista nÃ£o pode ser aprovada pois possue item(s) que jÃ¡ constam
             nas listas ONLINE.
 
             <v-simple-table fixed-header height="250px" dense>
@@ -575,7 +575,7 @@
                 <thead>
                   <tr>
                     <th class="text-left">Codigo</th>
-                    <th class="text-left">Descrição</th>
+                    <th class="text-left">DescriÃ§Ã£o</th>
                     <th class="text-left">Marca</th>
                     <th class="text-left">Lista</th>
                   </tr>
@@ -619,7 +619,7 @@
               }}
             </h6>
             <h6 class="warning--text" v-else>
-              Não Possui Valor Minimo P/ Venda Atualmente
+              NÃ£o Possui Valor Minimo P/ Venda Atualmente
             </h6>
             <v-row justify="center" >
               <v-col cols="5">
@@ -649,7 +649,7 @@
         <v-card>
           <v-card-title class="headline">Valores Lista</v-card-title>
           <v-card-text>
-            <h6>Lista Econômica: <b>R$ {{valorTotalListaEconomico}}</b></h6>
+            <h6>Lista EconÃ´mica: <b>R$ {{valorTotalListaEconomico}}</b></h6>
             <h6>Lista Sugerida: <b>R$ {{ valorTotalListaSugerida }}</b></h6>
           </v-card-text>
           <v-card-actions>
@@ -685,7 +685,7 @@ export default {
   },
   data: () => ({
     headers: [
-      { text: "Descrição", value: "descricao" },
+      { text: "DescriÃ§Ã£o", value: "descricao" },
       { text: "Codigo", value: "cod" },
       // { text: "Lista", value: "nome_lista_inicial" },
       // { text: "Valor", value: "valor_lista_inicial" },
@@ -911,7 +911,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "ATENÇÃO! É NECESSÁRIO MARCAR MAIS DE 1 LISTA PARA CHECAR ITENS REPETIDOS! ",
+          msg: "ATENÃ‡ÃƒO! Ã‰ NECESSÃRIO MARCAR MAIS DE 1 LISTA PARA CHECAR ITENS REPETIDOS! ",
           type: "warning",
           time: 0,
         });
@@ -932,7 +932,7 @@ export default {
       if (this.objectItem.nome_exibi_lista.length <= 0) {
         this.set_snackbar({
           show: true,
-          msg: "O campo nome não pode ser vazio!",
+          msg: "O campo nome nÃ£o pode ser vazio!",
           type: "warning",
           time: 0,
         });
@@ -1083,7 +1083,7 @@ export default {
           } else {
             this.set_snackbar({
               show: true,
-              msg: "VOCÊ NÃO PODE EDITAR ESTA LISTA",
+              msg: "VOCÃŠ NÃƒO PODE EDITAR ESTA LISTA",
               type: "error",
               time: 0,
             });
@@ -1141,12 +1141,12 @@ export default {
       let check = await this.$bvModal.msgBoxConfirm(
         "Deseja realmente deletar a lista?",
         {
-          title: "Confirmação!",
+          title: "ConfirmaÃ§Ã£o!",
           size: "sm",
           buttonSize: "sm",
           okVariant: "success",
           okTitle: "SIM",
-          cancelTitle: "NÃO",
+          cancelTitle: "NÃƒO",
           footerClass: "p-2",
           hideHeaderClose: false,
           centered: true,
@@ -1352,14 +1352,14 @@ export default {
             if (aprovar == 1) {
               this.set_snackbar({
                 show: true,
-                msg: "Previsão Aprovada",
+                msg: "PrevisÃ£o Aprovada",
                 type: "success",
                 time: 3000,
               });
             } else {
               this.set_snackbar({
                 show: true,
-                msg: "Previsão Desaprovada",
+                msg: "PrevisÃ£o Desaprovada",
                 type: "warning",
                 time: 3000,
               });
@@ -1399,7 +1399,7 @@ export default {
             } else {
               this.set_snackbar({
                 show: true,
-                msg: "Previsão Criada Com Sucesso",
+                msg: "PrevisÃ£o Criada Com Sucesso",
                 type: "success",
                 time: 3000,
               });
@@ -1413,7 +1413,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "Preencha a previsão",
+          msg: "Preencha a previsÃ£o",
           type: "warning",
           time: 3000,
         });

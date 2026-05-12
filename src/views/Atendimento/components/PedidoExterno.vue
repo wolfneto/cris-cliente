@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container class="mt-1">
     <v-dialog v-model="dialogBuscarCliente">
       <BuscarCliente
@@ -40,7 +40,7 @@
             color="primary"
             @click="imprimir()"
           >
-            <v-icon left>fa-print</v-icon> Imprimir Orçamento
+            <v-icon left>fa-print</v-icon> Imprimir OrÃ§amento
           </v-btn>
           <v-btn
             class="ml-4 mr-4"
@@ -50,7 +50,7 @@
             color="primary"
             @click="salvarPedido()"
           >
-            <v-icon left>fa-save</v-icon> Salvar Orçamento
+            <v-icon left>fa-save</v-icon> Salvar OrÃ§amento
           </v-btn>
           <v-btn
             class="ml-4 mr-4"
@@ -60,7 +60,7 @@
             color="error"
             @click="dialogLimpar = true"
           >
-            <v-icon left>fa-undo-alt</v-icon> Limpar Orçamento
+            <v-icon left>fa-undo-alt</v-icon> Limpar OrÃ§amento
           </v-btn>
         </v-col>
       </v-row>
@@ -78,7 +78,7 @@
             append-outer-icon="fa-search"
             @click:append-outer="dialogBuscarCliente = true"
             @click="$event.target.select()"
-            label="Código do Cliente"
+            label="CÃ³digo do Cliente"
             v-mask="'#####'"
           ></v-text-field>
         </v-col>
@@ -127,7 +127,7 @@
             height="12"
             hide-details
             @keyup="getCep(cliente.endereco_principal)"
-            hint="Digite somento números"
+            hint="Digite somento nÃºmeros"
             v-model="cliente.endereco_principal.cep"
             label="Cep"
             :loading="cepPrincipalLoading"
@@ -146,7 +146,7 @@
             class="input-uppercase"
             hint="Rua, Avenida, Estrada..."
             v-model="cliente.endereco_principal.logradouro"
-            label="Endereço"
+            label="EndereÃ§o"
             required
           ></v-text-field>
         </v-col>
@@ -158,7 +158,7 @@
             height="12"
             hide-details
             v-model="cliente.endereco_principal.numero"
-            label="Número"
+            label="NÃºmero"
             ref="numero_principal"
             required
             v-mask="'####'"
@@ -263,7 +263,7 @@
             hide-details
             class="input-uppercase"
             v-model="pedido.obs"
-            label="Observação"
+            label="ObservaÃ§Ã£o"
           ></v-text-field>
         </v-col>
       </v-row>
@@ -300,10 +300,10 @@
                 dense
                 hide-details
                 v-model="item.codigo"
-                placeholder="Código"
+                placeholder="CÃ³digo"
                 v-on:keyup="findProdutoByCod($event)"
                 v-on:keyup.page-down="$refs.tabelaItem.$el.focus()"
-                label="Código"
+                label="CÃ³digo"
                 required
               ></v-text-field>
             </v-col>
@@ -319,7 +319,7 @@
                 v-on:keyup="findProduto($event)"
                 v-on:keyup.page-down="$refs.tabelaItem.$el.focus()"
                 v-model="item.descricao"
-                label="Buscar por: Descrição"
+                label="Buscar por: DescriÃ§Ã£o"
               ></v-text-field>
             </v-col>
             <!-- <v-col cols="1">
@@ -391,10 +391,10 @@
                       dense
                       hide-details
                       v-model="item.codigo"
-                      placeholder="Código"
+                      placeholder="CÃ³digo"
                       v-on:keyup="findProdutoByCod($event)"
                       v-on:keyup.page-down="$refs.tabelaItem.$el.focus()"
-                      label="Código"
+                      label="CÃ³digo"
                       required
                     ></v-text-field>
                   </v-col>
@@ -410,7 +410,7 @@
                       v-on:keyup="findProduto($event)"
                       v-on:keyup.page-down="$refs.tabelaItem.$el.focus()"
                       v-model="item.descricao"
-                      label="Buscar por: Descrição"
+                      label="Buscar por: DescriÃ§Ã£o"
                     ></v-text-field>
                   </v-col>
                   <!-- <v-col cols="1">
@@ -471,14 +471,14 @@
     <v-dialog v-model="dialogLimpar" persistent max-width="600px">
       <v-card>
         <v-card-title>
-          <span class="headline error--text">Atenção</span>
+          <span class="headline error--text">AtenÃ§Ã£o</span>
         </v-card-title>
         <v-card-text class="headline">
-          Deseja realmente limpar o orçamento?
+          Deseja realmente limpar o orÃ§amento?
         </v-card-text>
         <v-card-actions>
           <div class="flex-grow-1"></div>
-          <v-btn color="error" text @click="dialogLimpar = false">NÃO</v-btn>
+          <v-btn color="error" text @click="dialogLimpar = false">NÃƒO</v-btn>
           <v-btn color="success" text @click="limpar()">SIM</v-btn>
         </v-card-actions>
       </v-card>
@@ -501,10 +501,10 @@
     <v-dialog v-model="dialogItemRepetido" persistent max-width="650px">
       <v-card>
         <v-card-title>
-          <span class="headline">Atenção!</span>
+          <span class="headline">AtenÃ§Ã£o!</span>
         </v-card-title>
         <v-card-text class="h5"
-          >O item que você está tentando substituir já consta no
+          >O item que vocÃª estÃ¡ tentando substituir jÃ¡ consta no
           pedido.</v-card-text
         >
         <v-card-actions>
@@ -628,7 +628,7 @@ export default {
       this.dialogLimpar = false;
       this.set_snackbar({
         show: true,
-        msg: "Orçamento Limpo!",
+        msg: "OrÃ§amento Limpo!",
         type: "success",
         time: 3000,
       });
@@ -696,14 +696,14 @@ export default {
         if (this.error) {
           this.set_snackbar({
             show: true,
-            msg: "Não Foi Possível Salvar o Orçamento",
+            msg: "NÃ£o Foi PossÃ­vel Salvar o OrÃ§amento",
             type: "error",
             time: 0,
           });
         } else {
           this.set_snackbar({
             show: true,
-            msg: "Orçamento Salvo Com Sucesso!",
+            msg: "OrÃ§amento Salvo Com Sucesso!",
             type: "success",
             time: 3000,
           });
@@ -915,7 +915,7 @@ export default {
               //   }
               this.set_snackbar({
                 show: true,
-                msg: "Cep Inválido",
+                msg: "Cep InvÃ¡lido",
                 type: "warning",
                 time: 3000,
               });
@@ -1015,7 +1015,7 @@ export default {
           console.log("vazio");
           this.set_snackbar({
             show: true,
-            msg: "Cliente não encontrado",
+            msg: "Cliente nÃ£o encontrado",
             type: "warning",
             time: 3000,
           });

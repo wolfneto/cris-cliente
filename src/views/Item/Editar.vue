@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card max-width="1500" height="auto" elevation="2">
       <v-toolbar dense flat color="indigo darken-3" dark>
@@ -26,7 +26,7 @@
         <v-tabs vertical v-model="tab">
           <v-tab active-class="blue darken-2 white--text">Dados</v-tab>
           <v-tab disabled active-class="blue darken-2 white--text"
-            >Descrição</v-tab
+            >DescriÃ§Ã£o</v-tab
           >
           <v-tab disabled active-class="blue darken-2 white--text"
             >Historico</v-tab
@@ -126,7 +126,7 @@
                         <v-text-field
                           class="uppercase"
                           v-model="item.descricao"
-                          label="Descrição"
+                          label="DescriÃ§Ã£o"
                           :rules="[regras]"
                           required
                           dense
@@ -194,7 +194,7 @@
                               v-if="item.aceita_desconto == 0"
                               class="error--text font-weight-medium"
                             >
-                              Não</span
+                              NÃ£o</span
                             >
                             <span
                               v-else
@@ -230,14 +230,14 @@
                     <v-col cols="12" sm="6" md="6" lg="6">
                       <v-textarea
                         class="uppercase-area"
-                        label="Descrição detalhada"
+                        label="DescriÃ§Ã£o detalhada"
                         rows="12"
                         no-resize
                         filled
                       ></v-textarea>
                       <v-textarea
                         class="uppercase-area"
-                        label="Especificações técnicas"
+                        label="EspecificaÃ§Ãµes tÃ©cnicas"
                         rows="12"
                         no-resize
                         filled
@@ -274,7 +274,7 @@
                       </v-col>
                       <v-col cols="12" sm="6" md="6" lg="6">
                         <div class="primary white--text text-center">
-                          <span class="h6">Saídas</span>
+                          <span class="h6">SaÃ­das</span>
                         </div>
                         <!-- <TabelaRealizadoSaidas></TabelaRealizadoSaidas> -->
                       </v-col>
@@ -294,7 +294,7 @@
                       </v-col>
                       <v-col cols="12" sm="6" md="6" lg="6">
                         <div class="primary white--text text-center">
-                          <span class="h6">Saídas</span>
+                          <span class="h6">SaÃ­das</span>
                         </div>
                         <!-- <TabelaPendenteSaidas></TabelaPendenteSaidas> -->
                       </v-col>
@@ -363,9 +363,9 @@ export default {
     msgSnackbar: "",
     valid: false,
     temDesconto: false,
-    regras: (val) => (val || "").length >= 4 || "*Campo obrigatório",
-    regras_marca: (val) => (val || "").length >= 2 || "*Campo obrigatório",
-    regras_imagem: (val) => (!val || val.size < 50000) || 'Imagem não pode exceder 5MB.',      
+    regras: (val) => (val || "").length >= 4 || "*Campo obrigatÃ³rio",
+    regras_marca: (val) => (val || "").length >= 2 || "*Campo obrigatÃ³rio",
+    regras_imagem: (val) => (!val || val.size < 50000) || 'Imagem nÃ£o pode exceder 5MB.',      
     file: null,
     showMenuImage: false,    
     x: 0,

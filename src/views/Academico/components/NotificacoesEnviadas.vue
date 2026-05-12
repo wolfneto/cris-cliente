@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <v-card-title>
@@ -79,7 +79,7 @@
                   color="primary"
                   @click="notificacao(row)"
                 >
-                  Notificação
+                  NotificaÃ§Ã£o
                   <v-icon dark right>far fa-paper-plane</v-icon>
                 </v-btn>
               </div> -->
@@ -122,13 +122,13 @@ export default {
       {
         name: "titulo_not",
         align: "center",
-        label: "Titulo Notificação",
+        label: "Titulo NotificaÃ§Ã£o",
         sortable: false,
       },
       {
         name: "msg_not",
         align: "center",
-        label: "Mensagem Notificação",
+        label: "Mensagem NotificaÃ§Ã£o",
         sortable: false,
       },
       {
@@ -146,7 +146,7 @@ export default {
       // {
       //   name: "acao",
       //   align: "center",
-      //   label: "Ação",
+      //   label: "AÃ§Ã£o",
       //   sortable: false,
       // },
     ],

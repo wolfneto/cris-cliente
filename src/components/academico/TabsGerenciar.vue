@@ -1,4 +1,4 @@
-<template>
+﻿<template>
 	<v-container>
 		<v-tabs grow icons-and-text >
 			<v-tabs-slider></v-tabs-slider>

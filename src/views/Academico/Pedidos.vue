@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <ImprimirPedido style="display: none" id="print"></ImprimirPedido>
     <v-card>
@@ -8,7 +8,7 @@
             <v-text-field
               v-model="data_de"
               v-mask="'##/##/####'"
-              :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
+              :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
               @keydown.enter="getPedidos()"
               placeholder="dd/mm/aaaa"
               label="De"
@@ -20,36 +20,36 @@
               v-model="data_ate"
               v-mask="'##/##/####'"
               @keydown.enter="getPedidos()"
-              :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
+              :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
               placeholder="dd/mm/aaaa"
-              label="Até"
+              label="AtÃ©"
               required
             ></v-text-field>
           </v-col>
         </v-row>
         <span v-if="emitido == 1">
           Pedidos
-          <span class="primary--text">Baixados</span> Acadêmico -
+          <span class="primary--text">Baixados</span> AcadÃªmico -
         </span>
         <span v-else-if="emitido == 0">
           Pedidos
-          <span class="warning--text">Pendentes</span> Acadêmico -
+          <span class="warning--text">Pendentes</span> AcadÃªmico -
         </span>
         <span v-else-if="emitido == 2">
           Pedidos
-          <span class="warning--text">Entregues</span> Acadêmico -
+          <span class="warning--text">Entregues</span> AcadÃªmico -
         </span>
         <span v-else-if="emitido == 3">
           Pedidos
-          <span class="error--text">Cancelados</span> Acadêmico -
+          <span class="error--text">Cancelados</span> AcadÃªmico -
         </span>
         <span v-else-if="emitido == 4">
           Pedidos
-          <span class="deep-purple--text">Outros </span> Acadêmico -
+          <span class="deep-purple--text">Outros </span> AcadÃªmico -
         </span>
         <span v-else-if="emitido == 5">
           Pedidos
-          <span class="deep-purple--text">Não Concluídos </span> Acadêmico -
+          <span class="deep-purple--text">NÃ£o ConcluÃ­dos </span> AcadÃªmico -
         </span>
         <v-btn small class="ml-3" @click="getPedidos()">Atualizar</v-btn>
         <!-- <v-btn
@@ -67,7 +67,7 @@
           offset-x
         >
           <template v-slot:activator="{ on }">
-            <v-btn v-on="on" class="success ml-2" small>Relatórios</v-btn>
+            <v-btn v-on="on" class="success ml-2" small>RelatÃ³rios</v-btn>
           </template>
           <v-card>
             <v-container class="ma-3">
@@ -196,7 +196,7 @@
           tile
         >
           <v-btn small active-class="deep-purple" :value="5"
-            >Não Concluidos</v-btn
+            >NÃ£o Concluidos</v-btn
           >
           <v-btn small active-class="warning" :value="0">Pendentes</v-btn>
           <v-btn small active-class="primary" :value="1">Emitidos</v-btn>
@@ -285,7 +285,7 @@
                 >
                   <br />
                   <v-chip class="mt-1 mb-1" color="red" text-color="white">
-                    NÃO É TITULAR
+                    NÃƒO Ã‰ TITULAR
                   </v-chip>
                 </span>
                 <span
@@ -336,7 +336,7 @@
 
                 <!-- <div
                   v-if="
-                    row.pagamento.status_pagamento == 'NÃO PAGO' &&
+                    row.pagamento.status_pagamento == 'NÃƒO PAGO' &&
                       row.emitido == 0
                   "
                 > -->
@@ -436,7 +436,7 @@
               <div v-if="col.name == 'desconto'">
                 {{ $money_format(row.valor_desconto) }}
                 <div v-if="row.pagamento.tipo_pagamento == 'BOLETO'">
-                  <i>À Vista ({{ row.boleto.desconto }}%): </i> <br />
+                  <i>Ã€ Vista ({{ row.boleto.desconto }}%): </i> <br />
                   {{
                     $money_format(
                       (row.valor_total - row.valor_desconto) *
@@ -445,7 +445,7 @@
                   }}
                 </div>
                 <div v-else-if="row.pagamento.tipo_pagamento == 'PIX'">
-                  <i>À Vista ({{ row.pix.desconto_valor }}%): </i> <br />
+                  <i>Ã€ Vista ({{ row.pix.desconto_valor }}%): </i> <br />
                   {{
                     $money_format(
                       (row.valor_total - row.valor_desconto) *
@@ -576,15 +576,15 @@
           >Detalhes Reserva</v-card-title
         >
         <v-card-text>
-          <b>Cartão de Crédito</b>
+          <b>CartÃ£o de CrÃ©dito</b>
           <br />
           <b>Banco:</b>
           {{ objectItem.credito.banco }}
           <br />
-          <b>Autorização:</b>
+          <b>AutorizaÃ§Ã£o:</b>
           {{ objectItem.credito.terminal_nsu }}
           <br />
-          <b>Nº Comprovante:</b>
+          <b>NÂº Comprovante:</b>
           {{ objectItem.credito.acquirer_transaction_id }}
           <br />
           <b>Status:</b>
@@ -669,11 +669,11 @@
               objectItem.credito == null ? "" : objectItem.credito.nome_cartao
             }}
             <br />
-            <b class="error--text">CLIENTE NÃO É O TITULAR</b>
+            <b class="error--text">CLIENTE NÃƒO Ã‰ O TITULAR</b>
             <br />
           </div>
           <div v-else>
-            <b class="success--text">CLIENTE É O TITULAR</b>
+            <b class="success--text">CLIENTE Ã‰ O TITULAR</b>
             <br />
           </div>
           <v-divider></v-divider>
@@ -723,18 +723,18 @@
         v-else-if="objectItem.pagamento.status_pagamento == 'RESERVA PAGA'"
       >
         <v-card-title class="headline font-weight-black"
-          >Detalhes Confirmação</v-card-title
+          >Detalhes ConfirmaÃ§Ã£o</v-card-title
         >
         <v-card-text>
-          <b>Cartão de Crédito</b>
+          <b>CartÃ£o de CrÃ©dito</b>
           <br />
           <b>Banco:</b>
           {{ objectItem.credito.banco }}
           <br />
-          <b>Autorização:</b>
+          <b>AutorizaÃ§Ã£o:</b>
           {{ objectItem.credito.terminal_nsu }}
           <br />
-          <b>Nº Comprovante:</b>
+          <b>NÂº Comprovante:</b>
           {{ objectItem.credito.acquirer_transaction_id }}
           <br />
           <b>Status:</b>
@@ -805,15 +805,15 @@
           >Detalhes Pagamento</v-card-title
         >
         <v-card-text>
-          <b>Cartão de Crédito</b>
+          <b>CartÃ£o de CrÃ©dito</b>
           <br />
           <b>Banco:</b>
           {{ objectItem.credito.banco }}
           <br />
-          <b>Autorização:</b>
+          <b>AutorizaÃ§Ã£o:</b>
           {{ objectItem.credito.terminal_nsu }}
           <br />
-          <b>Nº Comprovante:</b>
+          <b>NÂº Comprovante:</b>
           {{ objectItem.credito.acquirer_transaction_id }}
           <br />
           <b>Status:</b>
@@ -867,11 +867,11 @@
               objectItem.credito == null ? "" : objectItem.credito.nome_cartao
             }}
             <br />
-            <b class="error--text">CLIENTE NÃO É O TITULAR</b>
+            <b class="error--text">CLIENTE NÃƒO Ã‰ O TITULAR</b>
             <br />
           </div>
           <div v-else>
-            <b class="success--text">CLIENTE É O TITULAR</b>
+            <b class="success--text">CLIENTE Ã‰ O TITULAR</b>
             <br />
           </div>
         </v-card-text>
@@ -898,10 +898,10 @@
           <b>Banco:</b>
           {{ objectItem.boleto.banco }}
           <br />
-          <b>Nº Documento:</b>
+          <b>NÂº Documento:</b>
           {{ objectItem.boleto.document_number }}
           <br />
-          <b>Nosso Número:</b>
+          <b>Nosso NÃºmero:</b>
           {{ objectItem.boleto.our_number }}
           <br />
           <b>Frete:</b>
@@ -925,7 +925,7 @@
             {{ $money_format(objectItem.valor_desconto) }}
             <br />
           </div>
-          <b>Desconto à Vista ({{ objectItem.boleto.desconto }}%):</b>
+          <b>Desconto Ã  Vista ({{ objectItem.boleto.desconto }}%):</b>
           {{
             $money_format(
               (objectItem.valor_total - objectItem.valor_desconto) *
@@ -1014,15 +1014,15 @@
           >Detalhes Cancelamento</v-card-title
         >
         <v-card-text>
-          <b>Cartão de Crédito</b>
+          <b>CartÃ£o de CrÃ©dito</b>
           <br />
           <b>Banco:</b>
           {{ objectItem.credito.banco }}
           <br />
-          <b>Autorização:</b>
+          <b>AutorizaÃ§Ã£o:</b>
           {{ objectItem.credito.terminal_nsu }}
           <br />
-          <b>Nº Comprovante:</b>
+          <b>NÂº Comprovante:</b>
           {{ objectItem.credito.acquirer_transaction_id }}
           <br />
           <b>Status:</b>
@@ -1058,7 +1058,7 @@
       </v-card>
       <v-card v-else-if="objectItem.pagamento.status_pagamento == 'PIX PAGO'">
         <v-card-title class="headline font-weight-black"
-          >Detalhes Confirmação PIX</v-card-title
+          >Detalhes ConfirmaÃ§Ã£o PIX</v-card-title
         >
         <v-card-text>
           <b>PIX</b>
@@ -1089,7 +1089,7 @@
             }).format(objectItem.pix.valor)
           }}
           <br />
-          <b>Observação:</b>
+          <b>ObservaÃ§Ã£o:</b>
           {{ objectItem.pix.obs }}
         </v-card-text>
 
@@ -1148,7 +1148,7 @@
             }).format(objectItem.pix.valor)
           }}
           <br />
-          <b>Observação:</b>
+          <b>ObservaÃ§Ã£o:</b>
           {{ objectItem.pix.obs }}
         </v-card-text>
 
@@ -1181,13 +1181,13 @@
               <b>Status:</b>
               {{ log.obj_retorno.charge.chargeStatus }}
               <br />
-              <b>Código de Erro Banco:</b>
+              <b>CÃ³digo de Erro Banco:</b>
               {{ log.obj_retorno.charge.transactions[0].errorCode }}
               <br />
               <b>Mensagem de Erro Banco:</b>
               {{ log.obj_retorno.charge.transactions[0].errorMessage }}
               <br />
-              <b>Código de Erro Adquirente:</b>
+              <b>CÃ³digo de Erro Adquirente:</b>
               {{ log.obj_retorno.charge.transactions[0].acquirerErrorCode }}
               <br />
               <b>Mensagem de Erro Adquirente:</b>
@@ -1276,7 +1276,7 @@
                   'customer.email is invalid'
                 "
               >
-                Email inválido
+                Email invÃ¡lido
               </span>
               <br />
             </div>
@@ -1291,7 +1291,7 @@
       </v-card>
       <v-card
         v-else-if="
-          objectItem.pagamento.status_pagamento == 'NÃO PAGO' ||
+          objectItem.pagamento.status_pagamento == 'NÃƒO PAGO' ||
           objectItem.pagamento.status_pagamento == 'PAGO'
         "
       >
@@ -1301,7 +1301,7 @@
               <v-textarea
                 counter
                 filled
-                label="Observações"
+                label="ObservaÃ§Ãµes"
                 rows="6"
                 row-height="30"
                 v-model="objectItem.pagamento.observacao"
@@ -1427,7 +1427,7 @@
       <v-list>
         <v-list-item
           v-if="
-            objectItem.pagamento.status_pagamento == 'NÃO PAGO' &&
+            objectItem.pagamento.status_pagamento == 'NÃƒO PAGO' &&
             objectItem.emitido == 0
           "
         >
@@ -1438,7 +1438,7 @@
         </v-list-item>
         <v-list-item
           v-if="
-            objectItem.pagamento.status_pagamento == 'NÃO PAGO' &&
+            objectItem.pagamento.status_pagamento == 'NÃƒO PAGO' &&
             objectItem.pagamento.tipo_pagamento == 'OUTROS' &&
             objectItem.emitido == 1
           "
@@ -1559,7 +1559,7 @@
             objectItem.emitido == 1 &&
             objectItem.entregue == 0 &&
             (objectItem.pagamento.status_pagamento == 'BOLETO PAGO' ||
-              objectItem.pagamento.status_pagamento == 'NÃO PAGO') &&
+              objectItem.pagamento.status_pagamento == 'NÃƒO PAGO') &&
             objectItem.status_aluno != 'CANCELADO'
           "
         >
@@ -1604,7 +1604,7 @@
     >
       <v-card v-if="showMenuAntifraude">
         <v-card-title class="headline font-weight-black"
-          >Decisão Antifraude <br />
+          >DecisÃ£o Antifraude <br />
           <v-chip
             class="mt-1 mb-1"
             :color="
@@ -1620,7 +1620,7 @@
           </v-chip></v-card-title
         >
         <v-card-text>
-          <b>Cartão de Crédito</b>
+          <b>CartÃ£o de CrÃ©dito</b>
           <br />
           <b>Banco:</b>
           {{ objectItem.credito.banco }}
@@ -1697,11 +1697,11 @@
               objectItem.credito == null ? "" : objectItem.credito.nome_cartao
             }}
             <br />
-            <b class="error--text">CLIENTE NÃO É O TITULAR</b>
+            <b class="error--text">CLIENTE NÃƒO Ã‰ O TITULAR</b>
             <br />
           </div>
           <div v-else>
-            <b class="success--text">CLIENTE É O TITULAR</b>
+            <b class="success--text">CLIENTE Ã‰ O TITULAR</b>
             <br />
           </div>
         </v-card-text>
@@ -1740,7 +1740,7 @@
     <!-- MENUS DA TABELA -->
     <v-dialog v-model="dialogCancelarReserva" persistent max-width="400">
       <v-card>
-        <v-card-title class="display-1 error--text">Atenção!</v-card-title>
+        <v-card-title class="display-1 error--text">AtenÃ§Ã£o!</v-card-title>
         <v-divider></v-divider>
         <v-card-text class="body-1 font-weight-black">
           <p>Deseja cancelar a reserva de pagamento?</p>
@@ -1749,7 +1749,7 @@
         <v-card-actions>
           <div class="flex-grow-1"></div>
           <v-btn color="error" text @click="dialogCancelarReserva = false"
-            >Não</v-btn
+            >NÃ£o</v-btn
           >
           <v-btn color="success" text @click="cancelarReserva()">Sim</v-btn>
         </v-card-actions>
@@ -1757,7 +1757,7 @@
     </v-dialog>
     <v-dialog v-model="dialogCancelarPix" persistent max-width="400">
       <v-card>
-        <v-card-title class="display-1 error--text">Atenção!</v-card-title>
+        <v-card-title class="display-1 error--text">AtenÃ§Ã£o!</v-card-title>
         <v-divider></v-divider>
         <v-card-text class="body-1 font-weight-black">
           <p>Deseja cancelar o PIX?</p>
@@ -1766,7 +1766,7 @@
         <v-card-actions>
           <div class="flex-grow-1"></div>
           <v-btn color="error" text @click="dialogCancelarPix = false"
-            >Não</v-btn
+            >NÃ£o</v-btn
           >
           <v-btn color="success" text @click="cancelarPix()">Sim</v-btn>
         </v-card-actions>
@@ -1774,10 +1774,10 @@
     </v-dialog>
     <v-dialog v-model="dialogReserva" persistent max-width="400">
       <v-card>
-        <v-card-title class="display-1 error--text">Atenção!</v-card-title>
+        <v-card-title class="display-1 error--text">AtenÃ§Ã£o!</v-card-title>
         <v-divider></v-divider>
         <v-card-text v-if="dialogReserva" class="body-1 font-weight-black">
-          <p>É isso mesmo que deseja fazer ?</p>
+          <p>Ã‰ isso mesmo que deseja fazer ?</p>
           <p v-if="typeof objectItem.credito.valor_cobrar == 'number'">
             VALOR A COBRAR: R$
             {{
@@ -1797,31 +1797,31 @@
         <v-divider></v-divider>
         <v-card-actions>
           <div class="flex-grow-1"></div>
-          <v-btn color="error" text @click="dialogReserva = false">Não</v-btn>
+          <v-btn color="error" text @click="dialogReserva = false">NÃ£o</v-btn>
           <v-btn color="success" text @click="cobrarReserva()">Sim</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
     <v-dialog v-model="dialogRastreio" persistent max-width="300">
       <v-card>
-        <v-card-title class="headline">Atenção!</v-card-title>
+        <v-card-title class="headline">AtenÃ§Ã£o!</v-card-title>
         <v-card-text
           >Deseja realmente enviar o rastreio para o aluno ?</v-card-text
         >
         <v-card-actions>
           <div class="flex-grow-1"></div>
-          <v-btn color="error" text @click="dialogRastreio = false">Não</v-btn>
+          <v-btn color="error" text @click="dialogRastreio = false">NÃ£o</v-btn>
           <v-btn color="success" text @click="enviarRastreio()">Enviar</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
     <v-dialog v-model="dialogPago" persistent max-width="300">
       <v-card>
-        <v-card-title class="headline error--text">Atenção!</v-card-title>
+        <v-card-title class="headline error--text">AtenÃ§Ã£o!</v-card-title>
         <v-card-text>Deseja realmente marcar o pedido como PAGO?</v-card-text>
         <v-card-actions>
           <div class="flex-grow-1"></div>
-          <v-btn color="error" text @click="dialogPago = false">Não</v-btn>
+          <v-btn color="error" text @click="dialogPago = false">NÃ£o</v-btn>
           <v-btn color="success" text @click="pagarPedido(objectItem)"
             >Sim</v-btn
           >
@@ -1838,9 +1838,9 @@
             "
             class="success--text"
           >
-            É O TITULAR</span
+            Ã‰ O TITULAR</span
           >
-          <span v-else class="error--text"> NÃO É O TITULAR</span></v-card-title
+          <span v-else class="error--text"> NÃƒO Ã‰ O TITULAR</span></v-card-title
         >
         <div
           v-if="
@@ -1882,7 +1882,7 @@
               <br />
             </div>
             <div v-else>
-              <h5 class="error--text">CPF NÃO EXISTE</h5>
+              <h5 class="error--text">CPF NÃƒO EXISTE</h5>
             </div>
             <b>Valor do Pedido:</b>
             {{
@@ -1899,7 +1899,7 @@
           </v-card-text>
           <v-card-actions>
             <div class="flex-grow-1"></div>
-            <v-btn color="error" text @click="dialogBaixar = false">Não</v-btn>
+            <v-btn color="error" text @click="dialogBaixar = false">NÃ£o</v-btn>
             <v-btn color="success" text @click="baixarPedido(objectItem)"
               >Sim</v-btn
             >
@@ -1937,7 +1937,7 @@
               <br />
             </div>
             <div v-else>
-              <h5 class="error--text">CPF NÃO EXISTE</h5>
+              <h5 class="error--text">CPF NÃƒO EXISTE</h5>
             </div>
             <b>Valor do Pedido:</b>
             {{
@@ -1960,11 +1960,11 @@
                 objectItem.credito == null ? "" : objectItem.credito.nome_cartao
               }}
               <br />
-              <b>CLIENTE NÃO É O TITULAR</b>
+              <b>CLIENTE NÃƒO Ã‰ O TITULAR</b>
               <br />
             </div>
             <div v-else>
-              <b>CLIENTE É O TITULAR</b>
+              <b>CLIENTE Ã‰ O TITULAR</b>
               <br />
             </div>
           </v-card-text>
@@ -1983,7 +1983,7 @@
             type="password"
             class="mx-auto"
             style="width: 50%"
-            label="Senha de Autorização"
+            label="Senha de AutorizaÃ§Ã£o"
             v-model="senhaNovoCliente"
             @keypress.enter="novoCliente()"
           ></v-text-field>
@@ -2017,11 +2017,11 @@
     </v-dialog>
     <v-dialog v-model="dialogExcluir" persistent max-width="300">
       <v-card>
-        <v-card-title class="headline error--text">Atenção!</v-card-title>
+        <v-card-title class="headline error--text">AtenÃ§Ã£o!</v-card-title>
         <v-card-text>Deseja realmente excluir o pedido?</v-card-text>
         <v-card-actions>
           <div class="flex-grow-1"></div>
-          <v-btn color="primary" text @click="dialogExcluir = false">Não</v-btn>
+          <v-btn color="primary" text @click="dialogExcluir = false">NÃ£o</v-btn>
           <v-btn color="error" text @click="excluirPedido(objectItem)"
             >Excluir</v-btn
           >
@@ -2064,7 +2064,7 @@
             <br />
           </div>
           <div v-else>
-            <h5 class="error--text">CPF NÃO EXISTE</h5>
+            <h5 class="error--text">CPF NÃƒO EXISTE</h5>
           </div>
           <b>Valor do Pedido:</b>
           {{
@@ -2087,7 +2087,7 @@
                     @keydown.enter.prevent="checkDataBoleto()"
                     v-model="dataBoleto"
                     v-mask="'##/##/####'"
-                    :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
+                    :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
                     placeholder="dd/mm/aaaa"
                     label="Recebido em"
                     required
@@ -2124,11 +2124,11 @@
               <h5>{{ putMask(objectComprovante.aluno.cpf, "") }}</h5>
               <h5>
                 <br />
-                <b>Número Documento:</b>
+                <b>NÃºmero Documento:</b>
                 {{ objectComprovante.boleto.document_number }}
               </h5>
               <h5>
-                <b>Nosso Número:</b>
+                <b>Nosso NÃºmero:</b>
                 {{ objectComprovante.boleto.our_number }}
               </h5>
               <h5>
@@ -2158,7 +2158,7 @@
                   >RESERVA PAGA</span
                 >
                 <span v-else-if="objectComprovante.credito.status == 'APPROVED'"
-                  >CRÉDITO PAGO</span
+                  >CRÃ‰DITO PAGO</span
                 >
                 <span v-else>CANCELAMENTO</span>
               </h2>
@@ -2195,11 +2195,11 @@
                 {{ objectComprovante.credito.banco }}
               </h5>
               <h5>
-                <b>Autorização:</b>
+                <b>AutorizaÃ§Ã£o:</b>
                 {{ objectComprovante.credito.terminal_nsu }}
               </h5>
               <h5>
-                <b>N° Comprovante:</b>
+                <b>NÂ° Comprovante:</b>
                 {{ objectComprovante.credito.acquirer_transaction_id }}
               </h5>
               <div v-if="objectComprovante.credito.status == 'CONFIRMED'">
@@ -2272,7 +2272,7 @@
                 {{ objectComprovante.pix.banco }}
               </h5>
               <h5>
-                <b>N° Comprovante:</b>
+                <b>NÂ° Comprovante:</b>
                 {{ objectComprovante.pix.txid }}
               </h5>
               <h5>
@@ -2319,7 +2319,7 @@
                 {{ objectComprovante.pix.banco }}
               </h5>
               <h5>
-                <b>N° Comprovante:</b>
+                <b>NÂ° Comprovante:</b>
                 {{ objectComprovante.pix.txid }}
               </h5>
               <h5>
@@ -2354,11 +2354,11 @@
               <h5>{{ putMask(objectComprovante.aluno.cpf, "") }}</h5>
               <h5>
                 <br />
-                <b>Número Documento:</b>
+                <b>NÃºmero Documento:</b>
                 {{ objectComprovante.boleto.document_number }}
               </h5>
               <h5>
-                <b>Nosso Número:</b>
+                <b>Nosso NÃºmero:</b>
                 {{ objectComprovante.boleto.our_number }}
               </h5>
               <h5>
@@ -2388,7 +2388,7 @@
                   >RESERVA PAGA</span
                 >
                 <span v-else-if="objectComprovante.credito.status == 'APPROVED'"
-                  >CRÉDITO PAGO</span
+                  >CRÃ‰DITO PAGO</span
                 >
                 <span v-else>CANCELAMENTO</span>
               </h2>
@@ -2425,11 +2425,11 @@
                 {{ objectComprovante.credito.banco }}
               </h5>
               <h5>
-                <b>Autorização:</b>
+                <b>AutorizaÃ§Ã£o:</b>
                 {{ objectComprovante.credito.terminal_nsu }}
               </h5>
               <h5>
-                <b>N° Comprovante:</b>
+                <b>NÂ° Comprovante:</b>
                 {{ objectComprovante.credito.acquirer_transaction_id }}
               </h5>
               <div v-if="objectComprovante.credito.status == 'CONFIRMED'">
@@ -2503,7 +2503,7 @@
                 {{ objectComprovante.pix.banco }}
               </h5>
               <h5>
-                <b>N° Comprovante:</b>
+                <b>NÂ° Comprovante:</b>
                 {{ objectComprovante.pix.txid }}
               </h5>
               <h5>
@@ -2550,7 +2550,7 @@
                 {{ objectComprovante.pix.banco }}
               </h5>
               <h5>
-                <b>N° Comprovante:</b>
+                <b>NÂ° Comprovante:</b>
                 {{ objectComprovante.pix.txid }}
               </h5>
               <h5>
@@ -2610,7 +2610,7 @@
     <v-dialog v-model="dialogCancelar" persistent max-width="600px">
       <v-card>
         <v-card-title>
-          <span class="headline">Atenção</span>
+          <span class="headline">AtenÃ§Ã£o</span>
         </v-card-title>
         <v-card-text class="headline">
           Deseja realmente cancelar o pedido?
@@ -2629,10 +2629,10 @@
     <v-dialog v-model="dialogCancelado" persistent max-width="600px">
       <v-card>
         <v-card-title>
-          <span class="headline error--text">Atenção</span>
+          <span class="headline error--text">AtenÃ§Ã£o</span>
         </v-card-title>
         <v-card-text class="headline error--text">
-          Não se esqueça de cancelar o pedido {{ objectItem.pedido_dcinfo }} no
+          NÃ£o se esqueÃ§a de cancelar o pedido {{ objectItem.pedido_dcinfo }} no
           DC-INFO
         </v-card-text>
         <v-card-actions>
@@ -2659,17 +2659,17 @@
 
           <div v-if="divEnderecoEntrega1" id="printEnderecoEntrega">
             <v-card-text>
-              <h5><b>Endereço de Entrega</b></h5>
+              <h5><b>EndereÃ§o de Entrega</b></h5>
               <h5>
-                <b>Número Pedido:</b> {{ this.enderecoEntrega.numero_pedido }}
+                <b>NÃºmero Pedido:</b> {{ this.enderecoEntrega.numero_pedido }}
               </h5>
               <h5>
-                <b>Número Online:</b> {{ this.enderecoEntrega.numero_online }}
+                <b>NÃºmero Online:</b> {{ this.enderecoEntrega.numero_online }}
               </h5>
               <h5><b>Nome:</b> {{ this.enderecoEntrega.nome }}</h5>
               <h6><b>CPF:</b> {{ putMask(this.enderecoEntrega.cpf_aluno) }}</h6>
               <h5>
-                <b>Endereço</b>: {{ this.enderecoEntrega.endereco }},
+                <b>EndereÃ§o</b>: {{ this.enderecoEntrega.endereco }},
                 {{ this.enderecoEntrega.numero }}
               </h5>
               <h5 v-if="enderecoEntrega.complemento">
@@ -2705,17 +2705,17 @@
       <v-card>
         <div v-if="divEnderecoEntrega2" id="printEndereco1">
           <v-card-text class="headline">
-            <h5><b>Endereço de Entrega</b></h5>
+            <h5><b>EndereÃ§o de Entrega</b></h5>
             <h5>
-              <b>Número Pedido:</b> {{ this.enderecoEntrega.numero_pedido }}
+              <b>NÃºmero Pedido:</b> {{ this.enderecoEntrega.numero_pedido }}
             </h5>
             <h5>
-              <b>Número Online:</b> {{ this.enderecoEntrega.numero_online }}
+              <b>NÃºmero Online:</b> {{ this.enderecoEntrega.numero_online }}
             </h5>
             <h5><b>Nome:</b> {{ this.enderecoEntrega.nome }}</h5>
             <h6><b>CPF:</b> {{ putMask(this.enderecoEntrega.cpf_aluno) }}</h6>
             <h5>
-              <b>Endereço</b>: {{ this.enderecoEntrega.endereco }},
+              <b>EndereÃ§o</b>: {{ this.enderecoEntrega.endereco }},
               {{ this.enderecoEntrega.numero }}
             </h5>
             <h5 v-if="enderecoEntrega.complemento">
@@ -2729,12 +2729,12 @@
         </div>
         <div v-if="divEnderecoEntrega3" id="printEndereco2">
           <v-card-text class="headline">
-            <h5><b>Endereço de Entrega</b></h5>
+            <h5><b>EndereÃ§o de Entrega</b></h5>
             <h5>
-              <b>Número Pedido:</b> {{ this.objEnderecoEntrega.pedido_dcinfo }}
+              <b>NÃºmero Pedido:</b> {{ this.objEnderecoEntrega.pedido_dcinfo }}
             </h5>
             <h5>
-              <b>Número Online:</b> {{ this.objEnderecoEntrega.id_pedidos }}
+              <b>NÃºmero Online:</b> {{ this.objEnderecoEntrega.id_pedidos }}
             </h5>
             <h5>
               <b>Nome:</b> {{ this.objEnderecoEntrega.nome }}
@@ -2742,7 +2742,7 @@
             </h5>
             <h5><b>CPF:</b> {{ putMask(this.objEnderecoEntrega.cpf) }}</h5>
             <h5>
-              <b>Endereço</b>: {{ this.objEnderecoEntrega.endereco }},
+              <b>EndereÃ§o</b>: {{ this.objEnderecoEntrega.endereco }},
               {{ this.objEnderecoEntrega.numero }}
             </h5>
             <h5 v-if="objEnderecoEntrega.complemento">
@@ -2818,7 +2818,7 @@
     <v-dialog v-model="dialogAntifraude" persistent max-width="600px">
       <v-card>
         <v-card-title>
-          <span class="headline error--text">Atenção</span>
+          <span class="headline error--text">AtenÃ§Ã£o</span>
         </v-card-title>
         <v-card-text class="headline">
           Deseja realmente alterar o STATUS ANTIFRAUDE para
@@ -3000,7 +3000,7 @@
               <v-text-field
                 class="uppercase"
                 v-model="numeroPedidoDCInfo"
-                label="Insira o n° DC Info!"
+                label="Insira o nÂ° DC Info!"
                 filled
               ></v-text-field>
             </v-col>
@@ -3021,7 +3021,7 @@
                 {{ objPedidoDCInfo.credito.amount }}</span
               ><br />
               <span
-                >Autorização: {{ objPedidoDCInfo.credito.terminal_nsu }}</span
+                >AutorizaÃ§Ã£o: {{ objPedidoDCInfo.credito.terminal_nsu }}</span
               ><br />
               {{ objPedidoDCInfo.credito.authorized_at }}
             </v-col>
@@ -3164,7 +3164,7 @@ export default {
       },
       {
         value: "descri_item",
-        text: "DESCRIÇÃO",
+        text: "DESCRIÃ‡ÃƒO",
       },
       {
         value: "marca_item",
@@ -3239,7 +3239,7 @@ export default {
       {
         name: "acao",
         align: "center",
-        label: "Ação",
+        label: "AÃ§Ã£o",
         sortable: false,
       },
     ],
@@ -3424,7 +3424,7 @@ export default {
       await this.enviar_outros_cobranca(row.id_pedidos);
       this.loading = false;
       this.$router.push({
-        name: "Cobrança - Pagamento Parcial",
+        name: "CobranÃ§a - Pagamento Parcial",
       });
     },
     async emitirTodos() {
@@ -3529,7 +3529,7 @@ export default {
       var data = new Date(),
         dia = (data.getDate() - 1).toString(),
         diaF = dia.length == 1 ? "0" + dia : dia,
-        mes = (data.getMonth() + 1).toString(), //+1 pois no getMonth Janeiro começa com zero.
+        mes = (data.getMonth() + 1).toString(), //+1 pois no getMonth Janeiro comeÃ§a com zero.
         mesF = mes.length == 1 ? "0" + mes : mes,
         anoF = data.getFullYear();
       this.objectItem.data_entrega = diaF + "/" + mesF + "/" + anoF;
@@ -3898,7 +3898,7 @@ export default {
         this.loading = false;
         if (this.error) {
           this.showSnakerbar(
-            "Atenção! Cliente Menor de Idade. Contate o Administrador informando o CPF",
+            "AtenÃ§Ã£o! Cliente Menor de Idade. Contate o Administrador informando o CPF",
             "warning"
           );
         } else {
@@ -3964,7 +3964,7 @@ export default {
           ":" +
           this.getnet.credit_confirm.confirm_date.substring(17, 19);
 
-        this.showSnakerbar("Cobrança Realizada!", "success");
+        this.showSnakerbar("CobranÃ§a Realizada!", "success");
         this.getPedidos();
         this.showComprovante(this.objectItem);
 
@@ -4088,7 +4088,7 @@ export default {
 
           if (resposta != false) {
             this.dadosEndereco = resposta;
-            // tem endereço de entrega, salvar no store pra tambem imprimir junto com o pedido
+            // tem endereÃ§o de entrega, salvar no store pra tambem imprimir junto com o pedido
           }
           //this.$htmlToPaper("print");
           // mostral modal com o numero do pedido
@@ -4183,7 +4183,7 @@ export default {
       // FAZ A CHAMADA PARA O SERVIDOR
 
       if (this.motivo.trim() == "") {
-        this.showSnakerbar("O Motivo é obrigatório", "error");
+        this.showSnakerbar("O Motivo Ã© obrigatÃ³rio", "error");
       } else {
         this.loading = true;
         this.$axios
@@ -4410,7 +4410,7 @@ export default {
           for (let financeiro of pedidos_financeiro) {
             if (financeiro.length >= 2) {
               // [`interpolated-${c}`]: true, // dynamic property + interpolation
-              // é array
+              // Ã© array
               if (item.pedido_dcinfo == financeiro[0].yNumero.trim()) {
                 obj.valor_conf_fat = parseFloat(financeiro[0].yValTot);
                 obj.valor_conf_fat = obj.valor_conf_fat.toFixed(2);
@@ -4788,7 +4788,7 @@ export default {
           "error"
         );
       } else {
-        this.showSnakerbar("Observação salva!", "success");
+        this.showSnakerbar("ObservaÃ§Ã£o salva!", "success");
         this.showMenu = false;
       }
     },

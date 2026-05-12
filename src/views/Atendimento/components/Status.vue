@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <ImprimirPedidoOrcamento
       v-show="showPrint"
@@ -7,10 +7,10 @@
     <v-card>
       <v-card-title>
         <span v-if="status == 1">
-          Orçamentos Externos <span class="warning--text">Pendentes</span>
+          OrÃ§amentos Externos <span class="warning--text">Pendentes</span>
         </span>
         <span v-else>
-          Orçamentos Externos <span class="primary--text">Emitidos</span>
+          OrÃ§amentos Externos <span class="primary--text">Emitidos</span>
         </span>
         <v-btn text class="ml-5" color="success" @click="getPedidos()"
           ><v-icon left>fas fa-sync</v-icon> Atualizar</v-btn
@@ -173,13 +173,13 @@
     <!-- MENUS DA TABELA -->
     <v-dialog v-model="dialogBaixar" persistent max-width="300">
       <v-card>
-        <v-card-title class="headline error--text">Atenção!</v-card-title>
+        <v-card-title class="headline error--text">AtenÃ§Ã£o!</v-card-title>
         <v-card-text
           >Deseja realmente enviar o pedido para o DC-INFO?</v-card-text
         >
         <v-card-actions>
           <div class="flex-grow-1"></div>
-          <v-btn color="error" text @click="dialogBaixar = false">Não</v-btn>
+          <v-btn color="error" text @click="dialogBaixar = false">NÃ£o</v-btn>
           <v-btn color="success" text @click="baixarPedido(objectItem)"
             >Sim</v-btn
           >
@@ -188,11 +188,11 @@
     </v-dialog>
     <v-dialog v-model="dialogExcluir" persistent max-width="300">
       <v-card>
-        <v-card-title class="headline error--text">Atenção!</v-card-title>
+        <v-card-title class="headline error--text">AtenÃ§Ã£o!</v-card-title>
         <v-card-text>Deseja realmente excluir o pedido?</v-card-text>
         <v-card-actions>
           <div class="flex-grow-1"></div>
-          <v-btn color="primary" text @click="dialogExcluir = false">Não</v-btn>
+          <v-btn color="primary" text @click="dialogExcluir = false">NÃ£o</v-btn>
           <v-btn color="error" text @click="excluirPedido(objectItem)"
             >Excluir</v-btn
           >
@@ -203,7 +203,7 @@
     <v-dialog v-model="dialogNumeroPedido" persistent max-width="600px">
       <v-card>
         <v-card-title>
-          <span class="headline success--text">ATENÇÃO</span>
+          <span class="headline success--text">ATENÃ‡ÃƒO</span>
         </v-card-title>
         <v-card-text class="headline">
           {{ numeroPedido }}
@@ -301,7 +301,7 @@ export default {
       {
         name: "acao",
         align: "center",
-        label: "Ação",
+        label: "AÃ§Ã£o",
         sortable: false,
       },
     ],
@@ -643,7 +643,7 @@ export default {
              this.set_loading(false);
             this.set_snackbar({
               show: true,
-              msg: "Orçamento Excluido!",
+              msg: "OrÃ§amento Excluido!",
               type: "success",
               time: 0,
             });

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-form ref="form" v-model="valid" lazy-validation>
       <v-container>
@@ -6,7 +6,7 @@
           <v-col cols="12" md="3">
             <v-text-field
               v-model="data_de"
-              :rules="[v => !!v || 'Campo Obrigatório']"
+              :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
               label="De"
               required
               v-mask="'##/##/####'"
@@ -15,8 +15,8 @@
           <v-col cols="12" md="3">
             <v-text-field
               v-model="data_ate"
-              :rules="[v => !!v || 'Campo Obrigatório']"
-              label="Até"
+              :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+              label="AtÃ©"
               required
               v-mask="'##/##/####'"
             ></v-text-field>
@@ -121,13 +121,13 @@
                     </div>
                   </td>
                   <td>
-                    Previsão:
+                    PrevisÃ£o:
                     <b>{{ item.vendido.previsao * item.vendido.qtd}}</b>
                     <div v-if="item.hasOwnProperty('vendidoOp')">
                       <v-divider class="mt-1 mb-1"></v-divider>
                       <span
                         class="blue--text text--lighten-1"
-                      >Previsão: {{ item.vendidoOp.previsao }}</span>
+                      >PrevisÃ£o: {{ item.vendidoOp.previsao }}</span>
                     </div>
                   </td>
                   <td>
@@ -174,7 +174,7 @@
                 <span style="display:none">{{sortedArray}}</span>
                 <!-- <tr v-if="sortedArray.length > 0">
 									<td colspan="7" class="text-center">
-										<h2>NÃO VENDIDOS</h2>
+										<h2>NÃƒO VENDIDOS</h2>
 									</td>
 								</tr>
 								
@@ -182,7 +182,7 @@
 									<td>{{item.naovendido.codigo}}</td>
 									<td>{{item.naovendido.qtd}}</td>
 									<td>{{item.naovendido.descricao}}</td>
-									<td>Previsão: {{item.naovendido.previsao}}</td>
+									<td>PrevisÃ£o: {{item.naovendido.previsao}}</td>
 									<td>Vendidas: {{vendidas}}</td>
 									<td>
 										<b>Total Site: </b>{{item.naovendido.total_site}}
@@ -244,13 +244,13 @@
                     </div>
                   </td>
                   <td>
-                    Previsão:
+                    PrevisÃ£o:
                     <b>{{ item.vendido.previsao }}</b>
                     <div v-if="item.hasOwnProperty('vendidoOp')">
                       <v-divider class="mt-1 mb-1"></v-divider>
                       <span
                         class="blue--text text--lighten-1"
-                      >Previsão: {{ item.vendidoOp.previsao }}</span>
+                      >PrevisÃ£o: {{ item.vendidoOp.previsao }}</span>
                     </div>
                   </td>
                   <td>
@@ -355,7 +355,7 @@ export default {
         value: "nome_exibi_lista"
       },
       {
-        text: "Previsão",
+        text: "PrevisÃ£o",
         sortable: true,
         value: "previsao"
       },
@@ -370,7 +370,7 @@ export default {
         value: "valor_total_lista"
       },
       {
-        text: "Ação",
+        text: "AÃ§Ã£o",
         align: "center",
         sortable: false,
         value: "acao"
@@ -378,7 +378,7 @@ export default {
     ],
     headersItensVendidos: [
       {
-        text: "Código",
+        text: "CÃ³digo",
         sortable: true,
         value: "vendido.codigo"
       },
@@ -388,12 +388,12 @@ export default {
         value: "vendido.qtd"
       },
       {
-        text: "Descrição",
+        text: "DescriÃ§Ã£o",
         sortable: true,
         value: "vendido.descricao"
       },
       {
-        text: "Previsão",
+        text: "PrevisÃ£o",
         sortable: true,
         value: "vendido.previsao"
       },
@@ -594,7 +594,7 @@ export default {
 
       this.interval = setInterval(() => {
         if (this.value > 100) {
-          this.msg = "Ajustando o relatório";
+          this.msg = "Ajustando o relatÃ³rio";
           this.query = true;
         }
         this.value += 3;

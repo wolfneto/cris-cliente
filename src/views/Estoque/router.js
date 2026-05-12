@@ -1,4 +1,4 @@
-import Separacao from './Separacao';
+﻿import Separacao from './Separacao';
 import Consulta from './Consulta';
 import Impressao from './ImpressaoSeparacao';
 import EntradaSaidaManual from './EntradaSaidaManual';
@@ -11,7 +11,7 @@ import EntregasControle from './EntregasControle';
 
 export default [{
         path: '/estoque/separacao',
-        name: 'Separação',
+        name: 'SeparaÃ§Ã£o',
         component: Separacao,
         meta: {
             requiresAuth: true
@@ -27,7 +27,7 @@ export default [{
     },
     {
         path: '/estoque/Impressao',
-        name: 'Impressao Separação',
+        name: 'Impressao SeparaÃ§Ã£o',
         component: Impressao,
         meta: {
             requiresAuth: true
@@ -35,7 +35,7 @@ export default [{
     },
     {
         path: '/estoque/EntradaSaidaManual',
-        name: 'Entrada ou Saída Manual',
+        name: 'Entrada ou SaÃ­da Manual',
         component: EntradaSaidaManual,
         meta: {
             requiresAuth: true
@@ -43,7 +43,7 @@ export default [{
     },
     {
         path: '/estoque/impressaoEtiquetaExpedicao',
-        name: 'Etiquetas Expedições',
+        name: 'Etiquetas ExpediÃ§Ãµes',
         component: ImpressaoEtiquetaExpedicao,
         meta: {
             requiresAuth: true
@@ -51,7 +51,7 @@ export default [{
     },
     {
         path: '/estoque/Conferencia',
-        name: 'Conferência',
+        name: 'ConferÃªncia',
         component: Conferencia,
         meta: {
             requiresAuth: true
@@ -59,7 +59,7 @@ export default [{
     },
     {
         path: '/estoque/roteiroExpedicao',
-        name: 'Roteiro Expedição',
+        name: 'Roteiro ExpediÃ§Ã£o',
         component: RoteiroExpedicao,
         meta: {
             requiresAuth: true

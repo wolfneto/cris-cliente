@@ -1,4 +1,4 @@
-import PagamentoGerar from './Pagamento/PagamentoGerar';
+﻿import PagamentoGerar from './Pagamento/PagamentoGerar';
 import PagamentoVer from './Pagamento/PagamentoVer';
 import ErrosPagamento from './Pagamento/ErrosPagamento';
 import Bancos from './Bancos';

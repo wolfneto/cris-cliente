@@ -1,4 +1,4 @@
-import Usuario from './Usuario';
+﻿import Usuario from './Usuario';
 import UsuarioCadastrar from './UsuarioCadastrar';
 
 export default [
@@ -12,7 +12,7 @@ export default [
     },
     {
         path: '/usuario/cadastrar',
-        name: 'Cadastrar Usuário',
+        name: 'Cadastrar UsuÃ¡rio',
         component: UsuarioCadastrar,
         meta: {
             requiresAuth: true

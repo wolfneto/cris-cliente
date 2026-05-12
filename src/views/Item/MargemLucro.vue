@@ -1,4 +1,4 @@
-<template>
+﻿<template>
 	<v-container>
 		<div>
 			<v-card>
@@ -8,7 +8,7 @@
 					<v-text-field
 						v-model="search"
 						append-icon="fa-search"
-						label="Código, Fabricante ou Descrição"
+						label="CÃ³digo, Fabricante ou DescriÃ§Ã£o"
 						single-line
 						hide-details
 						autofocus
@@ -51,7 +51,7 @@
 					<v-row justify="center">
 						<v-col cols="3">
 							<span>
-								Código:
+								CÃ³digo:
 								<b>{{item.codigo}}</b>
 							</span>
                             <br>
@@ -59,13 +59,13 @@
 						</v-col>
 						<v-col cols="5">
 							<span>
-								Descrição:
+								DescriÃ§Ã£o:
 								<b>{{item.descricao}}</b>
 							</span>
 						</v-col>
 						<v-col cols="3">
 							<span>
-								Código Fabricante:
+								CÃ³digo Fabricante:
 								<b>{{item.codigo_fornecedor}}</b>
 							</span>
                             <br>
@@ -148,7 +148,7 @@
 												<div class="input-group mb-3">
 													<div class="input-group-prepend">
 														<span v-if="item.pis == 'S'" class="input-group-text text-size" id="basic-addon1">SIM</span>
-														<span v-else class="input-group-text text-size" id="basic-addon1">NÃO</span>
+														<span v-else class="input-group-text text-size" id="basic-addon1">NÃƒO</span>
 													</div>
 													<input
 														type="number"
@@ -220,7 +220,7 @@
 															class="input-group-text text-size"
 															id="basic-addon1"
 														>SIM</span>
-														<span v-else class="input-group-text text-size" id="basic-addon1">NÃO</span>
+														<span v-else class="input-group-text text-size" id="basic-addon1">NÃƒO</span>
 													</div>
 													<input
 														type="number"
@@ -542,7 +542,7 @@ export default {
 		itens: [],
 		headers: [
 			{ text: "Codigo", value: "codigo" },
-			{ text: "Descrição", value: "descricao" },
+			{ text: "DescriÃ§Ã£o", value: "descricao" },
 			{ text: "Marca", value: "marca" },
 			{ text: "Valor", value: "valor" },
 			{ text: "Saldo", value: "saldo" },

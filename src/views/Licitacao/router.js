@@ -1,4 +1,4 @@
-import LicitacaoItem from './LicitacaoItem';
+﻿import LicitacaoItem from './LicitacaoItem';
 import LicitacaoListar from './LicitacaoListar';
 
 export default [

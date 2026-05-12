@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-tabs @change="atualizar()" v-model="tab" dense grow>
       <v-tabs-slider></v-tabs-slider>
@@ -80,7 +80,7 @@ export default {
       //   icon: "fa-dollar-sign",
       //   component: "Financeiro"
       // },
-      // { id: 4, text: "Histórico", icon: "fa-history", component: "Historico" },
+      // { id: 4, text: "HistÃ³rico", icon: "fa-history", component: "Historico" },
       // {
       //   id: 5,
       //   text: "Comercial",

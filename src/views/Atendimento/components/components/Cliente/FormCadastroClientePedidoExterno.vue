@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card height="600">
       <v-toolbar dense flat>
@@ -24,10 +24,10 @@
                         @keyup="checkCpfCnpj(cliente.cpf_cnpj)"
                         type="search"
                         autocomplete="off"
-                        hint="Digite somento números"
+                        hint="Digite somento nÃºmeros"
                         autofocus
                         v-model="cliente.cpf_cnpj"
-                        :rules="[(v) => !!v || 'Campo Obrigatório']"
+                        :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
                         label="CPF/CNPJ"
                         v-mask="['###.###.###-##', '##.###.###/####-##']"
                         dense
@@ -43,7 +43,7 @@
                         autocomplete="off"
                         @keyup="cliente.fantasia = cliente.razao_social"
                         :rules="nomeRules"
-                        label="Razão Social"
+                        label="RazÃ£o Social"
                         class="input-uppercase"
                         dense
                         required
@@ -51,11 +51,11 @@
                     </v-col>
                     <v-col cols="12" md="2">
                       <v-text-field
-                        hint="Digite somento números com DDD"
+                        hint="Digite somento nÃºmeros com DDD"
                         v-model="cliente.telefone"
                        type="search"
                         autocomplete="off"
-                        :rules="[(v) => !!v || 'Campo Obrigatório']"
+                        :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
                         label="Telefone"
                         v-mask="'(##) ####-####'"
                         dense
@@ -68,7 +68,7 @@
                         v-model="cliente.email"
                         type="search"
                         autocomplete="off"
-                        :rules="[(v) => !!v || 'Campo Obrigatório']"
+                        :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
                         label="E-Mail"
                         dense
                         required
@@ -90,11 +90,11 @@
                     </v-col>
                     <v-col cols="12" md="2">
                       <v-text-field
-                        hint="Digite somento números com DDD"
+                        hint="Digite somento nÃºmeros com DDD"
                         v-model="cliente.celular"
                         type="search"
                         autocomplete="off"
-                        :rules="[(v) => !!v || 'Campo Obrigatório']"
+                        :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
                         label="Celular/WhatsApp"
                         v-mask="['(##) ####-####', '(##) #####-####']"
                         dense
@@ -122,7 +122,7 @@
                         autocomplete="off"
                           v-model="cliente.inscricao_estadual"
                           :rules="nomeRules"
-                          label="Inscrição Estadual"
+                          label="InscriÃ§Ã£o Estadual"
                           dense
                           required
                         ></v-text-field>
@@ -132,7 +132,7 @@
                           v-model="cliente.inscricao_municipal"
                           type="search"
                         autocomplete="off"
-                          label="Inscrição Municipal"
+                          label="InscriÃ§Ã£o Municipal"
                           dense
                         ></v-text-field>
                       </v-col>
@@ -142,7 +142,7 @@
               </v-card>
               <v-card class="mx-auto mt-3" outlined>
                 <v-card-title class="primary--text"
-                  >Endereço Principal</v-card-title
+                  >EndereÃ§o Principal</v-card-title
                 >
                 <v-card-text>
                   <v-row class="custom-row">
@@ -151,9 +151,9 @@
                         type="search"
                         autocomplete="off"
                         @keyup="getCep(cliente.endereco_principal)"
-                        hint="Digite somento números"
+                        hint="Digite somento nÃºmeros"
                         v-model="cliente.endereco_principal.cep"
-                        :rules="[(v) => !!v || 'Campo Obrigatório']"
+                        :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
                         label="Cep"
                         :loading="cepPrincipalLoading"
                         ref="cep_principal"
@@ -169,8 +169,8 @@
                         class="input-uppercase"
                         hint="Rua, Avenida, Estrada..."
                         v-model="cliente.endereco_principal.logradouro"
-                        :rules="[(v) => !!v || 'Campo Obrigatório']"
-                        label="Endereço"
+                        :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
+                        label="EndereÃ§o"
                         dense
                         required
                       ></v-text-field>
@@ -180,8 +180,8 @@
                         type="search"
                         autocomplete="off"
                         v-model="cliente.endereco_principal.numero"
-                        :rules="[(v) => !!v || 'Campo Obrigatório']"
-                        label="Número"
+                        :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
+                        label="NÃºmero"
                         ref="numero_principal"
                         required
                         v-mask="'####'"
@@ -206,7 +206,7 @@
                         type="search"
                         autocomplete="off"
                         v-model="cliente.endereco_principal.bairro"
-                        :rules="[(v) => !!v || 'Campo Obrigatório']"
+                        :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
                         label="Bairro"
                         dense
                         required
@@ -218,7 +218,7 @@
                         autocomplete="off"
                         class="input-uppercase"
                         v-model="cliente.endereco_principal.cidade"
-                        :rules="[(v) => !!v || 'Campo Obrigatório']"
+                        :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
                         label="Cidade"
                         dense
                         required
@@ -230,7 +230,7 @@
                         autocomplete="off"
                         class="input-uppercase"
                         v-model="cliente.endereco_principal.uf"
-                        :rules="[(v) => !!v || 'Campo Obrigatório']"
+                        :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
                         label="Estado"
                         dense
                         required
@@ -283,7 +283,7 @@ function defaultData() {
     },
     vendedores: [],
     nomeRules: [
-      (v) => !!v || "Campo Obrigatório",
+      (v) => !!v || "Campo ObrigatÃ³rio",
       (v) => v.length >= 3 || "Campo deve possuir 3 caracteres ou mais",
     ],
     valid: false,
@@ -355,7 +355,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "Preencha os campos obrigatórios.",
+          msg: "Preencha os campos obrigatÃ³rios.",
           type: "error",
           time: 0,
         });
@@ -384,7 +384,7 @@ export default {
 
               this.set_snackbar({
                 show: true,
-                msg: "Cep Inválido",
+                msg: "Cep InvÃ¡lido",
                 type: "warning",
                 time: 2000,
               });

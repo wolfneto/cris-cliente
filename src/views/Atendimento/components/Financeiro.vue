@@ -1,11 +1,11 @@
-<template>
+﻿<template>
   <div>
     <v-row class="custom-row ml-2 mr-2">
       <v-col cols="2">
         <v-text-field
           v-model="data_de"
           v-mask="'##/##/####'"
-          :rules=" [v => !!v.trim() || 'Data obrigatória!' ] "
+          :rules=" [v => !!v.trim() || 'Data obrigatÃ³ria!' ] "
           placeholder="dd/mm/aaaa"
           label="De"
           required
@@ -15,9 +15,9 @@
         <v-text-field
           v-model="data_ate"
           v-mask="'##/##/####'"
-          :rules=" [v => !!v.trim() || 'Data obrigatória!' ] "
+          :rules=" [v => !!v.trim() || 'Data obrigatÃ³ria!' ] "
           placeholder="dd/mm/aaaa"
-          label="Até"
+          label="AtÃ©"
           required
         ></v-text-field>
       </v-col>
@@ -29,18 +29,18 @@
           v-model="cliente.codigo"
           append-icon="fa-search"
           @click:append="showDialogSearch()"
-          label="Código"
+          label="CÃ³digo"
           v-mask="'#####'"
         ></v-text-field>
       </v-col>
       <v-col cols="2">
-        <v-select v-model="selectedOperacao" :items="operacoes" label="Operação"></v-select>
+        <v-select v-model="selectedOperacao" :items="operacoes" label="OperaÃ§Ã£o"></v-select>
       </v-col>
     </v-row>
     <v-card class="mb-2">
       <div class="text-center">
         <span class="subtitle-1">
-          <b>Parcelas à Realizar</b>
+          <b>Parcelas Ã  Realizar</b>
         </span>
       </div>
       <v-data-table
@@ -104,7 +104,7 @@
       </v-data-table>
     </v-card>
     <v-row class="font-weight-medium" justify="center">
-      <v-col cols="2">Total à Realizar: -193.568,02</v-col>
+      <v-col cols="2">Total Ã  Realizar: -193.568,02</v-col>
       <v-col cols="2">Total Atrazado: -572.739,60</v-col>
       <v-col cols="2">Total Realizado: 292.746,21</v-col>
       <v-col cols="2">Total de Pedidos: 1945</v-col>
@@ -146,20 +146,20 @@ export default {
       // ficar global no Inicio.vue do tela de atendimento
       { text: "COMPRA (PEDIDO)", value: "1102 P" },
       { text: "COMPRA (NOTA)", value: "1102 N" },
-      { text: "* DEVOLUÇÃO (ESTADUAL)", value: "5202 E" },
-      { text: "DEVOLUÇÃO (ESTADUAL)", value: "5202" }
+      { text: "* DEVOLUÃ‡ÃƒO (ESTADUAL)", value: "5202 E" },
+      { text: "DEVOLUÃ‡ÃƒO (ESTADUAL)", value: "5202" }
     ],
     selectedOperacao: {}, // ficar global no Inicio.vue do tela de atendimento
     dialogSearch: false, // ficar global no Inicio.vue do tela de atendimento
     headersRealizadas: [
       { text: "Documento", value: "documento" },
       { text: "Ref", value: "referencia" },
-      { text: "Emissão", value: "emissao" },
+      { text: "EmissÃ£o", value: "emissao" },
       { text: "Valor", value: "valor" },
       { text: "Pago", value: "valor_pago" },
       { text: "Vencimento", value: "vencimento" },
       { text: "Pagamento", value: "pagamento" },
-      { text: "Observações", value: "obs" },
+      { text: "ObservaÃ§Ãµes", value: "obs" },
       { text: "Cliente", value: "cliente" },
       { text: "Carteira", value: "carteira" },
       { text: "Banco", value: "banco" },
@@ -176,7 +176,7 @@ export default {
         pagamento: "01/03/1993",
         obs: "LOJA",
         cliente: "EDGAR CARDOTE",
-        carteira: "À VISTA",
+        carteira: "Ã€ VISTA",
         banco: "SOLIDENT",
         financeiro: 888021,
         vencido: false
@@ -191,7 +191,7 @@ export default {
         pagamento: "01/03/1993",
         obs: "LOJA",
         cliente: "EDGAR CARDOTE",
-        carteira: "À VISTA",
+        carteira: "Ã€ VISTA",
         banco: "SOLIDENT",
         financeiro: 888021,
         vencido: true
@@ -207,7 +207,7 @@ export default {
         obs:
           "ahsdjkahsdjk hasjdhasjkdhsaj ahsjdhas ajskdh ahsjdhas ajkdhasjkdh hasjkdhasjdh asjh jsahdjkashd h  jasdhjakshdjkashdjksahdjkas",
         cliente: "EDGAR CARDOTE",
-        carteira: "À VISTA",
+        carteira: "Ã€ VISTA",
         banco: "SOLIDENT",
         financeiro: 888021,
         vencido: false
@@ -222,7 +222,7 @@ export default {
         pagamento: "01/03/1993",
         obs: "LOJA",
         cliente: "EDGAR CARDOTE",
-        carteira: "À VISTA",
+        carteira: "Ã€ VISTA",
         banco: "SOLIDENT",
         financeiro: 888021,
         vencido: false
@@ -237,7 +237,7 @@ export default {
         pagamento: "01/03/1993",
         obs: "LOJA",
         cliente: "EDGAR CARDOTE",
-        carteira: "À VISTA",
+        carteira: "Ã€ VISTA",
         banco: "SOLIDENT",
         financeiro: 888021,
         vencido: false
@@ -252,7 +252,7 @@ export default {
         pagamento: "01/03/1993",
         obs: "LOJA",
         cliente: "EDGAR CARDOTE",
-        carteira: "À VISTA",
+        carteira: "Ã€ VISTA",
         banco: "SOLIDENT",
         financeiro: 888021,
         vencido: false
@@ -267,7 +267,7 @@ export default {
         pagamento: "01/03/1993",
         obs: "LOJA",
         cliente: "EDGAR CARDOTE",
-        carteira: "À VISTA",
+        carteira: "Ã€ VISTA",
         banco: "SOLIDENT",
         financeiro: 888021,
         vencido: false
@@ -282,7 +282,7 @@ export default {
         pagamento: "01/03/1993",
         obs: "LOJA",
         cliente: "EDGAR CARDOTE",
-        carteira: "À VISTA",
+        carteira: "Ã€ VISTA",
         banco: "SOLIDENT",
         financeiro: 888021,
         vencido: false
@@ -297,7 +297,7 @@ export default {
         pagamento: "01/03/1993",
         obs: "LOJA",
         cliente: "EDGAR CARDOTE",
-        carteira: "À VISTA",
+        carteira: "Ã€ VISTA",
         banco: "SOLIDENT",
         financeiro: 888021,
         vencido: false
@@ -312,7 +312,7 @@ export default {
         pagamento: "01/03/1993",
         obs: "LOJA",
         cliente: "EDGAR CARDOTE",
-        carteira: "À VISTA",
+        carteira: "Ã€ VISTA",
         banco: "SOLIDENT",
         financeiro: 888021,
         vencido: false
@@ -327,7 +327,7 @@ export default {
         pagamento: "01/03/1993",
         obs: "LOJA",
         cliente: "EDGAR CARDOTE",
-        carteira: "À VISTA",
+        carteira: "Ã€ VISTA",
         banco: "SOLIDENT",
         financeiro: 888021,
         vencido: true
@@ -342,7 +342,7 @@ export default {
         pagamento: "01/03/1993",
         obs: "LOJA",
         cliente: "EDGAR CARDOTE",
-        carteira: "À VISTA",
+        carteira: "Ã€ VISTA",
         banco: "SOLIDENT",
         financeiro: 888021,
         vencido: false
@@ -357,7 +357,7 @@ export default {
         pagamento: "01/03/1993",
         obs: "LOJA",
         cliente: "EDGAR CARDOTE",
-        carteira: "À VISTA",
+        carteira: "Ã€ VISTA",
         banco: "SOLIDENT",
         financeiro: 888021,
         vencido: false
@@ -372,7 +372,7 @@ export default {
         pagamento: "22/02/1993",
         obs: "LOJA",
         cliente: "EDGAR CARDOTE",
-        carteira: "À VISTA",
+        carteira: "Ã€ VISTA",
         banco: "SOLIDENT",
         financeiro: 887307,
         vencido: true
@@ -381,11 +381,11 @@ export default {
     headersRealizar: [
       { text: "Documento", value: "documento" },
       { text: "Ref", value: "referencia" },
-      { text: "Emissão", value: "emissao" },
+      { text: "EmissÃ£o", value: "emissao" },
       { text: "Valor", value: "valor" },
       { text: "Liquido", value: "valor_liquido" },
       { text: "Vencimento", value: "vencimento" },
-      { text: "Observações", value: "obs" },
+      { text: "ObservaÃ§Ãµes", value: "obs" },
       { text: "Cliente", value: "cliente" },
       { text: "Carteira", value: "carteira" },
       { text: "Banco", value: "banco" },
@@ -402,7 +402,7 @@ export default {
         obs:
           "COMPRO PAGO SEILA OQ LEVO NAO SEI OQ MAIS, DEU MOEDA DE CHOCOLATE",
         cliente: "EDGAR CARDOTE",
-        carteira: "À VISTA",
+        carteira: "Ã€ VISTA",
         banco: "SOLIDENT",
         financeiro: 888021,
         vencido: false
@@ -417,7 +417,7 @@ export default {
         obs:
           "COMPRO PAGO SEILA OQ LEVO NAO SEI OQ MAIS, DEU MOEDA DE CHOCOLATE",
         cliente: "EDGAR CARDOTE",
-        carteira: "À VISTA",
+        carteira: "Ã€ VISTA",
         banco: "SOLIDENT",
         financeiro: 888021,
         vencido: false
@@ -432,7 +432,7 @@ export default {
         obs:
           "COMPRO PAGO SEILA OQ LEVO NAO SEI OQ MAIS, DEU MOEDA DE CHOCOLATE",
         cliente: "EDGAR CARDOTE",
-        carteira: "À VISTA",
+        carteira: "Ã€ VISTA",
         banco: "SOLIDENT",
         financeiro: 888021,
         vencido: false
@@ -447,7 +447,7 @@ export default {
         obs:
           "COMPRO PAGO SEILA OQ LEVO NAO SEI OQ MAIS, DEU MOEDA DE CHOCOLATE",
         cliente: "EDGAR CARDOTE",
-        carteira: "À VISTA",
+        carteira: "Ã€ VISTA",
         banco: "SOLIDENT",
         financeiro: 888021,
         vencido: false
@@ -462,7 +462,7 @@ export default {
         obs:
           "COMPRO PAGO SEILA OQ LEVO NAO SEI OQ MAIS, DEU MOEDA DE CHOCOLATE",
         cliente: "EDGAR CARDOTE",
-        carteira: "À VISTA",
+        carteira: "Ã€ VISTA",
         banco: "SOLIDENT",
         financeiro: 888021,
         vencido: false
@@ -477,7 +477,7 @@ export default {
         obs:
           "COMPRO PAGO SEILA OQ LEVO NAO SEI OQ MAIS, DEU MOEDA DE CHOCOLATE",
         cliente: "EDGAR CARDOTE",
-        carteira: "À VISTA",
+        carteira: "Ã€ VISTA",
         banco: "SOLIDENT",
         financeiro: 888021,
         vencido: false
@@ -492,7 +492,7 @@ export default {
         obs:
           "COMPRO PAGO SEILA OQ LEVO NAO SEI OQ MAIS, DEU MOEDA DE CHOCOLATE",
         cliente: "EDGAR CARDOTE",
-        carteira: "À VISTA",
+        carteira: "Ã€ VISTA",
         banco: "SOLIDENT",
         financeiro: 888021,
         vencido: false
@@ -507,7 +507,7 @@ export default {
         obs:
           "COMPRO PAGO SEILA OQ LEVO NAO SEI OQ MAIS, DEU MOEDA DE CHOCOLATE",
         cliente: "EDGAR CARDOTE",
-        carteira: "À VISTA",
+        carteira: "Ã€ VISTA",
         banco: "SOLIDENT",
         financeiro: 888021,
         vencido: false
@@ -522,7 +522,7 @@ export default {
         obs:
           "COMPRO PAGO SEILA OQ LEVO NAO SEI OQ MAIS, DEU MOEDA DE CHOCOLATE",
         cliente: "EDGAR CARDOTE",
-        carteira: "À VISTA",
+        carteira: "Ã€ VISTA",
         banco: "SOLIDENT",
         financeiro: 888021,
         vencido: false
@@ -536,7 +536,7 @@ export default {
         vencimento: "22/02/1993",
         obs: "LOJA",
         cliente: "EDGAR CARDOTE",
-        carteira: "À VISTA",
+        carteira: "Ã€ VISTA",
         banco: "SOLIDENT",
         financeiro: 887307,
         vencido: true

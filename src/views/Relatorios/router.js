@@ -1,4 +1,4 @@
-import ItensPedidosxItensFaturados from './Academico/ItensPedidosxItensFaturados';
+﻿import ItensPedidosxItensFaturados from './Academico/ItensPedidosxItensFaturados';
 import PrevisaoAcademico from './Academico/PrevisaoAcademico';
 import ListasEmPrevisao from './Academico/ListasEmPrevisao';
 import CompararPrecoFornecedor from './Fornecedor/CompararPrecoFornecedor';
@@ -15,7 +15,7 @@ export default [{
     },
     {
         path: '/relatorios/previsaoAcademico',
-        name: 'Relatório Previsão Acadêmico',
+        name: 'RelatÃ³rio PrevisÃ£o AcadÃªmico',
         component: PrevisaoAcademico,
         meta: {
             requiresAuth: true
@@ -23,7 +23,7 @@ export default [{
     },
     {
         path: '/relatorios/compararPrecoFornecedor',
-        name: 'Comparar Preço Fornecedor',
+        name: 'Comparar PreÃ§o Fornecedor',
         component: CompararPrecoFornecedor,
         meta: {
             requiresAuth: true
@@ -31,7 +31,7 @@ export default [{
     },
     {
         path: '/relatorios/listasEmPrevisao',
-        name: 'Listas Em Previsão',
+        name: 'Listas Em PrevisÃ£o',
         component: ListasEmPrevisao,
         meta: {
             requiresAuth: true
@@ -39,7 +39,7 @@ export default [{
     },
     {
         path: '/relatorios/financeiroAcademico',
-        name: 'Financeiro Acadêmico',
+        name: 'Financeiro AcadÃªmico',
         component: FinanceiroAcademico,
         meta: {
             requiresAuth: true
@@ -47,7 +47,7 @@ export default [{
     },
     {
         path: '/relatorios/relatorioEndereco',
-        name: 'Relatório de Endereços',
+        name: 'RelatÃ³rio de EndereÃ§os',
         component: Endereco,
         meta: {
             requiresAuth: true

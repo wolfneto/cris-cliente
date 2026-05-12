@@ -1,11 +1,11 @@
-<template>
+﻿<template>
   <v-container>
     <v-row class="custom-row ml-2 mr-2">
       <v-col cols="2">
         <v-text-field
           v-model="data_de"
           v-mask="'##/##/####'"
-          :rules=" [v => !!v.trim() || 'Data obrigatória!' ] "
+          :rules=" [v => !!v.trim() || 'Data obrigatÃ³ria!' ] "
           placeholder="dd/mm/aaaa"
           label="De"
           required
@@ -15,9 +15,9 @@
         <v-text-field
           v-model="data_ate"
           v-mask="'##/##/####'"
-          :rules=" [v => !!v.trim() || 'Data obrigatória!' ] "
+          :rules=" [v => !!v.trim() || 'Data obrigatÃ³ria!' ] "
           placeholder="dd/mm/aaaa"
-          label="Até"
+          label="AtÃ©"
           required
         ></v-text-field>
       </v-col>
@@ -29,7 +29,7 @@
           v-model="cliente.codigo"
           append-icon="fa-search"
           @click:append="showDialogSearch()"
-          label="Código"
+          label="CÃ³digo"
           v-mask="'#####'"
         ></v-text-field>
       </v-col>
@@ -37,7 +37,7 @@
         <v-select v-model="selectedStatus" :items="status" label="Status"></v-select>
       </v-col>
       <v-col cols="2">
-        <v-select v-model="selectedOperacao" :items="operacoes" label="Operação"></v-select>
+        <v-select v-model="selectedOperacao" :items="operacoes" label="OperaÃ§Ã£o"></v-select>
       </v-col>
     </v-row>
     <v-row>
@@ -124,10 +124,10 @@ export default {
     data_ate: "31/12/2019",
     headersItens: [
       { text: "Qtd", value: "qtd", sortable: false },
-      { text: "Código", value: "codigo", sortable: true },
+      { text: "CÃ³digo", value: "codigo", sortable: true },
       { text: "Valor", value: "valor", sortable: true },
       { text: "Total", value: "total", sortable: true },
-      { text: "Descrição", value: "descricao", sortable: true }
+      { text: "DescriÃ§Ã£o", value: "descricao", sortable: true }
     ],
     itens: [
       {
@@ -154,12 +154,12 @@ export default {
     ],
     headersPedidos: [
       { text: "Pedido", value: "pedido", sortable: false },
-      { text: "Emissão", value: "emissao", sortable: true },
+      { text: "EmissÃ£o", value: "emissao", sortable: true },
       { text: "Qtd", value: "qtd", sortable: true },
       { text: "Valor", value: "valor", sortable: true },
       { text: "Total", value: "total", sortable: true },
       { text: "Nota", value: "nota", sortable: true },
-      { text: "Emissão", value: "emissao_nota", sortable: true }
+      { text: "EmissÃ£o", value: "emissao_nota", sortable: true }
     ],
     pedidos: [
       {
@@ -185,16 +185,16 @@ export default {
       // ficar global no Inicio.vue do tela de atendimento
       { text: "COMPRA (PEDIDO)", value: "1102 P" },
       { text: "COMPRA (NOTA)", value: "1102 N" },
-      { text: "* DEVOLUÇÃO (ESTADUAL)", value: "5202 E" },
-      { text: "DEVOLUÇÃO (ESTADUAL)", value: "5202" }
+      { text: "* DEVOLUÃ‡ÃƒO (ESTADUAL)", value: "5202 E" },
+      { text: "DEVOLUÃ‡ÃƒO (ESTADUAL)", value: "5202" }
     ],
     selectedOperacao: {}, // ficar global no Inicio.vue do tela de atendimento
     status: [
       // ficar global no Inicio.vue do tela de atendimento
       { text: "PENDENTE", value: "1" },
       { text: "COMPRA (NOTA)", value: "1102 N" },
-      { text: "* DEVOLUÇÃO (ESTADUAL)", value: "5202 E" },
-      { text: "DEVOLUÇÃO (ESTADUAL)", value: "5202" }
+      { text: "* DEVOLUÃ‡ÃƒO (ESTADUAL)", value: "5202 E" },
+      { text: "DEVOLUÃ‡ÃƒO (ESTADUAL)", value: "5202" }
     ],
     selectedStatus: {}, // ficar global no Inicio.vue do tela de atendimento
     dialogSearch: false // ficar global no Inicio.vue do tela de atendimento

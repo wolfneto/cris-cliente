@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card id="print" style="margin-bottom: 90px !important;">
       <v-card-title>
@@ -9,7 +9,7 @@
           class="ml-3 mr-3 primary d-print-none" @click="imprimir()">Imprimir</v-btn>
         <v-menu v-model="menu" :close-on-content-click="false" :nudge-width="200" offset-x>
           <template v-slot:activator="{ on }">
-            <v-btn class="ml-3 d-print-none" color="indigo" dark v-on="on">Opções</v-btn>
+            <v-btn class="ml-3 d-print-none" color="indigo" dark v-on="on">OpÃ§Ãµes</v-btn>
           </template>
           <v-card>
             <v-list>
@@ -23,7 +23,7 @@
                 <v-list-item-action>
                   <v-switch @change="imprimirPadraoChange()" v-model="imprimirPadrao" color="purple"></v-switch>
                 </v-list-item-action>
-                <v-list-item-title>Imprimir Padrão</v-list-item-title>
+                <v-list-item-title>Imprimir PadrÃ£o</v-list-item-title>
               </v-list-item>
               <v-list-item v-if="$parent.permissoes.check_imprimir_gerencial == 1">
                 <v-list-item-action>
@@ -45,7 +45,7 @@
                 <v-list-item-action>
                   <v-switch @change="imprimirAlunoChange()" v-model="imprimirAlunoSistema" color="purple"></v-switch>
                 </v-list-item-action>
-                <v-list-item-title>Imprimir P/ Aluno C/ Descrição Sistema</v-list-item-title>
+                <v-list-item-title>Imprimir P/ Aluno C/ DescriÃ§Ã£o Sistema</v-list-item-title>
               </v-list-item>
               <v-list-item v-if="$parent.permissoes.check_imprimir_mauricio == 1">
                 <v-list-item-action>
@@ -60,7 +60,7 @@
       <v-card-subtitle style="color:black !important">
         <h6><b>Criada em: {{ lista.date_create }}</b></h6>
         <div v-if="imprimirMauricio">
-          <h6>Orçamento Valido Até: {{ validade }}</h6>
+          <h6>OrÃ§amento Valido AtÃ©: {{ validade }}</h6>
           <v-text-field class="d-print-none" v-model="validade"></v-text-field>
         </div>
 
@@ -145,7 +145,7 @@
             </td>
             <td v-if="!item.titulo && item.disponivel_item == 0" class="col-1">
               <div>
-                <b>Indisponível</b>
+                <b>IndisponÃ­vel</b>
               </div>
             </td>
             <td v-if="!item.titulo && item.disponivel_item == 1" class="col-1">
@@ -166,12 +166,12 @@
             </td>
             <td v-if="!item.titulo" :class="!imprimirAluno && !imprimirAlunoSistema ? 'col-4' : 'col-5'">
               <div v-if="imprimirPadrao || imprimirGerencial">
-                <b>Descrição Sistema</b>
+                <b>DescriÃ§Ã£o Sistema</b>
                 <br />
                 <div>{{ item.descricao }}</div>
                 <br />
               </div>
-              <b v-if="imprimirPadrao || imprimirGerencial">Descrição Site</b>
+              <b v-if="imprimirPadrao || imprimirGerencial">DescriÃ§Ã£o Site</b>
               <br v-if="imprimirPadrao || imprimirGerencial" />
               <div
                 :class="imprimirAluno || imprimirAlunoSistema ? 'text-left text-uppercase' : 'text-center text-uppercase'">
@@ -183,7 +183,7 @@
               <div v-if="item.marcaOpcional">
                 <hr />
                 <b
-                  v-if="imprimirPadrao || imprimirGerencial || imprimirAluno || imprimirAlunoSistema || imprimirMauricio">Descrição
+                  v-if="imprimirPadrao || imprimirGerencial || imprimirAluno || imprimirAlunoSistema || imprimirMauricio">DescriÃ§Ã£o
                   Marca Opcional</b>
                 <br />
                 <div
@@ -211,7 +211,7 @@
                 <!-- <div>R$ {{(item.valor_site * item.qtd_item).toFixed(2)}}</div> -->
                 <v-row>
                   <v-col cols="6">
-                    <b>Unitário</b>
+                    <b>UnitÃ¡rio</b>
                     <br />
                     R$ {{(item.valor_site * 1).toFixed(2).replace('.', ',')}}
                   </v-col>
@@ -262,17 +262,17 @@
 </td>
 <td v-if="!item.titulo && !imprimirAluno && !imprimirAlunoSistema" class="col-1">
   <div v-if="!item.titulo && imprimirPadrao || imprimirGerencial || imprimirMauricio">
-    <b>Disponível:</b>
+    <b>DisponÃ­vel:</b>
     <br />
     <span v-if="item.disponivel_item == 1">SIM</span>
-    <span v-else>NÂO</span>
+    <span v-else>NÃ‚O</span>
   </div>
   <div v-if="!item.titulo && imprimirPadrao || imprimirGerencial || imprimirMauricio">
     <br v-if="!item.titulo" />
     <b>Opcional:</b>
     <br />
     <span v-if="item.opcional_item == 1">SIM</span>
-    <span v-else>NÂO</span>
+    <span v-else>NÃ‚O</span>
   </div>
 </td>
 <td v-if="!item.titulo" class="col-1"
@@ -285,7 +285,7 @@
   <td class="col-12">
     <h3 class="mt-n2">Opcionais</h3>
     <small>
-      <b>(Não inclusos no valor total da lista)</b>
+      <b>(NÃ£o inclusos no valor total da lista)</b>
     </small>
   </td>
 </tr>
@@ -301,7 +301,7 @@
   </td>
   <td v-if="!item.titulo && item.disponivel_item == 0" class="col-1">
     <div>
-      <b>Indisponível</b>
+      <b>IndisponÃ­vel</b>
     </div>
   </td>
   <td v-if="!item.titulo && !item.disponivel_item == 0" class="col-1">
@@ -318,12 +318,12 @@
   </td>
   <td v-if="!item.titulo" :class="!imprimirAluno && !imprimirAlunoSistema ? 'col-4' : 'col-5'">
     <div v-if="imprimirPadrao || imprimirGerencial">
-      <b>Descrição Sistema</b>
+      <b>DescriÃ§Ã£o Sistema</b>
       <br />
       <div>{{ item.descricao }}</div>
       <br />
     </div>
-    <b v-if="imprimirPadrao || imprimirGerencial">Descrição Site</b>
+    <b v-if="imprimirPadrao || imprimirGerencial">DescriÃ§Ã£o Site</b>
     <br v-if="imprimirPadrao || imprimirGerencial" />
     <div :class="imprimirAluno || imprimirAlunoSistema ? 'text-left text-uppercase' : 'text-center text-uppercase'">
       <div v-if="imprimirPadrao || imprimirGerencial || imprimirMauricio || imprimirAluno && !imprimirAlunoSistema">
@@ -332,7 +332,7 @@
     </div>
     <div v-if="item.marcaOpcional">
       <hr />
-      <b v-if="imprimirPadrao || imprimirGerencial || imprimirAluno || imprimirAlunoSistema || imprimirMauricio">Descrição
+      <b v-if="imprimirPadrao || imprimirGerencial || imprimirAluno || imprimirAlunoSistema || imprimirMauricio">DescriÃ§Ã£o
         Marca Opcional</b>
       <br />
       <div
@@ -358,7 +358,7 @@
     <div>
       <v-row>
         <v-col cols="6">
-          <b>Unitário</b>
+          <b>UnitÃ¡rio</b>
           <br />
           R$ {{(item.valor_site * 1).toFixed(2).replace('.', ',')}}
         </v-col>
@@ -389,10 +389,10 @@
   </td>
   <td v-if="!item.titulo && !imprimirAluno && !imprimirAlunoSistema" class="col-1">
     <div v-if="!item.titulo && imprimirPadrao || imprimirGerencial || imprimirMauricio">
-      <b>Disponível:</b>
+      <b>DisponÃ­vel:</b>
       <br />
       <span v-if="item.disponivel_item == 1">SIM</span>
-      <span v-else>NÂO</span>
+      <span v-else>NÃ‚O</span>
     </div>
   </td>
   <td v-if="!item.titulo" :class="imprimirAluno || imprimirAlunoSistema ? 'col-4 text-center' : 'col-1 text-center'">

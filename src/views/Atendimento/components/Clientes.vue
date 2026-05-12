@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <v-card-title>
@@ -31,7 +31,7 @@
               v-model="searchCod"
               @keyup.enter="searchClienteByCod($event.target.value)"
               prepend-icon="fa-user"
-              label="Código"
+              label="CÃ³digo"
               v-mask="'#####'"
             ></v-text-field>
           </v-col>
@@ -156,7 +156,7 @@ export default {
         value: "cpf_cnpj"
       },
       {
-        text: "Razão Social",
+        text: "RazÃ£o Social",
         sortable: true,
         value: "razao_social"
       },

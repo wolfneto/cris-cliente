@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card class="mx-auto mt-10" max-width="1500" height="600" elevation="5">
       <div v-if="!entrada && !saida " class="text-center ma">
@@ -15,7 +15,7 @@
               v-ripple="{ center: true }"
               class="error white--text text-center elevation-8 pa-6 h3"
               @click="saida = true"
-            >Saída</div>
+            >SaÃ­da</div>
           </v-col>
         </v-row>
       </div>
@@ -50,7 +50,7 @@
               </v-col>
               <v-col cols="8" class="text-center ma">
                 <p v-if="entrada" class="primary--text headline h5">Entrada de Material</p>
-                <p v-else class="error--text headline h5">Saída de Material</p>
+                <p v-else class="error--text headline h5">SaÃ­da de Material</p>
               </v-col>
               <v-col cols="2">
                 <v-btn
@@ -95,7 +95,7 @@
                             autofocus
                             v-model="editedItem.quantidade"
                             @click="$event.target.select()"
-                            :rules="[() => !!editedItem.quantidade || 'Qtd obrigatória!']"
+                            :rules="[() => !!editedItem.quantidade || 'Qtd obrigatÃ³ria!']"
                             :error-messages="errorMessages"
                             type="number"
                             filled
@@ -111,7 +111,7 @@
                             class="uppercase"
                             @keypress.enter="getItem()"
                             @click="$event.target.select()"
-                            :rules="[() => !!editedItem.codigo || 'Codigo obrigatório!']"
+                            :rules="[() => !!editedItem.codigo || 'Codigo obrigatÃ³rio!']"
                             :error-messages="errorMessages"
                           ></v-text-field>
                         </v-col>
@@ -119,7 +119,7 @@
                           <v-text-field
                             v-model="editedItem.descricao"
                             filled
-                            label="Descrição"
+                            label="DescriÃ§Ã£o"
                             class="uppercase"
                             readonly
                           ></v-text-field>
@@ -131,7 +131,7 @@
                             :rows="5"
                             v-model="editedItem.observacao"
                             filled
-                            label="Observação"
+                            label="ObservaÃ§Ã£o"
                             class="uppercase-area"
                             no-resize
                           ></v-textarea>
@@ -154,7 +154,7 @@
 
               <v-dialog v-model="dialogSalvar" max-width="290">
                 <v-card>
-                  <v-card-title class="headline">Atenção!</v-card-title>
+                  <v-card-title class="headline">AtenÃ§Ã£o!</v-card-title>
                   <v-card-text>Deseja realmente salvar?</v-card-text>
                   <v-card-actions>
                     <v-spacer></v-spacer>
@@ -168,7 +168,7 @@
                 <v-card>
                   <v-card-title class="headline">Deseja retornar a pagina anterior?</v-card-title>
                   <br />
-                  <v-card-text>Você perderá todos os dados da lista criada!</v-card-text>
+                  <v-card-text>VocÃª perderÃ¡ todos os dados da lista criada!</v-card-text>
                   <v-card-actions>
                     <v-spacer></v-spacer>
                     <v-btn color="error" @click="dialogVoltar = false">Cancelar</v-btn>
@@ -212,9 +212,9 @@ export default {
       },
       { text: "Qtd", value: "quantidade" },
       { text: "Codigo", value: "codigo" },
-      { text: "Descrição", value: "descricao" },
-      { text: "Observação", value: "observacao" },
-      { text: "Ação", value: "acao" },
+      { text: "DescriÃ§Ã£o", value: "descricao" },
+      { text: "ObservaÃ§Ã£o", value: "observacao" },
+      { text: "AÃ§Ã£o", value: "acao" },
     ],
     items: [],
     errorMessages: "",
@@ -277,7 +277,7 @@ export default {
           this.editedItem.descricao = this.item.descricao;
         } else {
           this.showSnackbar(
-            "Codigo não encontrado!" +
+            "Codigo nÃ£o encontrado!" +
               " - " +
               this.editedItem.codigo.toUpperCase(),
             "warning",
@@ -303,12 +303,12 @@ export default {
       let check = await this.$bvModal.msgBoxConfirm(
         "Deseja realmente excluir este item?",
         {
-          title: "Atenção!",
+          title: "AtenÃ§Ã£o!",
           size: "sm",
           buttonSize: "sm",
           okVariant: "success",
           okTitle: "SIM",
-          cancelTitle: "NÃO",
+          cancelTitle: "NÃƒO",
           footerClass: "p-2",
           hideHeaderClose: false,
           centered: true,
@@ -354,7 +354,7 @@ export default {
         if (this.entrada == 1) {
         this.showSnackbar("Entrada realizada com sucesso!", "success", 5000);  
         }else{
-          this.showSnackbar("Saída realizada com sucesso!", "success", 5000);
+          this.showSnackbar("SaÃ­da realizada com sucesso!", "success", 5000);
         }        
         this.loading = false;
         this.voltar();
