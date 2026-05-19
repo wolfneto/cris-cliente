@@ -23,7 +23,7 @@
               <v-text-field
                 v-mask="'##/##/####'"
                 placeholder="dd/mm/aaaa"
-                label="AtÃ©"
+                label="Até"
                 required
                 dense
               ></v-text-field>

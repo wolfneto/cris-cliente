@@ -21,7 +21,7 @@ export default [{
     },
     {
         path: '/fidelidade/relatorios',
-        name: 'Fidelidade RelatÃ³rios',
+        name: 'Fidelidade Relatórios',
         component: Relatorios,
         meta: {
             requiresAuth: true

@@ -2,12 +2,12 @@
   <v-container>
     <v-row justify="center" class="custom-row">
       <v-col cols="3">
-        <v-text-field v-model="data_de" v-mask="'##/##/####'" :rules="[v => !!v.trim() || 'Data obrigatÃ³ria!']"
+        <v-text-field v-model="data_de" v-mask="'##/##/####'" :rules="[v => !!v.trim() || 'Data obrigatória!']"
           placeholder="dd/mm/aaaa" label="De" required></v-text-field>
       </v-col>
       <v-col cols="3">
-        <v-text-field v-model="data_ate" v-mask="'##/##/####'" :rules="[v => !!v.trim() || 'Data obrigatÃ³ria!']"
-          placeholder="dd/mm/aaaa" label="AtÃ©" required></v-text-field>
+        <v-text-field v-model="data_ate" v-mask="'##/##/####'" :rules="[v => !!v.trim() || 'Data obrigatória!']"
+          placeholder="dd/mm/aaaa" label="Até" required></v-text-field>
       </v-col>
     </v-row>
     <v-row justify="center" class="custom-row">
@@ -22,7 +22,7 @@
         <v-select v-model="selectedPosGraduacao" @change="onChangeGraduacao()" :items="[
           { text: 'GRADUAÃ‡ÃƒO', value: 0 },
           { text: 'ESPECIALIZAÃ‡ÃƒO', value: 1 },
-        ]" class="text-uppercase" label="GraduaÃ§Ã£o ou EspecializaÃ§Ã£o"></v-select>
+        ]" class="text-uppercase" label="Graduação ou Especialização"></v-select>
       </v-col>
     </v-row>
     <v-row justify="center" class="custom-row">

@@ -31,7 +31,7 @@
             </v-col>
             <v-col class="text-right" cols="3">
               <barcode :height="30" :display-value="false" v-bind:value="arrayTeste[0][0].ynumero"></barcode>
-              PÃ¡gina {{index +1}}/{{arrayTeste.length}}
+              Página {{index +1}}/{{arrayTeste.length}}
               <!-- <span class="font-weight-bold" style="font-size: 1.5rem">|||||||||||||||||||||||||</span> -->
             </v-col>
           </v-row>
@@ -48,13 +48,13 @@
             <v-col class="text-left no-padding-up-down" cols="5">
               <span class="font-weight-bold">{{pedidoDcinfo.cliente.yfancli}}</span>
             </v-col>
-            <v-col class="text-left no-padding-up-down" cols="1">OperaÃ§Ã£o:</v-col>
+            <v-col class="text-left no-padding-up-down" cols="1">Operação:</v-col>
             <v-col class="text-left no-padding-up-down" cols="5">
               <span class="font-weight-bold">* VENDA (ESTADUAL)</span>
             </v-col>
           </v-row>
           <v-row>
-            <v-col class="text-left no-padding-up-down" cols="1">EndereÃ§o:</v-col>
+            <v-col class="text-left no-padding-up-down" cols="1">Endereço:</v-col>
             <v-col class="text-left no-padding-up-down" cols="5">
               <span
                 class="font-weight-bold"
@@ -85,7 +85,7 @@
             <v-col class="text-left no-padding-up-down" cols="1">Pgto:</v-col>
             <v-col class="text-left no-padding-up-down" cols="5">
               <div v-if="pedidoDcinfo.pagamento.tipo == 'BOLETO'">
-                <span class="font-weight-bold">BOLETO Ã VISTA</span>
+                <span class="font-weight-bold">BOLETO Á VISTA</span>
               </div>
               <div v-else>
                 <span class="font-weight-bold">CARTÃƒO {{pedidoDcinfo.pagamento.number_installments}}x</span>
@@ -227,7 +227,7 @@
             <v-col class="text-right" cols="3">
               <barcode :height="30" :display-value="false" v-bind:value="arrayTeste[0][0].ynumero"></barcode>
               <!-- <br />
-              PÃ¡gina {{index +1}}/{{arrayTeste.length}}-->
+              Página {{index +1}}/{{arrayTeste.length}}-->
             </v-col>
           </v-row>
           <v-row>
@@ -243,13 +243,13 @@
             <v-col class="text-left no-padding-up-down" cols="5">
               <span class="font-weight-bold">{{pedidoDcinfo.cliente.yfancli}}</span>
             </v-col>
-            <v-col class="text-left no-padding-up-down" cols="1">OperaÃ§Ã£o:</v-col>
+            <v-col class="text-left no-padding-up-down" cols="1">Operação:</v-col>
             <v-col class="text-left no-padding-up-down" cols="5">
               <span class="font-weight-bold">* VENDA (ESTADUAL)</span>
             </v-col>
           </v-row>
           <v-row>
-            <v-col class="text-left no-padding-up-down" cols="1">EndereÃ§o:</v-col>
+            <v-col class="text-left no-padding-up-down" cols="1">Endereço:</v-col>
             <v-col class="text-left no-padding-up-down" cols="5">
               <span
                 class="font-weight-bold"
@@ -280,7 +280,7 @@
             <v-col class="text-left no-padding-up-down" cols="1">Pgto:</v-col>
             <v-col class="text-left no-padding-up-down" cols="5">
               <div v-if="pedidoDcinfo.pagamento.tipo == 'BOLETO'">
-                <span class="font-weight-bold">BOLETO Ã VISTA</span>
+                <span class="font-weight-bold">BOLETO Á VISTA</span>
               </div>
               <div v-else>
                 <span class="font-weight-bold">CARTÃƒO {{pedidoDcinfo.pagamento.number_installments}}x</span>

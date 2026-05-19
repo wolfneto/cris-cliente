@@ -8,7 +8,7 @@
             @keypress.enter="showPedidoOrcamento()"
             autofocus
             v-model="numero"
-            label="Pedido ou OrÃ§amento"
+            label="Pedido ou Orçamento"
           ></v-text-field>
         </v-col>
       </v-row>
@@ -25,7 +25,7 @@
             @click="showTelaPedidoOrcamento({isPedido: false, isOrcamento: true})"
             v-ripple="{ center: true }"
             class="text-center elevation-2 pa-12 headline"
-          >Novo OrÃ§amento</div>
+          >Novo Orçamento</div>
         </v-col>
       </v-row>
     </div>
@@ -42,7 +42,7 @@
                 hide-details
                 readonly
                 v-model="pedido.numero"
-                label="NÃºmero"
+                label="Número"
                 :prefix="pedido.isPedido ? 'PEDIDO ':'ORÃ‡AMENTO '"
               ></v-text-field>
             </v-col>
@@ -53,14 +53,14 @@
                 hide-details
                 readonly
                 v-model="pedido.criado_em"
-                label="EmissÃ£o"
+                label="Emissão"
               ></v-text-field>
             </v-col>
             <v-col cols="2">
               <v-text-field height="12" dense hide-details readonly label="Nota"></v-text-field>
             </v-col>
             <v-col cols="2">
-              <v-text-field height="12" dense hide-details readonly label="EmissÃ£o Nota"></v-text-field>
+              <v-text-field height="12" dense hide-details readonly label="Emissão Nota"></v-text-field>
             </v-col>
           </v-row>
           <v-row>
@@ -83,7 +83,7 @@
                 v-model="cliente.codigo"
                 append-outer-icon="fa-search"
                 @click:append="showDialogSearch()"
-                label="CÃ³digo"
+                label="Código"
               ></v-text-field>
             </v-col>
           </v-row>
@@ -221,7 +221,7 @@
           </v-row>
           <v-row>
             <v-col cols="6">
-              <v-select height="12" dense hide-details :items="operacoes" label="OperaÃ§Ã£o"></v-select>
+              <v-select height="12" dense hide-details :items="operacoes" label="Operação"></v-select>
             </v-col>
             <v-col cols="6">
               <v-select
@@ -266,7 +266,7 @@
                 dense
                 hide-details
                 :items="condicoesPagamento"
-                label="CondiÃ§Ã£o de Pagamento"
+                label="Condição de Pagamento"
               ></v-select>
             </v-col>
             <v-col cols="4">
@@ -282,7 +282,7 @@
                 item-text="text"
                 item-value="id"
                 :items="enderecosEntrega"
-                label="EndereÃ§o de Entrega"
+                label="Endereço de Entrega"
               ></v-select>
             </v-col>
           </v-row>
@@ -290,7 +290,7 @@
       </v-row>
       <v-tabs height="20" dense grow>
         <v-tab active-class="blue darken-2 white--text" class="blue lighten-5">Itens do Pedido</v-tab>
-        <v-tab active-class="blue darken-2 white--text" class="blue lighten-5">ObservaÃ§Ãµes</v-tab>
+        <v-tab active-class="blue darken-2 white--text" class="blue lighten-5">Observações</v-tab>
         <v-tab active-class="blue darken-2 white--text" class="blue lighten-5">Dados do Cliente</v-tab>
         <v-tab-item>
           <v-row class="ml-2 mr-2" :class="item.editing ? 'yellow lighten-2': ''">
@@ -315,10 +315,10 @@
                 dense
                 hide-details
                 v-model="item.codigo"
-                placeholder="CÃ³digo"
+                placeholder="Código"
                 v-on:keyup="findProdutoByCod($event)"
                 v-on:keyup.page-down="$refs.tabelaItem.$el.focus()"
-                label="CÃ³digo"
+                label="Código"
                 required
               ></v-text-field>
             </v-col>
@@ -332,7 +332,7 @@
                 v-on:keyup="findProduto($event)"
                 v-on:keyup.page-down="$refs.tabelaItem.$el.focus()"
                 v-model="item.descricao"
-                label="DescriÃ§Ã£o"
+                label="Descrição"
               ></v-text-field>
             </v-col>
             <v-col cols="1">
@@ -365,9 +365,9 @@
           <v-textarea
             no-resize
             rows="10"
-            label="ObservaÃ§Ãµes"
+            label="Observações"
             value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in molestie sem. Mauris ut elit in justo ornare tristique. Nunc interdum semper lorem vel volutpat. Suspendisse imperdiet tempus neque, vel dapibus urna euismod nec. Suspendisse pellentesque neque est, vel suscipit odio sodales sed. Nunc bibendum lectus non mi vehicula porttitor."
-            hint="ObservaÃ§Ãµes gerais sobre qualquer assunto"
+            hint="Observações gerais sobre qualquer assunto"
           ></v-textarea>
         </v-tab-item>
         <v-tab-item>
@@ -379,19 +379,19 @@
                   height="12"
                   hide-details
                   v-model="cliente.codigo"
-                  label="CÃ³digo"
+                  label="Código"
                   readonly
                 ></v-text-field>
               </v-col>
               <v-col cols="12" md="2">
                 <v-text-field
                   @keyup="checkCpfCnpj(cliente.cpf_cnpj)"
-                  hint="Digite somento nÃºmeros"
+                  hint="Digite somento números"
                   dense
                   height="12"
                   hide-details
                   v-model="cliente.cpf_cnpj"
-                  :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                  :rules="[v => !!v || 'Campo Obrigatório']"
                   label="CPF/CNPJ"
                   v-mask="['###.###.###-##', '##.###.###/####-##']"
                   required
@@ -403,7 +403,7 @@
                   :items="condicoes"
                   item-text="descricao"
                   item-value="id"
-                  label="CondiÃ§Ã£o"
+                  label="Condição"
                   dense
                   height="12"
                   hide-details
@@ -468,7 +468,7 @@
                   v-model="cliente.razao_social"
                   @keyup="cliente.fantasia = cliente.razao_social"
                   :rules="nomeRules"
-                  label="RazÃ£o Social"
+                  label="Razão Social"
                   class="input-uppercase"
                   required
                 ></v-text-field>
@@ -478,9 +478,9 @@
                   dense
                   hide-details
                   height="12"
-                  hint="Digite somento nÃºmeros com DDD"
+                  hint="Digite somento números com DDD"
                   v-model="cliente.telefone"
-                  :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                  :rules="[v => !!v || 'Campo Obrigatório']"
                   label="Telefone"
                   v-mask="'(##) ####-####'"
                   required
@@ -492,7 +492,7 @@
                   height="12"
                   class="input-uppercase"
                   v-model="cliente.email"
-                  :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                  :rules="[v => !!v || 'Campo Obrigatório']"
                   label="E-Mail"
                   required
                   hide-details
@@ -517,9 +517,9 @@
                   dense
                   height="12"
                   hide-details
-                  hint="Digite somento nÃºmeros com DDD"
+                  hint="Digite somento números com DDD"
                   v-model="cliente.celular"
-                  :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                  :rules="[v => !!v || 'Campo Obrigatório']"
                   label="Celular/WhatsApp"
                   v-mask="['(##) ####-####', '(##) #####-####']"
                   required
@@ -569,7 +569,7 @@
                   height="12"
                   v-mask="'#########'"
                   v-model="cliente.inscricao_estadual"
-                  label="InscriÃ§Ã£o Estadual"
+                  label="Inscrição Estadual"
                   required
                   readonly
                   hide-details
@@ -581,7 +581,7 @@
                   height="12"
                   hide-details
                   v-model="cliente.inscricao_municipal"
-                  label="InscriÃ§Ã£o Municipal"
+                  label="Inscrição Municipal"
                   readonly
                 ></v-text-field>
               </v-col>
@@ -590,11 +590,11 @@
               <v-tab
                 active-class="blue darken-2 white--text"
                 class="blue lighten-5"
-              >EndereÃ§o Principal</v-tab>
+              >Endereço Principal</v-tab>
               <v-tab
                 active-class="blue darken-2 white--text"
                 class="blue lighten-5"
-              >EndereÃ§os Entrega</v-tab>
+              >Endereços Entrega</v-tab>
               <v-tab active-class="blue darken-2 white--text" class="blue lighten-5">Contatos</v-tab>
               <v-tab-item>
                 <v-row class="mt-2">
@@ -604,9 +604,9 @@
                       height="12"
                       hide-details
                       @keyup="getCep(cliente.endereco_principal)"
-                      hint="Digite somento nÃºmeros"
+                      hint="Digite somento números"
                       v-model="cliente.endereco_principal.cep"
-                      :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                      :rules="[v => !!v || 'Campo Obrigatório']"
                       label="Cep"
                       :loading="cepPrincipalLoading"
                       ref="cep_principal"
@@ -622,8 +622,8 @@
                       class="input-uppercase"
                       hint="Rua, Avenida, Estrada..."
                       v-model="cliente.endereco_principal.logradouro"
-                      :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
-                      label="EndereÃ§o"
+                      :rules="[v => !!v || 'Campo Obrigatório']"
+                      label="Endereço"
                       required
                     ></v-text-field>
                   </v-col>
@@ -633,8 +633,8 @@
                       height="12"
                       hide-details
                       v-model="cliente.endereco_principal.numero"
-                      :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
-                      label="NÃºmero"
+                      :rules="[v => !!v || 'Campo Obrigatório']"
+                      label="Número"
                       ref="numero_principal"
                       required
                       v-mask="'####'"
@@ -659,7 +659,7 @@
                       height="12"
                       class="input-uppercase"
                       v-model="cliente.endereco_principal.bairro"
-                      :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                      :rules="[v => !!v || 'Campo Obrigatório']"
                       label="Bairro"
                       required
                     ></v-text-field>
@@ -671,7 +671,7 @@
                       height="12"
                       class="input-uppercase"
                       v-model="cliente.endereco_principal.cidade"
-                      :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                      :rules="[v => !!v || 'Campo Obrigatório']"
                       label="Cidade"
                       required
                     ></v-text-field>
@@ -683,7 +683,7 @@
                       hide-details
                       class="input-uppercase"
                       v-model="cliente.endereco_principal.uf"
-                      :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                      :rules="[v => !!v || 'Campo Obrigatório']"
                       label="Estado"
                       required
                     ></v-text-field>
@@ -693,7 +693,7 @@
               <v-tab-item>
                 <v-card>
                   <v-card-title>
-                    <v-btn small class="success" @click="addEnderecoEntrega()">Adicionar EndereÃ§o</v-btn>
+                    <v-btn small class="success" @click="addEnderecoEntrega()">Adicionar Endereço</v-btn>
                     <v-spacer></v-spacer>
                   </v-card-title>
                   <v-data-table
@@ -712,9 +712,9 @@
                             height="12"
                             hide-details
                             @keyup="getCep(item)"
-                            hint="Digite somento nÃºmeros"
+                            hint="Digite somento números"
                             v-model="item.cep"
-                            :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                            :rules="[v => !!v || 'Campo Obrigatório']"
                             label="Cep"
                             :loading="item.loading"
                             ref="cep_entrega"
@@ -730,8 +730,8 @@
                             class="input-uppercase"
                             hint="Rua, Avenida, Estrada..."
                             v-model="item.logradouro"
-                            :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
-                            label="EndereÃ§o"
+                            :rules="[v => !!v || 'Campo Obrigatório']"
+                            label="Endereço"
                             required
                           ></v-text-field>
                         </td>
@@ -741,8 +741,8 @@
                             height="12"
                             hide-details
                             v-model="item.numero"
-                            :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
-                            label="NÃºmero"
+                            :rules="[v => !!v || 'Campo Obrigatório']"
+                            label="Número"
                             required
                             maxlength="4"
                           ></v-text-field>
@@ -764,7 +764,7 @@
                             hide-details
                             class="input-uppercase"
                             v-model="item.bairro"
-                            :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                            :rules="[v => !!v || 'Campo Obrigatório']"
                             label="Bairro"
                             required
                           ></v-text-field>
@@ -776,7 +776,7 @@
                             hide-details
                             class="input-uppercase"
                             v-model="item.cidade"
-                            :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                            :rules="[v => !!v || 'Campo Obrigatório']"
                             label="Cidade"
                             required
                           ></v-text-field>
@@ -788,7 +788,7 @@
                             hide-details
                             class="input-uppercase"
                             v-model="item.uf"
-                            :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                            :rules="[v => !!v || 'Campo Obrigatório']"
                             label="UF"
                             required
                           ></v-text-field>
@@ -831,7 +831,7 @@
                         <td>{{item.id}}</td>
                         <td>
                           <v-text-field
-                            :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                            :rules="[v => !!v || 'Campo Obrigatório']"
                             required
                             dense
                             height="12"
@@ -903,7 +903,7 @@ export default {
     numero: "",
     headersEnderecoEntrega: [
       { text: "Cep", value: "cep", sortable: false, width: 150 },
-      { text: "EndereÃ§o", value: "logradouro", sortable: false },
+      { text: "Endereço", value: "logradouro", sortable: false },
       { text: "NÂº", value: "numero", sortable: false, width: 100 },
       {
         text: "Complemento",
@@ -914,7 +914,7 @@ export default {
       { text: "Bairro", value: "bairro", sortable: false },
       { text: "Cidade", value: "cidade", sortable: false },
       { text: "UF", value: "uf", sortable: false, width: 70 },
-      { text: "AÃ§Ã£o", value: "acao", sortable: true }
+      { text: "Ação", value: "acao", sortable: true }
     ],
     headersContatos: [
       { text: "#", value: "id", sortable: false },
@@ -923,7 +923,7 @@ export default {
       { text: "Telefone", value: "telefone", sortable: true },
       { text: "Celular", value: "celular", sortable: true },
       { text: "Obs", value: "obs", sortable: true },
-      { text: "AÃ§Ã£o", value: "acao", sortable: true }
+      { text: "Ação", value: "acao", sortable: true }
     ],
     contatos: [],
     operacoes: [
@@ -956,7 +956,7 @@ export default {
     cepEntregaLoading: false,
     isCnpj: true,
     nomeRules: [
-      v => !!v || "Campo ObrigatÃ³rio",
+      v => !!v || "Campo Obrigatório",
       v => v.length >= 3 || "Campo deve possuir 3 caracteres ou mais"
     ],
     enderecosEntrega: [],
@@ -1263,7 +1263,7 @@ export default {
               } else {
                 this.cepEntregaLoading = false;
               }
-              this.showSnackbar("Cep InvÃ¡lido", "warning", 2000);
+              this.showSnackbar("Cep Inválido", "warning", 2000);
               return;
             }
 

@@ -9,7 +9,7 @@
                 <v-text-field
                   v-model="data_de"
                   v-mask="'##/##/####'"
-                  :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
+                  :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
                   @keydown.enter="getLogErrosPagamento()"
                   placeholder="dd/mm/aaaa"
                   label="De"
@@ -21,9 +21,9 @@
                   v-model="data_ate"
                   v-mask="'##/##/####'"
                   @keydown.enter="getLogErrosPagamento()"
-                  :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
+                  :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
                   placeholder="dd/mm/aaaa"
-                  label="AtÃ©"
+                  label="Até"
                   required
                 ></v-text-field>
               </v-col>
@@ -32,11 +32,11 @@
           <v-col cols="5">
             <v-row class="mt-4 custom-row">
               <span v-if="tipo_pagamento == 0">
-                RelatÃ³rio de Erros Pagamentos
-                <span class="success--text"><b>AcadÃªmico</b></span>
+                Relatório de Erros Pagamentos
+                <span class="success--text"><b>Acadêmico</b></span>
               </span>
               <span v-else-if="tipo_pagamento == 1">
-                RelatÃ³rio de Erros Pagamentos
+                Relatório de Erros Pagamentos
                 <span class="primary--text"><b>Varejo</b></span>
               </span>
               <v-btn
@@ -72,7 +72,7 @@
           v-model="tipo_pagamento"
           tile
         >
-          <v-btn small active-class="success" :value="0">AcadÃªmico</v-btn>
+          <v-btn small active-class="success" :value="0">Acadêmico</v-btn>
           <v-btn small active-class="primary" :value="1">Varejo</v-btn>
         </v-btn-toggle>
       </v-card-subtitle>

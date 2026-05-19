@@ -30,10 +30,10 @@
               :disabled="selectedFaculdade == 0 ? true : false"
               @change="onChangeSelect()"
               :items="[
-                { text: 'GraduaÃ§Ã£o', value: 0 },
-                { text: 'EspecializaÃ§Ã£o', value: 1 },
+                { text: 'Graduação', value: 0 },
+                { text: 'Especialização', value: 1 },
               ]"
-              label="GraduaÃ§Ã£o ou EspecializaÃ§Ã£o"
+              label="Graduação ou Especialização"
               solo
               density="comfortable"
             ></v-select>
@@ -59,7 +59,7 @@
                   :items="periodos"
                   item-text="nome_periodo"
                   item-value="cod_periodo"
-                  label="PerÃ­odo"
+                  label="Período"
                   solo
                   density="comfortable"
                 ></v-select>
@@ -88,7 +88,7 @@
                 Semestres</v-toolbar-title
               >
               <v-toolbar-title v-else-if="selectedPosGraduacao === 1"
-                >EspecializaÃ§Ãµes</v-toolbar-title
+                >Especializações</v-toolbar-title
               >
               <v-divider class="mx-4" inset vertical></v-divider>
               <div class="flex-grow-1"></div>
@@ -125,9 +125,9 @@
                         <v-row>
                           <v-col cols="2">
                             <v-text-field
-                              :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
+                              :rules="[(v) => !!v || 'Campo Obrigatório']"
                               v-model="objectItemSemestre.cod_semestre"
-                              label="CÃ³digo"
+                              label="Código"
                               v-mask="'##'"
                               dense
                               clearable
@@ -138,9 +138,9 @@
                           <v-col cols="10">
                             <v-text-field
                               required
-                              :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
+                              :rules="[(v) => !!v || 'Campo Obrigatório']"
                               v-model="objectItemSemestre.descri_semestre"
-                              label="DescriÃ§Ã£o"
+                              label="Descrição"
                               dense
                               clearable
                               outlined
@@ -172,12 +172,12 @@
                           </v-col>
                           <v-col cols="12" md="2">
                             <v-radio-group
-                              label="SituaÃ§Ã£o"
+                              label="Situação"
                               v-model="objectItemSemestre.situacao_semestre"
                               mandatory
                             >
-                              <v-radio label="VisÃ­vel" value="1"></v-radio>
-                              <v-radio label="InvisÃ­vel" value="0"></v-radio>
+                              <v-radio label="Visível" value="1"></v-radio>
+                              <v-radio label="Invisível" value="0"></v-radio>
                             </v-radio-group>
                           </v-col>
                         </v-row>
@@ -226,7 +226,7 @@
               color="#B9F6CA"
               text-color="green"
               small
-              >VISÃVEL</v-chip
+              >VISÍVEL</v-chip
             >
             <v-chip
               v-else
@@ -235,7 +235,7 @@
               color="#FFCDD2"
               text-color="red"
               small
-              >INVISÃVEL</v-chip
+              >INVISÍVEL</v-chip
             >
           </template>
           <template v-slot:item.acao="{ item }">
@@ -274,7 +274,7 @@
                     text
                   >
                     <v-icon color="primary" class="mr-2" small>fa-plus</v-icon>
-                    PerÃ­odo</v-btn
+                    Período</v-btn
                   >
                 </template>
                 <v-card>
@@ -329,12 +329,12 @@
                           </v-col>
                           <v-col cols="12" md="2">
                             <v-radio-group
-                              label="SituaÃ§Ã£o"
+                              label="Situação"
                               v-model="objectItemPeriodo.situacao_periodo"
                               mandatory
                             >
-                              <v-radio label="VisÃ­vel" value="1"></v-radio>
-                              <v-radio label="InvisÃ­vel" value="0"></v-radio>
+                              <v-radio label="Visível" value="1"></v-radio>
+                              <v-radio label="Invisível" value="0"></v-radio>
                             </v-radio-group>
                           </v-col>
                         </v-row>
@@ -389,7 +389,7 @@
               color="#B9F6CA"
               text-color="green"
               small
-              >VISÃVEL</v-chip
+              >VISÍVEL</v-chip
             >
             <v-chip
               v-else
@@ -398,7 +398,7 @@
               color="#FFCDD2"
               text-color="red"
               small
-              >INVISÃVEL</v-chip
+              >INVISÍVEL</v-chip
             >
           </template>
           <template v-slot:item.acao="{ item }">
@@ -459,7 +459,7 @@
                         <v-row>
                           <v-col cols="6">
                             <v-text-field
-                              :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
+                              :rules="[(v) => !!v || 'Campo Obrigatório']"
                               v-model="
                                 objectItemRepresentante.nome_representante
                               "
@@ -488,15 +488,15 @@
                               </v-col>
                               <v-col cols="6" md="6">
                                 <v-radio-group
-                                  label="SituaÃ§Ã£o"
+                                  label="Situação"
                                   v-model="
                                     objectItemRepresentante.situacao_representante
                                   "
                                   mandatory
                                 >
-                                  <v-radio label="VisÃ­vel" value="1"></v-radio>
+                                  <v-radio label="Visível" value="1"></v-radio>
                                   <v-radio
-                                    label="InvisÃ­vel"
+                                    label="Invisível"
                                     value="0"
                                   ></v-radio>
                                 </v-radio-group>
@@ -552,7 +552,7 @@
               color="#B9F6CA"
               text-color="green"
               small
-              >VISÃVEL</v-chip
+              >VISÍVEL</v-chip
             >
             <v-chip
               v-else
@@ -561,7 +561,7 @@
               color="#FFCDD2"
               text-color="red"
               small
-              >INVISÃVEL</v-chip
+              >INVISÍVEL</v-chip
             >
           </template>
           <template v-slot:item.acao="{ item }">
@@ -671,7 +671,7 @@
     </v-card>
     <v-dialog v-model="dialogExcluirSemestre" persistent max-width="600px">
       <v-card>
-        <v-card-title class="headline">AtenÃ§Ã£o!</v-card-title>
+        <v-card-title class="headline">Atenção!</v-card-title>
         <v-card-text>
           <span class="text-h5"> Deseja realmente excluir este semestre?</span
           ><br /><br />
@@ -683,7 +683,7 @@
         <v-card-actions>
           <div class="flex-grow-1"></div>
           <v-btn color="primary" text @click="dialogExcluirSemestre = false"
-            >NÃ£o</v-btn
+            >Não</v-btn
           >
           <v-btn color="error" text @click="deleteSemestre(objectItemSemestre)"
             >Excluir</v-btn
@@ -694,7 +694,7 @@
 
     <v-dialog v-model="dialogExcluirPeriodo" persistent max-width="600">
       <v-card>
-        <v-card-title class="headline">AtenÃ§Ã£o!</v-card-title>
+        <v-card-title class="headline">Atenção!</v-card-title>
         <v-card-text>
           <span class="text-h5"> Deseja realmente excluir este Periodo? </span
           ><br /><br />
@@ -706,7 +706,7 @@
         <v-card-actions>
           <div class="flex-grow-1"></div>
           <v-btn color="primary" text @click="dialogExcluirPeriodo = false"
-            >NÃ£o</v-btn
+            >Não</v-btn
           >
           <v-btn color="error" text @click="deletePeriodo(objectItemPeriodo)"
             >Excluir</v-btn
@@ -716,7 +716,7 @@
     </v-dialog>
     <v-dialog v-model="dialogExcluirRepresentante" persistent max-width="600">
       <v-card>
-        <v-card-title class="headline">AtenÃ§Ã£o!</v-card-title>
+        <v-card-title class="headline">Atenção!</v-card-title>
         <v-card-text>
           <span class="text-h5"
             >Deseja realmente excluir este representante? </span
@@ -732,7 +732,7 @@
             color="primary"
             text
             @click="dialogExcluirRepresentante = false"
-            >NÃ£o</v-btn
+            >Não</v-btn
           >
           <v-btn
             color="error"
@@ -745,7 +745,7 @@
     </v-dialog>
     <v-dialog v-model="dialogExcluirAviso" persistent max-width="600">
       <v-card>
-        <v-card-title class="headline">AtenÃ§Ã£o!</v-card-title>
+        <v-card-title class="headline">Atenção!</v-card-title>
         <v-card-text>
           <span class="text-h5"> Deseja realmente excluir este aviso?</span
           ><br /><br />
@@ -757,7 +757,7 @@
         <v-card-actions>
           <div class="flex-grow-1"></div>
           <v-btn color="primary" text @click="dialogExcluirAviso = false"
-            >NÃ£o</v-btn
+            >Não</v-btn
           >
           <v-btn color="error" text @click="deleteAviso(objectItemAviso)"
             >Excluir</v-btn
@@ -801,12 +801,12 @@ export default {
 
     headers: [
       { text: "Id", value: "id_semestre" },
-      { text: "Semestre/EspecializaÃ§Ã£o", value: "descri_semestre" },
+      { text: "Semestre/Especialização", value: "descri_semestre" },
       { text: "Mensagem", value: "msg_semestre", sortable: false },
       { text: "Status", value: "status_semestre", align: "center" },
-      { text: "SituaÃ§Ã£o", value: "situacao_semestre", align: "center" },
+      { text: "Situação", value: "situacao_semestre", align: "center" },
       {
-        text: "AÃ§Ã£o",
+        text: "Ação",
         value: "acao",
         align: "center",
         sortable: false,
@@ -815,12 +815,12 @@ export default {
     ],
     headersPeriodos: [
       { text: "Id", value: "id_periodo" },
-      { text: "PerÃ­odo", value: "nome_periodo" },
+      { text: "Período", value: "nome_periodo" },
       { text: "Vendedor", value: "codigo_vendedor" },
       { text: "Status", value: "status_periodo", align: "center" },
-      { text: "SituaÃ§Ã£o", value: "situacao_periodo", align: "center" },
+      { text: "Situação", value: "situacao_periodo", align: "center" },
       {
-        text: "AÃ§Ã£o",
+        text: "Ação",
         value: "acao",
         align: "center",
         sortable: false,
@@ -832,9 +832,9 @@ export default {
       { text: "Periodo", value: "nome_periodo" },
       { text: "Representante", value: "nome_representante" },
       { text: "Status", value: "status_representante", align: "center" },
-      { text: "SituaÃ§Ã£o", value: "situacao_representante", align: "center" },
+      { text: "Situação", value: "situacao_representante", align: "center" },
       {
-        text: "AÃ§Ã£o",
+        text: "Ação",
         value: "acao",
         align: "center",
         sortable: false,
@@ -846,7 +846,7 @@ export default {
       { text: "Titulo", value: "titulo_aviso" },
       { text: "Mensagem", value: "mensagem_aviso" },
       {
-        text: "AÃ§Ã£o",
+        text: "Ação",
         value: "acao",
         align: "center",
         sortable: false,
@@ -917,9 +917,9 @@ export default {
     }),
     formTitleSemestre() {
       if (this.objectItemSemestre.pos_graduacao == 0) {
-        this.texto = "GraduaÃ§Ã£o";
+        this.texto = "Graduação";
       } else {
-        this.texto = "EspecializaÃ§Ã£o";
+        this.texto = "Especialização";
       }
       return this.objectIndexSemestre === -1
         ? "Adicionar" + " " + this.texto
@@ -1043,7 +1043,7 @@ export default {
           // if (!this.semestres.length) {
           //   this.set_snackbar({
           //     show: true,
-          //     msg: "Ã‰ necessario selecionar GraduaÃ§Ã£o ou EspecializaÃ§Ã£o!",
+          //     msg: "Ã‰ necessario selecionar Graduação ou Especialização!",
           //     type: "warning",
           //     time: 0,
           //   });
@@ -1309,7 +1309,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "Semestre excluÃ­do com sucesso!",
+          msg: "Semestre excluído com sucesso!",
           type: "success",
           time: 3000,
         });
@@ -1337,7 +1337,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "Periodo excluÃ­do com sucesso!",
+          msg: "Periodo excluído com sucesso!",
           type: "success",
           time: 3000,
         });
@@ -1361,7 +1361,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "Representante excluÃ­do com sucesso!",
+          msg: "Representante excluído com sucesso!",
           type: "success",
           time: 3000,
         });
@@ -1383,7 +1383,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "Aviso excluÃ­do com sucesso!",
+          msg: "Aviso excluído com sucesso!",
           type: "success",
           time: 3000,
         });
@@ -1510,7 +1510,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "SituaÃ§Ã£o editada com sucesso!",
+          msg: "Situação editada com sucesso!",
           type: "success",
           time: 3000,
         });
@@ -1531,7 +1531,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "SituaÃ§Ã£o editada com sucesso!",
+          msg: "Situação editada com sucesso!",
           type: "success",
           time: 3000,
         });
@@ -1552,7 +1552,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "SituaÃ§Ã£o editada com sucesso!",
+          msg: "Situação editada com sucesso!",
           type: "success",
           time: 3000,
         });

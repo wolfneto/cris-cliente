@@ -35,7 +35,7 @@
               <v-col cols="12" md="6">
                 <v-text-field
                   class="uppercase"
-                  label="CÃ³digo"
+                  label="Código"
                   ref="codigo"
                   v-model="item.codigo"
                   :rules="[regras]"
@@ -49,7 +49,7 @@
               <v-col cols="12" md="6">
                 <v-text-field
                   class="uppercase"
-                  label="CÃ³digo Fornecedor"
+                  label="Código Fornecedor"
                   v-model="item.codigo_fornecedor"
                   :rules="[regras]"
                   dense
@@ -73,7 +73,7 @@
               <v-col cols="12" md="12">
                 <v-text-field
                   class="uppercase"
-                  label="DescriÃ§Ã£o"
+                  label="Descrição"
                   v-model="item.descricao"
                   :rules="[regras]"
                   dense
@@ -116,7 +116,7 @@
               <v-col cols="12" md="6">
                 <v-text-field
                   class="uppercase"
-                  label="CÃ³digo de Barras"
+                  label="Código de Barras"
                   v-model="item.codigo_barras"
                   :rules="[regras]"
                   dense
@@ -132,7 +132,7 @@
                   item-text="descricao"
                   :rules="[select]"
                   return-object
-                  label="EndereÃ§o"
+                  label="Endereço"
                   dense
                 ></v-autocomplete>               
               </v-col>
@@ -144,7 +144,7 @@
                   item-text="descricao"
                   :rules="[select]"
                   return-object
-                  label="ArmazÃ©m"
+                  label="Armazém"
                   dense
                 ></v-autocomplete>                
               </v-col>
@@ -179,7 +179,7 @@ export default {
     getFornecedor: null,
     getEndereco: null,
     getArmazem: null,
-    regras: val => (val || "").length >= 4 || "*Campo obrigatÃ³rio",
+    regras: val => (val || "").length >= 4 || "*Campo obrigatório",
     select: v => !!v || "Item is required",
     typeSnackbar: "",
     timeSnackbar: 2000,

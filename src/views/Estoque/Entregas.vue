@@ -20,7 +20,7 @@
             class="primary white--text text-center elevation-8 pa-6 h6"
             @click="$router.push('/estoque/entregas_relatorio')"
           >
-            RelÃ¡torio de Entregas
+            Relátorio de Entregas
           </div>
         </v-col>
       </v-row>

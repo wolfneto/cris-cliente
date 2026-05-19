@@ -40,7 +40,7 @@
             color="primary"
             @click="imprimir()"
           >
-            <v-icon left>fa-print</v-icon> Imprimir OrÃ§amento
+            <v-icon left>fa-print</v-icon> Imprimir Orçamento
           </v-btn>
           <v-btn
             class="ml-4 mr-4"
@@ -50,7 +50,7 @@
             color="primary"
             @click="salvarPedido()"
           >
-            <v-icon left>fa-save</v-icon> Salvar OrÃ§amento
+            <v-icon left>fa-save</v-icon> Salvar Orçamento
           </v-btn>
           <v-btn
             class="ml-4 mr-4"
@@ -60,7 +60,7 @@
             color="error"
             @click="dialogLimpar = true"
           >
-            <v-icon left>fa-undo-alt</v-icon> Limpar OrÃ§amento
+            <v-icon left>fa-undo-alt</v-icon> Limpar Orçamento
           </v-btn>
         </v-col>
       </v-row>
@@ -78,7 +78,7 @@
             append-outer-icon="fa-search"
             @click:append-outer="dialogBuscarCliente = true"
             @click="$event.target.select()"
-            label="CÃ³digo do Cliente"
+            label="Código do Cliente"
             v-mask="'#####'"
           ></v-text-field>
         </v-col>
@@ -127,7 +127,7 @@
             height="12"
             hide-details
             @keyup="getCep(cliente.endereco_principal)"
-            hint="Digite somento nÃºmeros"
+            hint="Digite somento números"
             v-model="cliente.endereco_principal.cep"
             label="Cep"
             :loading="cepPrincipalLoading"
@@ -146,7 +146,7 @@
             class="input-uppercase"
             hint="Rua, Avenida, Estrada..."
             v-model="cliente.endereco_principal.logradouro"
-            label="EndereÃ§o"
+            label="Endereço"
             required
           ></v-text-field>
         </v-col>
@@ -158,7 +158,7 @@
             height="12"
             hide-details
             v-model="cliente.endereco_principal.numero"
-            label="NÃºmero"
+            label="Número"
             ref="numero_principal"
             required
             v-mask="'####'"
@@ -263,7 +263,7 @@
             hide-details
             class="input-uppercase"
             v-model="pedido.obs"
-            label="ObservaÃ§Ã£o"
+            label="Observação"
           ></v-text-field>
         </v-col>
       </v-row>
@@ -300,10 +300,10 @@
                 dense
                 hide-details
                 v-model="item.codigo"
-                placeholder="CÃ³digo"
+                placeholder="Código"
                 v-on:keyup="findProdutoByCod($event)"
                 v-on:keyup.page-down="$refs.tabelaItem.$el.focus()"
-                label="CÃ³digo"
+                label="Código"
                 required
               ></v-text-field>
             </v-col>
@@ -319,7 +319,7 @@
                 v-on:keyup="findProduto($event)"
                 v-on:keyup.page-down="$refs.tabelaItem.$el.focus()"
                 v-model="item.descricao"
-                label="Buscar por: DescriÃ§Ã£o"
+                label="Buscar por: Descrição"
               ></v-text-field>
             </v-col>
             <!-- <v-col cols="1">
@@ -391,10 +391,10 @@
                       dense
                       hide-details
                       v-model="item.codigo"
-                      placeholder="CÃ³digo"
+                      placeholder="Código"
                       v-on:keyup="findProdutoByCod($event)"
                       v-on:keyup.page-down="$refs.tabelaItem.$el.focus()"
-                      label="CÃ³digo"
+                      label="Código"
                       required
                     ></v-text-field>
                   </v-col>
@@ -410,7 +410,7 @@
                       v-on:keyup="findProduto($event)"
                       v-on:keyup.page-down="$refs.tabelaItem.$el.focus()"
                       v-model="item.descricao"
-                      label="Buscar por: DescriÃ§Ã£o"
+                      label="Buscar por: Descrição"
                     ></v-text-field>
                   </v-col>
                   <!-- <v-col cols="1">
@@ -471,10 +471,10 @@
     <v-dialog v-model="dialogLimpar" persistent max-width="600px">
       <v-card>
         <v-card-title>
-          <span class="headline error--text">AtenÃ§Ã£o</span>
+          <span class="headline error--text">Atenção</span>
         </v-card-title>
         <v-card-text class="headline">
-          Deseja realmente limpar o orÃ§amento?
+          Deseja realmente limpar o orçamento?
         </v-card-text>
         <v-card-actions>
           <div class="flex-grow-1"></div>
@@ -501,10 +501,10 @@
     <v-dialog v-model="dialogItemRepetido" persistent max-width="650px">
       <v-card>
         <v-card-title>
-          <span class="headline">AtenÃ§Ã£o!</span>
+          <span class="headline">Atenção!</span>
         </v-card-title>
         <v-card-text class="h5"
-          >O item que vocÃª estÃ¡ tentando substituir jÃ¡ consta no
+          >O item que você está tentando substituir já consta no
           pedido.</v-card-text
         >
         <v-card-actions>
@@ -628,7 +628,7 @@ export default {
       this.dialogLimpar = false;
       this.set_snackbar({
         show: true,
-        msg: "OrÃ§amento Limpo!",
+        msg: "Orçamento Limpo!",
         type: "success",
         time: 3000,
       });
@@ -696,14 +696,14 @@ export default {
         if (this.error) {
           this.set_snackbar({
             show: true,
-            msg: "NÃ£o Foi PossÃ­vel Salvar o OrÃ§amento",
+            msg: "Não Foi Possível Salvar o Orçamento",
             type: "error",
             time: 0,
           });
         } else {
           this.set_snackbar({
             show: true,
-            msg: "OrÃ§amento Salvo Com Sucesso!",
+            msg: "Orçamento Salvo Com Sucesso!",
             type: "success",
             time: 3000,
           });
@@ -915,7 +915,7 @@ export default {
               //   }
               this.set_snackbar({
                 show: true,
-                msg: "Cep InvÃ¡lido",
+                msg: "Cep Inválido",
                 type: "warning",
                 time: 3000,
               });
@@ -1015,7 +1015,7 @@ export default {
           console.log("vazio");
           this.set_snackbar({
             show: true,
-            msg: "Cliente nÃ£o encontrado",
+            msg: "Cliente não encontrado",
             type: "warning",
             time: 3000,
           });

@@ -37,7 +37,7 @@ export default {
     headerHistoricoPedido: [
       { name: "Pedido", prop: "id" },
       { name: "Quantidade", prop: "quantidade" },
-      { name: "ObservaÃ§Ã£o", prop: "observacao" },
+      { name: "Observação", prop: "observacao" },
       { name: "Cliente/Fornecedor", prop: "cliente_fornecedor" },
       { name: "Inserido por", prop: "criado_por" },
       { name: "Data", prop: "date_create" },

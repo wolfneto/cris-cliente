@@ -198,7 +198,7 @@
                 @keyup.enter="getItem()"
                 @click="$event.target.select()"
                 append-icon="fa-search"
-                label="Busque por: CÃ³digo"
+                label="Busque por: Código"
                 ref="input_buscar"
                 filled
                 dense
@@ -225,7 +225,7 @@
                 class="uppercase"
                 v-model="objectItem.descricao_site"
                 @click="$event.target.select()"
-                label="DescriÃ§Ã£o do Site"
+                label="Descrição do Site"
                 filled
               ></v-text-field>
             </v-col>
@@ -240,7 +240,7 @@
                 v-model="objectItem.observacao"
                 @click="$event.target.select()"
                 clearable
-                label="ObservaÃ§Ãµes:"
+                label="Observações:"
                 filled
                 rows="4"
               ></v-textarea>
@@ -295,7 +295,7 @@
     </v-dialog>
     <v-dialog v-model="dialogExcluirBrinde" persistent max-width="50%">
       <v-card>
-        <v-card-title class="headline">AtenÃ§Ã£o!</v-card-title>
+        <v-card-title class="headline">Atenção!</v-card-title>
         <v-card-text>
           <span class="text-h5">Deseja realmente excluir este Brinde? </span
           ><br /><br />
@@ -345,10 +345,10 @@
                 :disabled="selectedFaculdade == 0 ? true : false"
                 @change="onChangeSelect()"
                 :items="[
-                  { text: 'GraduaÃ§Ã£o', value: 0 },
-                  { text: 'EspecializaÃ§Ã£o', value: 1 },
+                  { text: 'Graduação', value: 0 },
+                  { text: 'Especialização', value: 1 },
                 ]"
-                label="GraduaÃ§Ã£o ou EspecializaÃ§Ã£o:"
+                label="Graduação ou Especialização:"
                 filled
               ></v-select>
             </v-col>
@@ -366,7 +366,7 @@
           ></v-row>
           <v-row class="mt-n6 justify-center text-center">
             <v-col cols="3">
-              <span>Valor MÃ­nimo p/ Brinde</span>
+              <span>Valor Mínimo p/ Brinde</span>
               <money
                 :disabled="selectedSemestre == 0 ? true : false"
                 maxlength="10"
@@ -380,7 +380,7 @@
               :disabled="selectedSemestre == 0 ? true : false"
                 v-model="selectedAcumula"
                 :items="[
-                  { text: 'NÃ£o Acumula', value: 0 },
+                  { text: 'Não Acumula', value: 0 },
                   { text: 'Acumula', value: 1 },
                 ]"
                 filled
@@ -428,7 +428,7 @@
     <v-dialog v-model="dialogRelatorioBrindes" width="85%">
       <v-card>
         <v-card-title>
-          <span class="text-h5">RelatÃ³rio Brindes</span>
+          <span class="text-h5">Relatório Brindes</span>
         </v-card-title>
         <v-card-text>
           <v-simple-table dense fixed-header height="650px">
@@ -445,7 +445,7 @@
                     Codigo
                   </th>
                   <th class="text-left">
-                    DescriÃ§Ã£o
+                    Descrição
                   </th>
                   <th class="text-center" width="150">
                     Valor Acima de:
@@ -601,7 +601,7 @@ export default {
         width: 120,
       },
       {
-        text: "AÃ§Ã£o",
+        text: "Ação",
         value: "acao",
         align: "center",
         sortable: false,
@@ -734,7 +734,7 @@ export default {
 
             this.set_snackbar({
               show: true,
-              msg: "Item NÃ£o Encontrado!",
+              msg: "Item Não Encontrado!",
               type: "warning",
             });
           } else {
@@ -817,7 +817,7 @@ export default {
         } else if (this.retorno == false) {
           this.set_snackbar({
             show: true,
-            msg: "O CODIGO PARA O BRINDE INFORMADO JÃ ESTA CADASTRADO!",
+            msg: "O CODIGO PARA O BRINDE INFORMADO JÁ ESTA CADASTRADO!",
             type: "warning",
             time: 5000,
           });
@@ -856,7 +856,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "Brinde excluÃ­do com sucesso!",
+          msg: "Brinde excluído com sucesso!",
           type: "success",
           time: 3000,
         });
@@ -977,7 +977,7 @@ export default {
       if (item.valor == 0) {
         this.set_snackbar({
           show: true,
-          msg: "ATENÃ‡ÃƒO! O VALOR MÃNIMO DO BRINDE NÃƒO PODE SER VAZIO.",
+          msg: "ATENÃ‡ÃƒO! O VALOR MÍNIMO DO BRINDE NÃƒO PODE SER VAZIO.",
           type: "warning",
         });
       } else {

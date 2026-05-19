@@ -7,7 +7,7 @@
             <v-text-field
               v-model="data_de"
               v-mask="'##/##/####'"
-              :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
+              :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
               @keydown.enter="getPedidos()"
               placeholder="dd/mm/aaaa"
               label="De"
@@ -19,14 +19,14 @@
               v-model="data_ate"
               v-mask="'##/##/####'"
               @keydown.enter="getPedidos()"
-              :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
+              :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
               placeholder="dd/mm/aaaa"
-              label="AtÃ©"
+              label="Até"
               required
             ></v-text-field>
           </v-col>
         </v-row>
-        Pedidos AcadÃªmico
+        Pedidos Acadêmico
         <v-btn small class="ml-3" @click="getPedidos()">Atualizar</v-btn>
         <div class="flex-grow-1"></div>
         <v-text-field
@@ -366,7 +366,7 @@ export default {
       {
         name: "acao",
         align: "center",
-        label: "AÃ§Ã£o",
+        label: "Ação",
         sortable: false,
       },
     ],

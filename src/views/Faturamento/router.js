@@ -4,7 +4,7 @@ import CancelarNotaFiscal from './CancelarNotaFiscal';
 
 export default [{
         path: '/faturamento/emissaoNotasFiscais',
-        name: 'EmissÃ£o Notas Fiscais',
+        name: 'Emissão Notas Fiscais',
         component: EmissaoNotasFiscais,
         meta: {
             requiresAuth: true

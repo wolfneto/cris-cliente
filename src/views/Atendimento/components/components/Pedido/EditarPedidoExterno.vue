@@ -2,7 +2,7 @@
   <div>
     <v-card>
       <v-toolbar>
-        <v-toolbar-title>Editar OrÃ§amento</v-toolbar-title>
+        <v-toolbar-title>Editar Orçamento</v-toolbar-title>
         <v-btn @click="salvar()" class="ml-5" color="success" x-large text>
           <v-icon left>fa-save</v-icon> Salvar
         </v-btn>
@@ -28,7 +28,7 @@
               hide-details
               readonly
               v-model="pedido.numero"
-              label="NÃºmero do OrÃ§amento"
+              label="Número do Orçamento"
             ></v-text-field>
           </v-col>
         </v-row>
@@ -43,7 +43,7 @@
               class="height-lupa"
               v-model="pedido.cliente_obj.codigo"
               @click="$event.target.select()"
-              label="CÃ³digo do Cliente"
+              label="Código do Cliente"
               v-mask="'#####'"
             ></v-text-field>
           </v-col>
@@ -89,7 +89,7 @@
               height="12"
               hide-details
               @keyup="getCep(pedido.cliente_endereco)"
-              hint="Digite somento nÃºmeros"
+              hint="Digite somento números"
               v-model="pedido.cliente_endereco.cep"
               label="Cep"
               :loading="cepPrincipalLoading"
@@ -108,7 +108,7 @@
               class="input-uppercase"
               hint="Rua, Avenida, Estrada..."
               v-model="pedido.cliente_endereco.logradouro"
-              label="EndereÃ§o"
+              label="Endereço"
               required
             ></v-text-field>
           </v-col>
@@ -120,7 +120,7 @@
               height="12"
               hide-details
               v-model="pedido.cliente_endereco.numero"
-              label="NÃºmero"
+              label="Número"
               ref="numero_principal"
               required
               v-mask="'####'"
@@ -225,7 +225,7 @@
               hide-details
               class="input-uppercase"
               v-model="pedido.obs"
-              label="ObservaÃ§Ã£o"
+              label="Observação"
             ></v-text-field>
           </v-col>
         </v-row>
@@ -262,10 +262,10 @@
                   dense
                   hide-details
                   v-model="item.codigo"
-                  placeholder="CÃ³digo"
+                  placeholder="Código"
                   v-on:keyup="findProdutoByCod($event)"
                   v-on:keyup.page-down="$refs.tabelaItem.$el.focus()"
-                  label="CÃ³digo"
+                  label="Código"
                   required
                 ></v-text-field>
               </v-col>
@@ -281,7 +281,7 @@
                   v-on:keyup="findProduto($event)"
                   v-on:keyup.page-down="$refs.tabelaItem.$el.focus()"
                   v-model="item.descricao"
-                  label="Buscar por: DescriÃ§Ã£o"
+                  label="Buscar por: Descrição"
                 ></v-text-field>
               </v-col>
               <!-- <v-col cols="1">
@@ -326,7 +326,7 @@
             <v-card>
               <div class="text-center red darken-4 caption">
                 <h6>
-                  <b class="white--text">Itens do OrÃ§amento</b>
+                  <b class="white--text">Itens do Orçamento</b>
                 </h6>
               </div>
               <TabelaItensPedidoExterno></TabelaItensPedidoExterno>
@@ -338,11 +338,11 @@
     <v-dialog v-model="dialogItemRepetido" persistent max-width="650px">
       <v-card>
         <v-card-title>
-          <span class="headline">AtenÃ§Ã£o!</span>
+          <span class="headline">Atenção!</span>
         </v-card-title>
         <v-card-text class="h5"
-          >O item que vocÃª estÃ¡ tentando substituir jÃ¡ consta no
-          orÃ§amento.</v-card-text
+          >O item que você está tentando substituir já consta no
+          orçamento.</v-card-text
         >
         <v-card-actions>
           <div class="flex-grow-1"></div>
@@ -446,7 +446,7 @@ export default {
       if (this.pedido.orcamento_itens.length == 0) {
         this.set_snackbar({
           show: true,
-          msg: "Nenhum Item no OrÃ§amento",
+          msg: "Nenhum Item no Orçamento",
           type: "error",
           time: 0,
         });
@@ -463,7 +463,7 @@ export default {
         this.set_loading(false);
         this.set_snackbar({
           show: true,
-          msg: "OrÃ§amento Salvo!",
+          msg: "Orçamento Salvo!",
           type: "success",
           time: 3000,
         });
@@ -571,7 +571,7 @@ export default {
               //   }
               this.set_snackbar({
                 show: true,
-                msg: "Cep InvÃ¡lido",
+                msg: "Cep Inválido",
                 type: "warning",
                 time: 3000,
               });

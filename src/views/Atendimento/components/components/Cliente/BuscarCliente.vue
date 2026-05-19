@@ -26,7 +26,7 @@
                 v-model="searchCod"
                 @keyup.enter="searchClienteByCod($event.target.value)"
                 prepend-icon="fa-user"
-                label="CÃ³digo"
+                label="Código"
                 v-mask="'#####'"
               ></v-text-field>
             </v-col>
@@ -128,7 +128,7 @@ export default {
         value: "cpf_cnpj",
       },
       {
-        text: "RazÃ£o Social",
+        text: "Razão Social",
         sortable: true,
         value: "razao_social",
       },

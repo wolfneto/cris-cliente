@@ -10,7 +10,7 @@
             <v-text-field
               v-model="data_de"
               v-mask="'##/##/####'"
-              :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
+              :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
               @keydown.enter="getPedidos()"
               placeholder="dd/mm/aaaa"
               label="De"
@@ -22,9 +22,9 @@
               v-model="data_ate"
               v-mask="'##/##/####'"
               @keydown.enter="getPedidos()"
-              :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
+              :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
               placeholder="dd/mm/aaaa"
-              label="AtÃ©"
+              label="Até"
               required
             ></v-text-field>
           </v-col>
@@ -41,7 +41,7 @@
         </v-row>
       </v-card-title>
       <v-btn-toggle mandatory class="ml-3" dark v-model="status_link" tile>
-        <v-btn small active-class="error" :value="false">NÃ£o Pagos</v-btn>
+        <v-btn small active-class="error" :value="false">Não Pagos</v-btn>
         <v-btn small active-class="success" :value="true">Pagos</v-btn>
       </v-btn-toggle>
       <q-table
@@ -151,11 +151,11 @@
                   </template>
                   <v-card width="400px">
                     <v-card-title>
-                      ObservaÃ§Ãµes Financeiro
+                      Observações Financeiro
                     </v-card-title>
 
                     <v-textarea
-                      label="Insira as observaÃ§Ãµes"
+                      label="Insira as observações"
                       filled
                       clearable
                       no-resize
@@ -334,12 +334,12 @@
             >Detalhes Pagamento</v-card-title
           >
           <v-card-text>
-            <b>CartÃ£o de CrÃ©dito</b>
+            <b>Cartão de Crédito</b>
             <br />
             <b>Banco:</b>
             {{ objectItem.credito_pagamento.banco }}
             <br />
-            <b>AutorizaÃ§Ã£o:</b>
+            <b>Autorização:</b>
             {{ objectItem.credito_pagamento.terminal_nsu }}
             <br />
             <b>NÂº Comprovante:</b>
@@ -388,7 +388,7 @@
             <b>NÂº Documento:</b>
             {{ objectItem.boleto_pagamento.document_number }}
             <br />
-            <b>Nosso NÃºmero:</b>
+            <b>Nosso Número:</b>
             {{ objectItem.boleto_pagamento.our_number }}
             <br />
             <b>Valor:</b>
@@ -453,10 +453,10 @@
     <v-dialog v-model="dialog" persistent max-width="390">
       <v-card>
         <v-card-title>
-          <span class="headline">AtenÃ§Ã£o</span>
+          <span class="headline">Atenção</span>
         </v-card-title>
         <v-card-text>
-          VocÃª nÃ£o pode mais criar link de pagamento! <br />
+          Você não pode mais criar link de pagamento! <br />
           Exclua um link para continuar.
         </v-card-text>
         <v-card-actions>
@@ -468,7 +468,7 @@
     <v-dialog v-model="dialogAcao" persistent max-width="40%">
       <v-card>
         <v-card-title>
-          <span class="headline">AtenÃ§Ã£o</span>
+          <span class="headline">Atenção</span>
         </v-card-title>
         <v-card-text class="headline">
           <p>teste</p>
@@ -597,7 +597,7 @@
                   rows="3"
                   outlined
                   counter="100"
-                  label="ObservaÃ§Ãµes do Boleto"
+                  label="Observações do Boleto"
                   maxlength="100"
                   hint="Maximo 100 caracteres"
                 ></v-textarea>
@@ -661,11 +661,11 @@
               <h5>{{ $put_mask(objectComprovante.aluno.cpf, "cpf") }}</h5>
               <h5>
                 <br />
-                <b>NÃºmero Documento:</b>
+                <b>Número Documento:</b>
                 {{ objectComprovante.boleto_pagamento.document_number }}
               </h5>
               <h5>
-                <b>Nosso NÃºmero:</b>
+                <b>Nosso Número:</b>
                 {{ objectComprovante.boleto_pagamento.our_number }}
               </h5>
               <h5>
@@ -739,7 +739,7 @@
                 {{ objectComprovante.credito_pagamento.banco }}
               </h5>
               <h5>
-                <b>AutorizaÃ§Ã£o:</b>
+                <b>Autorização:</b>
                 {{ objectComprovante.credito_pagamento.terminal_nsu }}
               </h5>
               <h5>
@@ -830,11 +830,11 @@
               <h5>{{ $put_mask(objectComprovante.aluno.cpf, "cpf") }}</h5>
               <h5>
                 <br />
-                <b>NÃºmero Documento:</b>
+                <b>Número Documento:</b>
                 {{ objectComprovante.boleto_pagamento.document_number }}
               </h5>
               <h5>
-                <b>Nosso NÃºmero:</b>
+                <b>Nosso Número:</b>
                 {{ objectComprovante.boleto_pagamento.our_number }}
               </h5>
               <h5>
@@ -908,7 +908,7 @@
                 {{ objectComprovante.credito_pagamento.banco }}
               </h5>
               <h5>
-                <b>AutorizaÃ§Ã£o:</b>
+                <b>Autorização:</b>
                 {{ objectComprovante.credito_pagamento.terminal_nsu }}
               </h5>
               <h5>
@@ -1037,13 +1037,13 @@
     </v-dialog>
     <v-dialog v-model="dialogEmitir" persistent max-width="300">
       <v-card>
-        <v-card-title class="headline error--text">AtenÃ§Ã£o!</v-card-title>
+        <v-card-title class="headline error--text">Atenção!</v-card-title>
         <v-card-text
           >Deseja realmente emitir o pedido para o DC-INFO?</v-card-text
         >
         <v-card-actions>
           <div class="flex-grow-1"></div>
-          <v-btn color="error" text @click="dialogEmitir = false">NÃ£o</v-btn>
+          <v-btn color="error" text @click="dialogEmitir = false">Não</v-btn>
           <v-btn color="success" text @click="emitirPedido(objectItem)"
             >Sim</v-btn
           >
@@ -1060,17 +1060,17 @@
 
           <!-- <div v-if="divEnderecoEntrega1" id="printEnderecoEntrega">
             <v-card-text>
-              <h5><b>EndereÃ§o de Entrega</b></h5>
+              <h5><b>Endereço de Entrega</b></h5>
               <h5>
-                <b>NÃºmero Pedido:</b> {{ this.enderecoEntrega.numero_pedido }}
+                <b>Número Pedido:</b> {{ this.enderecoEntrega.numero_pedido }}
               </h5>
               <h5>
-                <b>NÃºmero Online:</b> {{ this.enderecoEntrega.numero_online }}
+                <b>Número Online:</b> {{ this.enderecoEntrega.numero_online }}
               </h5>
               <h5><b>Nome:</b> {{ this.enderecoEntrega.nome }}</h5>
               <h6><b>CPF:</b> {{ putMask(this.enderecoEntrega.cpf_aluno) }}</h6>
               <h5>
-                <b>EndereÃ§o</b>: {{ this.enderecoEntrega.endereco }},
+                <b>Endereço</b>: {{ this.enderecoEntrega.endereco }},
                 {{ this.enderecoEntrega.numero }}
               </h5>
               <h5 v-if="enderecoEntrega.complemento">
@@ -1104,9 +1104,9 @@
     </v-dialog>
     <v-dialog v-model="dialogExcluirPedido" persistent max-width="350">
       <v-card>
-        <v-card-title class="headline error--text">AtenÃ§Ã£o!</v-card-title>
+        <v-card-title class="headline error--text">Atenção!</v-card-title>
         <v-card-text>Deseja realmente <b>EXCLUIR</b> este pedido?</v-card-text>
-        <v-card-text>NÃƒO SERÃ POSSÃVEL DESFAZER ESTA AÃ‡ÃƒO!</v-card-text>
+        <v-card-text>NÃƒO SERÁ POSSÍVEL DESFAZER ESTA AÃ‡ÃƒO!</v-card-text>
         <v-card-actions>
           <div class="flex-grow-1"></div>
           <v-btn color="success" @click="dialogExcluirPedido = false"
@@ -1243,7 +1243,7 @@ export default {
       },
       {
         name: "acao",
-        label: "AÃ§Ã£o",
+        label: "Ação",
         align: "center",
         field: "acao",
         sortable: false,
@@ -1394,7 +1394,7 @@ export default {
 
         //   if (resposta != false) {
         //     this.dadosEndereco = resposta;
-        //     // tem endereÃ§o de entrega, salvar no store pra tambem imprimir junto com o pedido
+        //     // tem endereço de entrega, salvar no store pra tambem imprimir junto com o pedido
         //   }
         //this.$htmlToPaper("print");
         // mostral modal com o numero do pedido
@@ -1458,7 +1458,7 @@ export default {
       if (valor > this.objectItemLink.diferencaTotal) {
         this.set_snackbar({
           show: true,
-          msg: "O valor do Link nÃ£o pode ser maior que o valor total restante do pedido!",
+          msg: "O valor do Link não pode ser maior que o valor total restante do pedido!",
           type: "warning",
           time: 2000,
         });
@@ -1469,7 +1469,7 @@ export default {
       if (valor < 50) {
         this.set_snackbar({
           show: true,
-          msg: "Valor Minimo Para Gerar um Link Ã© de R$ 50,00",
+          msg: "Valor Minimo Para Gerar um Link é de R$ 50,00",
           type: "warning",
           time: 2000,
         });

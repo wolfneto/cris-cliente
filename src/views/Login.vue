@@ -13,7 +13,7 @@
 								<v-text-field
 									ref="usuario"
 									v-model="usuario"
-									:rules="[() => !!usuario || 'Campo ObrigatÃ³rio']"
+									:rules="[() => !!usuario || 'Campo Obrigatório']"
 									prepend-icon="fa-user"
 									label="Login"
 									required
@@ -21,7 +21,7 @@
 								<v-text-field
 									ref="senha"
 									v-model="senha"
-									:rules="[() => !!senha || 'Campo ObrigatÃ³rio']"
+									:rules="[() => !!senha || 'Campo Obrigatório']"
 									prepend-icon="fa-lock"
 									type="password"
 									label="Senha"
@@ -74,7 +74,7 @@ export default {
 						console.log(res.data);
 						if (res.data === true) {
 							this.showSnakerbar(
-								"UsuÃ¡rio ou Senha Incorretos!",
+								"Usuário ou Senha Incorretos!",
 								"warning",
 								2000
 							);

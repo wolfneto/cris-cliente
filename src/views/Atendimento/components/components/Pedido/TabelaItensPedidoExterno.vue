@@ -158,7 +158,7 @@
               ></v-text-field>
             </v-col>
             <v-col cols="12" md="6">
-              <label>Resetar % unitÃ¡rio</label>
+              <label>Resetar % unitário</label>
               <v-btn
                 :disabled="podeDesconto"
                 class="mt-n2 white--text"
@@ -466,7 +466,7 @@ export default {
       this.calcular_itens_pedido();
     },
 
-    // em manutenÃ§Ã£o
+    // em manutenção
     editItem(index) {
       //let item = this.itens[this.selected_item];
       // let item = this.itens[index];

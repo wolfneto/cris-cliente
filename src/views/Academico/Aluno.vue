@@ -81,7 +81,7 @@ export default {
         if (!this.aluno) {
           this.set_snackbar({
             show: true,
-            msg: "Aluno NÃ£o Encontrado!",
+            msg: "Aluno Não Encontrado!",
             type: "warning",
             time: 0,
           });

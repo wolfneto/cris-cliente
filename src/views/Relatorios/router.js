@@ -15,7 +15,7 @@ export default [{
     },
     {
         path: '/relatorios/previsaoAcademico',
-        name: 'RelatÃ³rio PrevisÃ£o AcadÃªmico',
+        name: 'Relatório Previsão Acadêmico',
         component: PrevisaoAcademico,
         meta: {
             requiresAuth: true
@@ -23,7 +23,7 @@ export default [{
     },
     {
         path: '/relatorios/compararPrecoFornecedor',
-        name: 'Comparar PreÃ§o Fornecedor',
+        name: 'Comparar Preço Fornecedor',
         component: CompararPrecoFornecedor,
         meta: {
             requiresAuth: true
@@ -31,7 +31,7 @@ export default [{
     },
     {
         path: '/relatorios/listasEmPrevisao',
-        name: 'Listas Em PrevisÃ£o',
+        name: 'Listas Em Previsão',
         component: ListasEmPrevisao,
         meta: {
             requiresAuth: true
@@ -39,7 +39,7 @@ export default [{
     },
     {
         path: '/relatorios/financeiroAcademico',
-        name: 'Financeiro AcadÃªmico',
+        name: 'Financeiro Acadêmico',
         component: FinanceiroAcademico,
         meta: {
             requiresAuth: true
@@ -47,7 +47,7 @@ export default [{
     },
     {
         path: '/relatorios/relatorioEndereco',
-        name: 'RelatÃ³rio de EndereÃ§os',
+        name: 'Relatório de Endereços',
         component: Endereco,
         meta: {
             requiresAuth: true

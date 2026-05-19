@@ -2,7 +2,7 @@
   <v-container>
     <v-card>
       <v-card-title>
-        UsuÃ¡rios
+        Usuários
         <div class="flex-grow-1"></div>
         <v-text-field
           v-model="search"
@@ -20,10 +20,10 @@
         :search="search"
         :items="usuarios"
         :items-per-page="10"
-        :no-data-text="'Nenhum usuÃ¡rio encontrado'"
+        :no-data-text="'Nenhum usuário encontrado'"
         :footer-props="{
           itemsPerPageOptions: [10, 20, 50, 100],
-          itemsPerPageText: 'UsuÃ¡rios por pagina',
+          itemsPerPageText: 'Usuários por pagina',
         }"
         class="elevation-1"
       >
@@ -32,7 +32,7 @@
             ><v-icon left>fa-graduation-cap</v-icon> Faculdades</v-btn
           >
           <v-btn text color="primary" @click="confirmPaginas(item)"
-            ><v-icon left>fa-user-lock</v-icon> PermissÃµes</v-btn
+            ><v-icon left>fa-user-lock</v-icon> Permissões</v-btn
           >
           <v-btn text color="warning" @click="showDialogAlterarSenha(item)"
             ><v-icon left>fa-key</v-icon> Alterar Senha</v-btn
@@ -118,7 +118,7 @@
       </v-card>
       <v-dialog v-model="dialogPermissao" persistent max-width="600">
         <v-card>
-          <v-card-title class="headline">PermissÃµes</v-card-title>
+          <v-card-title class="headline">Permissões</v-card-title>
           <v-card-text>
             <v-list dense>
               <v-list-item v-for="permissao in permissoes" :key="permissao.id">
@@ -127,7 +127,7 @@
                     <div v-if="permissao.campo == 'margem_preco'">
                       <v-text-field
                         v-model="permissao.status"
-                        :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
+                        :rules="[(v) => !!v || 'Campo Obrigatório']"
                         :label="permissao.campo"
                         required
                       ></v-text-field>
@@ -210,7 +210,7 @@ export default {
         value: "nome",
       },
       {
-        text: "UsuÃ¡rio",
+        text: "Usuário",
         sortable: true,
         value: "usuario",
       },
@@ -220,7 +220,7 @@ export default {
         value: "criado_em",
       },
       {
-        text: "AÃ§Ã£o",
+        text: "Ação",
         align: "center",
         value: "acao",
       },
@@ -261,7 +261,7 @@ export default {
         })
         .then((res) => {
           console.log(res.data);
-          this.msgSnackbar = "AlteraÃ§Ãµes Feitas Com Sucesso!";
+          this.msgSnackbar = "Alterações Feitas Com Sucesso!";
           this.typeSnackbar = "success";
           this.snackbar = true;
           this.timeSnackbar = 2000;
@@ -330,7 +330,7 @@ export default {
         })
         .then((res) => {
           console.log(res.data);
-          this.msgSnackbar = "AlteraÃ§Ãµes Feitas Com Sucesso!";
+          this.msgSnackbar = "Alterações Feitas Com Sucesso!";
           this.typeSnackbar = "success";
           this.snackbar = true;
           this.timeSnackbar = 2000;

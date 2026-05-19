@@ -19,7 +19,7 @@
             v-model="search"
             @click="$event.target.select()"
             append-icon="fa-search"
-            label="Busque por: CÃ³digo, DescriÃ§Ã£o, Marca"
+            label="Busque por: Código, Descrição, Marca"
           ></v-text-field>
         </v-card-title>
         <div ref="tabelaItens" tabindex="1">
@@ -151,7 +151,7 @@
       </v-dialog>
       <v-dialog v-model="dialog2" max-width="600" persistent>
         <v-card>
-          <v-card-title class="headline"> AtenÃ§Ã£o! </v-card-title>
+          <v-card-title class="headline"> Atenção! </v-card-title>
           <v-card-text>
             <span class="title"
               >Deseja realmente aplicar desconto nos itens selecionados?</span
@@ -214,7 +214,7 @@ export default {
         value: "codigo_fornecedor",
       },
       {
-        text: "DescriÃ§Ã£o",
+        text: "Descrição",
         sortable: true,
         value: "descricao",
       },
@@ -246,7 +246,7 @@ export default {
         value: "codigo",
       },
       {
-        text: "DescriÃ§Ã£o",
+        text: "Descrição",
         sortable: true,
         value: "descricao",
       },

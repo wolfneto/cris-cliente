@@ -8,9 +8,9 @@
           <v-col cols="2">
             <v-text-field
               v-model="codigo"
-              placeholder="CÃ³digo"
+              placeholder="Código"
               v-on:keyup="findProdutoByCod()"
-              label="CÃ³digo"
+              label="Código"
               required
             ></v-text-field>
           </v-col>
@@ -19,7 +19,7 @@
               autofocus
               v-on:keyup="findProduto()"
               v-model="descricao"
-              label="DescriÃ§Ã£o"
+              label="Descrição"
             ></v-text-field>
           </v-col>
         </v-row>
@@ -87,14 +87,14 @@
                 <h5>Armazem: S03-01-07</h5>
                 <h5
                   :class="objectItem.saldo == 0 ? 'error--text' : 'success--text'"
-                >DisponÃ­vel: {{objectItem.saldo}}</h5>
+                >Disponível: {{objectItem.saldo}}</h5>
               </div>
               <v-row>
                 <v-col cols="3">
                   <v-card>
                     <div class="text-center">
                       <span class="subtitle-1">
-                        <b>SaÃ­das</b>
+                        <b>Saídas</b>
                       </span>
                     </div>
                     <v-data-table
@@ -168,7 +168,7 @@
       <v-tab-item>
         <v-row>
           <v-col cols="12">
-            <h3>descriÃ§Ã£o do item selecionado</h3>
+            <h3>descrição do item selecionado</h3>
           </v-col>
         </v-row>
         <v-row>
@@ -299,8 +299,8 @@ export default {
     produtos: [],
     headers: [
       { text: "#", value: "codigo", sortable: false },
-      { text: "CÃ³digo", value: "codigo", sortable: true },
-      { text: "DescriÃ§Ã£o", value: "descricao", sortable: true },
+      { text: "Código", value: "codigo", sortable: true },
+      { text: "Descrição", value: "descricao", sortable: true },
       { text: "Marca", value: "marca", sortable: true },
       { text: "Saldo", value: "saldo", sortable: true },
       { text: "Valor", value: "valor", sortable: true },
@@ -366,7 +366,7 @@ export default {
     ],
     headersResumoMeses: [
       { text: "Ano", value: "ano", sortable: true },
-      { text: "MÃªs", value: "mes", sortable: true },
+      { text: "Mês", value: "mes", sortable: true },
       { text: "Qtd", value: "qtd", sortable: true },
       { text: "Total", value: "total", sortable: true }
     ],

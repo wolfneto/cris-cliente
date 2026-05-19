@@ -31,7 +31,7 @@ Vue.prototype.$moment_format_subtract_days = function(value1, value2) {
     return Moment(dia).format("DD/MM/YYYY")
 };
 
-// Format date/time in SÃ£o Paulo time zone (UTC-3)
+// Format date/time in São Paulo time zone (UTC-3)
 Vue.prototype.$moment_format_sao_paulo = function(value) {
     return Moment(value).utcOffset("-03:00").format("DD/MM/YYYY HH:mm:ss");
 };

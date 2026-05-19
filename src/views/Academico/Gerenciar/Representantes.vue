@@ -21,10 +21,10 @@
           v-model="selectedPosGraduacao"
           @change="onChangeGraduacao()"
           :items="[
-            { text: 'GraduaÃ§Ã£o', value: 0 },
-            { text: 'EspecializaÃ§Ã£o', value: 1 },
+            { text: 'Graduação', value: 0 },
+            { text: 'Especialização', value: 1 },
           ]"
-          label="GraduaÃ§Ã£o ou EspecializaÃ§Ã£o"
+          label="Graduação ou Especialização"
         ></v-select>
       </v-col>
     </v-row>
@@ -86,7 +86,7 @@
                     <v-row class="custom-row">
                       <v-col cols="12">
                         <v-text-field
-                          :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
+                          :rules="[(v) => !!v || 'Campo Obrigatório']"
                           v-model="objectItem.nome_representante"
                           label="Nome"
                         ></v-text-field>
@@ -106,7 +106,7 @@
                       </v-col>
                       <v-col cols="12" md="4">
                         <v-radio-group
-                          label="SituaÃ§Ã£o"
+                          label="Situação"
                           v-model="objectItem.situacao_representante"
                           mandatory
                         >
@@ -155,11 +155,11 @@
     </v-data-table>
     <v-dialog v-model="dialogExcluir" persistent max-width="300">
       <v-card>
-        <v-card-title class="headline">AtenÃ§Ã£o!</v-card-title>
+        <v-card-title class="headline">Atenção!</v-card-title>
         <v-card-text>Deseja realmente excluir o representante?</v-card-text>
         <v-card-actions>
           <div class="flex-grow-1"></div>
-          <v-btn color="primary" text @click="dialogExcluir = false">NÃ£o</v-btn>
+          <v-btn color="primary" text @click="dialogExcluir = false">Não</v-btn>
           <v-btn color="error" text @click="deleteRepresentante(objectItem)"
             >Excluir</v-btn
           >
@@ -200,12 +200,12 @@ export default {
       { text: "ID", value: "id_representante" },
       { text: "ID Faculdade", value: "id_faculdade_representante" },
       { text: "ID Semestre", value: "id_semestre_representante" },
-      { text: "DescriÃ§Ã£o", value: "nome_representante" },
+      { text: "Descrição", value: "nome_representante" },
       { text: "Periodo", value: "nome_periodo" },
       { text: "Status", value: "status_representante", align: "center" },
-      { text: "SituaÃ§Ã£o", value: "situacao_representante", align: "center" },
+      { text: "Situação", value: "situacao_representante", align: "center" },
       {
-        text: "AÃ§Ã£o",
+        text: "Ação",
         value: "acao",
         align: "center",
         sortable: false,

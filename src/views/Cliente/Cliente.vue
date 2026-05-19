@@ -32,7 +32,7 @@
               autocomplete="nope"
               @keyup="searchCliente($event.target.value, 'cod')"
               prepend-icon="fa-user"
-              label="CÃ³digo"
+              label="Código"
               v-mask="'#####'"
             ></v-text-field>
           </v-col>
@@ -69,7 +69,7 @@
             {{ item.cliente_atividade.descricao }}
           </td>
           <td colspan="3">
-            <b>CondiÃ§Ã£o:</b>
+            <b>Condição:</b>
             <span v-if="item.condicao">ATIVO</span>
             <span v-else>BLOQUEADO</span>
           </td>
@@ -116,7 +116,7 @@ export default {
         value: "cpf_cnpj",
       },
       {
-        text: "RazÃ£o Social",
+        text: "Razão Social",
         sortable: true,
         value: "razao_social",
       },

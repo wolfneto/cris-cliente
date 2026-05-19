@@ -32,10 +32,10 @@
 											<v-col cols="12" md="12">
 												<v-text-field
 													counter
-													:rules=" [v => !!v || 'DescriÃ§Ã£o ObrigatÃ³ria!', v => v.length <= 45 || 'DescriÃ§Ã£o ObrigatÃ³ria!' ] "
+													:rules=" [v => !!v || 'Descrição Obrigatória!', v => v.length <= 45 || 'Descrição Obrigatória!' ] "
 													maxlength="45"
 													v-model="editedItem.nome"
-													label="DescriÃ§Ã£o"
+													label="Descrição"
 												></v-text-field>
 											</v-col>
 										</v-row>
@@ -44,7 +44,7 @@
 												<v-text-field
 													v-mask="'######'"
 													maxlength="6"
-													:rules=" [v => !!v || 'Pontos ObrigatÃ³rios!'] "
+													:rules=" [v => !!v || 'Pontos Obrigatórios!'] "
 													v-model="editedItem.pontos"
 													label="Pontos"
 												></v-text-field>
@@ -86,7 +86,7 @@
 												<v-text-field
 													v-mask="'##/##/####'"
 													placeholder="dd/mm/aaaa"
-													:rules=" [v => !!v || 'Data obrigatÃ³ria!' ] "
+													:rules=" [v => !!v || 'Data obrigatória!' ] "
 													v-model="editedItem.data_de"
 													label="De"
 												></v-text-field>
@@ -95,16 +95,16 @@
 												<v-text-field
 													v-mask="'##/##/####'"
 													placeholder="dd/mm/aaaa"
-													:rules=" [v => !!v || 'Data obrigatÃ³ria!' ] "
+													:rules=" [v => !!v || 'Data obrigatória!' ] "
 													v-model="editedItem.data_ate"
-													label="AtÃ©"
+													label="Até"
 												></v-text-field>
 											</v-col>
 											<v-col cols="12" md="4">
 												<v-text-field
 													v-mask="'##/##/####'"
 													placeholder="dd/mm/aaaa"
-													:rules=" [v => !!v || 'Data obrigatÃ³ria!' ] "
+													:rules=" [v => !!v || 'Data obrigatória!' ] "
 													v-model="editedItem.data_limite"
 													label="Limite"
 												></v-text-field>
@@ -113,7 +113,7 @@
 										<v-row class="custom-row">
 											<v-col cols="12" md="4">
 												<v-text-field
-													:rules=" [v => !!v || 'Estoque ObrigatÃ³rios!'] "
+													:rules=" [v => !!v || 'Estoque Obrigatórios!'] "
 													v-model="editedItem.estoque"
 													label="Estoque"
 												></v-text-field>
@@ -122,7 +122,7 @@
 												<v-select
 													v-model="editedItem.categoria_fidelidade"
 													item-text="nome_categoria"
-													:rules=" [v => !!v || 'Categoria ObrigatÃ³ria!'] "
+													:rules=" [v => !!v || 'Categoria Obrigatória!'] "
 													return-object
 													:items="categorias"
 													label="Categoria"
@@ -135,10 +135,10 @@
 													rows="4"
 													no-resize
 													counter
-													:rules=" [v => !!v || 'DescriÃ§Ã£o ObrigatÃ³ria!', v => v.length <= 1000 || 'DescriÃ§Ã£o ObrigatÃ³ria!' ] "
+													:rules=" [v => !!v || 'Descrição Obrigatória!', v => v.length <= 1000 || 'Descrição Obrigatória!' ] "
 													maxlength="1000"
 													v-model="editedItem.descricao_detalhada"
-													label="DescriÃ§Ã£o Detalhada"
+													label="Descrição Detalhada"
 												></v-textarea>
 											</v-col>
 										</v-row>
@@ -148,10 +148,10 @@
 													rows="4"
 													no-resize
 													counter
-													:rules=" [v => !!v || 'InformaÃ§Ã£o ObrigatÃ³ria!', v => v.length <= 1000 || 'InformaÃ§Ã£o ObrigatÃ³ria!' ] "
+													:rules=" [v => !!v || 'Informação Obrigatória!', v => v.length <= 1000 || 'Informação Obrigatória!' ] "
 													maxlength="1000"
 													v-model="editedItem.info_adicional"
-													label="InformaÃ§Ã£o Adicional"
+													label="Informação Adicional"
 												></v-textarea>
 											</v-col>
 										</v-row>
@@ -175,7 +175,7 @@
 				<b>De:</b>
 				{{item.data_de}}
 				<br />
-				<b>AtÃ©:</b>
+				<b>Até:</b>
 				{{item.data_ate}}
 				<br />
 				<b>Limite:</b>
@@ -222,13 +222,13 @@ export default {
 		categorias: [],
 		dialog: false,
 		headers: [
-			{ text: "DescriÃ§Ã£o", value: "nome" },
+			{ text: "Descrição", value: "nome" },
 			{ text: "Categoria", value: "categoria_fidelidade" },
 			{ text: "Valor", value: "valor" },
 			{ text: "Status", value: "status" },
 			{ text: "Estoque", value: "estoque" },
 			{ text: "Validade", value: "data_de" },
-			{ text: "AÃ§Ã£o", value: "acao" }
+			{ text: "Ação", value: "acao" }
 		],
 		editedIndex: -1,
 		editedItem: {
@@ -350,8 +350,8 @@ export default {
 		},
 		async deleteItem(item) {
 			let check = await this.$bvModal
-				.msgBoxConfirm("VocÃª tem certeza que deseja deletar este produto?", {
-					title: "ConfirmaÃ§Ã£o!",
+				.msgBoxConfirm("Você tem certeza que deseja deletar este produto?", {
+					title: "Confirmação!",
 					size: "sm",
 					buttonSize: "sm",
 					okVariant: "success",

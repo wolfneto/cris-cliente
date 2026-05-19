@@ -7,7 +7,7 @@
             <v-text-field
               v-model="data_de"
               v-mask="'##/##/####'"
-              :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
+              :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
               @keydown.enter="getEntregas()"
               placeholder="dd/mm/aaaa"
               label="De"
@@ -19,9 +19,9 @@
               v-model="data_ate"
               v-mask="'##/##/####'"
               @keydown.enter="getEntregas()"
-              :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
+              :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
               placeholder="dd/mm/aaaa"
-              label="AtÃ©"
+              label="Até"
               required
             ></v-text-field>
           </v-col>
@@ -45,7 +45,7 @@
           :items="entregas"
           hide-default-footer
           dense
-          no-data-text="NÃ£o hÃ¡ entregas no periodo."
+          no-data-text="Não há entregas no periodo."
         >
           <template v-slot:[`item.dados`]="{ item }">
             <b>Recebido por: {{ item.nome_recebedor }}</b>
@@ -75,7 +75,7 @@ export default {
       { text: "Grupo", value: "pedido_grupo" },
       { text: "Dados", value: "dados" },
       { text: "Vendedor", value: "vendedor" },
-      { text: "EndereÃ§o", value: "endereco_completo" },
+      { text: "Endereço", value: "endereco_completo" },
     ],
   }),
   async created() {

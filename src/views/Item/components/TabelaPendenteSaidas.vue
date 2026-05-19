@@ -45,7 +45,7 @@ import { mapState, mapMutations, mapActions } from "vuex";
 export default {
   data: () => ({
     headers: [
-      { text: "MÃªs", sortable: true, value: "mes" },
+      { text: "Mês", sortable: true, value: "mes" },
       { text: "Ano", sortable: true, value: "ano" },
       { text: "Saldo", sortable: true, value: "saldo" },
     ],

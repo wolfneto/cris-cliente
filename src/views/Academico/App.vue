@@ -15,7 +15,7 @@
               showNotificacoesEnviadas = true;
               get_enviadas();
             "
-            >NotificaÃ§Ãµes Enviadas</v-btn
+            >Notificações Enviadas</v-btn
           >
         </v-card-title>
         <v-row justify="center">
@@ -108,11 +108,11 @@
         <v-card-title>
           <span v-if="filter == 1">
             Alunos
-            <span class="primary--text">Com App</span> AcadÃªmico
+            <span class="primary--text">Com App</span> Acadêmico
           </span>
           <span v-else-if="filter == 0">
             Alunos
-            <span class="warning--text">Sem App</span> AcadÃªmico
+            <span class="warning--text">Sem App</span> Acadêmico
           </span>
 
           <div class="flex-grow-1"></div>
@@ -145,7 +145,7 @@
                 small
                 color="primary"
                 @click="notificacao(null, false)"
-                >Enviar NotificaÃ§Ã£o P/ Todos Listados Abaixo ({{this.filteredAlunos.length}})</v-btn
+                >Enviar Notificação P/ Todos Listados Abaixo ({{this.filteredAlunos.length}})</v-btn
               ></v-col
             >
             <v-col align-self="end" cols="6">
@@ -156,7 +156,7 @@
                 small
                 color="warning"
                 @click="notificacao(null, true)"
-                >Enviar NotificaÃ§Ã£o P/ Todos os Alunos Com / Sem App({{
+                >Enviar Notificação P/ Todos os Alunos Com / Sem App({{
                   comAppSize + semAppSize
                 }})</v-btn
               >
@@ -206,7 +206,7 @@
                   color="primary"
                   @click="notificacao(row)"
                 >
-                  NotificaÃ§Ã£o
+                  Notificação
                   <v-icon dark right>far fa-paper-plane</v-icon>
                 </v-btn>
               </div> -->
@@ -227,8 +227,8 @@
                   <v-col cols="6">
                     <v-text-field
                       v-model="notification.title"
-                      :rules="[(v) => !!v.trim() || 'Titulo obrigatÃ³rio!']"
-                      label="Titulo da NotificaÃ§Ã£o"
+                      :rules="[(v) => !!v.trim() || 'Titulo obrigatório!']"
+                      label="Titulo da Notificação"
                       required
                     ></v-text-field>
                   </v-col>
@@ -237,8 +237,8 @@
                   <v-col cols="12">
                     <v-text-field
                       v-model="notification.body"
-                      :rules="[(v) => !!v.trim() || 'Mensagem obrigatÃ³ria!']"
-                      label="Mensagem da NotificaÃ§Ã£o"
+                      :rules="[(v) => !!v.trim() || 'Mensagem obrigatória!']"
+                      label="Mensagem da Notificação"
                       required
                     ></v-text-field>
                   </v-col>
@@ -248,7 +248,7 @@
                   <v-col cols="6">
                     <v-text-field
                       v-model="notification.titulo"
-                      :rules="[(v) => !!v.trim() || 'Titulo obrigatÃ³rio!']"
+                      :rules="[(v) => !!v.trim() || 'Titulo obrigatório!']"
                       label="Titulo da Mensagem"
                       required
                     ></v-text-field>
@@ -259,7 +259,7 @@
                     <v-textarea
                       no-resize
                       v-model="notification.mensagem"
-                      :rules="[(v) => !!v.trim() || 'Mensagem obrigatÃ³ria!']"
+                      :rules="[(v) => !!v.trim() || 'Mensagem obrigatória!']"
                       label="Mensagem"
                       required
                     ></v-textarea>
@@ -270,7 +270,7 @@
                     <v-select
                       :items="duracoes"
                       v-model="notification.duracao"
-                      label="DuraÃ§Ã£o da Mensagem no App"
+                      label="Duração da Mensagem no App"
                     ></v-select>
                   </v-col>
                 </v-row>
@@ -339,7 +339,7 @@ export default {
       // {
       //   name: "acao",
       //   align: "center",
-      //   label: "AÃ§Ã£o",
+      //   label: "Ação",
       //   sortable: false,
       // },
     ],

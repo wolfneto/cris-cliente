@@ -44,7 +44,7 @@
     </div>
     <v-dialog v-model="dialogHistorico" max-width="800">
       <v-card>
-        <v-card-title class="headline">HistÃ³rico de Compras</v-card-title>
+        <v-card-title class="headline">Histórico de Compras</v-card-title>
 
         <v-card-text>aqui vai ter os historicos de saidas e entradas do item {{objectItem.descricao}}</v-card-text>
 
@@ -57,9 +57,9 @@
     <v-dialog v-model="dialogItemRepetido" persistent max-width="650px">
       <v-card>
         <v-card-title>
-          <span class="headline">AtenÃ§Ã£o!</span>
+          <span class="headline">Atenção!</span>
         </v-card-title>
-        <v-card-text class="h5">O item que vocÃª estÃ¡ tentando substituir jÃ¡ consta no pedido.</v-card-text>
+        <v-card-text class="h5">O item que você está tentando substituir já consta no pedido.</v-card-text>
         <v-card-actions>
           <div class="flex-grow-1"></div>
           <v-btn color="error" text @click="dialogItemRepetido = false"

@@ -79,7 +79,7 @@
                   color="primary"
                   @click="notificacao(row)"
                 >
-                  NotificaÃ§Ã£o
+                  Notificação
                   <v-icon dark right>far fa-paper-plane</v-icon>
                 </v-btn>
               </div> -->
@@ -122,13 +122,13 @@ export default {
       {
         name: "titulo_not",
         align: "center",
-        label: "Titulo NotificaÃ§Ã£o",
+        label: "Titulo Notificação",
         sortable: false,
       },
       {
         name: "msg_not",
         align: "center",
-        label: "Mensagem NotificaÃ§Ã£o",
+        label: "Mensagem Notificação",
         sortable: false,
       },
       {
@@ -146,7 +146,7 @@ export default {
       // {
       //   name: "acao",
       //   align: "center",
-      //   label: "AÃ§Ã£o",
+      //   label: "Ação",
       //   sortable: false,
       // },
     ],

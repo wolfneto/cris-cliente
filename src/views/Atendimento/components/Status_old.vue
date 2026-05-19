@@ -5,7 +5,7 @@
         <v-text-field
           v-model="data_de"
           v-mask="'##/##/####'"
-          :rules=" [v => !!v.trim() || 'Data obrigatÃ³ria!' ] "
+          :rules=" [v => !!v.trim() || 'Data obrigatória!' ] "
           placeholder="dd/mm/aaaa"
           label="De"
           required
@@ -15,9 +15,9 @@
         <v-text-field
           v-model="data_ate"
           v-mask="'##/##/####'"
-          :rules=" [v => !!v.trim() || 'Data obrigatÃ³ria!' ] "
+          :rules=" [v => !!v.trim() || 'Data obrigatória!' ] "
           placeholder="dd/mm/aaaa"
-          label="AtÃ©"
+          label="Até"
           required
         ></v-text-field>
       </v-col>
@@ -35,14 +35,14 @@
           v-model="codigo"
           append-icon="fa-search"
           @click:append="showDialogSearch()"
-          label="CÃ³digo"
+          label="Código"
           v-mask="'#####'"
         ></v-text-field>
       </v-col>
     </v-row>
     <v-tabs @change="onChangeTabs($event)" dark :slider-size="10" dense grow>
       <v-tab class="blue lighten-1">Pedidos</v-tab>
-      <v-tab class="orange lighten-1">OrÃ§amentos</v-tab>
+      <v-tab class="orange lighten-1">Orçamentos</v-tab>
       <v-tab-item>
         <v-card>
           <div class="text-center blue lighten-4">
@@ -120,7 +120,7 @@
           <v-card>
           <div class="text-center blue lighten-4">
             <span class="subtitle-1">
-              <b>OrÃ§amentos</b>
+              <b>Orçamentos</b>
             </span>
           </div>
           <v-data-table
@@ -154,7 +154,7 @@
         <v-card>
           <div class="text-center blue lighten-4">
             <span class="subtitle-1">
-              <b>Itens do OrÃ§amento</b>
+              <b>Itens do Orçamento</b>
             </span>
           </div>
           <v-data-table
@@ -231,16 +231,16 @@ export default {
     headersPedidos: [
       { text: "Pedido", value: "pedido", sortable: false },
       { text: "Status", value: "status", sortable: false },
-      { text: "EmissÃ£o", value: "emissao", sortable: true },
+      { text: "Emissão", value: "emissao", sortable: true },
       { text: "Nota", value: "nota", sortable: true },
-      { text: "EmissÃ£o", value: "emissao_nota", sortable: true },
+      { text: "Emissão", value: "emissao_nota", sortable: true },
       { text: "Total", value: "total", sortable: true },
       { text: "Codigo", value: "codigo_cliente", sortable: true },
       { text: "Cliente", value: "nome_cliente", sortable: true },
       { text: "Vendedor", value: "vendedor", sortable: true },
       { text: "Atendente", value: "atendente", sortable: true },
-      { text: "UsuÃ¡rio", value: "usuario", sortable: true },
-      { text: "OperaÃ§Ã£o", value: "operacao", sortable: true }
+      { text: "Usuário", value: "usuario", sortable: true },
+      { text: "Operação", value: "operacao", sortable: true }
     ],
     pedidos: [
       {
@@ -372,11 +372,11 @@ export default {
     ],
     headersItens: [
       { text: "Qtd", value: "qtd", sortable: false },
-      { text: "CÃ³digo", value: "codigo", sortable: false },
+      { text: "Código", value: "codigo", sortable: false },
       { text: "Valor", value: "valor", sortable: true },
       { text: "Total", value: "total", sortable: true },
       { text: "Status", value: "status", sortable: true },
-      { text: "DescriÃ§Ã£o", value: "descricao", sortable: true },
+      { text: "Descrição", value: "descricao", sortable: true },
       { text: "Marca", value: "marca", sortable: true }
     ],
     itens: [
@@ -433,7 +433,7 @@ export default {
   methods: {
       onChangeTabs(event){
           // 1 = pedidos
-          // 2 = orÃ§amentos
+          // 2 = orçamentos
           console.log(event);
           
       }

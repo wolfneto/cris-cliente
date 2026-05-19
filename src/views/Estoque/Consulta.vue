@@ -35,10 +35,10 @@
             <b>Marca</b>
           </h6>
           <h6 class="mt-n3">
-            <b>CatÃ¡logo</b>
+            <b>Catálogo</b>
           </h6>
           <h6 class="mt-n3">
-            <b>LocalizaÃ§Ã£o</b>
+            <b>Localização</b>
           </h6>
         </div>
 
@@ -47,9 +47,9 @@
             <v-col cols="12" md="8">
               <v-row>
                 <v-col cols="6">
-                  <h6>DisponÃ­vel</h6>
+                  <h6>Disponível</h6>
                   <p class="mt-n2">
-                    <b>SaÃ­das previstas</b>
+                    <b>Saídas previstas</b>
                   </p>
                   <v-card class="ma-0" elevation="4">
                   <v-simple-table class="ml-0" dense height="300" style="width: 450px">
@@ -73,7 +73,7 @@
                   </v-card>
                 </v-col>
                 <v-col cols="6">
-                  <h6>Em produÃ§Ã£o</h6>
+                  <h6>Em produção</h6>
                   <p class="mt-n2">
                     <b>Entradas previstas</b>
                   </p>

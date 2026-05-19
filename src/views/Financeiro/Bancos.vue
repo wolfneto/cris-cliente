@@ -24,7 +24,7 @@
           <v-col cols="12" md="4">
             <v-row justify="end">
               <v-btn color="warning" class="mr-2" @click="openDialog()">
-                Alterar Banco CrÃ©dito p/ todos semestres
+                Alterar Banco Crédito p/ todos semestres
               </v-btn>
             </v-row>
           </v-col>
@@ -41,7 +41,7 @@
                       { text: 'ACADEMICO', value: 0 },
                       { text: 'VAREJO', value: 1 },
                     ]"
-                    label="AcadÃªmico ou Varejo"
+                    label="Acadêmico ou Varejo"
                     dense
                     filled
                   ></v-select>
@@ -68,10 +68,10 @@
                     v-model="selectedPosGraduacao"
                     @change="onChangeGraduacao()"
                     :items="[
-                      { text: 'GraduaÃ§Ã£o', value: 0 },
-                      { text: 'EspecializaÃ§Ã£o', value: 1 },
+                      { text: 'Graduação', value: 0 },
+                      { text: 'Especialização', value: 1 },
                     ]"
-                    label="GraduaÃ§Ã£o ou EspecializaÃ§Ã£o"
+                    label="Graduação ou Especialização"
                     outlined
                   ></v-select>
                 </v-col>
@@ -129,7 +129,7 @@
                       <br />
                       <v-row justify="center">
                         <h6>
-                          CartÃ£o de CrÃ©dito
+                          Cartão de Crédito
                         </h6>
                       </v-row>
                       <v-row v-for="item of credito" :key="item.id">
@@ -302,7 +302,7 @@
     <v-dialog v-model="dialogRelatorioBancos" width="75%">
       <v-card>
         <v-card-title>
-          <span class="text-h5">RelatÃ³rio Bancos</span>
+          <span class="text-h5">Relatório Bancos</span>
         </v-card-title>
         <v-card-text>
           <v-simple-table dense>
@@ -354,7 +354,7 @@
     <v-dialog v-model="dialogBancoCredito" max-width="700px" persistent>
       <v-card>
         <v-card-title class="headline">
-          Alterar Banco CrÃ©dito p/ todos semestres?
+          Alterar Banco Crédito p/ todos semestres?
         </v-card-title>
 
         <v-card-text>
@@ -506,7 +506,7 @@ export default {
 
       if (this.error) {
         this.showSnackbar(
-          "AtenÃ§Ã£o! Ocorreu um erro no servidor!",
+          "Atenção! Ocorreu um erro no servidor!",
           "error",
           5000
         );
@@ -759,7 +759,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "Banco de CrÃ©dito alterado para todos os semestres com sucesso!",
+          msg: "Banco de Crédito alterado para todos os semestres com sucesso!",
           type: "success",
           time: 3000,
         });

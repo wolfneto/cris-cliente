@@ -11,7 +11,7 @@ import EntregasControle from './EntregasControle';
 
 export default [{
         path: '/estoque/separacao',
-        name: 'SeparaÃ§Ã£o',
+        name: 'Separação',
         component: Separacao,
         meta: {
             requiresAuth: true
@@ -27,7 +27,7 @@ export default [{
     },
     {
         path: '/estoque/Impressao',
-        name: 'Impressao SeparaÃ§Ã£o',
+        name: 'Impressao Separação',
         component: Impressao,
         meta: {
             requiresAuth: true
@@ -35,7 +35,7 @@ export default [{
     },
     {
         path: '/estoque/EntradaSaidaManual',
-        name: 'Entrada ou SaÃ­da Manual',
+        name: 'Entrada ou Saída Manual',
         component: EntradaSaidaManual,
         meta: {
             requiresAuth: true
@@ -43,7 +43,7 @@ export default [{
     },
     {
         path: '/estoque/impressaoEtiquetaExpedicao',
-        name: 'Etiquetas ExpediÃ§Ãµes',
+        name: 'Etiquetas Expedições',
         component: ImpressaoEtiquetaExpedicao,
         meta: {
             requiresAuth: true
@@ -51,7 +51,7 @@ export default [{
     },
     {
         path: '/estoque/Conferencia',
-        name: 'ConferÃªncia',
+        name: 'Conferência',
         component: Conferencia,
         meta: {
             requiresAuth: true
@@ -59,7 +59,7 @@ export default [{
     },
     {
         path: '/estoque/roteiroExpedicao',
-        name: 'Roteiro ExpediÃ§Ã£o',
+        name: 'Roteiro Expedição',
         component: RoteiroExpedicao,
         meta: {
             requiresAuth: true

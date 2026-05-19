@@ -8,7 +8,7 @@
 					<v-text-field
 						v-model="search"
 						append-icon="fa-search"
-						label="CÃ³digo, Fabricante ou DescriÃ§Ã£o"
+						label="Código, Fabricante ou Descrição"
 						single-line
 						hide-details
 						autofocus
@@ -51,7 +51,7 @@
 					<v-row justify="center">
 						<v-col cols="3">
 							<span>
-								CÃ³digo:
+								Código:
 								<b>{{item.codigo}}</b>
 							</span>
                             <br>
@@ -59,13 +59,13 @@
 						</v-col>
 						<v-col cols="5">
 							<span>
-								DescriÃ§Ã£o:
+								Descrição:
 								<b>{{item.descricao}}</b>
 							</span>
 						</v-col>
 						<v-col cols="3">
 							<span>
-								CÃ³digo Fabricante:
+								Código Fabricante:
 								<b>{{item.codigo_fornecedor}}</b>
 							</span>
                             <br>
@@ -542,7 +542,7 @@ export default {
 		itens: [],
 		headers: [
 			{ text: "Codigo", value: "codigo" },
-			{ text: "DescriÃ§Ã£o", value: "descricao" },
+			{ text: "Descrição", value: "descricao" },
 			{ text: "Marca", value: "marca" },
 			{ text: "Valor", value: "valor" },
 			{ text: "Saldo", value: "saldo" },

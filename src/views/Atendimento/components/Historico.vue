@@ -5,7 +5,7 @@
         <v-text-field
           v-model="data_de"
           v-mask="'##/##/####'"
-          :rules=" [v => !!v.trim() || 'Data obrigatÃ³ria!' ] "
+          :rules=" [v => !!v.trim() || 'Data obrigatória!' ] "
           placeholder="dd/mm/aaaa"
           label="De"
           required
@@ -15,9 +15,9 @@
         <v-text-field
           v-model="data_ate"
           v-mask="'##/##/####'"
-          :rules=" [v => !!v.trim() || 'Data obrigatÃ³ria!' ] "
+          :rules=" [v => !!v.trim() || 'Data obrigatória!' ] "
           placeholder="dd/mm/aaaa"
-          label="AtÃ©"
+          label="Até"
           required
         ></v-text-field>
       </v-col>
@@ -29,12 +29,12 @@
           v-model="cliente.codigo"
           append-icon="fa-search"
           @click:append="showDialogSearch()"
-          label="CÃ³digo"
+          label="Código"
           v-mask="'#####'"
         ></v-text-field>
       </v-col>
       <v-col cols="2">
-        <v-select v-model="selectedOperacao" :items="operacoes" label="OperaÃ§Ã£o"></v-select>
+        <v-select v-model="selectedOperacao" :items="operacoes" label="Operação"></v-select>
       </v-col>
     </v-row>
     <v-card>
@@ -113,7 +113,7 @@
           no-resize
           rows="2"
           dense
-          label="ObservaÃ§Ãµes do Pedido"
+          label="Observações do Pedido"
           value="The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through."
         ></v-textarea>
         <v-card class="mb-2">
@@ -232,8 +232,8 @@ export default {
       { text: "Total", value: "total" },
       { text: "Cliente", value: "cliente" },
       { text: "Vendedor", value: "vendedor" },
-      { text: "UsuÃ¡rio", value: "usuario" },
-      { text: "OperaÃ§Ã£o", value: "operacao" },
+      { text: "Usuário", value: "usuario" },
+      { text: "Operação", value: "operacao" },
       { text: "Online", value: "online" }
     ],
     arrayPedidos: [
@@ -357,13 +357,13 @@ export default {
     ],
     headersRealizadas: [
       { text: "Num", value: "financeiro" },
-      { text: "EmissÃ£o", value: "emissao" },
+      { text: "Emissão", value: "emissao" },
       { text: "Venc", value: "vencimento" },
       { text: "Pgto", value: "pagamento" },
       { text: "Val", value: "valor", width: "70" },
       { text: "Pag", value: "valor_pago", width: "70" },
       { text: "Documento", value: "documento" },
-      { text: "ObservaÃ§Ãµes", value: "obs" },
+      { text: "Observações", value: "obs" },
       { text: "Cliente", value: "cliente" },
       { text: "Cart", value: "carteira" },
       { text: "Banco", value: "banco" }
@@ -583,12 +583,12 @@ export default {
     ],
     headersRealizar: [
       { text: "Num", value: "financeiro" },
-      { text: "EmissÃ£o", value: "emissao" },
+      { text: "Emissão", value: "emissao" },
       { text: "Venc", value: "vencimento" },
       { text: "Val", value: "valor" },
       { text: "Liq", value: "valor_liquido" },
       { text: "Documento", value: "documento" },
-      { text: "ObservaÃ§Ãµes", value: "obs" },
+      { text: "Observações", value: "obs" },
       { text: "Cliente", value: "cliente" },
       { text: "Cart", value: "carteira" },
       { text: "Banco", value: "banco" }
@@ -746,10 +746,10 @@ export default {
     ],
     headersItens: [
       { text: "Qtd", value: "qtd" },
-      { text: "CÃ³digo", value: "codigo" },
-      { text: "UnitÃ¡rio", value: "unitario" },
+      { text: "Código", value: "codigo" },
+      { text: "Unitário", value: "unitario" },
       { text: "Total", value: "total" },
-      { text: "DescriÃ§Ã£o", value: "descricao" }
+      { text: "Descrição", value: "descricao" }
     ],
     arrayItens: [
       {

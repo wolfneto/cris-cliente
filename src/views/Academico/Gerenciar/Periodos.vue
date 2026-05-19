@@ -21,10 +21,10 @@
           v-model="selectedPosGraduacao"
           @change="onChangeGraduacao()"
           :items="[
-            { text: 'GraduaÃ§Ã£o', value: 0 },
-            { text: 'EspecializaÃ§Ã£o', value: 1 },
+            { text: 'Graduação', value: 0 },
+            { text: 'Especialização', value: 1 },
           ]"
-          label="GraduaÃ§Ã£o ou EspecializaÃ§Ã£o"
+          label="Graduação ou Especialização"
         ></v-select>
       </v-col>
     </v-row>
@@ -103,7 +103,7 @@
                       </v-col>
                       <v-col cols="12" md="4">
                         <v-radio-group
-                          label="SituaÃ§Ã£o"
+                          label="Situação"
                           v-model="objectItem.situacao_periodo"
                           mandatory
                         >
@@ -142,11 +142,11 @@
     </v-data-table>
     <v-dialog v-model="dialogExcluir" persistent max-width="300">
       <v-card>
-        <v-card-title class="headline">AtenÃ§Ã£o!</v-card-title>
+        <v-card-title class="headline">Atenção!</v-card-title>
         <v-card-text>Deseja realmente excluir o periodo?</v-card-text>
         <v-card-actions>
           <div class="flex-grow-1"></div>
-          <v-btn color="primary" text @click="dialogExcluir = false">NÃ£o</v-btn>
+          <v-btn color="primary" text @click="dialogExcluir = false">Não</v-btn>
           <v-btn color="error" text @click="deletePeriodo(objectItem)">Excluir</v-btn>
         </v-card-actions>
       </v-card>
@@ -177,13 +177,13 @@ export default {
       { text: "ID", value: "id_periodo" },
       { text: "ID Faculdade", value: "id_faculdade_periodo" },
       { text: "ID Semestre", value: "id_semestre_periodo" },
-      { text: "DescriÃ§Ã£o", value: "nome_periodo" },
+      { text: "Descrição", value: "nome_periodo" },
       { text: "Vendedor", value: "codigo_vendedor" },
-      { text: "CÃ³digo", value: "cod_periodo" },
+      { text: "Código", value: "cod_periodo" },
       { text: "Status", value: "status_periodo", align: "center" },
-      { text: "SituaÃ§Ã£o", value: "situacao_periodo", align: "center" },
+      { text: "Situação", value: "situacao_periodo", align: "center" },
       {
-        text: "AÃ§Ã£o",
+        text: "Ação",
         value: "acao",
         align: "center",
         sortable: false,
