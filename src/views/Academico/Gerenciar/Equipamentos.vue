@@ -121,9 +121,9 @@
                 <v-row class="custom-row">
                   <v-col cols="12">
                     <v-text-field
-                      :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
+                      :rules="[(v) => !!v || 'Campo Obrigatório']"
                       v-model="objectItem.descricao"
-                      label="DescriÃ§Ã£o"
+                      label="Descrição"
                       class="uppercase"
                       solo
                       @keyup="check()"
@@ -235,14 +235,14 @@ export default {
     objectIndex: -1,
     objectItem: {},
     headersTiposEquipamentos: [
-      { text: "CÃ³digo", value: "codigo", width: 200 },
+      { text: "Código", value: "codigo", width: 200 },
       { text: "Saldo", value: "saldo" },
-      { text: "DescriÃ§Ã£o", value: "descricao" },
+      { text: "Descrição", value: "descricao" },
       { text: "Imagem", value: "imagem", width: 150 },
       { text: "Valor", value: "valor" },
-      { text: "Qtd DisponÃ­vel", value: "qtd_disponivel", width: 150 },
+      { text: "Qtd Disponível", value: "qtd_disponivel", width: 150 },
       {
-        text: "AÃ§Ã£o",
+        text: "Ação",
         value: "acao",
         align: "center",
         sortable: false,
@@ -255,7 +255,7 @@ export default {
       { text: "Status", value: "status_online", align: "center" },
 
       {
-        text: "AÃ§Ã£o",
+        text: "Ação",
         value: "acao",
         align: "center",
         sortable: false,
@@ -431,7 +431,7 @@ export default {
 
             this.set_snackbar({
               show: true,
-              msg: "Codigo informado nÃ£o existe!",
+              msg: "Codigo informado não existe!",
               type: "warning",
               time: 3000,
             });
@@ -471,7 +471,7 @@ export default {
           this.fechar();
           this.set_snackbar({
             show: true,
-            msg: "Os tipos equipamentos nÃ£o pode ser vazio!",
+            msg: "Os tipos equipamentos não pode ser vazio!",
             type: "warning",
             time: 3000,
           });

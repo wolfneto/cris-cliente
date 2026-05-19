@@ -18,7 +18,7 @@ import Outros from './Outros';
 
 export default [{
         path: '/academico/gerenciar/inicio',
-        name: 'Gerenciar Site AcadÃªmico',
+        name: 'Gerenciar Site Acadêmico',
         component: Inicio,
         meta: {
             requiresAuth: true
@@ -90,7 +90,7 @@ export default [{
     },
     {
         path: '/academico/pedidos',
-        name: 'Pedidos AcadÃªmico',
+        name: 'Pedidos Acadêmico',
         component: Pedidos,
         meta: {
             requiresAuth: true
@@ -106,7 +106,7 @@ export default [{
     },
     {
         path: '/academico/app',
-        name: 'App AcadÃªmico',
+        name: 'App Acadêmico',
         component: App,
         meta: {
             requiresAuth: true
@@ -130,7 +130,7 @@ export default [{
     },
     {
         path: '/academico/cobranca',
-        name: 'CobranÃ§a - Pagamento Parcial',
+        name: 'Cobrança - Pagamento Parcial',
         component: Cobranca,
         meta: {
             requiresAuth: true

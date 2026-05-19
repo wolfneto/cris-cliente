@@ -5,7 +5,7 @@
         <v-text-field
           v-model="data_de"
           v-mask="'##/##/####'"
-          :rules=" [v => !!v.trim() || 'Data obrigatÃ³ria!' ] "
+          :rules=" [v => !!v.trim() || 'Data obrigatória!' ] "
           placeholder="dd/mm/aaaa"
           label="De"
           required
@@ -15,9 +15,9 @@
         <v-text-field
           v-model="data_ate"
           v-mask="'##/##/####'"
-          :rules=" [v => !!v.trim() || 'Data obrigatÃ³ria!' ] "
+          :rules=" [v => !!v.trim() || 'Data obrigatória!' ] "
           placeholder="dd/mm/aaaa"
-          label="AtÃ©"
+          label="Até"
           required
         ></v-text-field>
       </v-col>
@@ -29,12 +29,12 @@
           v-model="cliente.codigo"
           append-icon="fa-search"
           @click:append="showDialogSearch()"
-          label="CÃ³digo"
+          label="Código"
           v-mask="'#####'"
         ></v-text-field>
       </v-col>
       <v-col cols="2">
-        <v-select v-model="selectedOperacao" :items="operacoes" label="OperaÃ§Ã£o"></v-select>
+        <v-select v-model="selectedOperacao" :items="operacoes" label="Operação"></v-select>
       </v-col>
     </v-row>
     <v-card class="mb-2">
@@ -154,12 +154,12 @@ export default {
     headersRealizadas: [
       { text: "Documento", value: "documento" },
       { text: "Ref", value: "referencia" },
-      { text: "EmissÃ£o", value: "emissao" },
+      { text: "Emissão", value: "emissao" },
       { text: "Valor", value: "valor" },
       { text: "Pago", value: "valor_pago" },
       { text: "Vencimento", value: "vencimento" },
       { text: "Pagamento", value: "pagamento" },
-      { text: "ObservaÃ§Ãµes", value: "obs" },
+      { text: "Observações", value: "obs" },
       { text: "Cliente", value: "cliente" },
       { text: "Carteira", value: "carteira" },
       { text: "Banco", value: "banco" },
@@ -381,11 +381,11 @@ export default {
     headersRealizar: [
       { text: "Documento", value: "documento" },
       { text: "Ref", value: "referencia" },
-      { text: "EmissÃ£o", value: "emissao" },
+      { text: "Emissão", value: "emissao" },
       { text: "Valor", value: "valor" },
       { text: "Liquido", value: "valor_liquido" },
       { text: "Vencimento", value: "vencimento" },
-      { text: "ObservaÃ§Ãµes", value: "obs" },
+      { text: "Observações", value: "obs" },
       { text: "Cliente", value: "cliente" },
       { text: "Carteira", value: "carteira" },
       { text: "Banco", value: "banco" },

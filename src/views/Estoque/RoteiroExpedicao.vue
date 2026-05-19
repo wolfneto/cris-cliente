@@ -1,7 +1,7 @@
 ﻿<template>
   <v-container>
     <v-card>
-      <h4 class="text-center">Roteiro de ExpediÃ§Ã£o</h4>
+      <h4 class="text-center">Roteiro de Expedição</h4>
       <v-row justify="center" class="mt-n4">
         <v-col cols="12" sm="5" md="7" lg="7">
           <v-text-field
@@ -37,7 +37,7 @@
           :items="pedidos"
           hide-default-footer
           dense
-          no-data-text="NÃ£o hÃ¡ pedidos no momento."
+          no-data-text="Não há pedidos no momento."
         >
           <template v-slot:[`item.total`]="{ item }">
             {{
@@ -88,9 +88,9 @@ export default {
       { text: "Grupo", value: "grupo" },
       { text: "Total", value: "total" },
       { text: "Nota", value: "nota" },
-      { text: "EndereÃ§o", value: "endereco_completo" },
+      { text: "Endereço", value: "endereco_completo" },
       { text: "Vendedor", value: "vendedor" },
-      { text: "AÃ§Ã£o", value: "acao"}
+      { text: "Ação", value: "acao"}
     ],
   }),
   created() {
@@ -124,7 +124,7 @@ export default {
         if (this.pedidos.some((e) => e.numero_pedido === this.pedido.trim())) {
           this.set_snackbar({
             show: true,
-            msg: "Pedido JÃ¡ Adicionado",
+            msg: "Pedido Já Adicionado",
             type: "warning",
             time: 3000,
           });

@@ -1,7 +1,7 @@
 ﻿<template>
   <v-container>      
         
-         <div class="headline">ImpressÃ£o para separaÃ§Ã£o</div>       
+         <div class="headline">Impressão para separação</div>       
             <v-card elevation="2" class="mt-8">
                   <v-simple-table dense height="550">
                     <thead>

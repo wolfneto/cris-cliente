@@ -7,7 +7,7 @@
             v-if="!divCancelarNotaFiscal"
             class="ml-4 uppercase"
             append-icon="fa-search"
-            label="NÃºmero pedido"
+            label="Número pedido"
             v-mask="'######A'"
             v-model="numeroPedido"
              ref="numeroPedido"
@@ -20,7 +20,7 @@
             v-else
             class="ml-4 uppercase"
             append-icon="fa-search"
-            label="NÃºmero pedido"
+            label="Número pedido"
             v-mask="'######A'"
             v-model="numeroPedido"
             filled
@@ -42,7 +42,7 @@
             <v-col cols="12" md="4">
                <v-select
                 :items="['Pendente', 'Aprovado', 'Emitido', 'Separando', 'Separado', 'Conferido', 'Pausado', 'Conferindo', 'Faturado', 'Expedido', 'Entregue', 'Saldo',
-                'Cancelado', 'DevoluÃ§Ã£o', 'Denegado', 'Atrasado', 'Separado Parcial', 'Operacional' ]"                
+                'Cancelado', 'Devolução', 'Denegado', 'Atrasado', 'Separado Parcial', 'Operacional' ]"                
                 label="Status"
                 filled
                 dense
@@ -75,7 +75,7 @@
               <v-textarea        
                 class="uppercase-area"         
                 filled
-                label="ObservaÃ§Ãµes"
+                label="Observações"
                 rows="4"
                 row-height="30"  
                 :rules="rules" hide-details="auto"              
@@ -89,15 +89,15 @@
 
     <v-dialog v-model="dialogCancelarNotaFiscal" max-width="500" persistent>
       <v-card>
-        <v-card-title class="body-3">Voltar a pÃ¡gina anterior?</v-card-title>
+        <v-card-title class="body-3">Voltar a página anterior?</v-card-title>
         <v-card-text>
           <span
             class="subtitle-1 font-weight-medium"
-          >EstÃ¡ nota fiscal nÃ£o serÃ¡ cancelada.</span>
+          >Está nota fiscal não será cancelada.</span>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="error" @click="dialogCancelarNotaFiscal = false">nÃ£o</v-btn>
+          <v-btn color="error" @click="dialogCancelarNotaFiscal = false">não</v-btn>
           <v-btn color="primary" @click="cancelarNotaFiscal()">sim</v-btn>
         </v-card-actions>
       </v-card>
@@ -109,11 +109,11 @@
         <v-card-text>
           <span
             class="subtitle-1 font-weight-medium"
-          >ApÃ³s confirmaÃ§Ã£o de exclusÃ£o nÃ£o serÃ¡ possÃ­vel desfazÃª-la!</span>
+          >Após confirmação de exclusão não será possível desfazê-la!</span>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="error" @click="dialogConcluirCancelamentoNotaFiscal = false">nÃ£o</v-btn>
+          <v-btn color="error" @click="dialogConcluirCancelamentoNotaFiscal = false">não</v-btn>
           <v-btn color="primary" @click="dialogConcluirCancelamentoNotaFiscal = false">sim</v-btn>
         </v-card-actions>
       </v-card>

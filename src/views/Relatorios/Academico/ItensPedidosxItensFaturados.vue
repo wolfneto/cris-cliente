@@ -6,7 +6,7 @@
           <v-col cols="12" md="3">
             <v-text-field
               v-model="data_de"
-              :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+              :rules="[v => !!v || 'Campo Obrigatório']"
               label="De"
               required
               v-mask="'##/##/####'"
@@ -15,8 +15,8 @@
           <v-col cols="12" md="3">
             <v-text-field
               v-model="data_ate"
-              :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
-              label="AtÃ©"
+              :rules="[v => !!v || 'Campo Obrigatório']"
+              label="Até"
               required
               v-mask="'##/##/####'"
             ></v-text-field>
@@ -121,13 +121,13 @@
                     </div>
                   </td>
                   <td>
-                    PrevisÃ£o:
+                    Previsão:
                     <b>{{ item.vendido.previsao * item.vendido.qtd}}</b>
                     <div v-if="item.hasOwnProperty('vendidoOp')">
                       <v-divider class="mt-1 mb-1"></v-divider>
                       <span
                         class="blue--text text--lighten-1"
-                      >PrevisÃ£o: {{ item.vendidoOp.previsao }}</span>
+                      >Previsão: {{ item.vendidoOp.previsao }}</span>
                     </div>
                   </td>
                   <td>
@@ -182,7 +182,7 @@
 									<td>{{item.naovendido.codigo}}</td>
 									<td>{{item.naovendido.qtd}}</td>
 									<td>{{item.naovendido.descricao}}</td>
-									<td>PrevisÃ£o: {{item.naovendido.previsao}}</td>
+									<td>Previsão: {{item.naovendido.previsao}}</td>
 									<td>Vendidas: {{vendidas}}</td>
 									<td>
 										<b>Total Site: </b>{{item.naovendido.total_site}}
@@ -244,13 +244,13 @@
                     </div>
                   </td>
                   <td>
-                    PrevisÃ£o:
+                    Previsão:
                     <b>{{ item.vendido.previsao }}</b>
                     <div v-if="item.hasOwnProperty('vendidoOp')">
                       <v-divider class="mt-1 mb-1"></v-divider>
                       <span
                         class="blue--text text--lighten-1"
-                      >PrevisÃ£o: {{ item.vendidoOp.previsao }}</span>
+                      >Previsão: {{ item.vendidoOp.previsao }}</span>
                     </div>
                   </td>
                   <td>
@@ -355,7 +355,7 @@ export default {
         value: "nome_exibi_lista"
       },
       {
-        text: "PrevisÃ£o",
+        text: "Previsão",
         sortable: true,
         value: "previsao"
       },
@@ -370,7 +370,7 @@ export default {
         value: "valor_total_lista"
       },
       {
-        text: "AÃ§Ã£o",
+        text: "Ação",
         align: "center",
         sortable: false,
         value: "acao"
@@ -378,7 +378,7 @@ export default {
     ],
     headersItensVendidos: [
       {
-        text: "CÃ³digo",
+        text: "Código",
         sortable: true,
         value: "vendido.codigo"
       },
@@ -388,12 +388,12 @@ export default {
         value: "vendido.qtd"
       },
       {
-        text: "DescriÃ§Ã£o",
+        text: "Descrição",
         sortable: true,
         value: "vendido.descricao"
       },
       {
-        text: "PrevisÃ£o",
+        text: "Previsão",
         sortable: true,
         value: "vendido.previsao"
       },
@@ -594,7 +594,7 @@ export default {
 
       this.interval = setInterval(() => {
         if (this.value > 100) {
-          this.msg = "Ajustando o relatÃ³rio";
+          this.msg = "Ajustando o relatório";
           this.query = true;
         }
         this.value += 3;

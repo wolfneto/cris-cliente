@@ -86,7 +86,7 @@
               <v-row>
                 <v-col cols="2">
                   <v-text-field
-                    :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
+                    :rules="[(v) => !!v || 'Campo Obrigatório']"
                     v-model="objectItem.codigo"
                     label="Codigo"
                     hint="codigo do vendedor"
@@ -99,7 +99,7 @@
                   <v-text-field
                     class="uppercase"
                     required
-                    :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
+                    :rules="[(v) => !!v || 'Campo Obrigatório']"
                     v-model="objectItem.nome"
                     label="Nome Vendedor"
                     dense
@@ -165,12 +165,12 @@ export default {
     search: "",
     filteredVendedores: [],
     headersVendedores: [
-      { text: "CÃ³digo", value: "codigo" },
+      { text: "Código", value: "codigo" },
       { text: "Nome", value: "nome" },
       { text: "Celular", value: "celular" },
       { text: "Status", value: "status" },
       {
-        text: "AÃ§Ã£o",
+        text: "Ação",
         value: "acao",
         align: "center",
         sortable: false,

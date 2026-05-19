@@ -13,7 +13,7 @@ export default [{
     },
     {
         path: '/atendimento/orcamento',
-        name: 'Atendimento - OrÃ§amento',
+        name: 'Atendimento - Orçamento',
         component: Orcamento,
         meta: {
             requiresAuth: true

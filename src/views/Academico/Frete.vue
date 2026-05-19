@@ -22,10 +22,10 @@
             v-model="selectedPosGraduacao"
             @change="onChangeGraduacao()"
             :items="[
-              { text: 'GraduaÃ§Ã£o', value: 0 },
-              { text: 'EspecializaÃ§Ã£o', value: 1 },
+              { text: 'Graduação', value: 0 },
+              { text: 'Especialização', value: 1 },
             ]"
-            label="GraduaÃ§Ã£o ou EspecializaÃ§Ã£o"
+            label="Graduação ou Especialização"
           ></v-select>
         </v-col>
       </v-row>
@@ -111,7 +111,7 @@
                   Valor total Listas Online
                   <b>R$ {{ totalListasOnline.total }}</b>
                 </h6>
-                <h6 v-else class="warning--text">NÃ£o existem listas online</h6>
+                <h6 v-else class="warning--text">Não existem listas online</h6>
               </v-col>
             </v-row>
 
@@ -135,7 +135,7 @@
 
             <v-row>
               <v-col cols="12" md="5">
-                <h6>Frete grÃ¡tis acima de</h6>
+                <h6>Frete grátis acima de</h6>
               </v-col>
               <v-col cols="12" md="7">
                 <money
@@ -266,7 +266,7 @@ export default {
       if (this.error) {
         this.loading = false;
         this.showSnackbar(
-          "AtenÃ§Ã£o! Ocorreu um erro no servidor!",
+          "Atenção! Ocorreu um erro no servidor!",
           "error",
           5000
         );
@@ -286,7 +286,7 @@ export default {
 
       if (this.error) {
         this.showSnackbar(
-          "AtenÃ§Ã£o! Ocorreu um erro no servidor!",
+          "Atenção! Ocorreu um erro no servidor!",
           "error",
           5000
         );
@@ -300,7 +300,7 @@ export default {
 
       if (this.error) {
         this.showSnackbar(
-          "AtenÃ§Ã£o! Ocorreu um erro no servidor!",
+          "Atenção! Ocorreu um erro no servidor!",
           "error",
           5000
         );
@@ -318,7 +318,7 @@ export default {
       if (this.error) {
         this.loading = false;
         this.showSnackbar(
-          "AtenÃ§Ã£o! Ocorreu um erro no servidor!",
+          "Atenção! Ocorreu um erro no servidor!",
           "error",
           5000
         );
@@ -376,7 +376,7 @@ export default {
       if (this.error) {
         this.loading = false;
         this.showSnackbar(
-          "AtenÃ§Ã£o! Ocorreu um erro no servidor!",
+          "Atenção! Ocorreu um erro no servidor!",
           "error",
           5000
         );

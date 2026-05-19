@@ -7,7 +7,7 @@
             <v-text-field
               class="uppercase"
               v-model="search"
-              label="Buscar por cÃ³digo"
+              label="Buscar por código"
               @keypress.enter="getItem()"
               @click="$event.target.select()"
               filled
@@ -60,7 +60,7 @@
             <v-text-field
               class="uppercase"
               v-model="item.descricao"
-              label="DescriÃ§Ã£o"
+              label="Descrição"
               readonly
               filled
             ></v-text-field>
@@ -122,7 +122,7 @@ export default {
     msgSnackbar: "",
 
     regras_imagem: (val) =>
-      !val || val.size < 50000 || "Imagem nÃ£o pode exceder 5MB.",
+      !val || val.size < 50000 || "Imagem não pode exceder 5MB.",
     file: null,
     showMenuImage: false,
     x: 0,

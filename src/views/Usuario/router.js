@@ -12,7 +12,7 @@ export default [
     },
     {
         path: '/usuario/cadastrar',
-        name: 'Cadastrar UsuÃ¡rio',
+        name: 'Cadastrar Usuário',
         component: UsuarioCadastrar,
         meta: {
             requiresAuth: true

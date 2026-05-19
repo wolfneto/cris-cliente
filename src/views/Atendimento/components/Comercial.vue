@@ -5,7 +5,7 @@
         <v-text-field
           v-model="data_de"
           v-mask="'##/##/####'"
-          :rules=" [v => !!v.trim() || 'Data obrigatÃ³ria!' ] "
+          :rules=" [v => !!v.trim() || 'Data obrigatória!' ] "
           placeholder="dd/mm/aaaa"
           label="De"
           required
@@ -15,9 +15,9 @@
         <v-text-field
           v-model="data_ate"
           v-mask="'##/##/####'"
-          :rules=" [v => !!v.trim() || 'Data obrigatÃ³ria!' ] "
+          :rules=" [v => !!v.trim() || 'Data obrigatória!' ] "
           placeholder="dd/mm/aaaa"
-          label="AtÃ©"
+          label="Até"
           required
         ></v-text-field>
       </v-col>
@@ -29,7 +29,7 @@
           v-model="cliente.codigo"
           append-icon="fa-search"
           @click:append="showDialogSearch()"
-          label="CÃ³digo"
+          label="Código"
           v-mask="'#####'"
         ></v-text-field>
       </v-col>
@@ -37,7 +37,7 @@
         <v-select v-model="selectedStatus" :items="status" label="Status"></v-select>
       </v-col>
       <v-col cols="2">
-        <v-select v-model="selectedOperacao" :items="operacoes" label="OperaÃ§Ã£o"></v-select>
+        <v-select v-model="selectedOperacao" :items="operacoes" label="Operação"></v-select>
       </v-col>
     </v-row>
     <v-row>
@@ -124,10 +124,10 @@ export default {
     data_ate: "31/12/2019",
     headersItens: [
       { text: "Qtd", value: "qtd", sortable: false },
-      { text: "CÃ³digo", value: "codigo", sortable: true },
+      { text: "Código", value: "codigo", sortable: true },
       { text: "Valor", value: "valor", sortable: true },
       { text: "Total", value: "total", sortable: true },
-      { text: "DescriÃ§Ã£o", value: "descricao", sortable: true }
+      { text: "Descrição", value: "descricao", sortable: true }
     ],
     itens: [
       {
@@ -154,12 +154,12 @@ export default {
     ],
     headersPedidos: [
       { text: "Pedido", value: "pedido", sortable: false },
-      { text: "EmissÃ£o", value: "emissao", sortable: true },
+      { text: "Emissão", value: "emissao", sortable: true },
       { text: "Qtd", value: "qtd", sortable: true },
       { text: "Valor", value: "valor", sortable: true },
       { text: "Total", value: "total", sortable: true },
       { text: "Nota", value: "nota", sortable: true },
-      { text: "EmissÃ£o", value: "emissao_nota", sortable: true }
+      { text: "Emissão", value: "emissao_nota", sortable: true }
     ],
     pedidos: [
       {

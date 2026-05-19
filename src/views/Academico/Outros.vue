@@ -92,7 +92,7 @@
                     Codigo
                   </th>
                   <th class="text-left">
-                    DescriÃ§Ã£o
+                    Descrição
                   </th>
                   <th class="text-left">
                     Marca
@@ -132,7 +132,7 @@
     <v-dialog v-model="dialog2" persistent width="55%">
       <v-card>
         <v-card-title>
-          <h5>AtenÃ§Ã£o!</h5>
+          <h5>Atenção!</h5>
           <v-spacer></v-spacer>
         </v-card-title>
         <v-card-text>
@@ -149,7 +149,7 @@
                   Codigo
                 </th>
                 <th class="text-left">
-                  DescriÃ§Ã£o
+                  Descrição
                 </th>
                 <th class="text-left">
                   Marca
@@ -212,7 +212,7 @@ export default {
       { text: "Ver Itens Pedido", value: "itempedidos" },
       { text: "Total Pedido", value: "valor_total" },
       {
-        text: "AÃ§Ã£o",
+        text: "Ação",
         value: "acao",
         align: "center",
         sortable: false,

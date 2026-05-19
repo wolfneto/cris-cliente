@@ -111,7 +111,7 @@
             @keyup.enter="getItem()"
             @click="$event.target.select()"
             append-icon="fa-search"
-            label="Busque por: CÃ³digo"
+            label="Busque por: Código"
             ref="input_buscar"
           ></v-text-field>
         </v-card-title>
@@ -240,13 +240,13 @@ export default {
     busca: "",
     headers: [
       { text: "Codigo", value: "codigo" },
-      { text: "DescriÃ§Ã£o", value: "descricao" },
+      { text: "Descrição", value: "descricao" },
       { text: "Marca", value: "marca" },
       { text: "Disponivel", value: "saldo", align: "center" },
       { text: "Saldo DC-Info", value: "saldo_dcinfo", align: "center" },
       { text: "Status", value: "status" },
       {
-        text: "AÃ§Ã£o",
+        text: "Ação",
         value: "acao",
         align: "center",
         sortable: false,
@@ -374,7 +374,7 @@ export default {
               "error"
             );
           } else if (res.data == null) {
-            this.showSnakerbar("Item NÃ£o Encontrado!", "warning");
+            this.showSnakerbar("Item Não Encontrado!", "warning");
           } else {
             this.item = res.data;
             this.$nextTick(() => this.$refs.input_saldo.focus());
@@ -426,7 +426,7 @@ export default {
             );
           });
       } else {
-        this.showSnakerbar("Saldo Ã© ObrigatÃ³rio", "warning");
+        this.showSnakerbar("Saldo é Obrigatório", "warning");
       }
     },
     async deleteItem(codigo) {

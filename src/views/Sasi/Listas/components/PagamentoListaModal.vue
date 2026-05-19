@@ -14,7 +14,7 @@
                     >Aceitar Pagamento Online</span
                   >
                   <span v-else class="error--text"
-                    >NÃ£o Aceitar Pagamento Online</span
+                    >Não Aceitar Pagamento Online</span
                   >
                 </template>
               </v-switch>
@@ -35,10 +35,10 @@
                     <span
                       v-if="lista.semestre_pagamento.credito"
                       class="success--text"
-                      >Aceitar CartÃ£o de CrÃ©dito</span
+                      >Aceitar Cartão de Crédito</span
                     >
                     <span v-else class="error--text"
-                      >NÃ£o Aceitar CartÃ£o de CrÃ©dito</span
+                      >Não Aceitar Cartão de Crédito</span
                     >
                   </template>
                 </v-switch>
@@ -66,7 +66,7 @@
                   <v-checkbox
                     class="mt-n1"
                     v-model="lista.semestre_pagamento.dois_cartoes"
-                    label="Dois cartÃµes"
+                    label="Dois cartões"
                     color="primary"
                   ></v-checkbox>
                   <v-checkbox
@@ -114,7 +114,7 @@
                       class="success--text"
                       >Aceitar Boleto Ã  Vista</span
                     >
-                    <span v-else class="error--text">NÃ£o Aceitar Boleto</span>
+                    <span v-else class="error--text">Não Aceitar Boleto</span>
                   </template>
                 </v-switch>
               </v-row>
@@ -185,7 +185,7 @@
                       v-if="lista.semestre_pagamento.entrada"
                       class="success--text"
                     >Aceitar Pagamento Entrada</span>
-                    <span v-else class="error--text">NÃ£o Aceitar Entrada</span>
+                    <span v-else class="error--text">Não Aceitar Entrada</span>
                   </template>
                 </v-switch>
               </v-row>
@@ -221,7 +221,7 @@
                       class="success--text"
                       >Aceitar Pagamento PIX</span
                     >
-                    <span v-else class="error--text">NÃ£o Aceitar PIX</span>
+                    <span v-else class="error--text">Não Aceitar PIX</span>
                   </template>
                 </v-switch>
               </v-row>
@@ -285,7 +285,7 @@
                 <v-col>
                   <v-row class="mt-n2" justify="center" no-gutters>
                     <v-col><span class="caption">Valor De:</span></v-col>
-                    <v-col><span class="caption">Valor AtÃ©:</span></v-col>
+                    <v-col><span class="caption">Valor Até:</span></v-col>
                     <v-col cols="2"
                       ><span class="caption">Parcelas</span></v-col
                     >
@@ -407,7 +407,7 @@ export default {
       }
       if (!this.checkValorAte()) {
         this.$parent.showSnakerbar(
-          "ATENÃ‡ÃƒO: NO ULTIMO REGISTRO DE PARCELAS, O CAMPO ' VALOR ATÃ‰ ' SEMPRE SERÃ ' 0 ' !",
+          "ATENÃ‡ÃƒO: NO ULTIMO REGISTRO DE PARCELAS, O CAMPO ' VALOR ATÃ‰ ' SEMPRE SERÁ ' 0 ' !",
           "warning"
         );
       } else if (
@@ -416,7 +416,7 @@ export default {
         ].valor_ate != 0
       ) {
         this.$parent.showSnakerbar(
-          "ATENÃ‡ÃƒO: NO ULTIMO REGISTRO DE PARCELAS, O CAMPO ' VALOR ATÃ‰ ' SEMPRE SERÃ ' 0 ' !",
+          "ATENÃ‡ÃƒO: NO ULTIMO REGISTRO DE PARCELAS, O CAMPO ' VALOR ATÃ‰ ' SEMPRE SERÁ ' 0 ' !",
           "warning"
         );
       } else {
@@ -425,7 +425,7 @@ export default {
           this.totalListasOnline
         ) {
           this.$parent.showSnakerbar(
-            "O valor minimo do boleto nÃ£o pode ser maior que o total das listas online!",
+            "O valor minimo do boleto não pode ser maior que o total das listas online!",
             "warning"
           );
         } else {

@@ -6,7 +6,7 @@
         <v-text-field
           @keyup.enter="buscarPedidos($event.target.value, 'cliente')"
           class="input-uppercase"
-          label="CÃ³digo"
+          label="Código"
           required
         ></v-text-field>
       </v-col>
@@ -16,7 +16,7 @@
           v-mask="'######A'"
           class="input-uppercase"
           @keyup.enter="buscarPedidos($event.target.value, 'pedido')"
-          label="NÃºmero do Pedido"
+          label="Número do Pedido"
           required
         ></v-text-field>
       </v-col>
@@ -26,7 +26,7 @@
         <v-col cols="12" md="1">
           <v-text-field
             v-model="pedido.yCodCli"
-            label="CÃ³digo"
+            label="Código"
             readonly
             filled
           ></v-text-field>
@@ -108,7 +108,7 @@
             rows="3"
             outlined
             counter
-            label="ObservaÃ§Ãµes do Boleto"
+            label="Observações do Boleto"
             :rules="[(va) => va.length <= 800 || 'Maximo 800 caracteres']"
             v-model="descricaoBoleto"
           ></v-textarea>
@@ -125,7 +125,7 @@
             rows="3"
             outlined
             counter
-            label="DescriÃ§Ã£o P/ Painel Iugu"
+            label="Descrição P/ Painel Iugu"
             :rules="[(va) => va.length <= 800 || 'Maximo 800 caracteres']"
             v-model="descricaoIugu"
           ></v-textarea>
@@ -156,7 +156,7 @@
               <v-col cols="12" md="1">
                 <v-text-field
                   v-model="cliente.yCodCli"
-                  label="CÃ³digo"
+                  label="Código"
                   readonly
                   filled
                 ></v-text-field>
@@ -232,7 +232,7 @@
                   rows="3"
                   outlined
                   counter
-                  label="ObservaÃ§Ãµes do Boleto"
+                  label="Observações do Boleto"
                   :rules="[(v) => v.length <= 800 || 'Maximo 800 caracteres']"
                   v-model="descricaoBoleto"
                 ></v-textarea>
@@ -246,7 +246,7 @@
                   rows="3"
                   outlined
                   counter
-                  label="DescriÃ§Ã£o P/ Painel Iugu"
+                  label="Descrição P/ Painel Iugu"
                   :rules="[(v) => v.length <= 800 || 'Maximo 800 caracteres']"
                   v-model="descricaoIugu"
                 ></v-textarea>
@@ -273,9 +273,9 @@
         <v-card-title class="headline error--text">ATENÃ‡ÃƒO</v-card-title>
         <v-card-text>
          <div class="title">
-           VocÃª estÃ¡ criando um link em que sera feita uma <br> <span class="error--text">RESERVA</span> no cartÃ£o do cliente e <span class="error--text">NÃƒO UMA COBRANÃ‡A</span>
+           Você está criando um link em que sera feita uma <br> <span class="error--text">RESERVA</span> no cartão do cliente e <span class="error--text">NÃƒO UMA COBRANÃ‡A</span>
          <br>
-         VocÃª tem certeza disso?
+         Você tem certeza disso?
          </div>
         </v-card-text>
         <v-card-actions>
@@ -586,12 +586,12 @@ export default {
             
           } else {
             this.disabledBtn = true;
-            this.showSnackbar("Pedido NÃ£o Encontrado!", "warning");
+            this.showSnackbar("Pedido Não Encontrado!", "warning");
           }
           this.loading = false;
         } else {
           this.pedido = {};
-          this.showSnackbar("NÃºmero do Pedido InvÃ¡lido", "warning");
+          this.showSnackbar("Número do Pedido Inválido", "warning");
           this.disabledBtn = true;
         }
       } else {

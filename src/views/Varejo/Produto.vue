@@ -290,7 +290,7 @@
                       >
                       <v-icon class="mr-2" small>fas fa-star-half-alt</v-icon>
                       <span class="h6 ma-2">
-                        OpÃ§Ã£o de Cor
+                        Opção de Cor
                       </span>
                       </v-chip>
                       <v-chip
@@ -300,7 +300,7 @@
                       >
                       <v-icon class="mr-2" small >as fa-expand-arrows-alt</v-icon>
                       <span class="h6 ma-2">
-                        OpÃ§Ã£o de Tamanho
+                        Opção de Tamanho
                       </span>
                       </v-chip>
                       
@@ -334,7 +334,7 @@
                                     Codigo
                                   </th>
                                   <th class="text-left">
-                                    DescriÃ§Ã£o
+                                    Descrição
                                   </th>
                                   <th class="text-center">
                                     Valor
@@ -478,7 +478,7 @@
                   <v-col cols="2">
                     <!-- @keyup.13="getProduto($event.target.value, objectItem)" -->
                     <v-text-field
-                      :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
+                      :rules="[(v) => !!v || 'Campo Obrigatório']"
                       v-model="objectItem.codigo"
                       label="Codigo"
                       outlined
@@ -499,7 +499,7 @@
                   <v-col cols="7">
                     <v-text-field
                       required
-                      :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
+                      :rules="[(v) => !!v || 'Campo Obrigatório']"
                       v-model="objectItem.nome"
                       label="Nome"
                       outlined
@@ -524,7 +524,7 @@
                       <v-col cols="4">
                         <v-text-field
                           required
-                          :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
+                          :rules="[(v) => !!v || 'Campo Obrigatório']"
                           v-model="objectItem.marca"
                           label="Marca"
                           outlined
@@ -562,7 +562,7 @@
                         <v-textarea
                         :rows="8"
                         no-resize
-                        label="DescriÃ§Ã£o"
+                        label="Descrição"
                         v-model="objectItem.descricao"
                         outlined
                         @click="$event.target.select()"
@@ -604,7 +604,7 @@
                       class='ml-n12 mt-4'
                       item-text="nome"
                       item-value="id"
-                      label="Tipo OpÃ§Ã£o"
+                      label="Tipo Opção"
                       return-object
                       outlined
                       dense
@@ -844,13 +844,13 @@ export default {
       },
     ],
     headersOpcoesProduto: [
-      { text: "CÃ³digo", value: "codigo", width: 200 },
+      { text: "Código", value: "codigo", width: 200 },
       { text: "Saldo", value: "saldo", width: 100 },
-      { text: "DescriÃ§Ã£o", value: "descricao", width: 800 },
+      { text: "Descrição", value: "descricao", width: 800 },
       { text: "Valor", value: "valor", width: 150 },
       { text: "Status", value: "bloqueado", width: 150 },
       {
-        text: "AÃ§Ã£o",
+        text: "Ação",
         value: "acao",
         align: "center",
         sortable: false,
@@ -861,7 +861,7 @@ export default {
     // opcional: false,
 
     regras_imagem: (val) =>
-      !val || val.size < 50000 || "Imagem nÃ£o pode exceder 5MB.",
+      !val || val.size < 50000 || "Imagem não pode exceder 5MB.",
     file: null,
     showMenuImage: false,
     x: 0,
@@ -997,7 +997,7 @@ export default {
 
     //         this.set_snackbar({
     //           show: true,
-    //           msg: "Codigo informado nÃ£o existe!",
+    //           msg: "Codigo informado não existe!",
     //           type: "warning",
     //           time: 3000,
     //         });
@@ -1025,7 +1025,7 @@ export default {
           //   }
           //   this.set_snackbar({
           //     show: true,
-          //     msg: "ATENÃ‡ÃƒO!, Ã‰ necessario selecionar o tipo de opÃ§Ã£o!",
+          //     msg: "ATENÃ‡ÃƒO!, Ã‰ necessario selecionar o tipo de opção!",
           //     type: "warning",
           //     time: 2000,
           //   });
@@ -1062,7 +1062,7 @@ export default {
         //   // this.fechar();
         //   this.set_snackbar({
         //     show: true,
-        //     msg: "Os tipos equipamentos nÃ£o pode ser vazio!",
+        //     msg: "Os tipos equipamentos não pode ser vazio!",
         //     type: "warning",
         //     time: 3000,
         //   });
@@ -1102,7 +1102,7 @@ export default {
         console.log("vazio");
         this.set_snackbar({
           show: true,
-          msg: "Ã‰ necessario preencher as informaÃ§Ãµes do produto!",
+          msg: "Ã‰ necessario preencher as informações do produto!",
           type: "warning",
           time: 3000,
         });

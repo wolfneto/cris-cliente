@@ -11,7 +11,7 @@
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-tabs vertical v-model="tab">
           <v-tab active-class="blue darken-2 white--text">Dados</v-tab>
-          <v-tab active-class="blue darken-2 white--text">EndereÃ§os</v-tab>
+          <v-tab active-class="blue darken-2 white--text">Endereços</v-tab>
           <v-tab active-class="blue darken-2 white--text">Contatos</v-tab>
           <v-tab-item eager>
             <v-container>
@@ -25,7 +25,7 @@
                         @keyup="verifyFornecedor(fornecedor.codigo)"
                         v-model="fornecedor.codigo"
                         :loading="codLoading"
-                        :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                        :rules="[v => !!v || 'Campo Obrigatório']"
                         label="Codigo"
                         v-mask="'#########'"
                         class="input-uppercase"
@@ -35,9 +35,9 @@
                       <v-text-field
                         type="text"
                         ref="cnpj"
-                        hint="Digite somento nÃºmeros"
+                        hint="Digite somento números"
                         v-model="fornecedor.cnpj"
-                        :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                        :rules="[v => !!v || 'Campo Obrigatório']"
                         label="CNPJ"
                         v-mask="'##.###.###/####-##'"
                       ></v-text-field>
@@ -49,7 +49,7 @@
                         v-model="fornecedor.razao_social"
                         @keyup="fornecedor.fantasia = fornecedor.razao_social"
                         :rules="nomeRules"
-                        label="RazÃ£o Social"
+                        label="Razão Social"
                         class="input-uppercase"
                         required
                       ></v-text-field>
@@ -73,8 +73,8 @@
                         type="text"
                         v-model="fornecedor.inscricao_estadual"
                         v-mask="'#########'"
-                        label="InscriÃ§Ã£o Estadual"
-                        :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                        label="Inscrição Estadual"
+                        :rules="[v => !!v || 'Campo Obrigatório']"
                         required
                       ></v-text-field>
                     </v-col>
@@ -82,8 +82,8 @@
                       <v-text-field
                         v-model="fornecedor.inscricao_municipal"
                         class="input-uppercase"
-                        label="InscriÃ§Ã£o Municipal"
-                        :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                        label="Inscrição Municipal"
+                        :rules="[v => !!v || 'Campo Obrigatório']"
                         required
                       ></v-text-field>
                     </v-col>
@@ -96,8 +96,8 @@
             <v-container>
               <v-card class="mx-auto" outlined>
                 <v-card-title class="primary--text">
-                  EndereÃ§os - Fornecedor
-                  <v-btn small class="ml-3 success" @click="addEndereco()">Adicionar EndereÃ§o</v-btn>
+                  Endereços - Fornecedor
+                  <v-btn small class="ml-3 success" @click="addEndereco()">Adicionar Endereço</v-btn>
                   <v-spacer></v-spacer>
                 </v-card-title>
                 <v-card-text>
@@ -119,7 +119,7 @@
                             @keyup="getCep(item, item.cep)"
                             v-model="item.cep"
                             v-mask="'#####-###'"
-                            :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                            :rules="[v => !!v || 'Campo Obrigatório']"
                             :loading="cepLoading"
                             required
                           ></v-text-field>
@@ -128,7 +128,7 @@
                           <v-text-field
                             v-model="item.logradouro"
                             class="input-uppercase"
-                            :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                            :rules="[v => !!v || 'Campo Obrigatório']"
                             readonly
                             required
                           ></v-text-field>
@@ -138,7 +138,7 @@
                             ref="numero"
                             v-model="item.numero"
                             type="number"
-                            :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                            :rules="[v => !!v || 'Campo Obrigatório']"
                             required
                           ></v-text-field>
                         </td>
@@ -146,7 +146,7 @@
                           <v-text-field
                             v-model="item.complemento"
                             class="input-uppercase"
-                            :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                            :rules="[v => !!v || 'Campo Obrigatório']"
                             required
                           ></v-text-field>
                         </td>
@@ -154,7 +154,7 @@
                           <v-text-field
                             v-model="item.bairro"
                             class="input-uppercase"
-                            :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                            :rules="[v => !!v || 'Campo Obrigatório']"
                             readonly
                             required
                           ></v-text-field>
@@ -163,7 +163,7 @@
                           <v-text-field
                             v-model="item.cidade"
                             class="input-uppercase"
-                            :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                            :rules="[v => !!v || 'Campo Obrigatório']"
                             readonly
                             required
                           ></v-text-field>
@@ -174,7 +174,7 @@
                             v-model="item.uf"
                             v-mask="'AA'"
                             class="input-uppercase"
-                            :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                            :rules="[v => !!v || 'Campo Obrigatório']"
                             readonly
                             required
                           ></v-text-field>
@@ -222,7 +222,7 @@
                         <v-text-field
                           class="input-uppercase"
                           v-model="item.nome"
-                          :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                          :rules="[v => !!v || 'Campo Obrigatório']"
                           autofocus
                           required
                         ></v-text-field>
@@ -234,9 +234,9 @@
                         <v-text-field
                           type="text"
                           v-model="item.telefone"
-                          hint="Digite somento nÃºmeros com DDD"
+                          hint="Digite somento números com DDD"
                           v-mask="'(##)####-####'"
-                          :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                          :rules="[v => !!v || 'Campo Obrigatório']"
                           required
                         ></v-text-field>
                       </td>
@@ -244,9 +244,9 @@
                         <v-text-field
                           type="text"
                           v-model="item.celular"
-                          hint="Digite somento nÃºmeros com DDD"
+                          hint="Digite somento números com DDD"
                           v-mask="'(##)#####-####'"
-                          :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                          :rules="[v => !!v || 'Campo Obrigatório']"
                           required
                         ></v-text-field>
                       </td>
@@ -254,7 +254,7 @@
                         <v-text-field
                           class="input-uppercase"
                           v-model="item.obs"
-                          :rules="[v => !!v || 'Campo ObrigatÃ³rio']"
+                          :rules="[v => !!v || 'Campo Obrigatório']"
                           required
                         ></v-text-field>
                       </td>
@@ -303,7 +303,7 @@ function defaultData() {
       inscricao_municipal: ""
     },
     nomeRules: [
-      v => !!v || "Campo ObrigatÃ³rio",
+      v => !!v || "Campo Obrigatório",
       v => v.length >= 3 || "Campo deve possuir 3 caracteres ou mais"
     ],
     emailRules: [
@@ -337,7 +337,7 @@ function defaultData() {
       { text: "Bairro", value: "bairro", width: "200", sortable: true },
       { text: "Cidade", value: "cidade", width: "200", sortable: true },
       { text: "UF", value: "uf", width: "100", sortable: true },
-      { text: "AÃ§Ã£o", value: "acao", sortable: true }
+      { text: "Ação", value: "acao", sortable: true }
     ],
     enderecos: [
       {
@@ -359,7 +359,7 @@ function defaultData() {
       { text: "Telefone", value: "telefone", width: "150", sortable: true },
       { text: "Celular", value: "celular", width: "150", sortable: true },
       { text: "Obs", value: "obs", sortable: true },
-      { text: "AÃ§Ã£o", value: "acao", sortable: true }
+      { text: "Ação", value: "acao", sortable: true }
     ],
     contatos: [
       {
@@ -454,7 +454,7 @@ export default {
         } else {
           if (this.findFornecedor) {
             this.showSnackbar(
-              "AtenÃ§Ã£o! Fornecedor jÃ¡ cadastrado.",
+              "Atenção! Fornecedor já cadastrado.",
               "warning",
               5000
             );
@@ -512,7 +512,7 @@ export default {
                   item.uf = "";
                 }
               });
-              this.showSnackbar("Cep InvÃ¡lido", "warning", 5000);
+              this.showSnackbar("Cep Inválido", "warning", 5000);
               return;
             } else {
               this.enderecos.forEach(e => {

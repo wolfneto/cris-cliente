@@ -75,9 +75,9 @@ export default {
   data: function() {
     return {
       headers: [
-        { text: "CÃ³digo", value: "codigo", sortable: true },
+        { text: "Código", value: "codigo", sortable: true },
         { text: "Saldo", value: "saldo", sortable: true },
-        { text: "DescriÃ§Ã£o", value: "descricao", sortable: true },
+        { text: "Descrição", value: "descricao", sortable: true },
         { text: "Marca", value: "marca", sortable: true },
         { text: "Valor", value: "valor", sortable: true },
         { text: "Qtd", value: "qtd", sortable: false, width: 100 }

@@ -60,7 +60,7 @@
                 <v-expansion-panel-content eager>
                   <v-text-field
                     dense
-                    placeholder="Busque por cÃ³digo ou descriÃ§Ã£o"
+                    placeholder="Busque por código ou descrição"
                     ref="searchinput"
                     outlined
                     hide-details

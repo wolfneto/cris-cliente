@@ -36,7 +36,7 @@
               class="ma-2"
               v-model="data_de"
               v-mask="'##/##/####'"
-              :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
+              :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
               placeholder="dd/mm/aaaa"
               label="De"
               required
@@ -48,9 +48,9 @@
               class="ma-2"
               v-model="data_ate"
               v-mask="'##/##/####'"
-              :rules="[(v) => !!v.trim() || 'Data obrigatÃ³ria!']"
+              :rules="[(v) => !!v.trim() || 'Data obrigatória!']"
               placeholder="dd/mm/aaaa"
-              label="AtÃ©"
+              label="Até"
               required
               dense
             ></v-text-field>
@@ -88,7 +88,7 @@
               tile
               small
               v-on="on"
-              >relatÃ³rios
+              >relatórios
               <v-icon x-small class="ma-1 text-white">fas fa-chart-line</v-icon>
             </v-btn>
           </template>
@@ -197,7 +197,7 @@
                         <th class="text-left">Codigo</th>
                         <th class="text-left">Banco</th>
                         <th class="text-left">Total</th>
-                        <th class="text-left">AÃ§Ã£o</th>
+                        <th class="text-left">Ação</th>
                       </tr>
                     </thead>
                     <tbody class="grey lighten-4">
@@ -407,10 +407,10 @@
           <v-card-text>
             <v-form ref="form" v-model="valid" lazy-validation>
               <v-text-field
-                hint="Digite somento nÃºmeros"
+                hint="Digite somento números"
                 autofocus
                 v-model="dataPagamentoBoleto"
-                :rules="[(v) => !!v || 'Campo ObrigatÃ³rio']"
+                :rules="[(v) => !!v || 'Campo Obrigatório']"
                 label="Data do Pagamento"
                 v-mask="'##/##/####'"
                 required
@@ -434,7 +434,7 @@
       </v-dialog>
       <v-dialog v-model="dialogExcluir" persistent max-width="350">
         <v-card>
-          <v-card-title class="headline">AtenÃ§Ã£o!</v-card-title>
+          <v-card-title class="headline">Atenção!</v-card-title>
           <v-card-text
             ><span class="subtitle-2">Deseja realmente excluir este link?</span>
           </v-card-text>
@@ -599,7 +599,7 @@
               {{ objectItemPrint.banco }}
             </h5>
             <h5>
-              <b>AutorizaÃ§Ã£o:</b>
+              <b>Autorização:</b>
               {{ objectItemPrint.credito.terminal_nsu }}
             </h5>
             <h5>
@@ -666,7 +666,7 @@
               {{ objectItemPrint.banco }}
             </h5>
             <h5>
-              <b>AutorizaÃ§Ã£o:</b>
+              <b>Autorização:</b>
               {{ objectItemPrint.credito.terminal_nsu }}
             </h5>
             <h5>
@@ -917,9 +917,9 @@
           <v-card>
             <v-card-title>Detalhes Pagamento</v-card-title>
             <v-card-text>
-              <b>CartÃ£o de CrÃ©dito</b><br />
+              <b>Cartão de Crédito</b><br />
               <b>Banco:</b> {{ objectItemPagamento.banco }}<br />
-              <b>AutorizaÃ§Ã£o:</b>
+              <b>Autorização:</b>
               {{ objectItemPagamento.credito.terminal_nsu }}<br />
               <b>NÂ° Comprovante:</b>
               {{ objectItemPagamento.credito.acquirer_transaction_id }}<br />
@@ -993,7 +993,7 @@
               <b>Banco:</b> {{ objectItemPagamento.banco }}<br />
               <b>NÂ° Documento:</b>
               {{ objectItemPagamento.boleto.document_number }}<br />
-              <b>Nosso NÃºmero:</b> {{ objectItemPagamento.boleto.our_number
+              <b>Nosso Número:</b> {{ objectItemPagamento.boleto.our_number
               }}<br />
               <b>Valor:</b>
               {{
@@ -1125,9 +1125,9 @@
         </v-card-title>
         <v-card-text>
           <div v-for="log in objectItem" :key="log.id">
-            <b>CÃ³digo do Link: </b><span>{{ log.codigo_link }}</span>
+            <b>Código do Link: </b><span>{{ log.codigo_link }}</span>
             <br />
-            <b>RazÃ£o: </b><span class="error--text">{{ log.razao }}</span>
+            <b>Razão: </b><span class="error--text">{{ log.razao }}</span>
             <br />
             <b>Data: </b><span>{{ log.created_at }}</span>
             <br />
@@ -1156,7 +1156,7 @@
 
     <v-dialog v-if="objectItemPagamento.tipo_pagamento == 'PIX'" v-model="dialogEstornar" persistent max-width="400">
       <v-card v-if="objectItemPagamento.pagamentos_pix.status == 'CONCLUIDA'">
-        <v-card-title class="display-1 error--text">AtenÃ§Ã£o!</v-card-title>
+        <v-card-title class="display-1 error--text">Atenção!</v-card-title>
         <v-divider></v-divider>
         <v-card-text class="body-1 font-weight-black">
           <p>Ã‰ isso mesmo que deseja fazer ?</p>
@@ -1182,7 +1182,7 @@
         <v-divider></v-divider>
         <v-card-actions>
           <div class="flex-grow-1"></div>
-          <v-btn color="error" text @click="dialogEstornar = false">NÃ£o</v-btn>
+          <v-btn color="error" text @click="dialogEstornar = false">Não</v-btn>
           <v-btn color="success" text @click="estornarPix()">Sim</v-btn>
         </v-card-actions>
       </v-card>
@@ -1594,7 +1594,7 @@ export default {
         this.$XLSX.utils.book_append_sheet(wb, ws, "pagamentos_varejo_" + tipo); // sheetAName is name of Worksheet
         this.$XLSX.writeFile(wb, "pagamentos_varejo_" + tipo + ".xlsx"); // name of the file is 'book.xlsx'
       } else {
-        this.showSnackbar("AtenÃ§Ã£o! NÃ£o existem pagamentos!", "warning", 5000);
+        this.showSnackbar("Atenção! Não existem pagamentos!", "warning", 5000);
       }
       this.loading = false;
     },
