@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <v-card-title>
@@ -323,7 +323,7 @@ export default {
           this.loading = false;
           if (res.data == false) {
             this.showSnakerbar(
-              "CODIGO NÃO FOI ENCONTRADO EM LISTAS ONLINE!",
+              "CODIGO NÃƒO FOI ENCONTRADO EM LISTAS ONLINE!",
               "warning"
             );
           } else {

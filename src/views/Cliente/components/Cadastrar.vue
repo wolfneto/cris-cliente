@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <v-form ref="form" v-model="valid" lazy-validation>

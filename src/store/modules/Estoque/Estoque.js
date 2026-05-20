@@ -1,4 +1,4 @@
-import api from '../../../api/api'
+﻿import api from '../../../plugins/axios'
 export default {
     state: {
         entregas: [],
@@ -55,10 +55,10 @@ export default {
                     }
                 })
                 if (res.data == false) {
-                    context.commit('set_snackbar', { show: true, type: 'warning', time: 3000, msg: "Pedido " + res.data.numero_pedido + " NÃO ENCONTRADO" })
+                    context.commit('set_snackbar', { show: true, type: 'warning', time: 3000, msg: "Pedido " + res.data.numero_pedido + " NÃƒO ENCONTRADO" })
                 } else {
                     if (res.data.status != '4') {
-                        context.commit('set_snackbar', { show: true, type: 'warning', time: 3000, msg: "Pedido " + res.data.numero_pedido + " NÃO FATURADO" })
+                        context.commit('set_snackbar', { show: true, type: 'warning', time: 3000, msg: "Pedido " + res.data.numero_pedido + " NÃƒO FATURADO" })
                     } else {
                         context.commit('set_error', false);
                         context.commit('set_pedido', res.data);
@@ -66,7 +66,7 @@ export default {
                     // if (res.data.online) {
 
                     // } else {
-                    //     context.commit('set_snackbar', { show: true, type: 'warning', time: 3000, msg: "Pedido " + res.data.numero_pedido + " NÃO É UM PEDIDO ONLINE" })
+                    //     context.commit('set_snackbar', { show: true, type: 'warning', time: 3000, msg: "Pedido " + res.data.numero_pedido + " NÃƒO Ã‰ UM PEDIDO ONLINE" })
                     // }
 
                 }

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-tabs grow icons-and-text class="mb-5">
       <v-tabs-slider></v-tabs-slider>
@@ -608,7 +608,7 @@ export default {
           buttonSize: "sm",
           okVariant: "success",
           okTitle: "SIM",
-          cancelTitle: "NÃO",
+          cancelTitle: "NÃƒO",
           footerClass: "p-2",
           hideHeaderClose: false,
           centered: true
@@ -653,7 +653,7 @@ export default {
           buttonSize: "sm",
           okVariant: "danger",
           okTitle: "SIM",
-          cancelTitle: "NÃO",
+          cancelTitle: "NÃƒO",
           footerClass: "p-2",
           hideHeaderClose: false,
           centered: true

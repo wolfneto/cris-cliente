@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <Tabs></Tabs>
     <v-card class="mx-auto">
@@ -53,7 +53,7 @@
                       outlined
                     >
                       <h5>
-                        SITE EM MANUTENÇÃO
+                        SITE EM MANUTENÃ‡ÃƒO
                       </h5>
                     </v-alert>
                   </v-col>
@@ -61,7 +61,7 @@
                 <v-row class="ma-2" justify="center" no-gutters>
                   <v-col cols="5">
                     <span
-                      ><strong>ÚLTIMA EDIÇÃO POR:</strong>
+                      ><strong>ÃšLTIMA EDIÃ‡ÃƒO POR:</strong>
                       {{ editado_por }}</span
                     >
                   </v-col>
@@ -79,7 +79,7 @@
                       v-model="selectedStatus"
                       :items="[
                         { text: 'ONLINE', value: 0 },
-                        { text: 'EM MANUTENÇÃO', value: 1 },
+                        { text: 'EM MANUTENÃ‡ÃƒO', value: 1 },
                       ]"
                       label="Site Online ou Em Manutenção"
                       required

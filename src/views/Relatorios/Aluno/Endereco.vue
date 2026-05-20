@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-row justify="center" class="custom-row">
       <v-col cols="3">
@@ -20,8 +20,8 @@
     <v-row justify="center" class="custom-row">
       <v-col cols="6">
         <v-select v-model="selectedPosGraduacao" @change="onChangeGraduacao()" :items="[
-          { text: 'GRADUAÇÃO', value: 0 },
-          { text: 'ESPECIALIZAÇÃO', value: 1 },
+          { text: 'GRADUAÃ‡ÃƒO', value: 0 },
+          { text: 'ESPECIALIZAÃ‡ÃƒO', value: 1 },
         ]" class="text-uppercase" label="Graduação ou Especialização"></v-select>
       </v-col>
     </v-row>

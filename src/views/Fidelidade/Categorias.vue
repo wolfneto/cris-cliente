@@ -1,4 +1,4 @@
-<template>
+﻿<template>
 	<v-container>
 		<v-data-table
 			:no-data-text="'Nenhuma categoria encontrado'"

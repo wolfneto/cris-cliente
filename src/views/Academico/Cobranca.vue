@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <v-card-title>
@@ -34,7 +34,7 @@
               v-model="search"
               @click="$event.target.select()"
               append-icon="fa-search"
-              label="Nome, CPF ou nº Pedido"
+              label="Nome, CPF ou nÂº Pedido"
               hide-details
             ></v-text-field>
           </v-col>
@@ -252,7 +252,7 @@
                           <v-chip
                             @click="show($event, item)"
                             :color="
-                              item.status_pagamento == 'NÃO PAGO'
+                              item.status_pagamento == 'NÃƒO PAGO'
                                 ? 'red'
                                 : item.status_pagamento == 'EM ABERTO'
                                 ? 'warning'
@@ -342,7 +342,7 @@
             <b>Autorização:</b>
             {{ objectItem.credito_pagamento.terminal_nsu }}
             <br />
-            <b>Nº Comprovante:</b>
+            <b>NÂº Comprovante:</b>
             {{ objectItem.credito_pagamento.acquirer_transaction_id }}
             <br />
             <b>Status:</b>
@@ -385,7 +385,7 @@
             <b>Banco:</b>
             {{ objectItem.boleto_pagamento.banco }}
             <br />
-            <b>Nº Documento:</b>
+            <b>NÂº Documento:</b>
             {{ objectItem.boleto_pagamento.document_number }}
             <br />
             <b>Nosso Número:</b>
@@ -709,7 +709,7 @@
                   v-else-if="
                     objectComprovante.credito_pagamento.status == 'APPROVED'
                   "
-                  >CRÉDITO PAGO</span
+                  >CRÃ‰DITO PAGO</span
                 >
                 <span v-else>CANCELAMENTO</span>
               </h2>
@@ -743,7 +743,7 @@
                 {{ objectComprovante.credito_pagamento.terminal_nsu }}
               </h5>
               <h5>
-                <b>N° Comprovante:</b>
+                <b>NÂ° Comprovante:</b>
                 {{
                   objectComprovante.credito_pagamento.acquirer_transaction_id
                 }}
@@ -878,7 +878,7 @@
                   v-else-if="
                     objectComprovante.credito_pagamento.status == 'APPROVED'
                   "
-                  >CRÉDITO PAGO</span
+                  >CRÃ‰DITO PAGO</span
                 >
                 <span v-else>CANCELAMENTO</span>
               </h2>
@@ -912,7 +912,7 @@
                 {{ objectComprovante.credito_pagamento.terminal_nsu }}
               </h5>
               <h5>
-                <b>N° Comprovante:</b>
+                <b>NÂ° Comprovante:</b>
                 {{
                   objectComprovante.credito_pagamento.acquirer_transaction_id
                 }}
@@ -1106,7 +1106,7 @@
       <v-card>
         <v-card-title class="headline error--text">Atenção!</v-card-title>
         <v-card-text>Deseja realmente <b>EXCLUIR</b> este pedido?</v-card-text>
-        <v-card-text>NÃO SERÁ POSSÍVEL DESFAZER ESTA AÇÃO!</v-card-text>
+        <v-card-text>NÃƒO SERÁ POSSÍVEL DESFAZER ESTA AÃ‡ÃƒO!</v-card-text>
         <v-card-actions>
           <div class="flex-grow-1"></div>
           <v-btn color="success" @click="dialogExcluirPedido = false"
@@ -1155,7 +1155,7 @@ export default {
       },
       {
         value: "descri_item",
-        text: "DESCRIÇÃO",
+        text: "DESCRIÃ‡ÃƒO",
       },
       {
         value: "valor_item",
@@ -1268,7 +1268,7 @@ export default {
     formasPagamento: null,
     arrayFormasPagamento: [
       { text: "BOLETO", value: "BOLETO" },
-      { text: "CARTÃO DE CREDITO", value: "CREDITO" },
+      { text: "CARTÃƒO DE CREDITO", value: "CREDITO" },
       { text: "PIX", value: "PIX" },
       { text: "DINHEIRO", value: "DINHEIRO" },
     ],
@@ -1494,7 +1494,7 @@ export default {
           obs_boleto_cobranca:
             this.formasPagamento == "BOLETO" ? this.obs_boleto : "",
           tipo_pagamento: this.formasPagamento,
-          status_pagamento: "NÃO PAGO",
+          status_pagamento: "NÃƒO PAGO",
           data_cobranca: this.$moment_now_db(),
           valor_cobranca: valor,
           max_parcela_cobranca: this.parcelas,
@@ -1636,7 +1636,7 @@ export default {
       await this.getPedidos();
     },
     show(e, item) {
-      if (item.status_pagamento != "NÃO PAGO") {
+      if (item.status_pagamento != "NÃƒO PAGO") {
         this.x = e.clientX;
         this.y = e.clientY;
         this.objectItem = { ...item };
@@ -1708,7 +1708,7 @@ export default {
       });
       let link = {
         template:
-          item.status_pagamento == "NÃO PAGO" ? "cobranca" : "cobranca_boleto",
+          item.status_pagamento == "NÃƒO PAGO" ? "cobranca" : "cobranca_boleto",
         nome: result.aluno.nome + " " + result.aluno.sobrenome,
         email: result.aluno.email,
         pedido: result.id_pedidos,
@@ -1737,7 +1737,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "NÃO É POSSIVEL EXCLUIR ESTE PEDIDO, POIS O MESMO POSSUI LINK PAGO",
+          msg: "NÃƒO Ã‰ POSSIVEL EXCLUIR ESTE PEDIDO, POIS O MESMO POSSUI LINK PAGO",
           type: "warning",
           time: 3000,
         });

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-dialog v-model="dialog" persistent width="90%">
     <v-card>
       <v-card-title class="headline text-center"
@@ -112,7 +112,7 @@
                     <span
                       v-if="lista.semestre_pagamento.boleto"
                       class="success--text"
-                      >Aceitar Boleto à Vista</span
+                      >Aceitar Boleto Ã  Vista</span
                     >
                     <span v-else class="error--text">Não Aceitar Boleto</span>
                   </template>
@@ -407,7 +407,7 @@ export default {
       }
       if (!this.checkValorAte()) {
         this.$parent.showSnakerbar(
-          "ATENÇÃO: NO ULTIMO REGISTRO DE PARCELAS, O CAMPO ' VALOR ATÉ ' SEMPRE SERÁ ' 0 ' !",
+          "ATENÃ‡ÃƒO: NO ULTIMO REGISTRO DE PARCELAS, O CAMPO ' VALOR ATÃ‰ ' SEMPRE SERÁ ' 0 ' !",
           "warning"
         );
       } else if (
@@ -416,7 +416,7 @@ export default {
         ].valor_ate != 0
       ) {
         this.$parent.showSnakerbar(
-          "ATENÇÃO: NO ULTIMO REGISTRO DE PARCELAS, O CAMPO ' VALOR ATÉ ' SEMPRE SERÁ ' 0 ' !",
+          "ATENÃ‡ÃƒO: NO ULTIMO REGISTRO DE PARCELAS, O CAMPO ' VALOR ATÃ‰ ' SEMPRE SERÁ ' 0 ' !",
           "warning"
         );
       } else {
@@ -477,7 +477,7 @@ export default {
         });
       } else {
         this.$parent.showSnakerbar(
-          "ATENÇÃO: AO INSERIR UMA NOVA LINHA, O CAMPO ' VALOR ATÉ ' NÃO PODE SER MENOR OU IGUAL O CAMPO ' VALOR DE ' !",
+          "ATENÃ‡ÃƒO: AO INSERIR UMA NOVA LINHA, O CAMPO ' VALOR ATÃ‰ ' NÃƒO PODE SER MENOR OU IGUAL O CAMPO ' VALOR DE ' !",
           "warning"
         );
       }

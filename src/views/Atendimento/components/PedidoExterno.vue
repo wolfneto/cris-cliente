@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container class="mt-1">
     <v-dialog v-model="dialogBuscarCliente">
       <BuscarCliente
@@ -478,7 +478,7 @@
         </v-card-text>
         <v-card-actions>
           <div class="flex-grow-1"></div>
-          <v-btn color="error" text @click="dialogLimpar = false">NÃO</v-btn>
+          <v-btn color="error" text @click="dialogLimpar = false">NÃƒO</v-btn>
           <v-btn color="success" text @click="limpar()">SIM</v-btn>
         </v-card-actions>
       </v-card>

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-tabs dense grow>
       <v-tab>Itens</v-tab>
@@ -331,7 +331,7 @@ export default {
         qtd: "2",
         total: "200,00"
       },
-      { cliente: "JOÃO SILVA", grupo: "VAREJO", qtd: "3", total: "300,00" }
+      { cliente: "JOÃƒO SILVA", grupo: "VAREJO", qtd: "3", total: "300,00" }
     ],
     vendedores: [
       { vendedor: "GISLANE", qtd: "3", total: "300,00" },

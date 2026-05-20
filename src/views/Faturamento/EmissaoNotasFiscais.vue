@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card class="mx-auto" max-width="1000" height="650" elevation="5">
       <v-row>
@@ -57,7 +57,7 @@
                 </v-col>
                 <v-col cols="12" md="4">
                   <v-select
-                    :items="['BOLETO BANCÁRIO', 'CHEQUE', 'CRÉDITO CONTA', 'DEPÓSITO', 'DINHEIRO', 'ELO', 'MASTER', 'MENSALISTA', 'VISA']"
+                    :items="['BOLETO BANCÁRIO', 'CHEQUE', 'CRÃ‰DITO CONTA', 'DEPÃ“SITO', 'DINHEIRO', 'ELO', 'MASTER', 'MENSALISTA', 'VISA']"
                      background-color="grey lighten-2"
                   ></v-select>
                 </v-col>
@@ -68,10 +68,10 @@
                 </v-col>
                 <v-col cols="12" md="4">
                   <v-select
-                    :items="['*VENDA (ESTADUAL)', '*VENDA (INTERESTADUAL)', 'COMPRA (CONCORRÊNCIA)', 'COMPRA (NOTA)', 'DEVOLUÇÃO DE MERCADORIAS', 'DEVOLUÇÃO DE MERCADORIAS', 'DEVOLUÇÃO (ESTADUAL)',
-                 'DEVOLUÇÃO (INTERESTADUAL)', 'DEVOLUÇÃO (INTERESTADUAL)', 'DEVOLUÇÃO DE DEMONSTRAÇÃO', 'REMESSA DE MERCADORIA PARA CONSERTO(ESTADUAL)', 'REMESSA DE MERCADORIA PARA CONSERTO(ESTADUAL)',
-                  'SIMPLES REMESSA(ESTADUAL)', 'TROCA', '*VENDA (INTERESTADUAL)', '*VENDA CONTRIBUINTE (INTERESTADUAL)', 'DEVOLUÇÃO (INTERESTADUAL)', 'REMESSA MERCADORIA PARA CONSERTO (INTERESTADUAL)', 
-                  'DEVOLUÇÃO (INTERESTADUAL)', 'SIMPLES REMESSA (INTERESTADUAL)', 'TROCA (INTERESTADUAL)', 'ESTORNO ENTREGA FUTURA (INTERESTADUAL)' ]"
+                    :items="['*VENDA (ESTADUAL)', '*VENDA (INTERESTADUAL)', 'COMPRA (CONCORRÃŠNCIA)', 'COMPRA (NOTA)', 'DEVOLUÃ‡ÃƒO DE MERCADORIAS', 'DEVOLUÃ‡ÃƒO DE MERCADORIAS', 'DEVOLUÃ‡ÃƒO (ESTADUAL)',
+                 'DEVOLUÃ‡ÃƒO (INTERESTADUAL)', 'DEVOLUÃ‡ÃƒO (INTERESTADUAL)', 'DEVOLUÃ‡ÃƒO DE DEMONSTRAÃ‡ÃƒO', 'REMESSA DE MERCADORIA PARA CONSERTO(ESTADUAL)', 'REMESSA DE MERCADORIA PARA CONSERTO(ESTADUAL)',
+                  'SIMPLES REMESSA(ESTADUAL)', 'TROCA', '*VENDA (INTERESTADUAL)', '*VENDA CONTRIBUINTE (INTERESTADUAL)', 'DEVOLUÃ‡ÃƒO (INTERESTADUAL)', 'REMESSA MERCADORIA PARA CONSERTO (INTERESTADUAL)', 
+                  'DEVOLUÃ‡ÃƒO (INTERESTADUAL)', 'SIMPLES REMESSA (INTERESTADUAL)', 'TROCA (INTERESTADUAL)', 'ESTORNO ENTREGA FUTURA (INTERESTADUAL)' ]"
                    background-color="grey lighten-2"
                   ></v-select>
                 </v-col>

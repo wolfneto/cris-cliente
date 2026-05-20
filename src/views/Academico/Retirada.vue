@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <v-container>
@@ -173,7 +173,7 @@
 
                   <v-list-item-subtitle
                     :class="
-                      item.pagamento.status_pagamento == 'NÃO PAGO'
+                      item.pagamento.status_pagamento == 'NÃƒO PAGO'
                         ? 'red--text'
                         : 'success--text'
                     "

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container
     fluid
     pa-0
@@ -775,7 +775,7 @@
           dense
           justify="center"
         >
-          PEDIDO NÚMERO {{ pedido_editar.id }} EM EDIÇÃO
+          PEDIDO NÃšMERO {{ pedido_editar.id }} EM EDIÃ‡ÃƒO
         </v-row>
         <v-row dense no-gutters style="height: 78%">
           <v-col class="fill-parent-height">
@@ -1023,7 +1023,7 @@
             <h6>{{ new_grupo }}</h6>
           </div>
           <div class="text-center" v-if="check_grupo">
-            <h6>À DEFINIR</h6>
+            <h6>Ã€ DEFINIR</h6>
             <v-textarea
               counter
               label="Descreva qual faculdade, semestre e periodo. Para que possamos ajustar posteriormente"
@@ -1541,8 +1541,8 @@ export default {
       pedido_editar: {},
       atividades: [
         { text: "VAREJO", value: 1, ref: "03" },
-        { text: "ACADÊMICO", value: 2, ref: "10" },
-        { text: "ORGÃO PUBLICO", value: 3, ref: "02" },
+        { text: "ACADÃŠMICO", value: 2, ref: "10" },
+        { text: "ORGÃƒO PUBLICO", value: 3, ref: "02" },
         { text: "OUTROS", value: 4, ref: "03" },
       ],
       condicoes: [
@@ -1634,13 +1634,13 @@ export default {
           sortable: false,
         },
         {
-          name: "CÓDIGO",
+          name: "CÃ“DIGO",
           prop: "codigo",
           align: "center",
           sortable: true,
         },
         {
-          name: "DESCRIÇÃO",
+          name: "DESCRIÃ‡ÃƒO",
           prop: "descricao",
           align: "center",
           sortable: true,
@@ -1678,13 +1678,13 @@ export default {
       ],
       headersItens: [
         {
-          name: "CÓDIGO",
+          name: "CÃ“DIGO",
           prop: "codigo",
           align: "center",
           sortable: true,
         },
         {
-          name: "DESCRIÇÃO",
+          name: "DESCRIÃ‡ÃƒO",
           prop: "descricao",
           align: "center",
           sortable: true,
@@ -1771,7 +1771,7 @@ export default {
         },
         razao_social: {
           required: helpers.withMessage(
-            "Campo RAZÃO SOCIAL é obrigatório",
+            "Campo RAZÃƒO SOCIAL é obrigatório",
             required
           ),
         },
@@ -1801,13 +1801,13 @@ export default {
         },
         condicao: {
           required: helpers.withMessage(
-            "Campo CONDIÇÃO é obrigatório",
+            "Campo CONDIÃ‡ÃƒO é obrigatório",
             required
           ),
         },
         inscricao_estadual: {
           required: helpers.withMessage(
-            "Campo INCRIÇÃO ESTADUAL é obrigatório",
+            "Campo INCRIÃ‡ÃƒO ESTADUAL é obrigatório",
             required
           ),
           required: requiredIf(this.isCnpj),
@@ -1818,13 +1818,13 @@ export default {
           },
           logradouro: {
             required: helpers.withMessage(
-              "Campo ENDEREÇO é obrigatório",
+              "Campo ENDEREÃ‡O é obrigatório",
               required
             ),
           },
           numero: {
             required: helpers.withMessage(
-              "Campo NÚMERO é obrigatório",
+              "Campo NÃšMERO é obrigatório",
               required
             ),
           },
@@ -2073,7 +2073,7 @@ export default {
 
         this.set_snackbar({
           show: true,
-          msg: "ORÇAMENTO COPIADO",
+          msg: "ORÃ‡AMENTO COPIADO",
           type: "success",
           time: 3000,
         });

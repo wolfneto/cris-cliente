@@ -1,4 +1,4 @@
-import Usuario from './Usuario';
+﻿import Usuario from './Usuario';
 import UsuarioCadastrar from './UsuarioCadastrar';
 
 export default [

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <h4 class="text-center">Roteiro de Expedição</h4>
@@ -80,7 +80,7 @@ export default {
     pedido: "",
     header: [
       {
-        text: "N° Pedido",
+        text: "NÂ° Pedido",
         align: "left",
         value: "numero_pedido",
       },
@@ -149,7 +149,7 @@ export default {
           ENDERECO_COMPLERO: pedido.endereco_completo,
           PEDIDO: pedido.numero_pedido,
           TOTAL: pedido.total,
-          ACAO: "SÓ ENTREGAR RETIRAR MATERIAL ENTREGAR E RECEBE TROCAR MATERIAL",
+          ACAO: "SÃ“ ENTREGAR RETIRAR MATERIAL ENTREGAR E RECEBE TROCAR MATERIAL",
           TELEFONE_CELULAR: pedido.telefone + ' - ' +pedido.celular,
           GRUPO: pedido.grupo
         };

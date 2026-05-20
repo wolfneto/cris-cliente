@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-row class="custom-row ml-2 mr-2">
       <v-col cols="2">
@@ -185,16 +185,16 @@ export default {
       // ficar global no Inicio.vue do tela de atendimento
       { text: "COMPRA (PEDIDO)", value: "1102 P" },
       { text: "COMPRA (NOTA)", value: "1102 N" },
-      { text: "* DEVOLUÇÃO (ESTADUAL)", value: "5202 E" },
-      { text: "DEVOLUÇÃO (ESTADUAL)", value: "5202" }
+      { text: "* DEVOLUÃ‡ÃƒO (ESTADUAL)", value: "5202 E" },
+      { text: "DEVOLUÃ‡ÃƒO (ESTADUAL)", value: "5202" }
     ],
     selectedOperacao: {}, // ficar global no Inicio.vue do tela de atendimento
     status: [
       // ficar global no Inicio.vue do tela de atendimento
       { text: "PENDENTE", value: "1" },
       { text: "COMPRA (NOTA)", value: "1102 N" },
-      { text: "* DEVOLUÇÃO (ESTADUAL)", value: "5202 E" },
-      { text: "DEVOLUÇÃO (ESTADUAL)", value: "5202" }
+      { text: "* DEVOLUÃ‡ÃƒO (ESTADUAL)", value: "5202 E" },
+      { text: "DEVOLUÃ‡ÃƒO (ESTADUAL)", value: "5202" }
     ],
     selectedStatus: {}, // ficar global no Inicio.vue do tela de atendimento
     dialogSearch: false // ficar global no Inicio.vue do tela de atendimento

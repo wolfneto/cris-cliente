@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <div ref="buscarcliente" tabindex="0">
       <v-card>

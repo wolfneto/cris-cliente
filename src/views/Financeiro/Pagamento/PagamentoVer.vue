@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <v-card-title>
@@ -21,7 +21,7 @@
               v-on:keyup="find(search)"
               @click="$event.target.select()"
               append-icon="fa-search"
-              label="Nome, CPF ou nº Pedido"
+              label="Nome, CPF ou nÂº Pedido"
               single-line
               hide-details
               dense
@@ -242,7 +242,7 @@
                             <span>{{ item.boleto.expiration_date }}</span>
                           </v-chip>
                           <v-chip
-                            v-if="item.status_pagamento == 'NÃO PAGO'"
+                            v-if="item.status_pagamento == 'NÃƒO PAGO'"
                             @click="show($event, item)"
                             color="error text-white"
                             small
@@ -269,7 +269,7 @@
                             color="success"
                             dark
                             small
-                            >CRÉDITO PAGO</v-chip
+                            >CRÃ‰DITO PAGO</v-chip
                           >
                           <v-chip
                             v-else-if="
@@ -376,7 +376,7 @@
                           <v-btn
                             v-if="
                               item.pagamentos_logs.length > 0 &&
-                                item.status_pagamento == 'NÃO PAGO'
+                                item.status_pagamento == 'NÃƒO PAGO'
                             "
                             @click="ver_logs(item.pagamentos_logs)"
                             small
@@ -560,7 +560,7 @@
             style="width: 800px; height: 50%"
             v-if="objectItemPrint.tipo_pagamento == 'CREDITO'"
           >
-            <h2 class="text-center">CRÉDITO PAGO</h2>
+            <h2 class="text-center">CRÃ‰DITO PAGO</h2>
             <br />
             <h5>
               <b>{{ objectItemPrint.cliente_id }}</b>
@@ -603,7 +603,7 @@
               {{ objectItemPrint.credito.terminal_nsu }}
             </h5>
             <h5>
-              <b>N° Comprovante:</b>
+              <b>NÂ° Comprovante:</b>
               {{ objectItemPrint.credito.acquirer_transaction_id }}
             </h5>
             <h5>
@@ -627,7 +627,7 @@
             style="width: 800px; height: 40%"
             v-if="objectItemPrint.tipo_pagamento == 'CREDITO'"
           >
-            <h2 class="text-center">CRÉDITO PAGO</h2>
+            <h2 class="text-center">CRÃ‰DITO PAGO</h2>
             <br />
             <h5>
               <b>{{ objectItemPrint.codigo_cliente }}</b>
@@ -670,7 +670,7 @@
               {{ objectItemPrint.credito.terminal_nsu }}
             </h5>
             <h5>
-              <b>N° Comprovante:</b>
+              <b>NÂ° Comprovante:</b>
               {{ objectItemPrint.credito.acquirer_transaction_id }}
             </h5>
             <h5>
@@ -839,7 +839,7 @@
     >
       <v-card>
         <v-card-title class="headline font-weight-black"> </v-card-title>
-        <div v-if="objectItemPagamento.status_pagamento == 'NÃO PAGO'">
+        <div v-if="objectItemPagamento.status_pagamento == 'NÃƒO PAGO'">
           <v-card>
             <v-card-title class="headline">Link de Pagamento</v-card-title>
             <v-card-text>
@@ -847,7 +847,7 @@
                 >{{ objectItemPagamento.iugu }}</span
               >
               <span v-else>
-                https://solident.com.br/pagamento/{{
+                https://academicosolident.com.br/pagamento/{{
                   objectItemPagamento.codigo_link
                 }}
                 
@@ -866,7 +866,7 @@
               <input
                 type="hidden"
                 id="linkCopy"
-                :value="objectItemPagamento.iugu ? objectItemPagamento.iugu :'https://solident.com.br/pagamento/' +
+                :value="objectItemPagamento.iugu ? objectItemPagamento.iugu :'https://academicosolident.com.br/pagamento/' +
                     objectItemPagamento.codigo_link "
               />
             </v-card-text>
@@ -921,7 +921,7 @@
               <b>Banco:</b> {{ objectItemPagamento.banco }}<br />
               <b>Autorização:</b>
               {{ objectItemPagamento.credito.terminal_nsu }}<br />
-              <b>N° Comprovante:</b>
+              <b>NÂ° Comprovante:</b>
               {{ objectItemPagamento.credito.acquirer_transaction_id }}<br />
               <b>Status:</b> {{ objectItemPagamento.credito.status }}<br />
               <b>Bandeira:</b> {{ objectItemPagamento.credito.bandeira }}<br />
@@ -960,11 +960,11 @@
               objectItemPagamento.credito == null ? "" : objectItemPagamento.pagamentos_cartao_credito.nome_cartao
             }}             
             <br />
-            <b class="error--text">CLIENTE NÃO É O TITULAR</b>
+            <b class="error--text">CLIENTE NÃƒO Ã‰ O TITULAR</b>
             <br />
           </div>
           <div v-else>
-            <b class="success--text">CLIENTE É O TITULAR</b>
+            <b class="success--text">CLIENTE Ã‰ O TITULAR</b>
             <br />
           </div> 
             </v-card-text>
@@ -991,7 +991,7 @@
             <v-card-text>
               <b>Boleto</b><br />
               <b>Banco:</b> {{ objectItemPagamento.banco }}<br />
-              <b>N° Documento:</b>
+              <b>NÂ° Documento:</b>
               {{ objectItemPagamento.boleto.document_number }}<br />
               <b>Nosso Número:</b> {{ objectItemPagamento.boleto.our_number
               }}<br />
@@ -1024,7 +1024,7 @@
         <div
           v-else-if="
             objectItemPagamento.tipo_pagamento == 'PIX' &&
-              objectItemPagamento.status_pagamento != 'NÃO PAGO'
+              objectItemPagamento.status_pagamento != 'NÃƒO PAGO'
           "
         >
           <v-card>
@@ -1159,7 +1159,7 @@
         <v-card-title class="display-1 error--text">Atenção!</v-card-title>
         <v-divider></v-divider>
         <v-card-text class="body-1 font-weight-black">
-          <p>É isso mesmo que deseja fazer ?</p>
+          <p>Ã‰ isso mesmo que deseja fazer ?</p>
           <p>
             VALOR A ESTORNAR:
             {{
@@ -1301,7 +1301,7 @@ export default {
     async estornarPix() {
       this.loading = true;
       let res = await this.$axios.post(
-        "https://solident.com.br/node/pix_estorno",
+        (process.env.VUE_APP_URL_SERVIDOR_PAGAMENTO || '/link/api') + "/pix_estorno",
         {
           dados: {
             codigo_link: this.objectItemPagamento.codigo_link,
@@ -1544,9 +1544,9 @@ export default {
               obj.codigo_link = pagamento.codigo_link;
               obj.created_at = pagamento.created_at;
 
-              if (pagamento.tipo_pagamento == "NÃO PAGO") {
+              if (pagamento.tipo_pagamento == "NÃƒO PAGO") {
                 obj.valor = parseFloat(pagamento.total);
-                obj.status = "NÃO PAGO";
+                obj.status = "NÃƒO PAGO";
                 json.push(obj);
               } else if (pagamento.tipo_pagamento == "CREDITO") {
                 if (

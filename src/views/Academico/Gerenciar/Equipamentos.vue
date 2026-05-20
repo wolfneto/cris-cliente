@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <Tabs></Tabs>
     <v-card width="auto">

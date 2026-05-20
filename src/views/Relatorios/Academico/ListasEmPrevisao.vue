@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-row justify="center" class="custom-row">
       <v-col cols="3">

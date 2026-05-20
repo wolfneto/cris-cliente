@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card height="600">
       <v-toolbar dense flat color="primary" dark>
@@ -508,7 +508,7 @@ function defaultData() {
     headersEnderecoEntrega: [
       { text: "Cep", value: "cep", sortable: false, width: 150 },
       { text: "Endereço", value: "logradouro", sortable: false },
-      { text: "Nº", value: "numero", sortable: false, width: 100 },
+      { text: "NÂº", value: "numero", sortable: false, width: 100 },
       {
         text: "Complemento",
         value: "complemento",

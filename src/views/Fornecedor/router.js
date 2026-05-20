@@ -1,4 +1,4 @@
-import Cadastrar from './components/Cadastrar';
+﻿import Cadastrar from './components/Cadastrar';
 
 export default [{
     path: '/fornecedor/cadastrar',

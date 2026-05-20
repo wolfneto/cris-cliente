@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card class="mx-auto mt-10" max-width="1500" height="600" elevation="5">
       <div v-if="!entrada && !saida " class="text-center ma">
@@ -308,7 +308,7 @@ export default {
           buttonSize: "sm",
           okVariant: "success",
           okTitle: "SIM",
-          cancelTitle: "NÃO",
+          cancelTitle: "NÃƒO",
           footerClass: "p-2",
           hideHeaderClose: false,
           centered: true,

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
 	<v-container>
 		<div>
 			<v-card>
@@ -148,7 +148,7 @@
 												<div class="input-group mb-3">
 													<div class="input-group-prepend">
 														<span v-if="item.pis == 'S'" class="input-group-text text-size" id="basic-addon1">SIM</span>
-														<span v-else class="input-group-text text-size" id="basic-addon1">NÃO</span>
+														<span v-else class="input-group-text text-size" id="basic-addon1">NÃƒO</span>
 													</div>
 													<input
 														type="number"
@@ -220,7 +220,7 @@
 															class="input-group-text text-size"
 															id="basic-addon1"
 														>SIM</span>
-														<span v-else class="input-group-text text-size" id="basic-addon1">NÃO</span>
+														<span v-else class="input-group-text text-size" id="basic-addon1">NÃƒO</span>
 													</div>
 													<input
 														type="number"

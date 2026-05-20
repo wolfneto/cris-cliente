@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-form ref="form" v-model="valid" lazy-validation>
       <v-container>
@@ -174,7 +174,7 @@
                 <span style="display:none">{{sortedArray}}</span>
                 <!-- <tr v-if="sortedArray.length > 0">
 									<td colspan="7" class="text-center">
-										<h2>NÃO VENDIDOS</h2>
+										<h2>NÃƒO VENDIDOS</h2>
 									</td>
 								</tr>
 								

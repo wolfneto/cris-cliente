@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>      
         
          <div class="headline">Impressão para separação</div>       
@@ -6,7 +6,7 @@
                   <v-simple-table dense height="550">
                     <thead>
                       <tr>
-                        <th class="text-left">N° Pedido</th>
+                        <th class="text-left">NÂ° Pedido</th>
                         <th class="text-left">Status</th>
                         <th class="text-left">Total</th>
                         <th class="text-left">Cliente</th>                                          

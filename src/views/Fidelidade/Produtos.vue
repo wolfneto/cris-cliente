@@ -1,4 +1,4 @@
-<template>
+﻿<template>
 	<v-container>
 		<v-data-table
 			:no-data-text="'Nenhum produto encontrado'"
@@ -356,7 +356,7 @@ export default {
 					buttonSize: "sm",
 					okVariant: "success",
 					okTitle: "SIM",
-					cancelTitle: "NÃO",
+					cancelTitle: "NÃƒO",
 					footerClass: "p-2",
 					hideHeaderClose: false,
 					centered: true

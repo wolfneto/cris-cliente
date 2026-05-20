@@ -1,4 +1,4 @@
-import Pedido from './Pedido';
+﻿import Pedido from './Pedido';
 
 export default [{
         path: '/ecommerce/pedido',

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card max-width="1500" height="auto" elevation="2">
       <v-toolbar dense flat color="indigo darken-3" dark>

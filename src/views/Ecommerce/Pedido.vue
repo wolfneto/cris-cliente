@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <v-card-title>
@@ -10,7 +10,7 @@
           v-model="search"
           v-on:keyup="filtrarPagamentos(search)"
           append-icon="fa-search"
-          label="Nome, nº Pedido"
+          label="Nome, nÂº Pedido"
           single-line
           hide-details
         ></v-text-field>
@@ -170,7 +170,7 @@
                   v-else-if="row.status == 'PAGO' && row.tipo_pagamento == 'CREDITO'"
                   color="success"
                   dark
-                >CRÉDITO PAGO</v-chip>-->
+                >CRÃ‰DITO PAGO</v-chip>-->
                 <v-chip
                   v-else-if="row.forma_pagamento == 'BOLETO' && row.status == 'PAGO'"
                   color="success"

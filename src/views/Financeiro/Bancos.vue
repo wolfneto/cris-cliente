@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card class="mx-auto mt-2" max-width="auto" height="auto">
       <div class="pa-4">
@@ -108,7 +108,7 @@
           >
             <v-row justify="center">
               <h5>
-                ACADÊMICO
+                ACADÃŠMICO
               </h5>
             </v-row>
             <v-card-text>

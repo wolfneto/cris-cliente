@@ -1,4 +1,4 @@
-<template>
+﻿<template>
 	<v-container>
 		<v-card v-if="showTable">
 			<v-card-title>

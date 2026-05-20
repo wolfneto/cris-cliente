@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-tabs @change="atualizar()" v-model="tab" dense grow>
       <v-tabs-slider></v-tabs-slider>

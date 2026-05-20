@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <Tabs></Tabs>
     <v-card
@@ -1043,7 +1043,7 @@ export default {
           // if (!this.semestres.length) {
           //   this.set_snackbar({
           //     show: true,
-          //     msg: "É necessario selecionar Graduação ou Especialização!",
+          //     msg: "Ã‰ necessario selecionar Graduação ou Especialização!",
           //     type: "warning",
           //     time: 0,
           //   });

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <h4 class="text-center">Relatório Financeiro Acadêmico Excel</h4>
     <h5 class="text-center">Somente pedidos pagos pelo site.</h5>

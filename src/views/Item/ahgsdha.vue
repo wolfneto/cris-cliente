@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <EditarItem v-if="editar"></EditarItem>
     <div v-if="!editar">

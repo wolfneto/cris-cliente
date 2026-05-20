@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <v-card-title>
@@ -67,11 +67,11 @@ export default {
   data: () => ({
     header: [
       {
-        text: "N° Online",
+        text: "NÂ° Online",
         align: "center",
         value: "pedido_online",
       },
-      { text: "N° DCInfo", value: "pedido_dcinfo" },
+      { text: "NÂ° DCInfo", value: "pedido_dcinfo" },
       { text: "Grupo", value: "pedido_grupo" },
       { text: "Dados", value: "dados" },
       { text: "Vendedor", value: "vendedor" },

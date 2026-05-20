@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <v-card-title>
@@ -377,7 +377,7 @@ export default {
       },
       {
         value: "descri_item",
-        text: "DESCRIÇÃO",
+        text: "DESCRIÃ‡ÃƒO",
       },
       {
         value: "marca_item",

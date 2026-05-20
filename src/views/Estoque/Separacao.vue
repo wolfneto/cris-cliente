@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-row class="ma-auto">
       <v-col>
@@ -11,7 +11,7 @@
                     <v-text-field
                       v-on:keyup="checkPedidoEmSeparacao()"
                       v-model="numeroPedido"
-                      placeholder="N° Pedido"
+                      placeholder="NÂ° Pedido"
                       v-mask="'######A'"
                       filled
                       dense
@@ -90,7 +90,7 @@ export default {
     separadores: [{ nome: "FULANO" }, { nome: "SICLANO" }, { nome: "FULANO" }],
     headerPedidosEmSeparacao: [
       {
-        text: "N° Pedido",
+        text: "NÂ° Pedido",
         align: "left",
         value: "numero_pedido"
       },

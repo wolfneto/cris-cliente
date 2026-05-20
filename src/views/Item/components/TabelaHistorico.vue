@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <q-virtual-scroll
       class="my-sticky-dynamic"

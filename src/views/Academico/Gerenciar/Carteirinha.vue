@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <Tabs></Tabs>
     <v-card width="auto">
@@ -156,7 +156,7 @@
     <v-dialog v-model="dialogDelete" persistent max-width="40%">
       <v-card>
         <v-card-title class="text-h5">
-          ATENÇÃO!
+          ATENÃ‡ÃƒO!
         </v-card-title>
         <v-card-text class="text-h5">
           Deseja excluir a opção de Carteirinha desse semestre? <br />

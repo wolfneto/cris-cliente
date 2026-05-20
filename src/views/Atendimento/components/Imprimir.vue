@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <div>
       <div>
@@ -6,7 +6,7 @@
           <v-col class="text-left" cols="6">
             <div>
               <span class="font-weight-bold" style="font-size: 1.5rem"
-                >ORÇAMENTO {{pedido_imprimir.id == false ? '':pedido_imprimir.id}}</span
+                >ORÃ‡AMENTO {{pedido_imprimir.id == false ? '':pedido_imprimir.id}}</span
               >
             </div>
           </v-col>

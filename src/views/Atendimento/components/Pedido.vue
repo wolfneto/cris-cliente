@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container class="no-padding">
     <div v-if="!telaPedidoOrcamento">
       <v-row justify="center">
@@ -43,7 +43,7 @@
                 readonly
                 v-model="pedido.numero"
                 label="Número"
-                :prefix="pedido.isPedido ? 'PEDIDO ':'ORÇAMENTO '"
+                :prefix="pedido.isPedido ? 'PEDIDO ':'ORÃ‡AMENTO '"
               ></v-text-field>
             </v-col>
             <v-col cols="2">
@@ -904,7 +904,7 @@ export default {
     headersEnderecoEntrega: [
       { text: "Cep", value: "cep", sortable: false, width: 150 },
       { text: "Endereço", value: "logradouro", sortable: false },
-      { text: "Nº", value: "numero", sortable: false, width: 100 },
+      { text: "NÂº", value: "numero", sortable: false, width: 100 },
       {
         text: "Complemento",
         value: "complemento",
@@ -931,13 +931,13 @@ export default {
       { text: "VENDA (ESTADUAL)", value: "1" },
       { text: "COMPRA (PEDIDO)", value: "1102 P" },
       { text: "COMPRA (NOTA)", value: "1102 N" },
-      { text: "* DEVOLUÇÃO (ESTADUAL)", value: "5202 E" },
-      { text: "DEVOLUÇÃO (ESTADUAL)", value: "5202" }
+      { text: "* DEVOLUÃ‡ÃƒO (ESTADUAL)", value: "5202 E" },
+      { text: "DEVOLUÃ‡ÃƒO (ESTADUAL)", value: "5202" }
     ],
     condicoesPagamento: [
-      { text: "À VISTA", value: "1" },
-      { text: "01X CRÉDITO", value: "2" },
-      { text: "02X CRÉDITO", value: "3" },
+      { text: "Ã€ VISTA", value: "1" },
+      { text: "01X CRÃ‰DITO", value: "2" },
+      { text: "02X CRÃ‰DITO", value: "3" },
       { text: "01X BOLETO 10 DIAS", value: "4" }
     ],
     transportadoras: [

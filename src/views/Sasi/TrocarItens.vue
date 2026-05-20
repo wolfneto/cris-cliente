@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <v-card-title>
@@ -121,10 +121,10 @@
             <td>
               Disponível:
               <span class="success--text" v-if="item.disponivel_item == 1"><b>SIM</b></span>
-              <span class="error--text" v-else><b>NÃO</b></span>
+              <span class="error--text" v-else><b>NÃƒO</b></span>
               <br />Opcional:
               <span class="success--text" v-if="item.opcional_item == 1"><b>SIM</b></span>
-              <span class="error--text" v-else><b>NÃO</b></span>
+              <span class="error--text" v-else><b>NÃƒO</b></span>
             </td>
           </tr>
         </template>

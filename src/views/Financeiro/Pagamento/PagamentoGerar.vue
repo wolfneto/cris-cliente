@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-row class="d-flex flex-row justify-center">
       <v-col cols="12" md="4">
@@ -63,7 +63,7 @@
             :success="pedido.yStatus == 4 ? true : false"
             :error="pedido.yStatus == 4 ? false : true"
             :color="pedido.yStatus == 4 ? 'primary' : 'error'"
-            :suffix="pedido.yStatus == 4 ? 'FATURADO' : 'NÃO FATURADO'"
+            :suffix="pedido.yStatus == 4 ? 'FATURADO' : 'NÃƒO FATURADO'"
             v-model="pedido.yNumero"
             label="Pedido"
             readonly
@@ -258,7 +258,7 @@
           <v-chip v-if="item.yStatus == 4" color="success" dark
             >FATURADO</v-chip
           >
-          <v-chip v-else color="error" dark>NÃO FATURADO</v-chip>
+          <v-chip v-else color="error" dark>NÃƒO FATURADO</v-chip>
         </template>
         <template v-slot:item.yValTot="{ item }">
           <div>
@@ -270,10 +270,10 @@
 
     <!-- <v-dialog v-model="dialogReserva" persistent max-width="600">
       <v-card>
-        <v-card-title class="headline error--text">ATENÇÃO</v-card-title>
+        <v-card-title class="headline error--text">ATENÃ‡ÃƒO</v-card-title>
         <v-card-text>
          <div class="title">
-           Você está criando um link em que sera feita uma <br> <span class="error--text">RESERVA</span> no cartão do cliente e <span class="error--text">NÃO UMA COBRANÇA</span>
+           Você está criando um link em que sera feita uma <br> <span class="error--text">RESERVA</span> no cartão do cliente e <span class="error--text">NÃƒO UMA COBRANÃ‡A</span>
          <br>
          Você tem certeza disso?
          </div>

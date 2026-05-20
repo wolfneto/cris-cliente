@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card>
       <h4 class="text-center">Controle de Entregas</h4>
@@ -109,7 +109,7 @@ export default {
     pedido: "",
     header: [
       {
-        text: "N° Pedido",
+        text: "NÂ° Pedido",
         align: "center",
         value: "numero_pedido",
       },

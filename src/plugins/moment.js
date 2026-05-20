@@ -1,4 +1,4 @@
-import Vue from 'vue';
+﻿import Vue from 'vue';
 var Moment = require('moment');
 
 Vue.prototype.$moment_now_db = function(value) {

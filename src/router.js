@@ -1,7 +1,7 @@
-import Vue from 'vue'
+﻿import Vue from 'vue'
 import Router from 'vue-router'
 import Painel from '@/views/Painel.vue';
-import api from '@/api/api.js'
+import api from './plugins/axios'
 import jwrDecode from "jwt-decode";
 
 import clienteRouter from '@/views/Cliente/router';

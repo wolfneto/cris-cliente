@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <div v-if="!proximaTela">
       <v-row justify="center" class="custom-row">
@@ -22,8 +22,8 @@
             v-model="selectedPosGraduacao"
             @change="onChangeGraduacao()"
             :items="[
-              { text: 'GRADUAÇÃO', value: 0 },
-              { text: 'ESPECIALIZAÇÃO', value: 1 },
+              { text: 'GRADUAÃ‡ÃƒO', value: 0 },
+              { text: 'ESPECIALIZAÃ‡ÃƒO', value: 1 },
             ]"
             class="text-uppercase"
             label="Graduação ou Especialização"
@@ -677,7 +677,7 @@
                     </span>
                     <span class="error--text" v-else>
                       Disponível:
-                      <b>NÂO</b>
+                      <b>NÃ‚O</b>
                     </span>
                   </b-form-checkbox>
                   <b-form-checkbox
@@ -696,7 +696,7 @@
                     </span>
                     <span class="error--text" v-else>
                       Opcional:
-                      <b>NÂO</b>
+                      <b>NÃ‚O</b>
                     </span>
                   </b-form-checkbox>
                   <b-form-checkbox
@@ -845,14 +845,14 @@
           >
             <v-list-item-title>
               <v-btn @click="child.data.kit = true" text color="warning" small
-                >è um KIT</v-btn
+                >Ã¨ um KIT</v-btn
               >
             </v-list-item-title>
           </v-list-item>
           <v-list-item v-if="child.data.kit">
             <v-list-item-title>
               <v-btn @click="child.data.kit = false" text color="warning" small
-                >Não è um KIT</v-btn
+                >Não Ã¨ um KIT</v-btn
               >
             </v-list-item-title>
           </v-list-item>
@@ -889,14 +889,14 @@
           >
             <v-list-item-title>
               <v-btn @click="child.data.luva = true" text color="success" small
-                >è uma LUVA</v-btn
+                >Ã¨ uma LUVA</v-btn
               >
             </v-list-item-title>
           </v-list-item>
           <v-list-item v-if="child.data.luva">
             <v-list-item-title class="primary--text">
               <v-btn @click="child.data.luva = false" text color="success" small
-                >Não è uma LUVA</v-btn
+                >Não Ã¨ uma LUVA</v-btn
               >
             </v-list-item-title>
           </v-list-item>
@@ -1263,7 +1263,7 @@ export default {
             buttonSize: "sm",
             okVariant: "danger",
             okTitle: "SIM",
-            cancelTitle: "NÃO",
+            cancelTitle: "NÃƒO",
             footerClass: "p-2",
             hideHeaderClose: false,
             centered: true,
@@ -1586,7 +1586,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "TODOS OS CAMPOS SÃO OBRIGATÓRIOS",
+          msg: "TODOS OS CAMPOS SÃƒO OBRIGATÃ“RIOS",
           type: "warning",
           time: 3000,
         });
@@ -1692,7 +1692,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "TODOS OS CAMPOS SÃO OBRIGATÓRIOS",
+          msg: "TODOS OS CAMPOS SÃƒO OBRIGATÃ“RIOS",
           type: "warning",
           time: 3000,
         });
@@ -2005,7 +2005,7 @@ export default {
     },
 
     checkLimiteValorSite(valor_digitado, item) {
-      //100   *   (10   ÷   100)
+      //100   *   (10   Ã·   100)
       let maximo =
         item.valor * (this.permissoes.margem_preco / 100) + item.valor;
       let minimo =
@@ -2079,7 +2079,7 @@ export default {
     },
 
     checkLimiteValorMarcaOpcional(valor_digitado, item) {
-      //100   *   (10   ÷   100)
+      //100   *   (10   Ã·   100)
       let maximo =
         item.valorMarcaOpcionalOriginal * (this.permissoes.margem_preco / 100) +
         item.valorMarcaOpcionalOriginal;

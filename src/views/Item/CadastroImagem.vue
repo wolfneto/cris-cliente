@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card max-width="auto" height="auto" elevation="2">
       <v-container>
@@ -159,7 +159,7 @@ export default {
           } else if (res.data == null) {
             this.item = {};
             this.file = null;
-            this.showSnackbar("ITEM NÃO ENCONTRADO!", "warning", 5000);
+            this.showSnackbar("ITEM NÃƒO ENCONTRADO!", "warning", 5000);
           } else {
             this.item = res.data;
             this.inputImg = true;

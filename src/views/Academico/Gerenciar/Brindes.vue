@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <Tabs></Tabs>
     <v-row justify="center" class="custom-row">
@@ -418,7 +418,7 @@ export default {
         if (!checked) {
           this.set_snackbar({
             show: true,
-            msg: "Os campos CODIGO, DESCRIÇÃO e VALOR não podem ser vazios!",
+            msg: "Os campos CODIGO, DESCRIÃ‡ÃƒO e VALOR não podem ser vazios!",
             type: "warning",
             time: 3000,
           });

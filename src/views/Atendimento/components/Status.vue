@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <ImprimirPedidoOrcamento
       v-show="showPrint"
@@ -203,7 +203,7 @@
     <v-dialog v-model="dialogNumeroPedido" persistent max-width="600px">
       <v-card>
         <v-card-title>
-          <span class="headline success--text">ATENÇÃO</span>
+          <span class="headline success--text">ATENÃ‡ÃƒO</span>
         </v-card-title>
         <v-card-text class="headline">
           {{ numeroPedido }}

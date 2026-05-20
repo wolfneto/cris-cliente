@@ -1,4 +1,4 @@
-import Cliente from './Cliente';
+﻿import Cliente from './Cliente';
 import Cadastrar from './components/Cadastrar';
 import Bloquear from './components/Bloquear';
 

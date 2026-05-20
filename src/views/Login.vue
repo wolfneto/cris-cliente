@@ -1,4 +1,4 @@
-<template>
+﻿<template>
 	<v-content>
 		<v-container fill-height fluid>
 			<v-layout align-center justify-center>
@@ -64,7 +64,7 @@ export default {
 		login() {
 			if (this.$refs.form.validate()) {
 				this.loading = true;
-				this.$axios
+				this.$http
 					.post("/usuario/login", {
 						usuario: this.usuario,
 						senha: this.senha

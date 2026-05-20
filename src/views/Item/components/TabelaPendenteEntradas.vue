@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <div ref="tabelaEntradas" tabindex="1">
       <q-virtual-scroll

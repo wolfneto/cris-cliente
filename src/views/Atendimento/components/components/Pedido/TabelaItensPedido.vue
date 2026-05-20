@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div ref="tabelaitenspedido" tabindex="0">
     <q-virtual-scroll
       ref="tabela"

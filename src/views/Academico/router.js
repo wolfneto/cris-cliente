@@ -1,4 +1,4 @@
-import Inicio from './Gerenciar/Inicio';
+﻿import Inicio from './Gerenciar/Inicio';
 import Faculdades from './Gerenciar/Faculdades';
 import Semestres from './Gerenciar/Semestres';
 import Periodos from './Gerenciar/Periodos';

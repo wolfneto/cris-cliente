@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div ref="tabelaitenspedido" tabindex="0">
     <q-virtual-scroll
       ref="tabela"
@@ -207,13 +207,13 @@ export default {
           sortable: false,
         },
         {
-          name: "CÓDIGO",
+          name: "CÃ“DIGO",
           prop: "codigo",
           align: "center",
           sortable: true,
         },
         {
-          name: "DESCRIÇÃO",
+          name: "DESCRIÃ‡ÃƒO",
           prop: "descricao",
           align: "center",
           sortable: true,

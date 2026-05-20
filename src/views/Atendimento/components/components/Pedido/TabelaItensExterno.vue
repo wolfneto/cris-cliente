@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div>
     <div ref="tabelaItens" tabindex="1">
       <q-virtual-scroll
@@ -82,13 +82,13 @@ export default {
       objectItem: {},
       headers: [
         {
-          name: "CÓDIGO",
+          name: "CÃ“DIGO",
           prop: "codigo",
           align: "center",
           sortable: true,
         },
         {
-          name: "DESCRIÇÃO",
+          name: "DESCRIÃ‡ÃƒO",
           prop: "descricao",
           align: "center",
           sortable: true,

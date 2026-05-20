@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card class="mx-auto" max-width="1000" height="650" elevation="5">
       <v-row>

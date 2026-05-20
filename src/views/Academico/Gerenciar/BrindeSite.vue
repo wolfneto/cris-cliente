@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <Tabs></Tabs>
     <v-card width="auto">
@@ -160,7 +160,7 @@
                       color="orange lighten-3"
                       text-color="orange darken-4"
                       @click="updateAcumulaBrindeLista(item)"
-                      >NÃO ACUMULA</v-chip
+                      >NÃƒO ACUMULA</v-chip
                     >
                   </template>
 
@@ -504,7 +504,7 @@
                       class="text-red font-weight-bold"
                       @click="updateAcumulaBrindeLista(item)"
                       text
-                      >NÃO ACUMULA</v-btn
+                      >NÃƒO ACUMULA</v-btn
                     >
                   </td>
                 </tr>
@@ -977,7 +977,7 @@ export default {
       if (item.valor == 0) {
         this.set_snackbar({
           show: true,
-          msg: "ATENÇÃO! O VALOR MÍNIMO DO BRINDE NÃO PODE SER VAZIO.",
+          msg: "ATENÃ‡ÃƒO! O VALOR MÍNIMO DO BRINDE NÃƒO PODE SER VAZIO.",
           type: "warning",
         });
       } else {

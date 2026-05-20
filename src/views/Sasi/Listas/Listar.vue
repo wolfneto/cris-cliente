@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <EditarLista
       v-if="editar"
@@ -259,7 +259,7 @@
                             <span class="success--text" v-if="item.em_previsao"
                               >SIM</span
                             >
-                            <span v-else>NÃO</span>
+                            <span v-else>NÃƒO</span>
                             - {{ item.previsao }}x)
                           </b>
                         </small>
@@ -550,10 +550,10 @@
       <v-dialog v-model="dialogSemRepetidos" width="500">     
         <v-card>
           <v-card-title class="text-h5 grey lighten-2">
-          ATENÇÂO!
+          ATENÃ‡Ã‚O!
           </v-card-title>
            <v-card-text class="subtitle-1 mt-4 font-weight-black">
-            NÃO FORAM ENCONTRADOS ITENS REPETIDOS NAS LISTAS SELECIONADAS!
+            NÃƒO FORAM ENCONTRADOS ITENS REPETIDOS NAS LISTAS SELECIONADAS!
            </v-card-text>       
           <v-card-actions>
             <v-spacer></v-spacer>
@@ -649,7 +649,7 @@
         <v-card>
           <v-card-title class="headline">Valores Lista</v-card-title>
           <v-card-text>
-            <h6>Lista Econômica: <b>R$ {{valorTotalListaEconomico}}</b></h6>
+            <h6>Lista EconÃ´mica: <b>R$ {{valorTotalListaEconomico}}</b></h6>
             <h6>Lista Sugerida: <b>R$ {{ valorTotalListaSugerida }}</b></h6>
           </v-card-text>
           <v-card-actions>
@@ -911,7 +911,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "ATENÇÃO! É NECESSÁRIO MARCAR MAIS DE 1 LISTA PARA CHECAR ITENS REPETIDOS! ",
+          msg: "ATENÃ‡ÃƒO! Ã‰ NECESSÁRIO MARCAR MAIS DE 1 LISTA PARA CHECAR ITENS REPETIDOS! ",
           type: "warning",
           time: 0,
         });
@@ -1083,7 +1083,7 @@ export default {
           } else {
             this.set_snackbar({
               show: true,
-              msg: "VOCÊ NÃO PODE EDITAR ESTA LISTA",
+              msg: "VOCÃŠ NÃƒO PODE EDITAR ESTA LISTA",
               type: "error",
               time: 0,
             });
@@ -1146,7 +1146,7 @@ export default {
           buttonSize: "sm",
           okVariant: "success",
           okTitle: "SIM",
-          cancelTitle: "NÃO",
+          cancelTitle: "NÃƒO",
           footerClass: "p-2",
           hideHeaderClose: false,
           centered: true,

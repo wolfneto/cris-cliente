@@ -1,4 +1,4 @@
-import Vue from 'vue';
+﻿import Vue from 'vue';
 import StringMask from 'string-mask'
 
 Vue.prototype.$mask = StringMask;

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <v-card class="mx-auto">
       <v-card-title>
@@ -376,7 +376,7 @@
                   <v-row class="mt-n0">
                     <v-col cols="10">
                       <v-btn class="text-bold" text>
-                        DESCRIÇÃO
+                        DESCRIÃ‡ÃƒO
                       </v-btn>
                     </v-col>
                     <v-col cols="2" class="align-end">
@@ -1025,7 +1025,7 @@ export default {
           //   }
           //   this.set_snackbar({
           //     show: true,
-          //     msg: "ATENÇÃO!, É necessario selecionar o tipo de opção!",
+          //     msg: "ATENÃ‡ÃƒO!, Ã‰ necessario selecionar o tipo de opção!",
           //     type: "warning",
           //     time: 2000,
           //   });
@@ -1102,7 +1102,7 @@ export default {
         console.log("vazio");
         this.set_snackbar({
           show: true,
-          msg: "É necessario preencher as informações do produto!",
+          msg: "Ã‰ necessario preencher as informações do produto!",
           type: "warning",
           time: 3000,
         });

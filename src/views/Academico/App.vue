@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-container>
     <NotificacoesEnviadas
       v-if="showNotificacoesEnviadas"

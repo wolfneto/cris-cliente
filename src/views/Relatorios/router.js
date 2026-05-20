@@ -1,4 +1,4 @@
-import ItensPedidosxItensFaturados from './Academico/ItensPedidosxItensFaturados';
+﻿import ItensPedidosxItensFaturados from './Academico/ItensPedidosxItensFaturados';
 import PrevisaoAcademico from './Academico/PrevisaoAcademico';
 import ListasEmPrevisao from './Academico/ListasEmPrevisao';
 import CompararPrecoFornecedor from './Fornecedor/CompararPrecoFornecedor';
