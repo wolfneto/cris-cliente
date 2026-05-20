@@ -234,7 +234,7 @@ export default {
           this.loading = true;
 
           try {
-            await this.get_cliente(value);
+            await this.get_cliente({ value: value, vendedor: this.$usuario.value.vendedor });
             if (this.error) {
               // mostrar msg erro com snakbar
               console.log("erro interno");
@@ -295,7 +295,7 @@ export default {
     async getClientes() {
       //this.cliente = null;
       this.loading = true;
-      await this.get_clientes();
+      await this.get_clientes(this.$usuario.value);
       this.loading = false;
     }
   }

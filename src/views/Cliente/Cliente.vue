@@ -158,7 +158,7 @@ export default {
   computed: {
     ...mapState({
       clientes: (state) => state.cliente.clientes,
-      totalClientes: (state) => state.cliente.total,
+      totalClientes: (state) => state.cliente.total_clientes,
       loading: (state) => state.cliente.loading,
     }),
   },
@@ -166,13 +166,13 @@ export default {
     this.buscarClientes();
   },
   methods: {
-    ...mapActions(["getClientes", "findCliente", "findClienteByCod"]),
+    ...mapActions(["get_clientes", "get_cliente", "get_cliente_by_code"]),
     searchCliente(value, type) {
       if (value.length > 3) {
         if (type == "all") {
-          this.findCliente(value);
+          this.get_cliente({ value: value, vendedor: this.$usuario.value.vendedor });
         } else {
-          this.findClienteByCod(value);
+          this.get_cliente_by_code(value);
         }
 
         this.hideFooter = true;
@@ -198,7 +198,7 @@ export default {
       }
     },
     buscarClientes() {
-      this.getClientes(this.options);
+      this.get_clientes(this.$usuario.value);
     },
   },
 };
