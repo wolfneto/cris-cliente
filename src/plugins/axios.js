@@ -1,12 +1,12 @@
-﻿import Vue from 'vue'
+import Vue from 'vue'
 import axios from 'axios'
 
-const apiBaseUrl = process.env.VUE_APP_URL_SERVIDOR_DADOS
+const apiBaseUrl = process.env.VUE_APP_URL_SERVIDOR_DADOS || '/erp/api'
 
 const api = axios.create({
-	baseURL: apiBaseUrl,
-	timeout: 60000,
-	withCredentials: true,
+  baseURL: apiBaseUrl,
+  timeout: 60000,
+  withCredentials: true,
 })
 
 Vue.prototype.$http = api

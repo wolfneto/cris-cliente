@@ -1,6 +1,6 @@
 ﻿import api from '../../../plugins/axios'
 
-const pagamentoApiBase = process.env.VUE_APP_URL_SERVIDOR_PAGAMENTO;
+const pagamentoApiBase = process.env.VUE_APP_URL_SERVIDOR_PAGAMENTO || 'https://academicosolident.com.br/link/api';
 const pagamentoApiBaseNormalized = pagamentoApiBase.replace(/\/$/, '');
 
 export default {
