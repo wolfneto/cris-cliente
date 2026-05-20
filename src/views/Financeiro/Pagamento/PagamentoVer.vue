@@ -847,7 +847,7 @@
                 >{{ objectItemPagamento.iugu }}</span
               >
               <span v-else>
-                https://solident.com.br/pagamento/{{
+                https://academicosolident.com.br/pagamento/{{
                   objectItemPagamento.codigo_link
                 }}
                 
@@ -866,7 +866,7 @@
               <input
                 type="hidden"
                 id="linkCopy"
-                :value="objectItemPagamento.iugu ? objectItemPagamento.iugu :'https://solident.com.br/pagamento/' +
+                :value="objectItemPagamento.iugu ? objectItemPagamento.iugu :'https://academicosolident.com.br/pagamento/' +
                     objectItemPagamento.codigo_link "
               />
             </v-card-text>
@@ -1301,7 +1301,7 @@ export default {
     async estornarPix() {
       this.loading = true;
       let res = await this.$axios.post(
-        "https://solident.com.br/node/pix_estorno",
+        (process.env.VUE_APP_URL_SERVIDOR_PAGAMENTO || '/link/api') + "/pix_estorno",
         {
           dados: {
             codigo_link: this.objectItemPagamento.codigo_link,
