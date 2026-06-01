@@ -264,24 +264,20 @@ export default {
     async getItens() {      
       this.itens = [];
       this.loading = true;
-      this.$axios
-        .get("/produto/getItensControlarSaldo")
-        .then((res) => {
-          this.loading = false;
-          this.itens = res.data;
-          this.filteredArray = res.data;
-          if (this.filterStatus != '') {
-            this.filtrarPorStatus(this.filterStatus.id);
-          }
-        })
-        .catch((err) => {
-          this.loading = false;
-          console.log(err);
-          this.showSnakerbar(
-            "Erro no Servidor, Contate o Administrador",
-            "error"
-          );
-        });
+      try {
+        const res = await this.$axios.get("/produto/getItensControlarSaldo");
+        this.loading = false;
+        const data = Array.isArray(res.data) ? res.data : [];
+        this.itens = data;
+        this.filteredArray = data;
+        if (this.filterStatus != '') {
+          this.filtrarPorStatus(this.filterStatus.id);
+        }
+      } catch (err) {
+        this.loading = false;
+        console.log(err);
+        this.showSnakerbar("Erro no Servidor, Contate o Administrador", "error");
+      }
     },
     async updateStatus(item) {
       this.loading = true;

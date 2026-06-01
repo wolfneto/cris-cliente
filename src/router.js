@@ -66,10 +66,9 @@ router.beforeEach(async(to, from, next) => {
     if (to.matched.some(record => record.meta.requiresAuth)) {
         let logado = await isAuthenticated();
         if (logado) {
-            next({ params: { nextUrl: to.fullPath } })
+            next()
             return
         }
-        console.log('oporra');
         localStorage.setItem("login", false);
         router.push('/')
         router.go();
