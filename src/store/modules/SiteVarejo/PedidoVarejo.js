@@ -29,9 +29,9 @@ export default {
                 }
             });
             if (res.data === false) {
-                context.commit('set_error', true);
+                context.commit('setError', true);
             } else {
-                context.commit('set_error', false);
+                context.commit('setError', false);
                 context.commit('set_pedidos_varejo', res.data);
             }
         },

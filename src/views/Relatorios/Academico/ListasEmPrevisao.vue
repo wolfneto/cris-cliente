@@ -160,11 +160,16 @@ export default {
           }
         })
         .then(res => {
+          if (res.data === false) {
+            this.showSnakerbar("Erro no Servidor, Contate o Administrador", "error");
+            return;
+          }
           this.listas = res.data;
           console.log(res.data);
         })
         .catch(err => {
           console.log(err);
+          this.showSnakerbar("Erro no Servidor, Contate o Administrador", "error");
         });
     },
     formatterDate(data) {

@@ -233,6 +233,7 @@ export default {
   computed: {
     ...mapState({
       pedidos_varejo: (state) => state.pedidoVarejo.pedidos_varejo,
+      error: (state) => state.pedidoVarejo.error,
       data_inicial: (state) => state.config.data_inicial,
       data_final: (state) => state.config.data_final,
 
