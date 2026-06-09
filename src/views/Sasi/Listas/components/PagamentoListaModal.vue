@@ -407,7 +407,7 @@ export default {
       }
       if (!this.checkValorAte()) {
         this.$parent.showSnakerbar(
-          "ATENÃ‡ÃƒO: NO ULTIMO REGISTRO DE PARCELAS, O CAMPO ' VALOR ATÃ‰ ' SEMPRE SERÁ ' 0 ' !",
+          "ATENÇÃO: NO ULTIMO REGISTRO DE PARCELAS, O CAMPO ' VALOR ATÃ‰ ' SEMPRE SERÁ ' 0 ' !",
           "warning"
         );
       } else if (
@@ -416,7 +416,7 @@ export default {
         ].valor_ate != 0
       ) {
         this.$parent.showSnakerbar(
-          "ATENÃ‡ÃƒO: NO ULTIMO REGISTRO DE PARCELAS, O CAMPO ' VALOR ATÃ‰ ' SEMPRE SERÁ ' 0 ' !",
+          "ATENÇÃO: NO ULTIMO REGISTRO DE PARCELAS, O CAMPO ' VALOR ATÃ‰ ' SEMPRE SERÁ ' 0 ' !",
           "warning"
         );
       } else {
@@ -477,7 +477,7 @@ export default {
         });
       } else {
         this.$parent.showSnakerbar(
-          "ATENÃ‡ÃƒO: AO INSERIR UMA NOVA LINHA, O CAMPO ' VALOR ATÃ‰ ' NÃƒO PODE SER MENOR OU IGUAL O CAMPO ' VALOR DE ' !",
+          "ATENÇÃO: AO INSERIR UMA NOVA LINHA, O CAMPO ' VALOR ATÃ‰ ' NÃO PODE SER MENOR OU IGUAL O CAMPO ' VALOR DE ' !",
           "warning"
         );
       }

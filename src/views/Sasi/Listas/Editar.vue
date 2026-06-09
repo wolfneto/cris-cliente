@@ -683,7 +683,7 @@
                       </span>
                       <span class="error--text" v-else>
                         Disponível:
-                        <b>NÃ‚O</b>
+                        <b>NÃO</b>
                       </span>
                     </b-form-checkbox>
                     <b-form-checkbox
@@ -706,7 +706,7 @@
 
                       <span class="error--text" v-else>
                         Opcional:
-                        <b>NÃ‚O</b>
+                        <b>NÃO</b>
                       </span>
                     </b-form-checkbox>
                     <b-form-checkbox
@@ -878,14 +878,14 @@
           >
             <v-list-item-title>
               <v-btn @click="child.data.kit = true" text color="warning" small
-                >Ã¨ um KIT</v-btn
+                >É um KIT</v-btn
               >
             </v-list-item-title>
           </v-list-item>
           <v-list-item v-if="child.data.kit">
             <v-list-item-title>
               <v-btn @click="child.data.kit = false" text color="warning" small
-                >Não Ã¨ um KIT</v-btn
+                >Não É um KIT</v-btn
               >
             </v-list-item-title>
           </v-list-item>
@@ -922,14 +922,14 @@
           >
             <v-list-item-title>
               <v-btn @click="child.data.luva = true" text color="success" small
-                >Ã¨ uma LUVA</v-btn
+                >É uma LUVA</v-btn
               >
             </v-list-item-title>
           </v-list-item>
           <v-list-item v-if="child.data.luva">
             <v-list-item-title class="primary--text">
               <v-btn @click="child.data.luva = false" text color="success" small
-                >Não Ã¨ uma LUVA</v-btn
+                >Não É uma LUVA</v-btn
               >
             </v-list-item-title>
           </v-list-item>
@@ -1456,7 +1456,7 @@ export default {
             buttonSize: "sm",
             okVariant: "danger",
             okTitle: "SIM",
-            cancelTitle: "NÃƒO",
+            cancelTitle: "NÃO",
             footerClass: "p-2",
             hideHeaderClose: false,
             centered: true,
@@ -1819,7 +1819,7 @@ export default {
     },
     checkLimiteValorMarcaOpcional(valor_digitado, item) {
       valor_digitado = parseFloat(valor_digitado.replace(",", "."));
-      //100   *   (10   Ã·   100)
+      //100   *   (10   ÷   100)
       let maximo =
         parseFloat(item.valorMarcaOpcionalOriginal) *
           (this.permissoes.margem_preco / 100) +
@@ -1853,7 +1853,7 @@ export default {
     },
     checkLimiteValorSite(valor_digitado, item) {
       valor_digitado = parseFloat(valor_digitado.replace(",", "."));
-      //100   *   (10   Ã·   100)
+      //100   *   (10   ÷   100)
       let maximo =
         parseFloat(item.valor) * (this.permissoes.margem_preco / 100) +
         parseFloat(item.valor);
@@ -1924,7 +1924,7 @@ export default {
       }
     },
     checkLimiteValorMarcaOpcional(valor_digitado, item) {
-      //100   *   (10   Ã·   100)
+      //100   *   (10   ÷   100)
       let maximo =
         item.valorMarcaOpcionalOriginal * (this.permissoes.margem_preco / 100) +
         item.valorMarcaOpcionalOriginal;
