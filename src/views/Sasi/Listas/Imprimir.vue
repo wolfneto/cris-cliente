@@ -265,14 +265,14 @@
     <b>Disponível:</b>
     <br />
     <span v-if="item.disponivel_item == 1">SIM</span>
-    <span v-else>NÃ‚O</span>
+    <span v-else>NÃO</span>
   </div>
   <div v-if="!item.titulo && imprimirPadrao || imprimirGerencial || imprimirMauricio">
     <br v-if="!item.titulo" />
     <b>Opcional:</b>
     <br />
     <span v-if="item.opcional_item == 1">SIM</span>
-    <span v-else>NÃ‚O</span>
+    <span v-else>NÃO</span>
   </div>
 </td>
 <td v-if="!item.titulo" class="col-1"
@@ -392,7 +392,7 @@
       <b>Disponível:</b>
       <br />
       <span v-if="item.disponivel_item == 1">SIM</span>
-      <span v-else>NÃ‚O</span>
+      <span v-else>NÃO</span>
     </div>
   </td>
   <td v-if="!item.titulo" :class="imprimirAluno || imprimirAlunoSistema ? 'col-4 text-center' : 'col-1 text-center'">

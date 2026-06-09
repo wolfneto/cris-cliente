@@ -277,13 +277,13 @@
 					<v-switch v-if="!item.titulo" dense v-model="item.disponivel_item" color="primary">
 						<template v-slot:label>
 							<span class="primary--text" v-if="item.disponivel_item">Disponível: SIM</span>
-							<span class="error--text" v-else>Disponível: NÃƒO</span>
+							<span class="error--text" v-else>Disponível: NÃO</span>
 						</template>
 					</v-switch>
 					<v-switch dense v-model="item.opcional_item" color="primary">
 						<template v-slot:label>
 							<span class="primary--text" v-if="item.opcional_item">Opcional: SIM</span>
-							<span class="error--text" v-else>Opcional: NÃƒO</span>
+							<span class="error--text" v-else>Opcional: NÃO</span>
 						</template>
 					</v-switch>
 					<v-checkbox v-model="item.trava_qtd_item" label="Travar Qtd"></v-checkbox>
@@ -310,22 +310,22 @@
 							</v-list-item>
 							<v-list-item v-if="!item.titulo && !item.luva && !item.kit">
 								<v-list-item-title>
-									<v-btn @click="item.kit = true" text color="warning" small>Ã¨ um KIT</v-btn>
+									<v-btn @click="item.kit = true" text color="warning" small>É um KIT</v-btn>
 								</v-list-item-title>
 							</v-list-item>
 							<v-list-item v-if="item.kit">
 								<v-list-item-title>
-									<v-btn @click="item.kit = false" text color="warning" small>Não Ã¨ um KIT</v-btn>
+									<v-btn @click="item.kit = false" text color="warning" small>Não É um KIT</v-btn>
 								</v-list-item-title>
 							</v-list-item>
 							<v-list-item v-if="!item.titulo && !item.luva && !item.marcaOpcional && !item.kit">
 								<v-list-item-title>
-									<v-btn @click="item.luva = true" text color="success" small>Ã¨ uma LUVA</v-btn>
+									<v-btn @click="item.luva = true" text color="success" small>É uma LUVA</v-btn>
 								</v-list-item-title>
 							</v-list-item>
 							<v-list-item v-if="item.luva">
 								<v-list-item-title class="primary--text">
-									<v-btn @click="item.luva = false" text color="success" small>Não Ã¨ uma LUVA</v-btn>
+									<v-btn @click="item.luva = false" text color="success" small>Não É uma LUVA</v-btn>
 								</v-list-item-title>
 							</v-list-item>
 							<v-list-item v-if="!item.titulo && !item.luva && !item.marcaOpcional && !item.kit">
@@ -548,7 +548,7 @@ export default {
 		},
 		checkLimiteValorSite(valor_digitado, item) {
 			valor_digitado = parseFloat(valor_digitado.replace(",", "."));
-			//100   *   (10   Ã·   100)
+			//100   *   (10   ÷   100)
 			let maximo =
 				parseFloat(item.valor) * (this.permissoes.margem_preco / 100) +
 				parseFloat(item.valor);
