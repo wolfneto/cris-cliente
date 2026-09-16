@@ -22,8 +22,8 @@
             v-model="selectedPosGraduacao"
             @change="onChangeGraduacao()"
             :items="[
-              { text: 'GRADUAÃ‡ÃƒO', value: 0 },
-              { text: 'ESPECIALIZAÃ‡ÃƒO', value: 1 },
+              { text: 'GRADUAÇÃO', value: 0 },
+              { text: 'ESPECIALIZAÇÃO', value: 1 },
             ]"
             class="text-uppercase"
             label="Graduação ou Especialização"
@@ -677,7 +677,7 @@
                     </span>
                     <span class="error--text" v-else>
                       Disponível:
-                      <b>NÃ‚O</b>
+                      <b>NÃO</b>
                     </span>
                   </b-form-checkbox>
                   <b-form-checkbox
@@ -696,7 +696,7 @@
                     </span>
                     <span class="error--text" v-else>
                       Opcional:
-                      <b>NÃ‚O</b>
+                      <b>NÃO</b>
                     </span>
                   </b-form-checkbox>
                   <b-form-checkbox
@@ -845,14 +845,14 @@
           >
             <v-list-item-title>
               <v-btn @click="child.data.kit = true" text color="warning" small
-                >Ã¨ um KIT</v-btn
+                  >É um KIT</v-btn
               >
             </v-list-item-title>
           </v-list-item>
           <v-list-item v-if="child.data.kit">
             <v-list-item-title>
               <v-btn @click="child.data.kit = false" text color="warning" small
-                >Não Ã¨ um KIT</v-btn
+                  >Não é um KIT</v-btn
               >
             </v-list-item-title>
           </v-list-item>
@@ -889,14 +889,14 @@
           >
             <v-list-item-title>
               <v-btn @click="child.data.luva = true" text color="success" small
-                >Ã¨ uma LUVA</v-btn
+                  >É uma LUVA</v-btn
               >
             </v-list-item-title>
           </v-list-item>
           <v-list-item v-if="child.data.luva">
             <v-list-item-title class="primary--text">
               <v-btn @click="child.data.luva = false" text color="success" small
-                >Não Ã¨ uma LUVA</v-btn
+                  >Não é uma LUVA</v-btn
               >
             </v-list-item-title>
           </v-list-item>
@@ -1263,7 +1263,7 @@ export default {
             buttonSize: "sm",
             okVariant: "danger",
             okTitle: "SIM",
-            cancelTitle: "NÃƒO",
+            cancelTitle: "NÃO",
             footerClass: "p-2",
             hideHeaderClose: false,
             centered: true,
@@ -1586,7 +1586,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "TODOS OS CAMPOS SÃƒO OBRIGATÃ“RIOS",
+          msg: "TODOS OS CAMPOS SÃO OBRIGATÓRIOS",
           type: "warning",
           time: 3000,
         });
@@ -1692,7 +1692,7 @@ export default {
       } else {
         this.set_snackbar({
           show: true,
-          msg: "TODOS OS CAMPOS SÃƒO OBRIGATÃ“RIOS",
+          msg: "TODOS OS CAMPOS SÃO OBRIGATÓRIOS",
           type: "warning",
           time: 3000,
         });
