@@ -53,7 +53,7 @@
                       outlined
                     >
                       <h5>
-                        SITE EM MANUTENÃ‡ÃƒO
+                        SITE EM MANUTENÇÃO
                       </h5>
                     </v-alert>
                   </v-col>
@@ -61,7 +61,7 @@
                 <v-row class="ma-2" justify="center" no-gutters>
                   <v-col cols="5">
                     <span
-                      ><strong>ÃšLTIMA EDIÃ‡ÃƒO POR:</strong>
+                      ><strong>ÚLTIMA EDIÇÃO POR:</strong>
                       {{ editado_por }}</span
                     >
                   </v-col>
@@ -79,7 +79,7 @@
                       v-model="selectedStatus"
                       :items="[
                         { text: 'ONLINE', value: 0 },
-                        { text: 'EM MANUTENÃ‡ÃƒO', value: 1 },
+                        { text: 'EM MANUTENÇÃO', value: 1 },
                       ]"
                       label="Site Online ou Em Manutenção"
                       required
