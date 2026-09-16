@@ -1,15 +1,30 @@
 ﻿import api from '../../../plugins/axios'
+
+const createDefaultAvisos = () => ([
+    { id: 1, msg: "", modal: 0 },
+    { id: 2, msg: "", modal: 0 },
+    { id: 3, msg: "", modal: 0 },
+    { id: 4, msg: "", modal: 0 },
+    { id: 5, msg: "", modal: 0 },
+    { id: 6, msg: "", modal: 0 }
+]);
+
+const normalizeAvisos = (value) => {
+    const defaults = createDefaultAvisos();
+    if (!Array.isArray(value) || !value.length) {
+        return defaults;
+    }
+
+    return defaults.map((item) => {
+        const found = value.find((entry) => Number(entry.id) === item.id);
+        return found ? { ...item, ...found } : item;
+    });
+};
+
 export default {
     state: {
         manutencao: {},
-        avisoGeralAcademico: [
-            { id: 0, msg: "", modal: 0},
-            { id: 1, msg: "", modal: 0},
-            { id: 2, msg: "", modal: 0},
-            { id: 3, msg: "", modal: 0},
-            { id: 4, msg: "", modal: 0},
-            { id: 5, msg: "", modal: 0}
-        ],
+        avisoGeralAcademico: createDefaultAvisos(),
         error: false
     },
 
@@ -20,7 +35,7 @@ export default {
             state.manutencao = {...value };
         },
         setAvisoGeralAcademico(state, value) {
-            state.avisoGeralAcademico = value ;
+            state.avisoGeralAcademico = normalizeAvisos(value);
         },
         setError(state, value) {
             state.error = value;
@@ -32,9 +47,11 @@ export default {
             let res = await api.get("/manutencao/getManutencao", {});
 
             if (res.data) {
-                context.commit('setManutencao', res.data.retorno);
+                const payload = res.data.retorno || res.data;
+                context.commit('setManutencao', payload || {});
+                context.commit('setError', false);
             } else {
-                context.commit('set_error', true);
+                context.commit('setError', true);
             }
         },
 
@@ -52,7 +69,9 @@ export default {
             let res = await api.get("/manutencao/getAvisoGeralAcademico", {});
             if (res.data) {
                 context.commit('setAvisoGeralAcademico', res.data);
+                context.commit('setError', false);
             } else {
+                context.commit('setAvisoGeralAcademico', []);
                 context.commit('setError', true);
             }
         },
