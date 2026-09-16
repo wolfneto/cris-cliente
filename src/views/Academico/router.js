@@ -17,6 +17,14 @@ import Aluno from './Aluno';
 import Outros from './Outros';
 
 export default [{
+        path: '/academico/buscar',
+        name: 'Buscar Acadêmico',
+        component: Pedidos,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
         path: '/academico/gerenciar/inicio',
         name: 'Gerenciar Site Acadêmico',
         component: Inicio,
