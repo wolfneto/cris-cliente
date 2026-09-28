@@ -300,9 +300,15 @@
                   </v-list-item>
                   <v-list-item
                     @click="aprovarLista(item)"
-                    v-if="item.status == 0 && permissoes.aprovar == 1"
+                    v-if="
+                      permissoes.aprovar == 1 &&
+                      !item.tem_copia_site &&
+                      (item.status == 0 || item.status == 1)
+                    "
                   >
-                    <v-list-item-title>Aprovar</v-list-item-title>
+                    <v-list-item-title>
+                      {{ item.status == 1 ? 'Reprocessar publicação' : 'Aprovar' }}
+                    </v-list-item-title>
                   </v-list-item>
                   <v-list-item
                     v-if="
