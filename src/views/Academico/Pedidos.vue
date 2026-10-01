@@ -3509,6 +3509,7 @@ export default {
       //     return "text-center warning-reservado";
       //   }
       // }
+      if (!row || !row.pagamento) return;
 
       if (row.credito != null) {
         if (row.pagamento.status_pagamento != "RESERVA PAGA") {
