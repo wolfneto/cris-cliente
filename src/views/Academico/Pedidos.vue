@@ -3271,13 +3271,13 @@ export default {
     objEnderecoEntrega: {},
     dialogItens: false,
     objectIndex: -1,
-    objectItem: {
+    _objectItem: {
       aluno: {},
       credito: {},
       boleto: {},
       pagamento: { credito: {}, boleto: {} },
     },
-    objectComprovante: {
+    _objectComprovante: {
       pagamento: {},
       credito: {},
       boleto: {},
@@ -3369,9 +3369,32 @@ export default {
     statusPagamento: function () {
       let data = [];
       for (const pedido of this.pedidos) {
-        data.push(pedido.pagamento.status_pagamento);
+        data.push(pedido.pagamento && pedido.pagamento.status_pagamento);
       }
       return data;
+    },
+    // garante que .pagamento nunca seja null nos templates que leem objectItem direto
+    objectItem: {
+      get() {
+        return this._objectItem;
+      },
+      set(value) {
+        this._objectItem = {
+          ...value,
+          pagamento: value.pagamento || { credito: {}, boleto: {} },
+        };
+      },
+    },
+    objectComprovante: {
+      get() {
+        return this._objectComprovante;
+      },
+      set(value) {
+        this._objectComprovante = {
+          ...value,
+          pagamento: value.pagamento || {},
+        };
+      },
     },
   },
   methods: {
