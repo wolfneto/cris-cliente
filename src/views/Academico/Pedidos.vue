@@ -3271,13 +3271,13 @@ export default {
     objEnderecoEntrega: {},
     dialogItens: false,
     objectIndex: -1,
-    _objectItem: {
+    objectItemData: {
       aluno: {},
       credito: {},
       boleto: {},
       pagamento: { credito: {}, boleto: {} },
     },
-    _objectComprovante: {
+    objectComprovanteData: {
       pagamento: {},
       credito: {},
       boleto: {},
@@ -3374,25 +3374,26 @@ export default {
       return data;
     },
     // garante que .pagamento nunca seja null nos templates que leem objectItem direto
+    // (underscore no nome da data quebra o proxy do Vue 2, por isso "Data" como sufixo)
     objectItem: {
       get() {
-        return this._objectItem;
+        return this.objectItemData;
       },
       set(value) {
-        this._objectItem = {
+        this.objectItemData = {
           ...value,
-          pagamento: value.pagamento || { credito: {}, boleto: {} },
+          pagamento: (value && value.pagamento) || { credito: {}, boleto: {} },
         };
       },
     },
     objectComprovante: {
       get() {
-        return this._objectComprovante;
+        return this.objectComprovanteData;
       },
       set(value) {
-        this._objectComprovante = {
+        this.objectComprovanteData = {
           ...value,
-          pagamento: value.pagamento || {},
+          pagamento: (value && value.pagamento) || {},
         };
       },
     },
