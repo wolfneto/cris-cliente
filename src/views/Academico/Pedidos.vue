@@ -264,7 +264,7 @@
                   v-if="
                     row.emitido == 0 &&
                     row.novo_pedido == 1 &&
-                    row.pagamento.tipo_pagamento == 'CREDITO'
+                    row.pagamento?.tipo_pagamento == 'CREDITO'
                   "
                 >
                   <br />
@@ -275,7 +275,7 @@
                 <span
                   v-if="
                     row.emitido == 0 &&
-                    row.pagamento.tipo_pagamento == 'CREDITO' &&
+                    row.pagamento?.tipo_pagamento == 'CREDITO' &&
                     row.pagamento.parentesco != '' &&
                     row.credito != null &&
                     row.credito.hasOwnProperty('banco') &&
@@ -291,7 +291,7 @@
                 <span
                   v-if="
                     row.emitido == 0 &&
-                    row.pagamento.tipo_pagamento == 'CREDITO'
+                    row.pagamento?.tipo_pagamento == 'CREDITO'
                   "
                 >
                   <div v-if="row.credito != null && row.credito.hasOwnProperty('banco') && row.credito.banco == 'SAFRA'">
@@ -396,16 +396,16 @@
                   @click="show($event, row)"
                   class="text-center"
                   :class="classWarning(row)"
-                  :color="colorStatusSistema(row.pagamento.status_pagamento)"
+                  :color="colorStatusSistema(row.pagamento?.status_pagamento)"
                   dark
                   heigth="40"
                 >
-                  <div v-if="row.pagamento.hasOwnProperty('boleto')">
+                  <div v-if="row.pagamento?.hasOwnProperty('boleto')">
                     <span
                       v-if="row.boleto.vencido && row.boleto.status != 'PAGO'"
                       >BOLETO VENCIDO</span
                     >
-                    <span v-else>{{ row.pagamento.status_pagamento }}</span>
+                    <span v-else>{{ row.pagamento?.status_pagamento }}</span>
                   </div>
                   <div v-else>
                     <span
@@ -413,7 +413,7 @@
                     >
                       PIX DEVOLVIDO
                     </span>
-                    <span v-else>{{ row.pagamento.status_pagamento }}</span>
+                    <span v-else>{{ row.pagamento?.status_pagamento }}</span>
                     <div v-if="row.hasOwnProperty('credito')">
                       <div
                         style="margin-top: -3px"
@@ -435,7 +435,7 @@
               </div>
               <div v-if="col.name == 'desconto'">
                 {{ $money_format(row.valor_desconto) }}
-                <div v-if="row.pagamento.tipo_pagamento == 'BOLETO'">
+                <div v-if="row.pagamento?.tipo_pagamento == 'BOLETO'">
                   <i>Ã€ Vista ({{ row.boleto.desconto }}%): </i> <br />
                   {{
                     $money_format(
@@ -444,7 +444,7 @@
                     )
                   }}
                 </div>
-                <div v-else-if="row.pagamento.tipo_pagamento == 'PIX'">
+                <div v-else-if="row.pagamento?.tipo_pagamento == 'PIX'">
                   <i>Ã€ Vista ({{ row.pix.desconto_valor }}%): </i> <br />
                   {{
                     $money_format(
@@ -464,7 +464,7 @@
               </div>
               <div v-if="col.name == 'valor_total_final'">
                 <div v-if="row.desconto_representantes">
-                  <div v-if="row.pagamento.tipo_pagamento == 'BOLETO'">
+                  <div v-if="row.pagamento?.tipo_pagamento == 'BOLETO'">
                     {{
                       $money_format(
                         row.valor_total_final -
@@ -474,7 +474,7 @@
                       )
                     }}
                   </div>
-                  <div v-else-if="row.pagamento.tipo_pagamento == 'PIX'">
+                  <div v-else-if="row.pagamento?.tipo_pagamento == 'PIX'">
                     {{
                       $money_format(
                         row.valor_total_final -
@@ -489,7 +489,7 @@
                   </div>
                 </div>
                 <div v-else>
-                  <div v-if="row.pagamento.tipo_pagamento == 'PIX'">
+                  <div v-if="row.pagamento?.tipo_pagamento == 'PIX'">
                     {{
                       $money_format(
                         row.valor_total_final -
@@ -498,7 +498,7 @@
                       )
                     }}
                   </div>
-                  <div v-else-if="row.pagamento.tipo_pagamento == 'BOLETO'">
+                  <div v-else-if="row.pagamento?.tipo_pagamento == 'BOLETO'">
                     {{
                       $money_format(
                         row.valor_total_final -
@@ -3461,7 +3461,7 @@ export default {
     },
     showDialogEmitirTodos() {
       this.pedidosEmitirTodos = this.pedidos.filter(
-        (p) => p.pagamento.tipo_pagamento != "CREDITO" && p.emitido != 1
+        (p) => p.pagamento?.tipo_pagamento != "CREDITO" && p.emitido != 1
       );
       this.dialogEmitirTodos = true;
     },
