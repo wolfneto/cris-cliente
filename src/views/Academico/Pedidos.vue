@@ -2870,10 +2870,10 @@
           >
             <template v-slot:item.pagamento="{ item }">
               <v-chip
-                :color="colorStatusSistema(item.pagamento.status_pagamento)"
+                :color="colorStatusSistema(item.pagamento && item.pagamento.status_pagamento)"
                 dark
               >
-                {{ item.pagamento.status_pagamento }}
+                {{ item.pagamento && item.pagamento.status_pagamento }}
               </v-chip>
             </template>
             <template v-slot:item.aluno="{ item }">
@@ -2881,7 +2881,7 @@
             </template>
             <template v-slot:item.valor_total="{ item }">
               <div v-if="item.desconto_representantes">
-                <div v-if="item.pagamento.tipo_pagamento == 'BOLETO'">
+                <div v-if="item.pagamento && item.pagamento.tipo_pagamento == 'BOLETO'">
                   {{
                     $money_format(
                       item.valor_total_final -
@@ -2891,7 +2891,7 @@
                     )
                   }}
                 </div>
-                <div v-else-if="item.pagamento.tipo_pagamento == 'PIX'">
+                <div v-else-if="item.pagamento && item.pagamento.tipo_pagamento == 'PIX'">
                   {{
                     $money_format(
                       item.valor_total_final -
@@ -2906,7 +2906,7 @@
                 </div>
               </div>
               <div v-else>
-                <div v-if="item.pagamento.tipo_pagamento == 'PIX'">
+                <div v-if="item.pagamento && item.pagamento.tipo_pagamento == 'PIX'">
                   {{
                     $money_format(
                       item.valor_total_final -
@@ -2915,7 +2915,7 @@
                     )
                   }}
                 </div>
-                <div v-else-if="item.pagamento.tipo_pagamento == 'BOLETO'">
+                <div v-else-if="item.pagamento && item.pagamento.tipo_pagamento == 'BOLETO'">
                   {{
                     $money_format(
                       item.valor_total_final -
