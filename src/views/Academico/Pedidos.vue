@@ -431,14 +431,14 @@
               </div>
               <div v-if="col.name == 'desconto'">
                 {{ $money_format(row.valor_desconto) }}
-                <div v-if="row.pagamento && row.pagamento.tipo_pagamento == 'BOLETO'">
+                <div v-if="row.pagamento && row.pagamento.tipo_pagamento == 'BOLETO' && row.boleto">
                   <i>Ã€ Vista ({{ row.boleto.desconto }}%): </i> <br />
                   {{ $money_format(
                     (row.valor_total - row.valor_desconto) *
                       (row.boleto.desconto / 100)
                   ) }}
                 </div>
-                <div v-else-if="row.pagamento && row.pagamento.tipo_pagamento == 'PIX'">
+                <div v-else-if="row.pagamento && row.pagamento.tipo_pagamento == 'PIX' && row.pix">
                   <i>Ã€ Vista ({{ row.pix.desconto_valor }}%): </i> <br />
                   {{ $money_format(
                     (row.valor_total - row.valor_desconto) *
@@ -454,7 +454,7 @@
               </div>
               <div v-if="col.name == 'valor_total_final'">
                 <div v-if="row.desconto_representantes">
-                  <div v-if="row.pagamento && row.pagamento.tipo_pagamento == 'BOLETO'">
+                  <div v-if="row.pagamento && row.pagamento.tipo_pagamento == 'BOLETO' && row.boleto">
                     {{ $money_format(
                       row.valor_total_final -
                         row.valor_desconto -
@@ -462,7 +462,7 @@
                           (row.boleto.desconto / 100)
                     ) }}
                   </div>
-                  <div v-else-if="row.pagamento && row.pagamento.tipo_pagamento == 'PIX'">
+                  <div v-else-if="row.pagamento && row.pagamento.tipo_pagamento == 'PIX' && row.pix">
                     {{ $money_format(
                       row.valor_total_final -
                         row.valor_desconto -
@@ -475,14 +475,14 @@
                   </div>
                 </div>
                 <div v-else>
-                  <div v-if="row.pagamento && row.pagamento.tipo_pagamento == 'PIX'">
+                  <div v-if="row.pagamento && row.pagamento.tipo_pagamento == 'PIX' && row.pix">
                     {{ $money_format(
                       row.valor_total_final -
                         (row.valor_total - row.valor_desconto) *
                           (row.pix.desconto_valor / 100)
                     ) }}
                   </div>
-                  <div v-else-if="row.pagamento && row.pagamento.tipo_pagamento == 'BOLETO'">
+                  <div v-else-if="row.pagamento && row.pagamento.tipo_pagamento == 'BOLETO' && row.boleto">
                     {{ $money_format(
                       row.valor_total_final -
                         (row.valor_total - row.valor_desconto) *
@@ -2778,7 +2778,7 @@
             </template>
             <template v-slot:item.valor_total="{ item }">
               <div v-if="item.desconto_representantes">
-                <div v-if="item.pagamento && item.pagamento.tipo_pagamento == 'BOLETO'">
+                <div v-if="item.pagamento && item.pagamento.tipo_pagamento == 'BOLETO' && item.boleto">
                   {{ $money_format(
                     item.valor_total_final -
                       item.valor_desconto -
@@ -2786,7 +2786,7 @@
                         (item.boleto.desconto / 100)
                   ) }}
                 </div>
-                <div v-else-if="item.pagamento && item.pagamento.tipo_pagamento == 'PIX'">
+                <div v-else-if="item.pagamento && item.pagamento.tipo_pagamento == 'PIX' && item.pix">
                   {{ $money_format(
                     item.valor_total_final -
                       item.valor_desconto -
@@ -2799,14 +2799,14 @@
                 </div>
               </div>
               <div v-else>
-                <div v-if="item.pagamento && item.pagamento.tipo_pagamento == 'PIX'">
+                <div v-if="item.pagamento && item.pagamento.tipo_pagamento == 'PIX' && item.pix">
                   {{ $money_format(
                     item.valor_total_final -
                       (item.valor_total - item.valor_desconto) *
                         (item.pix.desconto_valor / 100)
                   ) }}
                 </div>
-                <div v-else-if="item.pagamento && item.pagamento.tipo_pagamento == 'BOLETO'">
+                <div v-else-if="item.pagamento && item.pagamento.tipo_pagamento == 'BOLETO' && item.boleto">
                   {{ $money_format(
                     item.valor_total_final -
                       (item.valor_total - item.valor_desconto) *
