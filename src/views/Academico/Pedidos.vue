@@ -77,41 +77,39 @@
                     >Todos Pedidos</v-btn
                   >
                 </v-col>
-              </v-row>
+              </row>
               <v-row v-if="emitido == 0 || emitido == 1" dense>
                 <v-col>
                   <v-btn
                     class="light-blue lighten-1 white--text"
-                    @click="excel('reservado')"
-                    small
+                    @click="excel('reservado')" small
                     >Reservados</v-btn
                   >
                 </v-col>
-              </v-row>
+              </row>
               <v-row v-if="emitido == 1 || emitido == 2" dense>
                 <v-col>
                   <v-btn class="success" @click="excel('reserva_paga')" small
                     >Reserva Paga</v-btn
                   >
                 </v-col>
-              </v-row>
+              </row>
               <v-row v-if="emitido == 0" dense>
                 <v-col>
                   <v-btn
                     class="warning"
-                    @click="excel('boleto_em_aberto')"
-                    small
+                    @click="excel('boleto_em_aberto')" small
                     >Boleto em Aberto</v-btn
                   >
                 </v-col>
-              </v-row>
+              </row>
               <v-row v-if="emitido == 1 || emitido == 2" dense>
                 <v-col>
                   <v-btn class="success" @click="excel('boleto_pago')" small
                     >Boleto Pago</v-btn
                   >
                 </v-col>
-              </v-row>
+              </row>
               <!-- <v-row dense>
                 <v-col>
                   <v-btn
@@ -138,8 +136,7 @@
           x-large
           classs="ml-4"
           icon
-          ><v-icon>fas fa-arrow-alt-circle-down</v-icon></v-btn
-        >
+          ><v-icon>fas fa-arrow-alt-circle-down</v-icon></v-btn>
         <div class="flex-grow-1"></div>
         <v-text-field
           class="uppercase"
@@ -170,7 +167,7 @@
                     label="Grupos"
                   ></v-select>
                 </v-col>
-              </v-row>
+              </row>
             </v-container>
             <v-card-actions>
               <v-spacer></v-spacer>
@@ -314,8 +311,7 @@
               </div>
               <div v-if="col.name == 'aluno'">
                 <span @click="copy('nome', index)"
-                  >{{ row.aluno.nome }} {{ row.aluno.sobrenome }}</span
-                >
+                  >{{ row.aluno.nome }} {{ row.aluno.sobrenome }}</span>
                 <input
                   type="hidden"
                   :id="'nomeCopy' + index"
@@ -437,52 +433,42 @@
                 {{ $money_format(row.valor_desconto) }}
                 <div v-if="row.pagamento && row.pagamento.tipo_pagamento == 'BOLETO'">
                   <i>Ã€ Vista ({{ row.boleto.desconto }}%): </i> <br />
-                  {{
-                    $money_format(
-                      (row.valor_total - row.valor_desconto) *
-                        (row.boleto.desconto / 100)
-                    )
-                  }}
+                  {{ $money_format(
+                    (row.valor_total - row.valor_desconto) *
+                      (row.boleto.desconto / 100)
+                  ) }}
                 </div>
                 <div v-else-if="row.pagamento && row.pagamento.tipo_pagamento == 'PIX'">
                   <i>Ã€ Vista ({{ row.pix.desconto_valor }}%): </i> <br />
-                  {{
-                    $money_format(
-                      (row.valor_total - row.valor_desconto) *
-                        (row.pix.desconto_valor / 100)
-                    )
-                  }}
+                  {{ $money_format(
+                    (row.valor_total - row.valor_desconto) *
+                      (row.pix.desconto_valor / 100)
+                  ) }}
                 </div>
               </div>
               <div v-if="col.name == 'valor_frete'">
-                {{
-                  new Intl.NumberFormat("pt-BR", {
-                    style: "currency",
-                    currency: "BRL",
-                  }).format(row.valor_frete)
-                }}
+                {{ new Intl.NumberFormat("pt-BR", {
+                  style: "currency",
+                  currency: "BRL",
+                }).format(row.valor_frete) }}
               </div>
               <div v-if="col.name == 'valor_total_final'">
                 <div v-if="row.desconto_representantes">
                   <div v-if="row.pagamento && row.pagamento.tipo_pagamento == 'BOLETO'">
-                    {{
-                      $money_format(
-                        row.valor_total_final -
-                          row.valor_desconto -
-                          (row.valor_total - row.valor_desconto) *
-                            (row.boleto.desconto / 100)
-                      )
-                    }}
+                    {{ $money_format(
+                      row.valor_total_final -
+                        row.valor_desconto -
+                        (row.valor_total - row.valor_desconto) *
+                          (row.boleto.desconto / 100)
+                    ) }}
                   </div>
                   <div v-else-if="row.pagamento && row.pagamento.tipo_pagamento == 'PIX'">
-                    {{
-                      $money_format(
-                        row.valor_total_final -
-                          row.valor_desconto -
-                          (row.valor_total - row.valor_desconto) *
-                            (row.pix.desconto_valor / 100)
-                      )
-                    }}
+                    {{ $money_format(
+                      row.valor_total_final -
+                        row.valor_desconto -
+                        (row.valor_total - row.valor_desconto) *
+                          (row.pix.desconto_valor / 100)
+                    ) }}
                   </div>
                   <div v-else>
                     {{ row.valor_total_final - row.valor_desconto }}
@@ -490,22 +476,18 @@
                 </div>
                 <div v-else>
                   <div v-if="row.pagamento && row.pagamento.tipo_pagamento == 'PIX'">
-                    {{
-                      $money_format(
-                        row.valor_total_final -
-                          (row.valor_total - row.valor_desconto) *
-                            (row.pix.desconto_valor / 100)
-                      )
-                    }}
+                    {{ $money_format(
+                      row.valor_total_final -
+                        (row.valor_total - row.valor_desconto) *
+                          (row.pix.desconto_valor / 100)
+                    ) }}
                   </div>
                   <div v-else-if="row.pagamento && row.pagamento.tipo_pagamento == 'BOLETO'">
-                    {{
-                      $money_format(
-                        row.valor_total_final -
-                          (row.valor_total - row.valor_desconto) *
-                            (row.boleto.desconto / 100)
-                      )
-                    }}
+                    {{ $money_format(
+                      row.valor_total_final -
+                        (row.valor_total - row.valor_desconto) *
+                          (row.boleto.desconto / 100)
+                    ) }}
                   </div>
                   <div v-else>
                     <span v-if="row.acrescimo != 0">
@@ -603,31 +585,25 @@
           {{ objectItem.credito.dias_p_extorno }}
           <br />
           <b>Frete:</b>
-          {{
-            new Intl.NumberFormat("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            }).format(objectItem.valor_frete)
-          }}
+          {{ new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          }).format(objectItem.valor_frete) }}
           <br />
           <b>Valor Pedido:</b>
-          {{
-            new Intl.NumberFormat("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            }).format(objectItem.valor_total)
-          }}
+          {{ new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          }).format(objectItem.valor_total) }}
           <br />
           <div class="title font-weight-black">
             <b>Valor Total:</b>
-            {{
-              new Intl.NumberFormat("pt-BR", {
-                style: "currency",
-                currency: "BRL",
-              }).format(
-                objectItem.valor_total_final * (1 + objectItem.acrescimo / 100)
-              )
-            }}
+            {{ new Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            }).format(
+              objectItem.valor_total_final * (1 + objectItem.acrescimo / 100)
+            ) }}
             <b v-if="objectItem.acrescimo != 0">
               ({{ objectItem.acrescimo }}% juros)</b
             >
@@ -635,10 +611,9 @@
           <v-divider></v-divider>
 
           <b>CPF:</b>
-          {{
-            objectItem.aluno.cpf == undefined
-              ? ""
-              : putMask(objectItem.aluno.cpf)
+          {{ objectItem.aluno.cpf == undefined
+            ? ""
+            : putMask(objectItem.aluno.cpf)
           }}
           <br />
           <b>Data Nascimento:</b> {{ objectItem.aluno.nascimento }}
@@ -649,10 +624,9 @@
           <b>Email Cadastro:</b> {{ objectItem.aluno.email }}
           <br />
           <b>Telefone Cadastro:</b>
-          {{
-            objectItem.aluno.celular == undefined
-              ? ""
-              : putMask(objectItem.aluno.celular, "celular")
+          {{ objectItem.aluno.celular == undefined
+            ? ""
+            : putMask(objectItem.aluno.celular, "celular")
           }}
           <br />
 
@@ -665,8 +639,7 @@
             <b>Parentesco:</b> {{ objectItem.pagamento.parentesco }}
             <br />
             <b>Nome Titular:</b>
-            {{
-              objectItem.credito == null ? "" : objectItem.credito.nome_cartao
+            {{ objectItem.credito == null ? "" : objectItem.credito.nome_cartao
             }}
             <br />
             <b class="error--text">CLIENTE NÃƒO Ã‰ O TITULAR</b>
@@ -744,32 +717,26 @@
           {{ objectItem.credito.bandeira }}
           <br />
           <b>Frete:</b>
-          {{
-            new Intl.NumberFormat("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            }).format(objectItem.valor_frete)
-          }}
+          {{ new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          }).format(objectItem.valor_frete) }}
           <br />
           <b>Valor Pedido:</b>
-          {{
-            new Intl.NumberFormat("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            }).format(objectItem.valor_total)
-          }}
+          {{ new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          }).format(objectItem.valor_total) }}
 
           <br />
           <div class="title font-weight-black">
             <b>Valor Total:</b>
-            {{
-              new Intl.NumberFormat("pt-BR", {
-                style: "currency",
-                currency: "BRL",
-              }).format(
-                objectItem.valor_total_final * (1 + objectItem.acrescimo / 100)
-              )
-            }}
+            {{ new Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            }).format(
+              objectItem.valor_total_final * (1 + objectItem.acrescimo / 100)
+            ) }}
             <b v-if="objectItem.acrescimo != 0">
               ({{ objectItem.acrescimo }}% de juros)</b
             >
@@ -833,10 +800,9 @@
 
           <v-divider></v-divider>
           <b>CPF:</b>
-          {{
-            objectItem.aluno.cpf == undefined
-              ? ""
-              : putMask(objectItem.aluno.cpf)
+          {{ objectItem.aluno.cpf == undefined
+            ? ""
+            : putMask(objectItem.aluno.cpf)
           }}
           <br />
           <b>Data Nascimento:</b> {{ objectItem.aluno.nascimento }}
@@ -847,10 +813,9 @@
           <b>Email Cadastro:</b> {{ objectItem.aluno.email }}
           <br />
           <b>Telefone Cadastro:</b>
-          {{
-            objectItem.aluno.celular == undefined
-              ? ""
-              : putMask(objectItem.aluno.celular, "celular")
+          {{ objectItem.aluno.celular == undefined
+            ? ""
+            : putMask(objectItem.aluno.celular, "celular")
           }}
           <br />
 
@@ -863,8 +828,7 @@
             <b>Parentesco:</b> {{ objectItem.pagamento.parentesco }}
             <br />
             <b>Nome Titular:</b>
-            {{
-              objectItem.credito == null ? "" : objectItem.credito.nome_cartao
+            {{ objectItem.credito == null ? "" : objectItem.credito.nome_cartao
             }}
             <br />
             <b class="error--text">CLIENTE NÃƒO Ã‰ O TITULAR</b>
@@ -905,20 +869,16 @@
           {{ objectItem.boleto.our_number }}
           <br />
           <b>Frete:</b>
-          {{
-            new Intl.NumberFormat("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            }).format(objectItem.valor_frete)
-          }}
+          {{ new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          }).format(objectItem.valor_frete) }}
           <br />
           <b>Valor Pedido:</b>
-          {{
-            new Intl.NumberFormat("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            }).format(objectItem.valor_total)
-          }}
+          {{ new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          }).format(objectItem.valor_total) }}
           <br />
           <div v-if="objectItem.desconto_representantes">
             <b>Desconto CPF:</b>
@@ -926,22 +886,18 @@
             <br />
           </div>
           <b>Desconto Ã  Vista ({{ objectItem.boleto.desconto }}%):</b>
-          {{
-            $money_format(
-              (objectItem.valor_total - objectItem.valor_desconto) *
-                (objectItem.boleto.desconto / 100)
-            )
-          }}
+          {{ $money_format(
+            (objectItem.valor_total - objectItem.valor_desconto) *
+              (objectItem.boleto.desconto / 100)
+          ) }}
           <br />
           <b>Valor Pago:</b>
-          {{
-            $money_format(
-              objectItem.valor_total_final -
-                objectItem.valor_desconto -
-                (objectItem.valor_total - objectItem.valor_desconto) *
-                  (objectItem.boleto.desconto / 100)
-            )
-          }}
+          {{ $money_format(
+            objectItem.valor_total_final -
+              objectItem.valor_desconto -
+              (objectItem.valor_total - objectItem.valor_desconto) *
+                (objectItem.boleto.desconto / 100)
+          ) }}
           <br />
           <b>Emitido em:</b>
           {{ objectItem.boleto.issue_date }}
@@ -1005,8 +961,7 @@
           <div class="flex-grow-1"></div>
           <v-btn text @click="showMenu = false">Voltar</v-btn>
           <v-btn color="success" text @click="enviarEmailLink(objectItem)"
-            >Enviar por E-mail</v-btn
-          >
+            >Enviar por E-mail</v-btn>
         </v-card-actions>
       </v-card>
       <v-card v-else-if="objectItem.pagamento.status_pagamento == 'CANCELADO'">
@@ -1067,12 +1022,10 @@
           {{ objectItem.pix.banco }}
           <br />
           <b>Frete:</b>
-          {{
-            new Intl.NumberFormat("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            }).format(objectItem.valor_frete)
-          }}
+          {{ new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          }).format(objectItem.valor_frete) }}
           <br />
           <b>Criado em:</b>
           {{ objectItem.pix.criado_em }}
@@ -1082,12 +1035,10 @@
           <br />
           <b>Valor:</b>
           R$
-          {{
-            new Intl.NumberFormat("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            }).format(objectItem.pix.valor)
-          }}
+          {{ new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          }).format(objectItem.pix.valor) }}
           <br />
           <b>Observação:</b>
           {{ objectItem.pix.obs }}
@@ -1107,7 +1058,7 @@
               dialogCancelarPix = true;
               showMenu = false;
             "
-            >Estornar</v-btn
+            >Estornar</v-btn>
           >
           <v-btn text @click="showMenu = false">Voltar</v-btn>
         </v-card-actions>
@@ -1123,12 +1074,10 @@
           {{ objectItem.pix.banco }}
           <br />
           <b>Frete:</b>
-          {{
-            new Intl.NumberFormat("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            }).format(objectItem.valor_frete)
-          }}
+          {{ new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          }).format(objectItem.valor_frete) }}
           <br />
           <b>Criado em:</b>
           {{ objectItem.pix.criado_em }}
@@ -1141,12 +1090,10 @@
           <br />
           <b>Valor:</b>
           R$
-          {{
-            new Intl.NumberFormat("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            }).format(objectItem.pix.valor)
-          }}
+          {{ new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          }).format(objectItem.pix.valor) }}
           <br />
           <b>Observação:</b>
           {{ objectItem.pix.obs }}
@@ -1199,11 +1146,9 @@
             >
               <br />
               <b>Data:</b>
-              {{
-                $moment_format_sub_2(
-                  log.obj_retorno.details[0].antifraud.transaction_datetime
-                )
-              }}
+              {{ $moment_format_sub_2(
+                log.obj_retorno.details[0].antifraud.transaction_datetime
+              ) }}
               <br />
               <b>Status:</b>
               {{ log.obj_retorno.details[0].antifraud.code }}
@@ -1254,8 +1199,7 @@
                   log.obj_retorno.details[0].description ==
                   'Internal Server Error'
                 "
-                >Erro interno do Banco</span
-              >
+                >Erro interno do Banco</span>
               <br />
             </div>
             <div v-else-if="log.obj_retorno.status_code == '400'">
@@ -1365,10 +1309,9 @@
           </div>
           <br />
           <b>Total Fat/Conf:</b>
-          {{
-            (pedidosSaldoDcInfo.total + objectItem.valor_faturado)
-              .toFixed(2)
-              .replace(",", ",")
+          {{ (pedidosSaldoDcInfo.total + objectItem.valor_faturado)
+            .toFixed(2)
+            .replace(",", ",")
           }}
         </v-card-text>
         <v-divider></v-divider>
@@ -1632,41 +1575,34 @@
           {{ objectItem.credito.authorized_at }}
           <br />
           <b>Frete:</b>
-          {{
-            new Intl.NumberFormat("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            }).format(objectItem.valor_frete)
-          }}
+          {{ new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          }).format(objectItem.valor_frete) }}
           <br />
           <b>Valor Pedido:</b>
-          {{
-            new Intl.NumberFormat("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            }).format(objectItem.valor_total)
-          }}
+          {{ new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          }).format(objectItem.valor_total) }}
           <br />
           <div class="title font-weight-black">
             <b>Valor Total:</b>
-            {{
-              new Intl.NumberFormat("pt-BR", {
-                style: "currency",
-                currency: "BRL",
-              }).format(
-                objectItem.valor_total_final * (1 + objectItem.acrescimo / 100)
-              )
-            }}
+            {{ new Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            }).format(
+              objectItem.valor_total_final * (1 + objectItem.acrescimo / 100)
+            ) }}
             <b v-if="objectItem.acrescimo != 0">
               ({{ objectItem.acrescimo }}% de juros)</b
             >
           </div>
 
           <b>CPF:</b>
-          {{
-            objectItem.aluno.cpf == undefined
-              ? ""
-              : putMask(objectItem.aluno.cpf)
+          {{ objectItem.aluno.cpf == undefined
+            ? ""
+            : putMask(objectItem.aluno.cpf)
           }}
           <br />
           <b>Data Nascimento:</b> {{ objectItem.aluno.nascimento }}
@@ -1677,10 +1613,9 @@
           <b>Email Cadastro:</b> {{ objectItem.aluno.email }}
           <br />
           <b>Telefone Cadastro:</b>
-          {{
-            objectItem.aluno.celular == undefined
-              ? ""
-              : putMask(objectItem.aluno.celular, "celular")
+          {{ objectItem.aluno.celular == undefined
+            ? ""
+            : putMask(objectItem.aluno.celular, "celular")
           }}
           <br />
 
@@ -1693,8 +1628,7 @@
             <b>Parentesco:</b> {{ objectItem.pagamento.parentesco }}
             <br />
             <b>Nome Titular:</b>
-            {{
-              objectItem.credito == null ? "" : objectItem.credito.nome_cartao
+            {{ objectItem.credito == null ? "" : objectItem.credito.nome_cartao
             }}
             <br />
             <b class="error--text">CLIENTE NÃƒO Ã‰ O TITULAR</b>
@@ -1780,11 +1714,10 @@
           <p>Ã‰ isso mesmo que deseja fazer ?</p>
           <p v-if="typeof objectItem.credito.valor_cobrar == 'number'">
             VALOR A COBRAR: R$
-            {{
-              objectItem.credito.valor_cobrar
-                .toFixed(2)
-                .toString()
-                .replace(".", ",")
+            {{ objectItem.credito.valor_cobrar
+              .toFixed(2)
+              .toString()
+              .replace(".", ",")
             }}
           </p>
           <p v-else>
@@ -1853,10 +1786,9 @@
             ><h6>Deseja realmente enviar o pedido para o DC-INFO?</h6>
             <br />
             <b>CPF:</b>
-            {{
-              objectItem.aluno.cpf == undefined
-                ? ""
-                : putMask(objectItem.aluno.cpf)
+            {{ objectItem.aluno.cpf == undefined
+              ? ""
+              : putMask(objectItem.aluno.cpf)
             }}
             - {{ alunoReceita.situacao.descricao }}
             <br />
@@ -1868,10 +1800,9 @@
             <b>Email Cadastro:</b> {{ objectItem.aluno.email }}
             <br />
             <b>Telefone Cadastro:</b>
-            {{
-              objectItem.aluno.celular == undefined
-                ? ""
-                : putMask(objectItem.aluno.celular, "celular")
+            {{ objectItem.aluno.celular == undefined
+              ? ""
+              : putMask(objectItem.aluno.celular, "celular")
             }}
             <br />
             <div v-if="alunoReceita.nome != false">
@@ -1885,11 +1816,10 @@
               <h5 class="error--text">CPF NÃƒO EXISTE</h5>
             </div>
             <b>Valor do Pedido:</b>
-            {{
-              new Intl.NumberFormat("pt-BR", {
-                style: "currency",
-                currency: "BRL",
-              }).format(objectItem.valor_total * (1 + objectItem.acrescimo / 100)
+            {{ new Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            }).format(objectItem.valor_total * (1 + objectItem.acrescimo / 100)
               )
             }}
             <b v-if="objectItem.acrescimo != 0">
@@ -1908,10 +1838,9 @@
         <div v-else>
           <v-card-text id="printNovoCliente">
             <b>CPF:</b>
-            {{
-              objectItem.aluno.cpf == undefined
-                ? ""
-                : putMask(objectItem.aluno.cpf)
+            {{ objectItem.aluno.cpf == undefined
+              ? ""
+              : putMask(objectItem.aluno.cpf)
             }}
             - {{ alunoReceita.situacao.descricao }}
             <br />
@@ -1923,10 +1852,9 @@
             <b>Email Cadastro:</b> {{ objectItem.aluno.email }}
             <br />
             <b>Telefone Cadastro:</b>
-            {{
-              objectItem.aluno.celular == undefined
-                ? ""
-                : putMask(objectItem.aluno.celular, "celular")
+            {{ objectItem.aluno.celular == undefined
+              ? ""
+              : putMask(objectItem.aluno.celular, "celular")
             }}
             <br />
             <div v-if="alunoReceita.nome != false">
@@ -1940,11 +1868,10 @@
               <h5 class="error--text">CPF NÃƒO EXISTE</h5>
             </div>
             <b>Valor do Pedido:</b>
-            {{
-              new Intl.NumberFormat("pt-BR", {
-                style: "currency",
-                currency: "BRL",
-              }).format(objectItem.valor_total)
+            {{ new Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            }).format(objectItem.valor_total)
             }}
             <br />
             <div
@@ -1956,8 +1883,7 @@
               <b>Parentesco:</b> {{ objectItem.pagamento.parentesco }}
               <br />
               <b>Nome Titular:</b>
-              {{
-                objectItem.credito == null ? "" : objectItem.credito.nome_cartao
+              {{ objectItem.credito == null ? "" : objectItem.credito.nome_cartao
               }}
               <br />
               <b>CLIENTE NÃƒO Ã‰ O TITULAR</b>
@@ -1998,7 +1924,7 @@
                 senhaNovoCliente = '';
                 autorizacaoNovoCliente = false;
               "
-              >Voltar</v-btn
+              >Voltar</v-btn>
             >
             <v-btn
               v-if="autorizacaoNovoCliente"
@@ -2009,8 +1935,7 @@
                 senhaNovoCliente = '';
                 autorizacaoNovoCliente = false;
               "
-              >Emitir Pedido</v-btn
-            >
+              >Emitir Pedido</v-btn>
           </v-card-actions>
         </div>
       </v-card>
@@ -2023,8 +1948,7 @@
           <div class="flex-grow-1"></div>
           <v-btn color="primary" text @click="dialogExcluir = false">Não</v-btn>
           <v-btn color="error" text @click="excluirPedido(objectItem)"
-            >Excluir</v-btn
-          >
+            >Excluir</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -2035,10 +1959,9 @@
         </v-card-title>
         <v-card-text>
           <b>CPF:</b>
-          {{
-            objectItem.aluno.cpf == undefined
-              ? ""
-              : putMask(objectItem.aluno.cpf)
+          {{ objectItem.aluno.cpf == undefined
+            ? ""
+            : putMask(objectItem.aluno.cpf)
           }}
           - {{ alunoReceita.situacao.descricao }}
           <br />
@@ -2050,10 +1973,9 @@
           <b>Email Cadastro:</b> {{ objectItem.aluno.email }}
           <br />
           <b>Telefone Cadastro:</b>
-          {{
-            objectItem.aluno.celular == undefined
-              ? ""
-              : putMask(objectItem.aluno.celular, "celular")
+          {{ objectItem.aluno.celular == undefined
+            ? ""
+            : putMask(objectItem.aluno.celular, "celular")
           }}
           <br />
           <div v-if="alunoReceita.nome != false">
@@ -2067,16 +1989,15 @@
             <h5 class="error--text">CPF NÃƒO EXISTE</h5>
           </div>
           <b>Valor do Pedido:</b>
-          {{
-            new Intl.NumberFormat("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            }).format(objectItem.valor_total * (1 + objectItem.acrescimo / 100)
-              )
-            }}
-            <b v-if="objectItem.acrescimo != 0">
-              ({{ objectItem.acrescimo }}% juros)</b
-            >
+          {{ new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          }).format(objectItem.valor_total * (1 + objectItem.acrescimo / 100)
+            )
+          }}
+          <b v-if="objectItem.acrescimo != 0">
+            ({{ objectItem.acrescimo }}% juros)</b
+          >
           <br />
 
           <v-container>
@@ -2100,8 +2021,7 @@
         <v-card-actions>
           <div class="flex-grow-1"></div>
           <v-btn color="error" text @click="dialogBaixarBoleto = false"
-            >Voltar</v-btn
-          >
+            >Voltar</v-btn>
           <v-btn color="success" text @click="checkDataBoleto()">Emitir</v-btn>
         </v-card-actions>
       </v-card>
@@ -2155,11 +2075,9 @@
               <h2 class="text-center">
                 COMPROVANTE
                 <span v-if="objectComprovante.credito.status == 'CONFIRMED'"
-                  >RESERVA PAGA</span
-                >
+                  >RESERVA PAGA</span>
                 <span v-else-if="objectComprovante.credito.status == 'APPROVED'"
-                  >CRÃ‰DITO PAGO</span
-                >
+                  >CRÃ‰DITO PAGO</span>
                 <span v-else>CANCELAMENTO</span>
               </h2>
               <br />
@@ -2179,10 +2097,9 @@
               <h5>
                 <b>Total:</b>
                 R$
-                {{
-                  objectComprovante.valor_total_final
-                    .toFixed(2)
-                    .replace(".", ",")
+                {{ objectComprovante.valor_total_final
+                  .toFixed(2)
+                  .replace(".", ",")
                 }}
               </h5>
               <h5>
@@ -2259,12 +2176,10 @@
               </h5>
               <h5>
                 <b>Total:</b>
-                {{
-                  new Intl.NumberFormat("pt-BR", {
-                    style: "currency",
-                    currency: "BRL",
-                  }).format(objectComprovante.pix.valor)
-                }}
+                {{ new Intl.NumberFormat("pt-BR", {
+                  style: "currency",
+                  currency: "BRL",
+                }).format(objectComprovante.pix.valor) }}
               </h5>
 
               <h5>
@@ -2306,12 +2221,10 @@
               </h5>
               <h5>
                 <b>Total:</b>
-                {{
-                  new Intl.NumberFormat("pt-BR", {
-                    style: "currency",
-                    currency: "BRL",
-                  }).format(objectComprovante.pix.valor)
-                }}
+                {{ new Intl.NumberFormat("pt-BR", {
+                  style: "currency",
+                  currency: "BRL",
+                }).format(objectComprovante.pix.valor) }}
               </h5>
 
               <h5>
@@ -2385,11 +2298,9 @@
               <h2 class="text-center">
                 COMPROVANTE
                 <span v-if="objectComprovante.credito.status == 'CONFIRMED'"
-                  >RESERVA PAGA</span
-                >
+                  >RESERVA PAGA</span>
                 <span v-else-if="objectComprovante.credito.status == 'APPROVED'"
-                  >CRÃ‰DITO PAGO</span
-                >
+                  >CRÃ‰DITO PAGO</span>
                 <span v-else>CANCELAMENTO</span>
               </h2>
               <br />
@@ -2409,10 +2320,9 @@
               <h5>
                 <b>Total:</b>
                 R$
-                {{
-                  objectComprovante.valor_total_final
-                    .toFixed(2)
-                    .replace(".", ",")
+                {{ objectComprovante.valor_total_final
+                  .toFixed(2)
+                  .replace(".", ",")
                 }}
               </h5>
               <h5>
@@ -2490,12 +2400,10 @@
               </h5>
               <h5>
                 <b>Total:</b>
-                {{
-                  new Intl.NumberFormat("pt-BR", {
-                    style: "currency",
-                    currency: "BRL",
-                  }).format(objectComprovante.pix.valor)
-                }}
+                {{ new Intl.NumberFormat("pt-BR", {
+                  style: "currency",
+                  currency: "BRL",
+                }).format(objectComprovante.pix.valor) }}
               </h5>
 
               <h5>
@@ -2537,12 +2445,10 @@
               </h5>
               <h5>
                 <b>Total:</b>
-                {{
-                  new Intl.NumberFormat("pt-BR", {
-                    style: "currency",
-                    currency: "BRL",
-                  }).format(objectComprovante.pix.valor)
-                }}
+                {{ new Intl.NumberFormat("pt-BR", {
+                  style: "currency",
+                  currency: "BRL",
+                }).format(objectComprovante.pix.valor) }}
               </h5>
 
               <h5>
@@ -2567,11 +2473,9 @@
         <v-card-actions>
           <div class="flex-grow-1"></div>
           <v-btn color="error" text @click="modalComprovante = false"
-            >Voltar</v-btn
-          >
+            >Voltar</v-btn>
           <v-btn @click="printComprovante()" color="success" text
-            >Imprimir</v-btn
-          >
+            >Imprimir</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -2594,15 +2498,14 @@
                     required
                   ></v-text-field>
                 </v-col>
-              </v-row>
+              </row>
             </v-form>
           </v-container>
         </v-card-text>
         <v-card-actions>
           <div class="flex-grow-1"></div>
           <v-btn color="error" text @click="dialogEntrega = false"
-            >Voltar</v-btn
-          >
+            >Voltar</v-btn>
           <v-btn color="success" text @click="marcarEntregue()">Entregue</v-btn>
         </v-card-actions>
       </v-card>
@@ -2618,11 +2521,9 @@
         <v-card-actions>
           <div class="flex-grow-1"></div>
           <v-btn color="error" text @click="dialogCancelar = false"
-            >Voltar</v-btn
-          >
+            >Voltar</v-btn>
           <v-btn color="success" text @click="marcarCancelado()"
-            >Cancelar</v-btn
-          >
+            >Cancelar</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -2644,8 +2545,7 @@
               getPedidos();
               dialogCancelado = false;
             "
-            >Ok</v-btn
-          >
+            >Ok</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -2689,15 +2589,13 @@
             color="success"
             text
             @click="dialogNumeroPedido = false"
-            >Ok</v-btn
-          >
+            >Ok</v-btn>
           <v-btn
             v-if="divEnderecoEntrega1"
             @click="imprimirEnderecoEntrega()"
             color="success"
             text
-            >Imprimir</v-btn
-          >
+            >Imprimir</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -2761,8 +2659,7 @@
         <v-card-actions>
           <div class="flex-grow-1"></div>
           <v-btn color="success" text @click="dialogMostrarEndereco = false"
-            >Voltar</v-btn
-          >
+            >Voltar</v-btn>
           <v-btn
             v-if="divEnderecoEntrega2"
             @click="imprimirEnderecoEntrega()"
@@ -2775,8 +2672,7 @@
             @click="imprimirEnderecoEntrega()"
             color="success"
             text
-            >Imprimir</v-btn
-          >
+            >Imprimir</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -2785,8 +2681,7 @@
         <v-card-title>
           <span class="headline">Itens do Pedido - </span>
           <v-btn small class="ml-3 error" @click="dialogItens = false"
-            >Voltar</v-btn
-          >
+            >Voltar</v-btn>
           <v-spacer></v-spacer>
           <v-text-field
             v-model="searchItem"
@@ -2828,8 +2723,7 @@
           Deseja realmente alterar o STATUS ANTIFRAUDE para
           <span :class="statusAntifraude ? 'success--text' : 'error--text'">{{
             statusAntifraude ? "APROVADO" : "RECUSADO"
-          }}</span
-          >?
+          }}</span>
           <br />
           <v-textarea
             label="Motivo"
@@ -2841,8 +2735,7 @@
         <v-card-actions>
           <div class="flex-grow-1"></div>
           <v-btn color="error" text @click="dialogAntifraude = false"
-            >Voltar</v-btn
-          >
+            >Voltar</v-btn>
           <v-btn color="success" text @click="alterarAntifraude()">Sim</v-btn>
         </v-card-actions>
       </v-card>
@@ -2886,24 +2779,20 @@
             <template v-slot:item.valor_total="{ item }">
               <div v-if="item.desconto_representantes">
                 <div v-if="item.pagamento && item.pagamento.tipo_pagamento == 'BOLETO'">
-                  {{
-                    $money_format(
-                      item.valor_total_final -
-                        item.valor_desconto -
-                        (item.valor_total - item.valor_desconto) *
-                          (item.boleto.desconto / 100)
-                    )
-                  }}
+                  {{ $money_format(
+                    item.valor_total_final -
+                      item.valor_desconto -
+                      (item.valor_total - item.valor_desconto) *
+                        (item.boleto.desconto / 100)
+                  ) }}
                 </div>
                 <div v-else-if="item.pagamento && item.pagamento.tipo_pagamento == 'PIX'">
-                  {{
-                    $money_format(
-                      item.valor_total_final -
-                        item.valor_desconto -
-                        (item.valor_total - item.valor_desconto) *
-                          (item.pix.desconto_valor / 100)
-                    )
-                  }}
+                  {{ $money_format(
+                    item.valor_total_final -
+                      item.valor_desconto -
+                      (item.valor_total - item.valor_desconto) *
+                        (item.pix.desconto_valor / 100)
+                  ) }}
                 </div>
                 <div v-else>
                   {{ item.valor_total_final - item.valor_desconto }}
@@ -2911,22 +2800,18 @@
               </div>
               <div v-else>
                 <div v-if="item.pagamento && item.pagamento.tipo_pagamento == 'PIX'">
-                  {{
-                    $money_format(
-                      item.valor_total_final -
-                        (item.valor_total - item.valor_desconto) *
-                          (item.pix.desconto_valor / 100)
-                    )
-                  }}
+                  {{ $money_format(
+                    item.valor_total_final -
+                      (item.valor_total - item.valor_desconto) *
+                        (item.pix.desconto_valor / 100)
+                  ) }}
                 </div>
                 <div v-else-if="item.pagamento && item.pagamento.tipo_pagamento == 'BOLETO'">
-                  {{
-                    $money_format(
-                      item.valor_total_final -
-                        (item.valor_total - item.valor_desconto) *
-                          (item.boleto.desconto / 100)
-                    )
-                  }}
+                  {{ $money_format(
+                    item.valor_total_final -
+                      (item.valor_total - item.valor_desconto) *
+                        (item.boleto.desconto / 100)
+                  ) }}
                 </div>
                 <div v-else>
                   {{ $money_format(item.valor_total_final) }}
@@ -2938,8 +2823,7 @@
         <v-card-actions>
           <div class="flex-grow-1"></div>
           <v-btn color="error" text @click="dialogEmitirTodos = false"
-            >Voltar</v-btn
-          >
+            >Voltar</v-btn>
           <v-btn color="success" @click="emitirTodos()" text>Emitir</v-btn>
         </v-card-actions>
       </v-card>
@@ -2976,8 +2860,7 @@
         <v-card-actions>
           <div class="flex-grow-1"></div>
           <v-btn color="error" text @click="dialogEmitidos = false"
-            >Voltar</v-btn
-          >
+            >Voltar</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -3065,8 +2948,7 @@
             color="primary"
             text
             @click="emitirPedidoDCInfo(objPedidoDCInfo, numeroPedidoDCInfo)"
-            >Salvar</v-btn
-          >
+            >Salvar</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -4534,6 +4416,7 @@ export default {
       let objectMaxLength = [];
       for (let i = 0; i < json.length; i++) {
         let value = json[i];
+
         for (let j = 0; j < jsonKeys.length; j++) {
           if (value[jsonKeys[j]] != null) {
             if (typeof value[jsonKeys[j]] == "number") {
