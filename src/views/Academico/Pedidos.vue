@@ -2712,19 +2712,23 @@
             <h5>
               <b>Número Online:</b> {{ this.enderecoEntrega.numero_online }}
             </h5>
-            <h5><b>Nome:</b> {{ this.enderecoEntrega.nome }}</h5>
-            <h6><b>CPF:</b> {{ putMask(this.enderecoEntrega.cpf_aluno) }}</h6>
-            <h5>
-              <b>Endereço</b>: {{ this.enderecoEntrega.endereco }},
-              {{ this.enderecoEntrega.numero }}
-            </h5>
-            <h5 v-if="enderecoEntrega.complemento">
-              <b>Complemento:</b> {{ this.enderecoEntrega.complemento }}
-            </h5>
-            <h5><b>Bairro:</b> {{ this.enderecoEntrega.bairro }}</h5>
-            <h5><b>Cep:</b> {{ this.enderecoEntrega.cep }}</h5>
-            <h5><b>Cidade:</b> {{ this.enderecoEntrega.cidade }}</h5>
-            <h5><b>Estado:</b> {{ this.enderecoEntrega.estado }}</h5>
+            <h5><b>Nome:</b> {{ this.enderecoEntrega.nome }}
+            {{ this.enderecoEntrega.sobrenome }}
+            <br />
+            <b>CPF:</b> {{ putMask(this.enderecoEntrega.cpf_aluno) }}
+            <br />
+            <b>Endereço</b>: {{ this.enderecoEntrega.endereco }},
+            {{ this.enderecoEntrega.numero }}
+            <br />
+            <b>Complemento:</b> {{ this.enderecoEntrega.complemento }}
+            <br />
+            <b>Bairro:</b> {{ this.enderecoEntrega.bairro }}
+            <br />
+            <b>Cep:</b> {{ this.enderecoEntrega.cep }}
+            <br />
+            <b>Cidade:</b> {{ this.enderecoEntrega.cidade }}
+            <br />
+            <b>Estado:</b> {{ this.enderecoEntrega.estado }}
           </v-card-text>
         </div>
         <div v-if="divEnderecoEntrega3" id="printEndereco2">
@@ -3104,7 +3108,6 @@ export default {
     typeSnackbar: "",
     timeSnackbar: 2000,
     snackbar: false,
-    msgSnackbar: "",
     loading: false,
     valid: true,
     validReserva: true,
@@ -4679,6 +4682,7 @@ export default {
       let objectMaxLength = [];
       for (let i = 0; i < json.length; i++) {
         let value = json[i];
+
         for (let j = 0; j < jsonKeys.length; j++) {
           if (value[jsonKeys[j]] != null) {
             if (typeof value[jsonKeys[j]] == "number") {
