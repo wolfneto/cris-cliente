@@ -4280,7 +4280,7 @@ export default {
             ? pedido.pedido_dcinfo.slice(0, -1)
             : "";
           let res = await this.$axios.get(
-            "http://192.168.0.200:36730/dc-info/API/pedido?pedido=" + aux
+            "http://solident.ddns.net:36730/dc-info/API/pedido?pedido=" + aux
           );
           console.log("oporra", res.data);
           pedidos_financeiro.push(res.data);
